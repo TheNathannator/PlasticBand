@@ -18,42 +18,45 @@ When using any data structures included in these documents, you'll want to make 
 
 - 5-fret guitar
   - Guitar Hero
-    - [ ] Xbox 360
+    - [x] Xbox 360
     - [ ] PS2 (assuming they can be differentiated from regular PS3 controllers at all, and hoping the PS2 adapter landscape isn't too fragmented)
     - [ ] PS3
     - [ ] Wii
   - Rock Band
-    - [ ] Xbox 360
+    - [x] Xbox 360
     - [ ] Xbox One
     - [ ] PS2/3
     - [ ] PS4
     - [ ] Wii
 - 6-fret guitar
   - [ ] Xbox 360
+    - This one's partially done, but it requires hardware verification
   - [ ] Xbox One
   - [ ] PS3/Wii U
   - [ ] PS4
   - [ ] iOS
 - 4-lane (Rock Band) drums
-  - [ ] Xbox 360
+  - [x] Xbox 360
   - [ ] Xbox One
   - [ ] PS2/3
   - [ ] PS4
   - [ ] Wii
 - 5-lane (Guitar Hero) drums
   - [ ] Xbox 360
+    - Document is parially done, needs hardware verification
   - [ ] PS2/3
   - [ ] Wii
 - Turntable (DJ Hero)
-  - [ ] Xbox 360
+  - [x] Xbox 360
   - [ ] PS3
   - [ ] Wii
 - Pro Guitar (Rock Band)
   - [ ] Xbox 360
+    - Document is parially done, needs hardware verification
   - [ ] PS3
   - [ ] Wii
 - Keyboard/keytar (Rock Band)
-  - [ ] Xbox 360
+  - [x] Xbox 360
   - [ ] PS3
   - [ ] Wii
 
