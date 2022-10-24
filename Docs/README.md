@@ -12,7 +12,7 @@ You may add images to documentation, and you may also create an `_Ignored` folde
 
 ## General Notes
 
-When using any data structures included in these documents, you'll want to make sure that they are unaligned and have no packing applied to them, unless otherwise specified.
+Data structures in these documents assume that the processor and data are little-endian, and that the structure is unaligned with no packing applied. If you use them directly, you'll want to ensure these assumptions are correct, or that you adjust the structures to make them correct on your system.
 
 ## Todo List
 
