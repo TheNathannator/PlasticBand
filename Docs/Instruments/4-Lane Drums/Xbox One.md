@@ -77,7 +77,7 @@ Bytes:
       bool kick1 : 1;
       bool kick2 : 1;
       bool soloFlag : 1;
-      bool rightThumbClick : 1;
+      bool unused1 : 1;
 
       uint8_t yellowPad : 4;
       uint8_t redPad : 4;
@@ -86,7 +86,7 @@ Bytes:
 
       uint8_t blueCymbal : 4;
       uint8_t yellowCymbal : 4;
-      uint8_t unused : 4;
+      uint8_t unused2 : 4;
       uint8_t greenCymbal : 4;
   }
   ```
