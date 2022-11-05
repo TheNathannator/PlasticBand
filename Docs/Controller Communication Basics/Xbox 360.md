@@ -54,6 +54,12 @@ if (hXInput)
 
 For the other hidden exports, see [OpenXInput](https://github.com/Nemirtingas/OpenXinput)'s header and .def file.
 
+### Windows.Gaming.Input
+
+The Universal Windows Platform `Windows.Gaming.Input` namespace also lets you use Xbox 360 controllers, among other things. However, WGI doesn't just hand you the input data as-is: axis values are normalized to floats, which doesn't work for devices that use those axes as bitmasks. Additionally, not all Xbox 360 subtypes are supported by it.
+
+There is also the `Windows.Gaming.Input.Custom` namespace, however there is no official documentation on how to use it, and all of my attempts to use it have failed so far.
+
 ### Other Options
 
 Other options for using XInput include the [OpenXInput](https://github.com/Nemirtingas/OpenXinput) project, which allows using more than 4 controllers and has additional functions.
