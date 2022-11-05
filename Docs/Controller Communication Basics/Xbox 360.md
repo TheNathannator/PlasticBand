@@ -66,6 +66,9 @@ On the latest versions of macOS, there is currently no way to use Xbox 360 contr
 
 ## Linux
 
-On Linux, Xbox 360 controller support is built into the kernel, and they simply work as HID devices.
+On Linux, Xbox 360 controller support is built directly into the kernel. There are also alternative drivers which provide additional functionality and may work better with some controllers:
 
-TODO: Further information on what exactly to do is needed. I don't know the device IDs, format of the report, or if there's ways to get the normally-unused data.
+- [xboxdrv](https://gitlab.com/xboxdrv/xboxdrv)
+- a modified [xpad](https://github.com/paroj/xpad)
+
+(TODO: how to identify and interface with devices)
