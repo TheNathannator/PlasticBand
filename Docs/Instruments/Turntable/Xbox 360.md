@@ -34,7 +34,7 @@ Tables:
 
 - Scratching:
   - Positive is clockwise, negative is counter-clockwise.
-  - Only uses a tiny range (around -64 to +64 in my testing), presumably so as to not register on the Xbox 360 menus.
+  - Only uses a tiny range (within -64 to +64), presumably so as to not register on the Xbox 360 menus.
 
 Euphoria button: Y button
 
@@ -86,7 +86,7 @@ struct XInputTurntableState
     int16_t leftTableVelocity;
     int16_t rightTableVelocity;
 
-    uint16_t effectsKnob;
+    int16_t effectsKnob; // Whether or not this is signed doesn't really matter, as either way it's gonna loop over when it reaches min/max
     int16_t crossfader;
 }
 ```
@@ -96,3 +96,4 @@ struct XInputTurntableState
 Euphoria button light: Right vibration
 
 - First turns on at around 7936 (`0x1F00`). Maxes out at 65535 (`0xFFFF`).
+- The low-level XUSB vibration report is only bytes instead of shorts, so on that end it turns on at `0x1F` and maxes out at `0xFF`.
