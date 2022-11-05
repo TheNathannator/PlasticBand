@@ -62,9 +62,10 @@ There is also the `Windows.Gaming.Input.Custom` namespace, however there is no o
 
 ### Other Options
 
-Other options for using XInput include the [OpenXInput](https://github.com/Nemirtingas/OpenXinput) project, which allows using more than 4 controllers and has additional functions.
+XInput works just fine for getting input data from an Xbox 360 controller: it does little to no processing on it. But it has some limitations, and there's some functionality it doesn't allow, and data that it doesn't expose that some devices might use.
 
-There is also my own [SharpXusb](https://github.com/TheNathannator/SharpXusb) library for .NET that is more focused on direct communication with the XUSB driver, which allows for getting data beyond what standard XInput reports (modifying OpenXInput can also provide this functionality).
+- The [OpenXInput](https://github.com/Nemirtingas/OpenXinput) project is a reverse-engineering/re-implementation of XInput which allows using more than 4 controllers at once, and has some additional functionality.
+- My own [SharpXusb](https://github.com/TheNathannator/SharpXusb) library for .NET allows for getting data nearly directly from the driver, which means some additional input data that would otherwise get lost can be used.
 
 ## Mac
 
