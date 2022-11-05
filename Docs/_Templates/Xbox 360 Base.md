@@ -18,6 +18,10 @@ XInput type and subtype may be retrieved through the XInputGetCapabilities funct
 
 Detail input information here.
 
+## Vibration Info
+
+Detail any information about what vibration reports will do, if applicable.
+
 ### As A Struct
 
 ```c
