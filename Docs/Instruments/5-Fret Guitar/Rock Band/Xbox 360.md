@@ -71,7 +71,7 @@ struct XInputRBGuitarGamepad
 
     bool start : 1;
     bool back : 1;
-    bool leftThumbClick : 1;
+    bool soloFlag : 1;
     bool rightThumbClick : 1;
 
     bool orange : 1;
