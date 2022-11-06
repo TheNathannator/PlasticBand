@@ -21,6 +21,8 @@ Frets:
 | Blue   | Y           |
 | Orange | Left bumper |
 
+Strumbar: D-pad up/down
+
 Whammy: Right stick X
 
 - Resting state is negative, pressed state is positive.

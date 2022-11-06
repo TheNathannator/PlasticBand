@@ -40,6 +40,8 @@ Or, as flags:
 | Orange    | Left bumper      |
 | Solo flag | Left stick click |
 
+Strumbar: D-pad up/down
+
 Whammy: Right Stick X
 
 - Resting state is negative, pressed state is positive.
