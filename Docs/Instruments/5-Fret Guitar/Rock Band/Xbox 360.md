@@ -5,6 +5,8 @@
 - XInput Type: Gamepad (1)
 - XInput Subtype: Guitar (6)
 
+TODO: Rock Band is able to differentiate between RB guitars with auto-calibration and those without, most likely either a flag or reported vibration capabilities
+
 ## Input Info
 
 Face buttons work like a standard Xbox 360 controller.
@@ -59,7 +61,14 @@ Pedal port (3.5mm port): Right Stick Y
 
 - Acts exactly the same as tilt, minus the flickering.
 
-Auto-calibration sensors (RB2/3 only(?)): TODO, may require low-level XUSB stuff 
+Auto-calibration sensors: Left Stick X
+
+- Only one sensor is ever active at a time, and they both use this axis to report their state.
+- Microphone:
+  - Ranges from `0x0000` (no noise) to `0x7FFF` (roughly, doesn't actually reach this but it's so close it might as well).
+  - Has a limited frequency response range: it starts barely picking up at around 3640 Hz, starts maxing out at around 4350 hz, and starts dropping off at around 11400 Hz. Rock Band uses a tone at around B7 (3951 Hz).
+- Light sensor:
+  - Ranges from `0x7FFF` (no light) to `0x0000`.
 
 ### As A Struct
 
@@ -88,8 +97,17 @@ struct XInputRBGuitarGamepad
 
     uint8_t pickupSwitch;
     uint8_t unused1;
-    int32_t unused2;
+    int16_t calibrationSensor;
+    int16_t unused2;
     int16_t whammy;
     int16_t tilt;
 }
 ```
+
+## Vibration Info
+
+Toggling auto-calibration sensors:
+
+- Microphone: Right vibration `0x6000`
+- Light sensor: Right vibration `0xFFFF`
+- Off: Right vibration `0x0000` (or any other non-specified value)
