@@ -25,9 +25,12 @@ Strumbar: D-pad up/down
 
 Whammy: Right stick X
 
-- Resting state is negative, pressed state is positive.
+- Ranges from -32768 (not pressed) to 32767 (fully pressed).
 
 Tilt: Right stick Y
+
+- Tilted up is positive, tilted down is negative.
+- Values vary; on some guitars the range might max out at a fairly high angle, on others you might hardly be able to hold it regularly without it maxing out.
 
 Other accelerometer data: Left and right triggers
 
@@ -130,7 +133,15 @@ Touch/slider bar: Left stick X
     | OB        | `0x6`        | `0x6`                             |
     | O         | `0x7`        | `0xF`                             |
 
-  - For frets below the top fret combo, a certain amount is subtracted from the bottom nibble's starting value: 1 for G, 2 for R, and 4 for Y.
+  - For frets below the top fret combo, a certain amount is subtracted from the overall value:
+
+    | Fret | Amount subtracted |
+    | :--: | :---------------- |
+    | G    | 1                 |
+    | R    | 2                 |
+    | Y    | 4                 |
+
+    This means that, for example, a GRYB chord will equal (BY = `0x2F`) - (G + R = `3`) = `0x2C`.
 
 RJ14 (pedal) port: Right bumper
 

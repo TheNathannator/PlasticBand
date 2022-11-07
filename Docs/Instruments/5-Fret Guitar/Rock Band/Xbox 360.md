@@ -46,7 +46,7 @@ Strumbar: D-pad up/down
 
 Whammy: Right Stick X
 
-- Resting state is negative, pressed state is positive.
+- Ranges from -32768 (not pressed) to 32767 (fully pressed). Note that the actual max may vary.
 
 Tilt: Right Stick Y
 
