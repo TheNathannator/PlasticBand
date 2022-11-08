@@ -6,7 +6,7 @@ This folder contains documentation on how to communicate with and interpret the 
 
 These docs are a work in progress, contributions are very welcome!
 
-To get started, use one of the templates in the [_Templates](_Templates/) folder. Fill out information required to identify the device, include any device descriptors if possible, and give a writeup on how its input data works. Code examples (including data structures) are also appreciated. If you're missing info, be sure to make note of such.
+To get started, use one of the templates in the [_Templates](_Templates/) folder. Fill out information required to identify the device, include any device descriptors if possible, and give a writeup on how its input data works. Code examples (including data structures) are also appreciated. If you're missing info, be sure to make note of such. Descriptor dumps can be added to the [Descriptor Dumps](Descriptor%20Dumps/) folder.
 
 You may add images to documentation, and you may also create an `_Ignored` folder anywhere within the repository to have a folder you can put anything in without fear of accidentally committing it.
 
