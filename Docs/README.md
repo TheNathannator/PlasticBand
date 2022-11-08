@@ -42,7 +42,7 @@ Data structures in these documents assume that the processor and data are little
   - [ ] Wii
 - 5-lane (Guitar Hero) drums
   - [ ] Xbox 360
-    - Document is parially done, needs hardware verification
+    - Document is partially done, needs hardware verification
   - [ ] PS2/3
   - [ ] Wii
 - Turntable (DJ Hero)
@@ -51,7 +51,7 @@ Data structures in these documents assume that the processor and data are little
   - [ ] Wii
 - Pro Guitar (Rock Band)
   - [ ] Xbox 360
-    - Document is parially done, needs hardware verification
+    - Document is partially done, needs hardware verification
   - [ ] PS3
   - [ ] Wii
 - Keyboard/keytar (Rock Band)
@@ -61,7 +61,7 @@ Data structures in these documents assume that the processor and data are little
 - Other
   - [ ] Rock Band 4 Legacy Wireless Adapter
   - [ ] Rock Band 4 Legacy Wired Adapter
-    - Document is parially done, needs additional research and verification
+    - Document is partially done, needs additional research and verification
 
 ## License
 
