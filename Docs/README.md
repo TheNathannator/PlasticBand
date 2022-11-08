@@ -12,7 +12,7 @@ You may add images to documentation, and you may also create an `_Ignored` folde
 
 ## General Notes
 
-Data structures in these documents assume that the processor and data are little-endian, and that the structure is unaligned with no packing applied. If you use them directly, you'll want to ensure these assumptions are correct, or that you adjust the structures to make them correct on your system.
+Data structures in these documents assume that the processor and data are little-endian, and that the structure is unaligned with no packing applied, unless otherwise specified. If you use them directly, you'll want to ensure these assumptions are correct, or that you adjust the structures to make them correct on your system.
 
 ## Todo List
 
@@ -29,8 +29,7 @@ Data structures in these documents assume that the processor and data are little
     - [ ] PS4
     - [ ] Wii
 - 6-fret guitar
-  - [ ] Xbox 360
-    - This one's partially done, but it requires hardware verification
+  - [x] Xbox 360
   - [ ] Xbox One
   - [ ] PS3/Wii U
   - [ ] PS4
@@ -59,6 +58,9 @@ Data structures in these documents assume that the processor and data are little
   - [x] Xbox 360
   - [ ] PS3
   - [ ] Wii
+- Other
+  - [ ] Rock Band 4 Legacy Wireless Adapter
+  - [x] Rock Band 4 Legacy Wired Adapter
 
 ## License
 
