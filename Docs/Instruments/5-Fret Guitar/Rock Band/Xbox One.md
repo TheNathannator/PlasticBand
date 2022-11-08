@@ -9,104 +9,109 @@
   - Stratocaster: `0x4161`
   - Jaguar: (Unknown)
 - Interface GUID:
-  - Stratocaster: `0D2AE438-7F7D-4933-8693-30FC55018E77`
-  - Jaguar: (Unknown, likely the same)
+  - Stratocaster:
+    - Primary: `0D2AE438-7F7D-4933-8693-30FC55018E77`
+    - Secondary:
+      - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
+      - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Unknown)
+  - Jaguar: (Unknown, possibly the same)
 - Class string:
-  - Stratocaster: `MadCatz.Xbox.Guitar.Stratocaster`
+  - Stratocaster:
+    - Primary: `MadCatz.Xbox.Guitar.Stratocaster`
+    - Secondary: `Windows.Xbox.Input.NavigationController`
   - Jaguar: (Unknown)
 
 ## Input Command Info
 
-Command ID: `0x20`
+### Command ID `0x20`: Input State
 
-- Length:
-  - Typically 10 bytes
-  - Descriptor reports length as 14 bytes
-- General format: `<buttons> <tilt> <whammy> <pickup> <upper frets> <lower/solo frets> <unused[3]>`
-  - `buttons`: 16-bit button bitmask
-    - Bit 0 (`0x0001`) - Sync button
-    - Bit 1 (`0x0002`) - Unused
-    - Bit 2 (`0x0004`) - Menu Button
-    - Bit 3 (`0x0008`) - View Button
-    - Bit 4 (`0x0010`) - Green Fret Flag (equivalent to A Button)
-    - Bit 5 (`0x0020`) - Red Fret Flag (equivalent to B Button)
-    - Bit 6 (`0x0040`) - Blue Fret Flag (equivalent to X Button)
-    - Bit 7 (`0x0080`) - Yellow Fret Flag (equivalent to Y Button)
-    - Bit 8 (`0x0100`) - D-pad Up/Strum Up
-    - Bit 9 (`0x0200`) - D-pad Down/Strum Down
-    - Bit 10 (`0x0400`) - D-pad Left
-    - Bit 11 (`0x0800`) - D-pad Right
-    - Bit 12 (`0x1000`) - Orange Fret Flag (equivalent to Left Bumper)
-    - Bit 13 (`0x2000`) - Unused (equivalent to Right Bumper)
-    - Bit 14 (`0x4000`) - Solo Fret Flag (equivalent to Left Stick Press)
-    - Bit 15 (`0x8000`) - Unused (equivalent to Right Stick Press)
-  - `tilt`: 8-bit tilt axis
-    - Has a minimum value of `0x70`, angles below this point register as just `0x00`
-  - `whammy`: 8-bit whammy bar axis
-  - `pickup`: 8-bit pickup switch axis
-    - Seems to use top 4 bytes, values from the Guitar Sniffer logs are `0x00`, `0x10`, `0x20`, `0x30`, and `0x40`
-  - `upper frets`, `lower/solo frets`: 8-bit fret bitmasks
-    - Bit 0 (`0x01`) - Green
-    - Bit 1 (`0x02`) - Red
-    - Bit 2 (`0x04`) - Yellow
-    - Bit 3 (`0x08`) - Blue
-    - Bit 4 (`0x10`) - Orange
-    - Bits 5-7 - Unused
-  - `unused[3]`: unknown data values
-    - These are most likely used for the auto-calibration sensors once those are activated.
+Length: Typically 10 bytes (descriptor reports max length as 14 bytes)
 
-  ```c
-  struct GipGuitarState
-  {
-      bool sync : 1;
-      bool reserved : 1;
-      bool menu : 1;
-      bool view : 1;
+- Bytes 0-1: 16-bit button bitmask
+  - Byte 0, bit 0 (`0x01`) - Sync Button
+  - Byte 0, bit 1 (`0x02`) - Unused
+  - Byte 0, bit 2 (`0x04`) - Menu Button
+  - Byte 0, bit 3 (`0x08`) - View Button
+  - Byte 0, bit 4 (`0x10`) - Green Fret Flag (equivalent to A Button)
+  - Byte 0, bit 5 (`0x20`) - Red Fret Flag (equivalent to B Button)
+  - Byte 0, bit 6 (`0x40`) - Blue Fret Flag (equivalent to X Button)
+  - Byte 0, bit 7 (`0x80`) - Yellow Fret Flag (equivalent to Y Button)
+  - Byte 1, bit 0 (`0x01`) - D-pad Up/Strum Up
+  - Byte 1, bit 1 (`0x02`) - D-pad Down/Strum Down
+  - Byte 1, bit 2 (`0x04`) - D-pad Left
+  - Byte 1, bit 3 (`0x08`) - D-pad Right
+  - Byte 1, bit 4 (`0x10`) - Orange Fret Flag (equivalent to Left Bumper)
+  - Byte 1, bit 5 (`0x20`) - Unused (equivalent to Right Bumper)
+  - Byte 1, bit 6 (`0x40`) - Solo Fret Flag (equivalent to Left Stick Press)
+  - Byte 1, bit 7 (`0x80`) - Unused (equivalent to Right Stick Press)
+- Byte 2: Tilt
+  - Has a minimum value of `0x70`, angles below this point register as just `0x00`
+- Byte 3: Whammy bar
+- Byte 4: Pickup switch
+  - Seems to use top 4 bytes, values from the Guitar Sniffer logs are `0x00`, `0x10`, `0x20`, `0x30`, and `0x40`
+- Byte 5: 8-bit upper fret bitmask
+  - Bit 0 (`0x01`) - Green
+  - Bit 1 (`0x02`) - Red
+  - Bit 2 (`0x04`) - Yellow
+  - Bit 3 (`0x08`) - Blue
+  - Bit 4 (`0x10`) - Orange
+- Byte 6: 8-bit lower fret bitmask
+  - Same as previous
+- Bytes 7-9: unknown
+  - These are most likely used for the auto-calibration sensors once those are activated.
 
-      bool greenFlag : 1;
-      bool redFlag : 1;
-      bool blueFlag : 1;
-      bool yellowFlag : 1;
+```c
+struct GipGuitarState
+{
+    bool sync : 1;
+    bool reserved : 1;
+    bool menu : 1;
+    bool view : 1;
 
-      bool dpadStrumUp : 1;
-      bool dpadStrumDown : 1;
-      bool dpadLeft : 1;
-      bool dpadRight : 1;
+    bool greenFlag : 1;
+    bool redFlag : 1;
+    bool blueFlag : 1;
+    bool yellowFlag : 1;
 
-      bool orangeFlag : 1;
-      bool unused1 : 1;
-      bool soloFlag : 1;
-      bool unused2 : 1;
+    bool dpadStrumUp : 1;
+    bool dpadStrumDown : 1;
+    bool dpadLeft : 1;
+    bool dpadRight : 1;
 
-      uint8_t tilt;
-      uint8_t whammy;
-      uint8_t pickup;
+    bool orangeFlag : 1;
+    bool unused1 : 1;
+    bool soloFlag : 1;
+    bool unused2 : 1;
 
-      bool upperGreen : 1;
-      bool upperRed : 1;
-      bool upperYellow : 1;
-      bool upperBlue : 1;
-      bool upperOrange : 1;
-      bool upperPadding : 3;
+    uint8_t tilt;
+    uint8_t whammy;
+    uint8_t pickup;
 
-      bool lowerGreen : 1;
-      bool lowerRed : 1;
-      bool lowerYellow : 1;
-      bool lowerBlue : 1;
-      bool lowerOrange : 1;
-      bool lowerPadding : 3;
+    bool upperGreen : 1;
+    bool upperRed : 1;
+    bool upperYellow : 1;
+    bool upperBlue : 1;
+    bool upperOrange : 1;
+    bool upperPadding : 3;
 
-      uint8_t unknown[3];
-  }
-  ```
+    bool lowerGreen : 1;
+    bool lowerRed : 1;
+    bool lowerYellow : 1;
+    bool lowerBlue : 1;
+    bool lowerOrange : 1;
+    bool lowerPadding : 3;
+
+    uint8_t unknown[3];
+}
+```
 
 ## Output Command Info
 
-Command ID: `0x21`
+### Command ID `0x21`
 
-- Length: 5 bytes
-- Data is unknown. This info comes from the guitar's descriptor.
-- This is most likely used for enabling/disabling the auto-calibration sensors.
+- Reported length: 5 bytes
+
+The data for this one is unknown, it's reported in the descriptor but unfortunately it doesn't provide any important info outside of the ID, length, and that it's an output command. It's probably used for enabling/disabling the auto-calibration sensors.
 
 ## References
 

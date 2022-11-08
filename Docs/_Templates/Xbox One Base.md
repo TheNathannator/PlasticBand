@@ -9,24 +9,69 @@ Resources to assist in the documentation process:
 
 ## Controller Info
 
-- Vendor ID: Hex number
-  - Acquired from the arrival message (`0x02`)
-- Product ID: Hex number
-  - Acquired from the arrival message (`0x02`)
-- Interface GUID:
-  - Acquired from the descriptor message (`0x04`)
-  - Multiple can be included in the descriptor, only list the one(s) unique to the type of device being documented
-- Class string:
-  - Acquired from the descriptor message (`0x04`)
-  - Multiple can be included in the descriptor, only list the one(s) unique to the type of device being documented
+- Vendor ID:
+- Product ID:
+- Interface GUIDs:
+  - Primary:
+  - Secondary:
+    - (List each)
+- Class strings:
+  - Primary:
+  - Secondary:
+    - (List each)
+
+Vendor ID and product ID can be retrieved from the arrival message (`0x02`).
+
+Interface GUIDs and class strings can be retrieved from the descriptor message (`0x04`). Multiple of each can be specified, if there's more than one include all of them but be sure to specify which is primary (unique) and which ones are secondary (non-unique). If there's only one, this is not required.
+
+Common non-unique GUIDs include:
+
+- `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7`: Navigation
+- `9776FF56-9BFD-4581-AD45-B645BBA526D6`: Unknown
+
+Common non-unique class strings include:
+
+- `Windows.Xbox.Input.NavigationController`
 
 ## Input Command Info
 
 Detail information about commands that may be received from the device, excluding common core ones such as status messages (command ID `0x03`) unless there's something important of note about them.
 
-Typically, devices will report input data via the `0x20` command ID.
+### Example: Command ID `0x20`: Input State
 
-It is recommended to create a struct out of the described data. For example, here's the standard gamepad's state as a struct:
+Typically, devices will report input data via the `0x20` command ID. As an example, this section details the standard gamepad's state info.
+
+Length: Typically 14 bytes (descriptor reports max length as 20 bytes)
+
+- Sometimes the in-practice length differs from what the descriptor reports as its max length.
+
+Although the readme for these docs says that little-endian is assumed, it's recommended to specify big-endian or little-endian for values spanning across multiple bytes. Signedness should also be specified.
+
+- Bytes 0-1: 16-bit button bitmask
+  - Byte 0, bit 0 (`0x01`) - Sync Button
+  - Byte 0, bit 1 (`0x02`) - Unused
+  - Byte 0, bit 2 (`0x04`) - Menu Button
+  - Byte 0, bit 3 (`0x08`) - View Button
+  - Byte 0, bit 4 (`0x10`) - A Button
+  - Byte 0, bit 5 (`0x20`) - B Button
+  - Byte 0, bit 6 (`0x40`) - X Button
+  - Byte 0, bit 7 (`0x80`) - Y Button
+  - Byte 1, bit 0 (`0x01`) - D-pad Up
+  - Byte 1, bit 1 (`0x02`) - D-pad Down
+  - Byte 1, bit 2 (`0x04`) - D-pad Left
+  - Byte 1, bit 3 (`0x08`) - D-pad Right
+  - Byte 1, bit 4 (`0x10`) - Left Bumper
+  - Byte 1, bit 5 (`0x20`) - Right Bumper
+  - Byte 1, bit 6 (`0x40`) - Left Stick Press
+  - Byte 1, bit 7 (`0x80`) - Right Stick Press
+- Bytes 2-3: Left trigger (little-endian, unsigned)
+  - Unpressed: 0, fully pressed: roughly `0x03FF`
+- Bytes 4-5: Right trigger (little-endian, unsigned)
+  - Same as above
+- Bytes 6-7: Left stick X (little-endian, signed)
+- Bytes 8-9: Left stick Y (little-endian, signed)
+- Bytes 10-11: Right stick X (little-endian, signed)
+- Bytes 12-13: Right stick Y (little-endian, signed)
 
 ```c
 struct GipGamepadState
@@ -65,4 +110,56 @@ struct GipGamepadState
 
 Detail info about any commands that can be sent to the device.
 
-It's recommended to create a struct for this data as well.
+### Example: Command ID `0x09`: Set Vibration
+
+This command is found in the standard Xbox One gamepad's descriptor, and is used to set the state of its four vibration motors.
+
+Length: Typically 9 bytes (descriptor reports max length as 60 bytes)
+
+Bytes:
+
+- Byte 0: Unknown
+  - Typically `0x00`
+- Byte 1: Flags
+  - Bitmask of which motors to set.
+  - Bit 0 (`0x01`): Right rumble
+  - Bit 1 (`0x02`): Left rumble
+  - Bit 2 (`0x04`): Right trigger
+  - Bit 3 (`0x08`): Left trigger
+- Byte 2: Left trigger motor strength
+- Byte 3: Right trigger motor strength
+- Byte 4: Left rumble motor strength
+- Byte 5: Right rumble motor strength
+- Byte 6: Rumble duration
+  - The exact unit of this value is unknown.
+  - Typically `0xFF` for instantaneous rumble effects.
+- Byte 7: Activation delay
+  - The exact unit of this value is unknown.
+  - Typically `0x00` for instantaneous rumble effects.
+- Byte 8: Number of times to repeat
+  - Typically `0xEB` for instantaneous rumble effects.
+
+```c
+enum GipGamepadMotorFlags
+{
+    GipGamepadMotor_RightRumble = 0x01,
+    GipGamepadMotor_LeftRumble = 0x02,
+    GipGamepadMotor_RightTrigger = 0x04,
+    GipGamepadMotor_LeftTrigger = 0x08
+}
+
+struct GipGamepadVibration
+{
+    uint8_t unk;
+    uint8_t flags;
+
+    uint8_t leftTrigger;
+    uint8_t rightTrigger;
+    uint8_t leftRumble;
+    uint8_t rightRumble;
+
+    uint8_t duration;
+    uint8_t delay;
+    uint8_t repeat;
+}
+```
