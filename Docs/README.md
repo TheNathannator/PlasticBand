@@ -60,7 +60,8 @@ Data structures in these documents assume that the processor and data are little
   - [ ] Wii
 - Other
   - [ ] Rock Band 4 Legacy Wireless Adapter
-  - [x] Rock Band 4 Legacy Wired Adapter
+  - [ ] Rock Band 4 Legacy Wired Adapter
+    - Document is parially done, needs additional research and verification
 
 ## License
 
