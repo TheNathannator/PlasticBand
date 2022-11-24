@@ -16,12 +16,9 @@ One way vendor and product IDs may be retrieved is through Device Manager on Win
 
 - Vendor ID: `<Hexadecimal number>`
 - Product ID: `<Hexadecimal number>`
+- Device Descriptor: Link (set this to link to a descriptor dump in the [Descriptor Dumps](../Descriptor%20Dumps/) folder, such as `[Link](../Descriptor%20Dumps/PS3/PS3 Rock Band Guitar.txt)`)
 
 If there are other IDs or properties that are necessary for distinguishing a device, those should be listed here as well.
-
-## Device Descriptor
-
-Detail the HID report descriptor here, if applicable.
 
 ## Additional Steps
 
