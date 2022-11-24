@@ -8,6 +8,7 @@ Resources to assist in the documentation process:
 
 - [USB Implementers Forum documentation on HID](https://www.usb.org/hid)
 - [Ryochan7's HID Report Inspector](https://github.com/Ryochan7/HidReportInspector/)
+- [abend0c1's hidrdd (HID Report Descriptor Decoder)](https://github.com/abend0c1/hidrdd)
 - TODO: Should probably have more resources here, feel free to contribute!
 
 ## Device Info
@@ -17,6 +18,7 @@ One way vendor and product IDs may be retrieved is through Device Manager on Win
 - Vendor ID: `<Hexadecimal number>`
 - Product ID: `<Hexadecimal number>`
 - Device Descriptor: Link (set this to link to a descriptor dump in the [Descriptor Dumps](../Descriptor%20Dumps/) folder, such as `[Link](../Descriptor%20Dumps/PS3/PS3 Rock Band Guitar.txt)`)
+  - Some HID devices might have broken report descriptors. If this is the case, make sure to note it as such.
 
 If there are other IDs or properties that are necessary for distinguishing a device, those should be listed here as well.
 
