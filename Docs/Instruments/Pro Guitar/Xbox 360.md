@@ -4,8 +4,8 @@ TODO: This document was written without actual hardware to test with. Everything
 
 ## Controller Info
 
-- XInput Type: 
-- XInput Subtype: 
+- XInput Type: Gamepad (1)
+- XInput Subtype: 25, not part of XInput standards
 
 ## Input Info
 
@@ -94,3 +94,4 @@ struct XInputProGuitarState
 ## References
 
 - https://dwsk.proboards.com/thread/404/song-standard-advancements
+- https://github.com/maxton/gamepad-midi/blob/master/LibPlasticInstrument/Native/Xinput.cs#L110 for subtype
