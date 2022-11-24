@@ -6,7 +6,7 @@ Some general notes that apply to all 4-lane drumkits regardless of platform.
 
 Decoding the button flags on Rock Band kits is not particularly trivial. There are some pitfalls, complications, and hardware issues that need to be accounted for in order for things to work correctly. I spent a few hours cumulative getting some logic figured out so no one will ever have to do this again, hopefully there are no platform-specific issues or additional hardware bugs to throw a wrench in things lol
 
-This code is built off of observations and assumptions on the Xbox 360 kit. As such, this might not work for the other kit platforms as-is. This also may not work 100% for the MIDI Pro Adapters, there's some known issues with them even on console (though ideally e-kit users would use direct MIDI input where possible).
+This code is built off of observations and assumptions on the Xbox 360 kit. As such, this might not work for the other kit platforms as-is. This also may not work 100% for the MIDI Pro Adapters, there's some known issues with them even on console (though ideally e-kit users would use direct MIDI input where possible). This code is also designed for checking the instantaneous state, it doesn't work well with methods that only give you an input on the frame it happens.
 
 ```c
 // Bitmask of individual pads/cymbals
@@ -54,7 +54,7 @@ if (pad && cymbal)
     if (colorCount > 1)
     {
         // The d-pad inputs let us resolve the ambiguity of a pad+cymbal hit
-        // Only d-pad is checked here due to the hardware bug mentioned above
+        // Only d-pad is checked here since it is the only unique identifier
 
         // Yellow
         if (dpadUp)
@@ -89,17 +89,17 @@ if (pad && cymbal)
 // This does mean that just pressing the face buttons will count as pad hits; this behavior can be observed in Rock Band as well
 if (pad || !cymbal)
 {
-    if (red) pads |= FourLanePad.RedPad;
-    if (yellow) pads |= FourLanePad.YellowPad;
-    if (blue) pads |= FourLanePad.BluePad;
-    if (green) pads |= FourLanePad.GreenPad;
+    if (red) pads |= FourLanePad_Red;
+    if (yellow) pads |= FourLanePad_Yellow;
+    if (blue) pads |= FourLanePad_Blue;
+    if (green) pads |= FourLanePad_Green;
 }
 
 // Check for cymbal hits
 if (cymbal)
 {
-    if (yellow) pads |= FourLanePad.YellowCymbal;
-    if (blue) pads |= FourLanePad.BlueCymbal;
-    if (green) pads |= FourLanePad.GreenCymbal;
+    if (yellow) pads |= FourLaneCymbal_Yellow;
+    if (blue) pads |= FourLaneCymbal_Blue;
+    if (green) pads |= FourLaneCymbal_Green;
 }
 ```
