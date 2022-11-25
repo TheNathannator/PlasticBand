@@ -6,7 +6,9 @@ Some general notes that apply to all 4-lane drumkits regardless of platform.
 
 Decoding the button flags on Rock Band kits is not particularly trivial. There are some pitfalls, complications, and hardware issues that need to be accounted for in order for things to work correctly. I spent a few hours cumulative getting some logic figured out so no one will ever have to do this again, hopefully there are no platform-specific issues or additional hardware bugs to throw a wrench in things lol
 
-This code is built off of observations and assumptions on the Xbox 360 kit. As such, this might not work for the other kit platforms as-is. This also may not work 100% for the MIDI Pro Adapters, there's some known issues with them even on console (though ideally e-kit users would use direct MIDI input where possible). This code is also designed for checking the instantaneous state, it doesn't work well with methods that only give you an input on the frame it happens.
+This code is designed for checking the instantaneous state, it doesn't work well with methods that only give you an input on the frame it happens. There's some examples and comments on how to filter the instantaneous state further if that's desired.
+
+This may not work 100% for the MIDI Pro Adapters, there's some known issues with them even on console (though ideally e-kit users would use direct MIDI input where possible).
 
 ```c
 // Bitmask of individual pads/cymbals
@@ -22,7 +24,13 @@ enum FourLanePad
     FourLaneCymbal_Yellow = 0x20,
     FourLaneCymbal_Blue = 0x40,
     FourLaneCymbal_Green = 0x80
-} pads;
+};
+
+// The previously-calculated pads.
+static FourLanePad previousPads;
+
+// The currently-calculated pads.
+FourLanePad pads;
 
 // Retrieve each input flag
 // The exact details of this varies between platforms
@@ -34,10 +42,7 @@ bool pad = ...
 bool cymbal = ...
 
 // Yellow and blue cymbals send d-pad up and down respectively, at least on Xbox 360 kits
-// (I sure hope they do on PS3 and Wii as well, otherwise this whole thing falls apart lol)
 // The kit only sends either d-pad up or down, not both at the same time (even when hitting both Yc+Bc)
-// There also appears to be a hardware bug with the cymbals where the color flag is sometimes cleared before the d-pad is
-// (hope this isn't too different between other platforms either...)
 bool dpadUp = ...
 bool dpadDown = ...
 
@@ -54,7 +59,8 @@ if (pad && cymbal)
     if (colorCount > 1)
     {
         // The d-pad inputs let us resolve the ambiguity of a pad+cymbal hit
-        // Only d-pad is checked here since it is the only unique identifier
+        // Only d-pad is checked here since it is the only unique identifier due to hardware bugs
+        // (sometimes the color flag is released before the d-pad input is, particularly at high polling rates)
 
         // Yellow
         if (dpadUp)
@@ -102,4 +108,14 @@ if (cymbal)
     if (blue) pads |= FourLaneCymbal_Blue;
     if (green) pads |= FourLaneCymbal_Green;
 }
+
+// If you want to see which pads have changed state, you can XOR the decoded pads with the previous pads.
+FourLanePad changedPads = pads ^ previousPads;
+// If you want only new pads, you can additionally mask out the current pads from the changed pads.
+FourLanePad newPads = changedPads & pads;
+// For pads that are no longer active, you can negate the calculated pads before masking.
+FourLanePad removedPads = changedPads & ~pads;
+
+// Store the current pads as the now-previous now that processing is done
+previousPads = pads;
 ```
