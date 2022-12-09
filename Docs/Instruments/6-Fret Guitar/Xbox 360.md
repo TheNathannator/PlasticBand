@@ -6,7 +6,7 @@
 - XInput Subtype: Guitar Alternate (7)
   - Annoyingly, the subtype is not unique, so additional capabilities info is required.
 - XInput Flags: Voice supported, plug-in modules supported, no navigation (`0x1C`)
-  - Interestingly, the no navigation flag is set, but clearly this shouldn't be the case, it has equivalents for d-pad, ABXY, start, back, and the guide button. this flag is probably how Guitar Hero Live distinguishes between 5-fret and 6-fret guitars.
+  - Interestingly, the no navigation flag is set, but clearly this shouldn't be the case, it has equivalents for d-pad, ABXY, start, back, and the guide button. This flag is probably how Guitar Hero Live distinguishes between 5-fret and 6-fret guitars.
 
 ## Input Info
 
@@ -23,11 +23,13 @@ Frets:
 
 Strumbar: D-pad up/down + left stick up/down
 
+- It seems that Guitar Hero Live only uses the left stick input when checking for strumming during gameplay.
+
 Tilt and whammy are swapped compared to the other Xbox 360 guitars.
 
 Whammy: Right stick Y
 
-- Ranges from 0 (not pressed) to 32767 (pressed).
+- Ranges from 0 (not pressed) to 32767 (pressed). This also differs from other Xbox 360 guitars.
 
 Tilt: Right stick X
 
@@ -69,7 +71,8 @@ struct XInput6FretGuitarGamepad
     bool black3 : 1;
 
     uint16_t unused1;
-    uint32_t unused2;
+    uint16_t unused2;
+    int16_t strumBar;
     int16_t tilt;
     int16_t whammy;
 }
