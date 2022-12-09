@@ -6,7 +6,7 @@ Documenting this device is a bit pointless with regards to PC use since Xbox 360
 
 ## Device Info
 
-- Vendor ID: `0x0EF6`
+- Vendor ID: `0x0E6F`
 - Product ID: `0x0175`
 - Interface GUIDs:
   - Primary: `FD019937-9816-45E7-8034-CFD6AB3AE6BF`
@@ -49,7 +49,7 @@ Bytes:
   - Typically `0x00`
 - Byte 4: XUSB report length
   - Typically `0x14`
-  - This seems to include the report ID and the length byte itself, the actual state data after this is only 18 bytes long
+  - This seems to include the report ID and the length byte itself, the actual state data after this is only 18 bytes long (`0x12`)
 - Bytes 5-22: XUSB report
   - Bytes 5-6: Buttons
     - Formatted identically to the `XINPUT_GAMEPAD` struct from XInput.
@@ -78,8 +78,6 @@ Bytes:
   - Bytes 17-22: Reserved
 
 ```c
-#include <xinput.h>
-
 struct GipLegacyWiredState
 {
     bool sync : 1;
@@ -102,7 +100,7 @@ struct GipLegacyWiredState
     bool leftThumbClick : 1;
     bool rightThumbClick : 1;
 
-    uint8_t unk1;
+    uint8_t subType; //? In the referenced packet capture this is always 0x08, the closest match is the subtype
     uint8_t reportId;
     uint8_t reportLength;
 
@@ -156,12 +154,14 @@ struct GipLegacyWiredDeviceInfo
 }
 ```
 
-### Command ID `0x23`: Unknown
+### Command ID `0x23`: Disconnection?
+
+This only occurs once in the packet log at the very end.
 
 Length: 1 byte
 
-- Byte 0: Unknown
-  - The only instance of this in the packet log is set to `0x08`.
+- Byte 0: Subtype?
+  - The only instance of this in the packet log is set to `0x08`, closest match is the subtype.
 
 ```c
 typedef GipLegacyWired_0x23 uint8_t;

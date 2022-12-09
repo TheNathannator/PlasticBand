@@ -21,6 +21,8 @@
     - Primary: `PDP.Xbox.Drums.Tablah`
     - Secondary: `Windows.Xbox.Input.NavigationController`
 
+NOTE: These drumkits typically send every packet twice! Respecting the packet count is vital!
+
 ## Input Command Info
 
 ### Command ID `0x20`: Input State
