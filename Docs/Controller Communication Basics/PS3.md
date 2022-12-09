@@ -42,6 +42,7 @@ struct Ps3Report
     uint8_t dpad;
 
     // Stick axes
+    // Neutral state is 0x80
     uint8_t leftStickX;
     uint8_t leftStickY;
     uint8_t rightStickX;
@@ -62,6 +63,7 @@ struct Ps3Report
     uint8_t pressure_square;
 
     // Each of the following are 10 bits in accuracy
+    // Centered/neutral state is 0x0200
     int16_t accelX;
     int16_t accelY;
     int16_t accelZ;
