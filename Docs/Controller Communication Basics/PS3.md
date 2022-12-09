@@ -14,15 +14,15 @@ The base report goes like this:
 struct Ps3Report
 {
     // Button bits
-    bool triangle : 1;
-    bool circle : 1;
-    bool cross : 1;
     bool square : 1;
+    bool cross : 1;
+    bool circle : 1;
+    bool triangle : 1;
 
-    bool l2 : 1;
-    bool r2 : 1;
     bool l1 : 1;
     bool r1 : 1;
+    bool l2 : 1;
+    bool r2 : 1;
 
     bool start : 1;
     bool select : 1;
