@@ -4,7 +4,7 @@ The PS3 Guitar Hero and Rock Band peripherals are standard HID devices that all 
 
 Unfortunately, if these devices are anything like a regular PS3 gamepad, the HID descriptor is not formed correctly. Manual parsing of the input report or use of a fixed descriptor is needed.
 
-Vendor ID is typically `0x12BA` but may vary, and product ID is never the same between devices. The IDs for a device are noted in the docs for the device.
+Vendor ID is typically `0x12BA` but may vary. The IDs for a device are noted in the docs for the device.
 
 ## Report Format
 
@@ -13,6 +13,8 @@ The base report goes like this:
 ```cpp
 struct Ps3Report
 {
+    uint8_t reportId;
+
     // Button bits
     bool square : 1;
     bool cross : 1;
@@ -24,8 +26,8 @@ struct Ps3Report
     bool l2 : 1;
     bool r2 : 1;
 
-    bool start : 1;
     bool select : 1;
+    bool start : 1;
     bool l3 : 1;
     bool r3 : 1;
 
@@ -65,13 +67,13 @@ struct Ps3Report
     // Each of the following are 10 bits in accuracy
     // Centered/neutral state is 0x0200
     int16_t accelX;
-    int16_t accelY;
     int16_t accelZ;
+    int16_t accelY;
     int16_t gyro;
 };
 ```
 
-What everything means changes between devices, but the amount of data typically does not.
+What everything means changes between devices, but the amount of data does not.
 
 ## References
 
