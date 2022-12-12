@@ -9,11 +9,6 @@
 
 Face buttons work like a standard Xbox 360 controller.
 
-Binary representations key:
-
-- `x` = This bit doesn't matter.
-- `B` = This bit is used.
-
 ### Keys
 
 The keys are sent as a bitmask, which gets split up across several of the XInput axes.
@@ -22,34 +17,34 @@ C1 is the leftmost key, C3 is the rightmost key.
 
 | Key | Input         | Bits                     |
 | :-- | :----         | :--:                     |
-| C1  | Left trigger  | `0b_Bxxx_xxxx`           |
-| Db1 | Left trigger  | `0b_xBxx_xxxx`           |
-| D1  | Left trigger  | `0b_xxBx_xxxx`           |
-| Eb1 | Left trigger  | `0b_xxxB_xxxx`           |
-| E1  | Left trigger  | `0b_xxxx_Bxxx`           |
-| F1  | Left trigger  | `0b_xxxx_xBxx`           |
-| Gb1 | Left trigger  | `0b_xxxx_xxBx`           |
-| G1  | Left trigger  | `0b_xxxx_xxxB`           |
+| C1  | Left trigger  | `0b_1xxx_xxxx`           |
+| Db1 | Left trigger  | `0b_x1xx_xxxx`           |
+| D1  | Left trigger  | `0b_xx1x_xxxx`           |
+| Eb1 | Left trigger  | `0b_xxx1_xxxx`           |
+| E1  | Left trigger  | `0b_xxxx_1xxx`           |
+| F1  | Left trigger  | `0b_xxxx_x1xx`           |
+| Gb1 | Left trigger  | `0b_xxxx_xx1x`           |
+| G1  | Left trigger  | `0b_xxxx_xxx1`           |
 |     |               |                          |
-| Ab1 | Right trigger | `0b_Bxxx_xxxx`           |
-| A1  | Right trigger | `0b_xBxx_xxxx`           |
-| Bb1 | Right trigger | `0b_xxBx_xxxx`           |
-| B1  | Right trigger | `0b_xxxB_xxxx`           |
-| C2  | Right trigger | `0b_xxxx_Bxxx`           |
-| Db2 | Right trigger | `0b_xxxx_xBxx`           |
-| D2  | Right trigger | `0b_xxxx_xxBx`           |
-| Eb2 | Right trigger | `0b_xxxx_xxxB`           |
+| Ab1 | Right trigger | `0b_1xxx_xxxx`           |
+| A1  | Right trigger | `0b_x1xx_xxxx`           |
+| Bb1 | Right trigger | `0b_xx1x_xxxx`           |
+| B1  | Right trigger | `0b_xxx1_xxxx`           |
+| C2  | Right trigger | `0b_xxxx_1xxx`           |
+| Db2 | Right trigger | `0b_xxxx_x1xx`           |
+| D2  | Right trigger | `0b_xxxx_xx1x`           |
+| Eb2 | Right trigger | `0b_xxxx_xxx1`           |
 |     |               |                          |
-| E2  | Left stick X  | `0b_xxxx_xxxx_Bxxx_xxxx` |
-| F2  | Left stick X  | `0b_xxxx_xxxx_xBxx_xxxx` |
-| Gb2 | Left stick X  | `0b_xxxx_xxxx_xxBx_xxxx` |
-| G2  | Left stick X  | `0b_xxxx_xxxx_xxxB_xxxx` |
-| Ab2 | Left stick X  | `0b_xxxx_xxxx_xxxx_Bxxx` |
-| A2  | Left stick X  | `0b_xxxx_xxxx_xxxx_xBxx` |
-| Bb2 | Left stick X  | `0b_xxxx_xxxx_xxxx_xxBx` |
-| B2  | Left stick X  | `0b_xxxx_xxxx_xxxx_xxxB` |
+| E2  | Left stick X  | `0b_xxxx_xxxx_1xxx_xxxx` |
+| F2  | Left stick X  | `0b_xxxx_xxxx_x1xx_xxxx` |
+| Gb2 | Left stick X  | `0b_xxxx_xxxx_xx1x_xxxx` |
+| G2  | Left stick X  | `0b_xxxx_xxxx_xxx1_xxxx` |
+| Ab2 | Left stick X  | `0b_xxxx_xxxx_xxxx_1xxx` |
+| A2  | Left stick X  | `0b_xxxx_xxxx_xxxx_x1xx` |
+| Bb2 | Left stick X  | `0b_xxxx_xxxx_xxxx_xx1x` |
+| B2  | Left stick X  | `0b_xxxx_xxxx_xxxx_xxx1` |
 |     |               |                          |
-| C3  | Left stick X  | `0b_Bxxx_xxxx_xxxx_xxxx` |
+| C3  | Left stick X  | `0b_1xxx_xxxx_xxxx_xxxx` |
 
 ### Velocity
 
@@ -57,11 +52,11 @@ Velocities also get registered across several of the XInput axes.
 
 | Key     | Input         | Bits                     |
 | :--     | :----         | :--:                     |
-| 1st key | Left stick X  | `0b_xBBB_BBBB_xxxx_xxxx` |
-| 2nd key | Left stick Y  | `0b_xxxx_xxxx_xBBB_BBBB` |
-| 3rd key | Left stick Y  | `0b_xBBB_BBBB_xxxx_xxxx` |
-| 4th key | Right stick X | `0b_xxxx_xxxx_xBBB_BBBB` |
-| 5th key | Right stick X | `0b_xBBB_BBBB_xxxx_xxxx` |
+| 1st key | Left stick X  | `0b_x111_1111_xxxx_xxxx` |
+| 2nd key | Left stick Y  | `0b_xxxx_xxxx_x111_1111` |
+| 3rd key | Left stick Y  | `0b_x111_1111_xxxx_xxxx` |
+| 4th key | Right stick X | `0b_xxxx_xxxx_x111_1111` |
+| 5th key | Right stick X | `0b_x111_1111_xxxx_xxxx` |
 
 When a key is pressed or released, if there are 5 or less keys pressed, the velocities of the currently pressed keys will be assigned from left to right into the velocity slots. If there are more than 5 keys pressed, the velocity values do not change from what they were previously, and the velocity of the 6th+ keys pressed will not register until one of the other keys is released, at which point it will register as a velocity of 64.
 
@@ -69,11 +64,11 @@ There is an issue where if a key is pressed, then released only slightly such th
 
 ### Other
 
-Overdrive button: Right Stick Y, `0b_xxxx_xxxx_Bxxx_xxxx`
+Overdrive button: Right Stick Y, `0b_xxxx_xxxx_1xxx_xxxx`
 
-Pedal port digital input: Right Stick Y, `0b_Bxxx_xxxx_xxxx_xxxx`
+Pedal port digital input: Right Stick Y, `0b_1xxx_xxxx_xxxx_xxxx`
 
-Pedal port analog input: Right Stick Y, `0b_xBBB_BBBB_xxxx_xxxx`
+Pedal port analog input: Right Stick Y, `0b_x111_1111_xxxx_xxxx`
 
 - This value appears to have an inverted range (0 = max, 127 = min). Not 100% sure on that though as this wasn't tested with an actual analog pedal, instead I used a headphone/microphone splitter on a pair of headphones that have a built-in mic and connected the mic part into the port.
 - These bits are all 1 when nothing is plugged in.

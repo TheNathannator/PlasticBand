@@ -11,44 +11,39 @@ TODO: This document was written without actual hardware to test with. Everything
 
 Face buttons work like a standard Xbox 360 controller.
 
-Binary representations key:
-
-- `x` = This bit doesn't matter.
-- `B` = This bit is used.
-
 Fret numbers:
 
 - For simplicity and clarity, the triggers here are combined little-endian-wise into a single 16-bit integer (that is, left trigger is the low 8 bytes, and right trigger is the high 8 bytes).
 
 | String | Input         | Bits                     |
 | :----- | :----         | :---                     |
-| Low E  | Triggers      | `0b_xxxx_xxxx_xxxB_BBBB` |
-| A      | Triggers      | `0b_xxxx_xxBB_BBBx_xxxx` |
-| D      | Triggers      | `0b_xBBB_BBxx_xxxx_xxxx` |
-| G      | Left Thumb X  | `0b_xxxx_xxxx_xxxB_BBBB` |
-| B      | Left Thumb X  | `0b_xxxx_xxBB_BBBx_xxxx` |
-| High E | Left Thumb X  | `0b_xBBB_BBxx_xxxx_xxxx` |
+| Low E  | Triggers      | `0b_xxxx_xxxx_xxx1_1111` |
+| A      | Triggers      | `0b_xxxx_xx11_111x_xxxx` |
+| D      | Triggers      | `0b_x111_11xx_xxxx_xxxx` |
+| G      | Left Thumb X  | `0b_xxxx_xxxx_xxx1_1111` |
+| B      | Left Thumb X  | `0b_xxxx_xx11_111x_xxxx` |
+| High E | Left Thumb X  | `0b_x111_11xx_xxxx_xxxx` |
 
 String velocity?:
 
 | String | Input         | Bits                     |
 | :----- | :----         | :---                     |
-| Low E  | Left Thumb Y  | `0b_xxxx_xxxx_xBBB_BBBB` |
-| A      | Left Thumb Y  | `0b_xBBB_BBBB_xxxx_xxxx` |
-| D      | Right Thumb X | `0b_xxxx_xxxx_xBBB_BBBB` |
-| G      | Right Thumb X | `0b_xBBB_BBBB_xxxx_xxxx` |
-| B      | Right Thumb Y | `0b_xxxx_xxxx_xBBB_BBBB` |
-| High E | Right Thumb Y | `0b_xBBB_BBBB_xxxx_xxxx` |
+| Low E  | Left Thumb Y  | `0b_xxxx_xxxx_x111_1111` |
+| A      | Left Thumb Y  | `0b_x111_1111_xxxx_xxxx` |
+| D      | Right Thumb X | `0b_xxxx_xxxx_x111_1111` |
+| G      | Right Thumb X | `0b_x111_1111_xxxx_xxxx` |
+| B      | Right Thumb Y | `0b_xxxx_xxxx_x111_1111` |
+| High E | Right Thumb Y | `0b_x111_1111_xxxx_xxxx` |
 
 Standard 5-fret color flags:
 
 | Fret Color | Input         | Bits                     |
 | :--------- | :----         | :---                     |
-| Green      | Left Thumb Y  | `0b_xxxx_xxxx_Bxxx_xxxx` |
-| Red        | Left Thumb Y  | `0b_Bxxx_xxxx_xxxx_xxxx` |
-| Yellow     | Right Thumb X | `0b_xxxx_xxxx_Bxxx_xxxx` |
-| Blue       | Right Thumb X | `0b_Bxxx_xxxx_xxxx_xxxx` |
-| Orange     | Right Thumb Y | `0b_xxxx_xxxx_Bxxx_xxxx` |
+| Green      | Left Thumb Y  | `0b_xxxx_xxxx_1xxx_xxxx` |
+| Red        | Left Thumb Y  | `0b_1xxx_xxxx_xxxx_xxxx` |
+| Yellow     | Right Thumb X | `0b_xxxx_xxxx_1xxx_xxxx` |
+| Blue       | Right Thumb X | `0b_1xxx_xxxx_xxxx_xxxx` |
+| Orange     | Right Thumb Y | `0b_xxxx_xxxx_1xxx_xxxx` |
 
 Tilt is not reported through the standard XInput data, according to the referenced forum post. It's possible it does the same thing as the RB3 keyboard's touchpad.
 
