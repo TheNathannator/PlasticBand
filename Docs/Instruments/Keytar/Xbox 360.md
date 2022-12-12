@@ -54,9 +54,7 @@ Velocities:
 | 4th key | Right stick X | `0b_xxxx_xxxx_x111_1111` |
 | 5th key | Right stick X | `0b_x111_1111_xxxx_xxxx` |
 
-- When a key is pressed or released, if there are 5 or less keys pressed, the velocities of the currently pressed keys will be assigned from left to right into the velocity slots. If there are more than 5 keys pressed, the velocity values do not change from what they were previously, and the velocity of the 6th+ keys pressed will not register until one of the other keys is released, at which point it will register as a velocity of 64.
-
-- There is an issue where if a key is pressed, then released only slightly such that it stops registering, then pressed again, it will not register a velocity. This can wreak havoc on velocity recognition if not accounted for. This is most likely due to the nature of how the keys use two contacts for velocity detection, and the keyboard is unable to correctly use a default velocity when only one gets released.
+- See the [general notes doc](General%20Notes.md) for details on [velocity behavior](General%20Notes.md#key-velocities) and [pairing velocities with keys](General%20Notes.md#pairing-keys-and-velocities).
 
 Overdrive button: Right Stick Y, `0b_xxxx_xxxx_1xxx_xxxx`
 
@@ -108,74 +106,6 @@ struct XInputKeytarGamepad
     uint8_t touchPad : 7;
     bool padding2 : 1;
 };
-```
-
-### Pairing Keys and Velocities Programmatically
-
-This code does not attempt to account for the hardware issue described in [Velocity](#velocity). In practice, it's not going to be much of an issue as it's a bit of a deliberate action to make this happen, and working around it requires storing state and overall making things much more complicated for an example.
-
-```cpp
-#define KEYS_COUNT 25
-
-void UpdateState(DWORD userIndex)
-{
-    // Array to copy key velocities into
-    uint8_t keyArr[KEYS_COUNT];
-
-    // Modified XINPUT_STATE that uses XInputKeytarGamepad instead of XINPUT_GAMEPAD for better data definitions
-    XInputKeytarState state;
-
-    // Get XInput state
-    if (XInputGetState(userIndex, (XINPUT_STATE*)&state) != ERROR_SUCCESS)
-    {
-        return;
-    }
-
-    XInputKeytarGamepad gamepad = state.Gamepad;
-
-    // Create a bitmask for the currently pressed keys.
-    // When displayed in binary, the 24th bit (starting from 0) is the left-most key,
-    // and the 0th bit is the right-most key.
-    uint32_t keyBits = (keys[0] << 17) | // 11111111
-            (keys[1] << 9) |             //         11111111
-            (keys[2] << 1) |             //                 11111111
-            ((velocity[0] & 0x80) >> 7); //                         10000000
-                                         // xxxxxxxxxxxxxxxxxxxxxxxxx
-                                         // 24                      0 
-
-    // Put keys and velocity together
-    int pressed = 0; // Number of keys pressed
-    int keyMask = 0x01000000; // Bitmask used to test for a specific key
-    for (int i = 0; i < KEYS_COUNT; i++)
-    {
-        // Check if the key is pressed
-        if (keyBits & keyMask)
-        {
-            // There are only 5 key velocities stored
-            if (pressed < 5)
-            {
-                // Retrieve velocity (ranges from 0-127)
-                keyArr[i] = (gamepad.velocity[pressed] & 0x7F);
-            }
-            else
-            {
-                // We need to assign a default velocity if more than 5 keys are pressed.
-                // The keyboard defaults to 64 for keys that were pressed after all velocities filled up
-                // and then keys that had velocities registered were released, so we're using the same here.
-                // This can be whatever you want it to be though, so long as it's in the range of 0-127.
-                keyArr[i] = 64;
-            }
-        }
-        else
-        {
-            // Key is not pressed
-            keyArr[i] = 0;
-        }
-
-        // Shift the key mask to the next key
-        keyMask >>= 1;
-    }
-}
 ```
 
 ## References
