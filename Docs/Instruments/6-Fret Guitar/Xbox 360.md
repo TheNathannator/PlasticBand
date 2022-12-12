@@ -48,7 +48,7 @@ GHTV button: Left stick click
 ### As A Struct
 
 ```c
-struct XInput6FretGuitarGamepad
+struct XInputSixFretGuitarGamepad
 {
     bool dpadUp : 1;
     bool dpadDown : 1;

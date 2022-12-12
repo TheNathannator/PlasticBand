@@ -60,7 +60,7 @@ Velocities:
 ### As A Struct
 
 ```c
-struct XInput4LaneDrumsGamepad
+struct XInputFourLaneDrumsGamepad
 {
     bool dpadUp : 1;
     bool dpadDown : 1;

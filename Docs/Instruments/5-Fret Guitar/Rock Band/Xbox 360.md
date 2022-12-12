@@ -73,7 +73,7 @@ Auto-calibration sensors: Left Stick X
 ### As A Struct
 
 ```c
-struct XInputRBGuitarGamepad
+struct XInputGuitarGamepad
 {
     bool dpadStrumUp : 1;
     bool dpadStrumDown : 1;
