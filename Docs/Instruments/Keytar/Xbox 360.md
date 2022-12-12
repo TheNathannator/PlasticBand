@@ -9,14 +9,12 @@
 
 Face buttons work like a standard Xbox 360 controller.
 
-### Keys
+Keys:
 
-The keys are sent as a bitmask, which gets split up across several of the XInput axes.
+- C1 is the leftmost key, C3 is the rightmost key.
 
-C1 is the leftmost key, C3 is the rightmost key.
-
-| Key | Input         | Bits                     |
-| :-- | :----         | :--:                     |
+| Key | Axis          | Bits                     |
+| :-- | :---          | :--:                     |
 | C1  | Left trigger  | `0b_1xxx_xxxx`           |
 | Db1 | Left trigger  | `0b_x1xx_xxxx`           |
 | D1  | Left trigger  | `0b_xx1x_xxxx`           |
@@ -46,23 +44,19 @@ C1 is the leftmost key, C3 is the rightmost key.
 |     |               |                          |
 | C3  | Left stick X  | `0b_1xxx_xxxx_xxxx_xxxx` |
 
-### Velocity
+Velocities:
 
-Velocities also get registered across several of the XInput axes.
-
-| Key     | Input         | Bits                     |
-| :--     | :----         | :--:                     |
+| Key     | Axis          | Bits                     |
+| :--     | :---          | :--:                     |
 | 1st key | Left stick X  | `0b_x111_1111_xxxx_xxxx` |
 | 2nd key | Left stick Y  | `0b_xxxx_xxxx_x111_1111` |
 | 3rd key | Left stick Y  | `0b_x111_1111_xxxx_xxxx` |
 | 4th key | Right stick X | `0b_xxxx_xxxx_x111_1111` |
 | 5th key | Right stick X | `0b_x111_1111_xxxx_xxxx` |
 
-When a key is pressed or released, if there are 5 or less keys pressed, the velocities of the currently pressed keys will be assigned from left to right into the velocity slots. If there are more than 5 keys pressed, the velocity values do not change from what they were previously, and the velocity of the 6th+ keys pressed will not register until one of the other keys is released, at which point it will register as a velocity of 64.
+- When a key is pressed or released, if there are 5 or less keys pressed, the velocities of the currently pressed keys will be assigned from left to right into the velocity slots. If there are more than 5 keys pressed, the velocity values do not change from what they were previously, and the velocity of the 6th+ keys pressed will not register until one of the other keys is released, at which point it will register as a velocity of 64.
 
-There is an issue where if a key is pressed, then released only slightly such that it stops registering, then pressed again, it will not register a velocity. This can wreak havoc on velocity recognition if not accounted for. This is most likely due to the nature of how the keys use two contacts for velocity detection, and the keyboard is unable to correctly use a default velocity when only one gets released.
-
-### Other
+- There is an issue where if a key is pressed, then released only slightly such that it stops registering, then pressed again, it will not register a velocity. This can wreak havoc on velocity recognition if not accounted for. This is most likely due to the nature of how the keys use two contacts for velocity detection, and the keyboard is unable to correctly use a default velocity when only one gets released.
 
 Overdrive button: Right Stick Y, `0b_xxxx_xxxx_1xxx_xxxx`
 
