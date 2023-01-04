@@ -98,3 +98,4 @@ struct PS3FourLaneDrumsState
 ## References
 
 - https://sanjay900.github.io/guitar-configurator/controller-reverse-engineering/ps3-rockband-drums.html
+- [Phase Shift mappings file](../../Other/device_list.json)

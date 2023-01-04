@@ -80,3 +80,4 @@ struct PS3FiveLaneDrumsState
 ## References
 
 - https://sanjay900.github.io/guitar-configurator/controller-reverse-engineering/ps3-gh-drums.html
+- [Phase Shift mappings file](../../Other/device_list.json)

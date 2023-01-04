@@ -1,0 +1,2894 @@
+/*
+  This file is based off of the Phase Shift device mappings file.
+  It's been converted to a more sensible structure, with many helpful changes.
+
+  A summary of changes:
+  - VID/PID have been converted to hexadecimal.
+  - Inputs have been grouped into buttons, PoV hats, and axes.
+  - Byte offsets have been changed to button bits and axis/PoV hat indexes, based on byte offsets in the DIJOYSTATE structure used in DirectInput.
+  - Axis inputs now have names based on field names in the DIJOYSTATE structure.
+  - PoV hat inputs have max/min renamed to neutral/active.
+*/
+{
+  "guitars": [
+    {
+      "name": "Controller (Xbox 360 Wireless Receiver for Windows)",
+      "friendlyName": "Xbox 360 Wireless Generic Guitar (O)",
+      "vendorId": "0x045E",
+      "productId": "0x0719",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 6,
+        "start": 7
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Rx",
+          "axisNo": 3,
+          "max": 65535,
+          "min": 0
+        },
+        "slider": {
+          "name": "X",
+          "axisNo": 0,
+          "max": 65535,
+          "min": 0
+        },
+        "xGyro": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 0
+        },
+        "yGyro": {
+          "name": "Ry",
+          "axisNo": 4,
+          "max": 0,
+          "min": 65535
+        }
+      }
+    },
+    {
+      "name": "Controller (XBOX 360 For Windows)",
+      "friendlyName": "Xbox 360 Wireless Generic Guitar (U)",
+      "vendorId": "0x045E",
+      "productId": "0x0291",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 6,
+        "start": 7
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Rx",
+          "axisNo": 3,
+          "max": 65535,
+          "min": 0
+        },
+        "slider": {
+          "name": "X",
+          "axisNo": 0,
+          "max": 65535,
+          "min": 0
+        },
+        "xGyro": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 0
+        },
+        "yGyro": {
+          "name": "Ry",
+          "axisNo": 4,
+          "max": 0,
+          "min": 65535
+        }
+      }
+    },
+    {
+      "name": "Controller (GH5 Wired Guitar)",
+      "friendlyName": "XBOX 360 GH5 Wired Guitar",
+      "vendorId": "0x1430",
+      "productId": "0x0715",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 6,
+        "start": 7
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Rx",
+          "axisNo": 3,
+          "max": 65535,
+          "min": 0
+        },
+        "slider": {
+          "name": "X",
+          "axisNo": 0,
+          "max": 65535,
+          "min": 0
+        },
+        "xGyro": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 0
+        },
+        "yGyro": {
+          "name": "Ry",
+          "axisNo": 4,
+          "max": 0,
+          "min": 65535
+        }
+      }
+    },
+    {
+      "name": "GH6 Wired Air Guitar (Controller)",
+      "friendlyName": "XBOX 360 GH6 Wired Air Guitar",
+      "vendorId": "0x1430",
+      "productId": "0x0716",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 6,
+        "start": 7
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Rx",
+          "axisNo": 3,
+          "max": 65535,
+          "min": 0
+        },
+        "slider": {
+          "name": "X",
+          "axisNo": 0,
+          "max": 65535,
+          "min": 0
+        },
+        "xGyro": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 0
+        },
+        "yGyro": {
+          "name": "Ry",
+          "axisNo": 4,
+          "max": 0,
+          "min": 65535
+        }
+      }
+    },
+    {
+      "name": "Controller (Guitar Hero X-plorer  )",
+      "friendlyName": "XBOX 360 Wired GH2 Xplorer Guitar",
+      "vendorId": "0x1430",
+      "productId": "0x4748",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 6,
+        "start": 7
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Rx",
+          "axisNo": 3,
+          "max": 65535,
+          "min": 0
+        },
+        "slider": null,
+        "xGyro": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 44671,
+          "min": 17663
+        },
+        "yGyro": {
+          "name": "Ry",
+          "axisNo": 4,
+          "max": 0,
+          "min": 65535
+        }
+      }
+    },
+    {
+      "name": "Harmonix Guitar for PlayStation\u00AE3",
+      "friendlyName": "PS3 Wireless Rockband 2 Guitar (strat)",
+      "vendorId": "0x12BA",
+      "productId": "0x0200",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": 5,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 0
+        },
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "Guitar Hero X-plorer   (Controller)",
+      "friendlyName": "XBOX 360 Wired GH2 Xplorer Guitar V2",
+      "vendorId": "0x1430",
+      "productId": "0x4748",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 6,
+        "start": 7
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Rx",
+          "axisNo": 3,
+          "max": 65535,
+          "min": 0
+        },
+        "slider": null,
+        "xGyro": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 44671,
+          "min": 17663
+        },
+        "yGyro": {
+          "name": "Ry",
+          "axisNo": 4,
+          "max": 0,
+          "min": 65535
+        }
+      }
+    },
+    {
+      "name": "Guitar Hero for PC/MAC",
+      "friendlyName": "PC/MAC Guitar Hero WT Guitar",
+      "vendorId": "0x1430",
+      "productId": "0x474C",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 0,
+        "blue": 3,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 32767
+        },
+        "slider": {
+          "name": "Rz",
+          "axisNo": 5,
+          "max": 65014,
+          "min": 8191
+        },
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "Guitar Hero5 for PlayStation (R) 3",
+      "friendlyName": "PS3 Wireless GH5 Guitar",
+      "vendorId": "0x12BA",
+      "productId": "0x0100",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 0,
+        "blue": 3,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 32767
+        },
+        "slider": {
+          "name": "Rz",
+          "axisNo": 5,
+          "max": 65535,
+          "min": 12287
+        },
+        "xGyro": {
+          "name": "Rz",
+          "axisNo": 5,
+          "max": 65535,
+          "min": 5375
+        },
+        "yGyro": null
+      }
+    },
+    {
+      "name": "PS TO PC CONVERTOR",
+      "friendlyName": "PS2 Guitar (GH2)",
+      "vendorId": "0x19FA",
+      "productId": "0x8D01",
+      "magicButton": 1006,
+      "magicData": 27000,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 5,
+        "red": 1,
+        "yellow": 0,
+        "blue": 2,
+        "orange": 3,
+        "xGyro": -1,
+        "yGyro": 4,
+        "back": 9,
+        "start": 8
+      },
+      "povs": {
+        "up": null,
+        "down": null,
+        "left": null,
+        "right": null,
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 31500
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 22500
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Y",
+          "axisNo": 1,
+          "max": 25343,
+          "min": 0
+        },
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "PS2PS3 Kingmaker",
+      "friendlyName": "PS2/PS3 Kingmaker Guitar",
+      "vendorId": "0x1BAD",
+      "productId": "0x0004",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": 4,
+        "xGyro": 5,
+        "yGyro": -1,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": null,
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "Harmonix Guitar Controller for Nintendo Wii",
+      "friendlyName": "Wii RB1 Guitar",
+      "vendorId": "0x1BAD",
+      "productId": "0x0004",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": 4,
+        "xGyro": 5,
+        "yGyro": -1,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 3327
+        },
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "Harmonix Guitar for Xbox 360 (Controller)",
+      "friendlyName": "XBOX 360 RB1 Guitar",
+      "vendorId": "0x1BAD",
+      "productId": "0x0002",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 6,
+        "start": 7
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Rx",
+          "axisNo": 3,
+          "max": 65535,
+          "min": 0
+        },
+        "slider": null,
+        "xGyro": {
+          "name": "Ry",
+          "axisNo": 4,
+          "max": 32766,
+          "min": 0
+        },
+        "yGyro": {
+          "name": "Ry",
+          "axisNo": 4,
+          "max": 32766,
+          "min": 0
+        }
+      }
+    },
+    {
+      "name": "USB Joystick ",
+      "friendlyName": "PS2 GHWT Guitar Radioshack USB Adaptor",
+      "vendorId": "0x0E8F",
+      "productId": "0x0003",
+      "magicButton": 6,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 5,
+        "red": 1,
+        "yellow": 0,
+        "blue": 2,
+        "orange": 3,
+        "xGyro": -1,
+        "yGyro": 4,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": null,
+        "down": null,
+        "left": null,
+        "right": null,
+        "strumUp": null,
+        "strumDown": null
+      },
+      "axes": {
+        "whammy": null,
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "Guitar Hero3 for PlayStation (R) 3",
+      "friendlyName": "PS3 Guitar Hero 3 Guitar",
+      "vendorId": "0x12BA",
+      "productId": "0x0100",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 0,
+        "blue": 3,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 33548
+        },
+        "slider": null,
+        "xGyro": null,
+        "yGyro": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 40569,
+          "min": 33288
+        }
+      }
+    },
+    {
+      "name": "Dual USB Vibration Joystick",
+      "friendlyName": "PS3 GH2 Guitar DVJ Adaptor",
+      "vendorId": "0x12BD",
+      "productId": "0xE002",
+      "magicButton": 15,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 5,
+        "red": 1,
+        "yellow": 0,
+        "blue": 2,
+        "orange": 3,
+        "xGyro": -1,
+        "yGyro": 4,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": null,
+        "down": null,
+        "left": null,
+        "right": null,
+        "strumUp": null,
+        "strumDown": null
+      },
+      "axes": {
+        "whammy": null,
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "Twin USB Network Gamepad",
+      "friendlyName": "PS3 GH2 Guitar Twin Adaptor",
+      "vendorId": "0x0810",
+      "productId": "0x0001",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 5,
+        "red": 1,
+        "yellow": 0,
+        "blue": 2,
+        "orange": 3,
+        "xGyro": -1,
+        "yGyro": 4,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": null,
+        "down": null,
+        "left": null,
+        "right": null,
+        "strumUp": null,
+        "strumDown": null
+      },
+      "axes": {
+        "whammy": null,
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "Guitar",
+      "friendlyName": "Logitech Guitar PS3",
+      "vendorId": "0x12BA",
+      "productId": "0x0100",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 0,
+        "blue": 3,
+        "orange": 4,
+        "xGyro": 8,
+        "yGyro": -1,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 32767
+        },
+        "slider": {
+          "name": "Rz",
+          "axisNo": 5,
+          "max": 65014,
+          "min": 8447
+        },
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "GuitarHero for Playstation (R) 3",
+      "friendlyName": "PS3 GH WOR Drums",
+      "vendorId": "0x12BA",
+      "productId": "0x0100",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 0,
+        "blue": 3,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 0
+        },
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "Guitar Hero 2 PS2 Guitar w/ USB adapter ",
+      "friendlyName": "PS2 Guitar (GH2) Via USB Adaptor",
+      "vendorId": "0x0E8F",
+      "productId": "0x0003",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 5,
+        "red": 1,
+        "yellow": 0,
+        "blue": 2,
+        "orange": 3,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 4,
+        "start": 9
+      },
+      "povs": {
+        "up": null,
+        "down": null,
+        "left": null,
+        "right": null,
+        "strumUp": null,
+        "strumDown": null
+      },
+      "axes": {
+        "whammy": null,
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "Guitar Hero4 for PlayStation (R) 3",
+      "friendlyName": "PS3 Guitar Hero WT Guitar",
+      "vendorId": "0x12BA",
+      "productId": "0x0100",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 0,
+        "blue": 3,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 0
+        },
+        "slider": {
+          "name": "Rz",
+          "axisNo": 5,
+          "max": 65014,
+          "min": 8191
+        },
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "USB Joystick ",
+      "friendlyName": "PS1 Generic Guitar",
+      "vendorId": "0x0E8F",
+      "productId": "0x0003",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 5,
+        "red": 1,
+        "yellow": 0,
+        "blue": 2,
+        "orange": 3,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": null,
+        "down": null,
+        "left": null,
+        "right": null,
+        "strumUp": null,
+        "strumDown": null
+      },
+      "axes": {
+        "whammy": null,
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "4-osiowy 12-przyciskowy joystick z prze\u00B3\u00B9cznikiem ustawie\u00F1",
+      "friendlyName": "PS2 GHWT Guitar Polish",
+      "vendorId": "0x0C12",
+      "productId": "0x0005",
+      "magicButton": 4,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 7,
+        "red": 1,
+        "yellow": 3,
+        "blue": 0,
+        "orange": 2,
+        "xGyro": 6,
+        "yGyro": 6,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": null,
+        "down": null,
+        "left": null,
+        "right": null,
+        "strumUp": null,
+        "strumDown": null
+      },
+      "axes": {
+        "whammy": null,
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "GUITAR PRAISE",
+      "friendlyName": "Guitar Praise Guitar",
+      "vendorId": "0x0314",
+      "productId": "0x0830",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 2,
+        "blue": 3,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 8,
+        "start": 7
+      },
+      "povs": {
+        "up": null,
+        "down": null,
+        "left": null,
+        "right": null,
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        }
+      },
+      "axes": {
+        "whammy": null,
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "Twin USB Joystick",
+      "friendlyName": "PS2 Hama 34383 Wireless Guitar",
+      "vendorId": "0x0810",
+      "productId": "0x0001",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 5,
+        "red": 1,
+        "yellow": 0,
+        "blue": 2,
+        "orange": 3,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": null,
+        "down": null,
+        "left": null,
+        "right": null,
+        "strumUp": null,
+        "strumDown": null
+      },
+      "axes": {
+        "whammy": null,
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "PS3 Guitar",
+      "friendlyName": "PS3 Nyko Front Man",
+      "vendorId": "0x12BA",
+      "productId": "0x0200",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": 4,
+        "xGyro": 5,
+        "yGyro": 5,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 0
+        },
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "PS3 Guitar",
+      "friendlyName": "PS3 Frontman Wireless Guitar",
+      "vendorId": "0x12BA",
+      "productId": "0x0100",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 0,
+        "blue": 3,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": null,
+        "right": null,
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 32511,
+          "min": 65535
+        },
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "Twin USB Vibration Gamepad",
+      "friendlyName": "PS2 Guitarmania II",
+      "vendorId": "0x0810",
+      "productId": "0x0001",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 5,
+        "red": 1,
+        "yellow": 0,
+        "blue": 2,
+        "orange": 3,
+        "xGyro": -1,
+        "yGyro": 4,
+        "back": -1,
+        "start": 9
+      },
+      "povs": {
+        "up": null,
+        "down": null,
+        "left": null,
+        "right": null,
+        "strumUp": null,
+        "strumDown": null
+      },
+      "axes": {
+        "whammy": null,
+        "slider": null,
+        "xGyro": null,
+        "yGyro": null
+      }
+    },
+    {
+      "name": "Harmonix Guitar Controller for Nintendo Wii",
+      "friendlyName": "Wii Rock Band 2 Guitar",
+      "vendorId": "0x1BAD",
+      "productId": "0x3010",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 0,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": 4,
+        "xGyro": -1,
+        "yGyro": 5,
+        "back": 8,
+        "start": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65535,
+          "min": 0
+        },
+        "slider": {
+          "name": "Rz",
+          "axisNo": 5,
+          "max": 58773,
+          "min": 6399
+        },
+        "xGyro": null,
+        "yGyro": null
+      }
+    }
+  ],
+  "drumkits": [
+    {
+      "name": "Controller (Xbox 360 Wireless Receiver for Windows)",
+      "friendlyName": "Xbox 360 Wireless Generic Drumkit 4 Lane (O)",
+      "vendorId": "0x045E",
+      "productId": "0x0719",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": 1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": -1,
+        "back": 6,
+        "start": 7,
+        "bass": 4,
+        "bass2": 8,
+        "cymbal": 5,
+        "tom": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Controller (XBOX 360 For Windows)",
+      "friendlyName": "Xbox 360 Wireless Generic Drumkit 4 Lane (U)",
+      "vendorId": "0x045E",
+      "productId": "0x0291",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": 1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": -1,
+        "back": 6,
+        "start": 7,
+        "bass": 4,
+        "bass2": 8,
+        "cymbal": 5,
+        "tom": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Controller (Xbox 360 Wireless Receiver for Windows)",
+      "friendlyName": "Xbox 360 Wireless Generic Drumkit 5 Lane (O)",
+      "vendorId": "0x045E",
+      "productId": "0x0719",
+      "magicButton": 8,
+      "magicData": -1,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 5,
+        "back": 6,
+        "start": 7,
+        "bass": 4,
+        "bass2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Controller (XBOX 360 For Windows)",
+      "friendlyName": "Xbox 360 Wireless Generic Drumkit 5 Lane (U)",
+      "vendorId": "0x045E",
+      "productId": "0x0291",
+      "magicButton": 8,
+      "magicData": -1,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 5,
+        "back": 6,
+        "start": 7,
+        "bass": 4,
+        "bass2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "GuitarHero for Playstation (R) 3",
+      "friendlyName": "PS3 Wireless Guitar Hero WT Drums",
+      "vendorId": "0x12BA",
+      "productId": "0x0120",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": 5,
+        "back": 8,
+        "start": 9,
+        "bass": 4,
+        "bass2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Guitar Hero3 for PlayStation (R) 3",
+      "friendlyName": "PS3 Wired Guitar Hero WT Drums",
+      "vendorId": "0x12BA",
+      "productId": "0x0120",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": 5,
+        "back": 8,
+        "start": 9,
+        "bass": 4,
+        "bass2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Harmonix Drum kit for PlayStation\u00AE3",
+      "friendlyName": "PS3 Wireless Rockband 2 Drum Kit",
+      "vendorId": "0x12BA",
+      "productId": "0x0210",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": 1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": -1,
+        "back": 8,
+        "start": 9,
+        "bass": 4,
+        "bass2": 5,
+        "cymbal": 11,
+        "tom": 10
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Harmonix Drum Kit for PlayStation(R)3",
+      "friendlyName": "PS3 Wireless Rockband 2 Drum Kit",
+      "vendorId": "0x12BA",
+      "productId": "0x0210",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": 1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": -1,
+        "back": 8,
+        "start": 9,
+        "bass": 4,
+        "bass2": 5,
+        "cymbal": 11,
+        "tom": 10
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Harmonix Drum kit for PlayStation\u00AE3",
+      "friendlyName": "PS3 Rockband 2 Drum Kit Via MIDI MPA",
+      "vendorId": "0x12BA",
+      "productId": "0x0218",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": 1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": -1,
+        "back": 8,
+        "start": 9,
+        "bass": 4,
+        "bass2": 5,
+        "cymbal": 11,
+        "tom": 10
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Controller (Harmonix Drum Kit for Xbox 360)",
+      "friendlyName": "XBOX 360 Wired RB1 Drumkit",
+      "vendorId": "0x1BAD",
+      "productId": "0x0003",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": -1,
+        "back": 6,
+        "start": 7,
+        "bass": 4,
+        "bass2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Harmonix Drum Kit for Xbox 360 (Controller)",
+      "friendlyName": "XBOX 360 Wired RB1 Drumkit V2",
+      "vendorId": "0x1BAD",
+      "productId": "0x0003",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": -1,
+        "back": 6,
+        "start": 7,
+        "bass": 4,
+        "bass2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Controller (Mad Catz Portable Drum Kit)",
+      "friendlyName": "XBOX 360 Wired RB Mad Catz Portable Drumkit",
+      "vendorId": "0x0738",
+      "productId": "0x9871",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": -1,
+        "back": 6,
+        "start": 7,
+        "bass": 4,
+        "bass2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Controller (Drum Rocker)",
+      "friendlyName": "XBOX 360 ION Drum Rocker",
+      "vendorId": "0x1BAD",
+      "productId": "0x0130",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": 1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": -1,
+        "back": 6,
+        "start": 7,
+        "bass": 4,
+        "bass2": 8,
+        "cymbal": 5,
+        "tom": 9
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Harmonix Drum Controller for Nintendo Wii",
+      "friendlyName": "Wii RB1 Drums",
+      "vendorId": "0x1BAD",
+      "productId": "0x0005",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": -1,
+        "back": 8,
+        "start": 9,
+        "bass": 4,
+        "bass2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Harmonix Drum Controller for Nintendo Wii",
+      "friendlyName": "Wii RB2/3 Pro Drumkit",
+      "vendorId": "0x1BAD",
+      "productId": "0x3110",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": 1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": -1,
+        "back": 8,
+        "start": 9,
+        "bass": 4,
+        "bass2": 5,
+        "cymbal": 11,
+        "tom": 10
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Drums ",
+      "friendlyName": "Logitech Drums PS3",
+      "vendorId": "0x12BA",
+      "productId": "0x0120",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": 5,
+        "back": 2,
+        "start": 9,
+        "bass": 4,
+        "bass2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Ion Audio Drum Rocker for Playstation(R)3",
+      "friendlyName": "PS3 Ion Drum Rocker",
+      "vendorId": "0x12BA",
+      "productId": "0x0210",
+      "magicButton": 5,
+      "magicData": -1,
+      "method": 1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": -1,
+        "back": 8,
+        "start": 9,
+        "bass": 4,
+        "bass2": 5,
+        "cymbal": 11,
+        "tom": 10
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Guitar Hero4 for PlayStation (R) 3",
+      "friendlyName": "PS3 wireless GHWT Drums V2(GH4)",
+      "vendorId": "0x12BA",
+      "productId": "0x0120",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": 5,
+        "back": 8,
+        "start": 9,
+        "bass": 4,
+        "bass2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    },
+    {
+      "name": "Guitar Hero5 for PlayStation (R) 3",
+      "friendlyName": "PS3 GH WOR Drums",
+      "vendorId": "0x12BA",
+      "productId": "0x0120",
+      "magicButton": -1,
+      "magicData": -1,
+      "method": -1,
+      "buttons": {
+        "green": 1,
+        "red": 2,
+        "yellow": 3,
+        "blue": 0,
+        "orange": 5,
+        "back": 8,
+        "start": 9,
+        "bass": 4,
+        "bass2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        }
+      }
+    }
+  ],
+  "other": [
+    {
+      "name": "Controller (Xbox 360 Wireless Receiver for Windows)",
+      "friendlyName": "Xbox 360 Wireless Gamepad (O)",
+      "vendorId": "0x045E",
+      "productId": "0x02A1",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 32129,
+      "gyroCutoff": 99,
+      "type": 2,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 5,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 6,
+        "start": 7,
+        "kick1": 4,
+        "kick2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 127,
+          "min": 32767
+        },
+        "slider": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65407,
+          "min": 32767
+        },
+        "xGyro": {
+          "name": "X",
+          "axisNo": 0,
+          "max": 65535,
+          "min": 0
+        },
+        "yGyro": {
+          "name": "Y",
+          "axisNo": 1,
+          "max": 0,
+          "min": 65535
+        }
+      }
+    },
+    {
+      "name": "Controller (XBOX 360 For Windows)",
+      "friendlyName": "Xbox 360 Wireless Gamepad (U)",
+      "vendorId": "0x045E",
+      "productId": "0x02A1",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 32129,
+      "gyroCutoff": 99,
+      "type": 2,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 5,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 6,
+        "start": 7,
+        "kick1": 4,
+        "kick2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 127,
+          "min": 32767
+        },
+        "slider": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65407,
+          "min": 32767
+        },
+        "xGyro": {
+          "name": "X",
+          "axisNo": 0,
+          "max": 65535,
+          "min": 0
+        },
+        "yGyro": {
+          "name": "Y",
+          "axisNo": 1,
+          "max": 0,
+          "min": 65535
+        }
+      }
+    },
+    {
+      "name": "Controller (XBOX 360 For Windows)",
+      "friendlyName": "Xbox 360 Wired Gamepad",
+      "vendorId": "0x045E",
+      "productId": "0x028E",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 32129,
+      "gyroCutoff": 99,
+      "type": 2,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 5,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 6,
+        "start": 7,
+        "kick1": 4,
+        "kick2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 127,
+          "min": 32767
+        },
+        "slider": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65407,
+          "min": 32767
+        },
+        "xGyro": {
+          "name": "X",
+          "axisNo": 0,
+          "max": 65535,
+          "min": 0
+        },
+        "yGyro": {
+          "name": "Y",
+          "axisNo": 1,
+          "max": 0,
+          "min": 65535
+        }
+      }
+    },
+    {
+      "name": "XBOX 360 For Windows (Controller)",
+      "friendlyName": "Xbox 360 Wired Gamepad",
+      "vendorId": "0x045E",
+      "productId": "0x028E",
+      "magicButton": -1,
+      "magicData": -1,
+      "xGyroCenter": 32129,
+      "gyroCutoff": 99,
+      "type": 2,
+      "method": -1,
+      "buttons": {
+        "green": 0,
+        "red": 1,
+        "yellow": 3,
+        "blue": 2,
+        "orange": 5,
+        "xGyro": -1,
+        "yGyro": -1,
+        "back": 6,
+        "start": 7,
+        "kick1": 4,
+        "kick2": -1,
+        "cymbal": -1,
+        "tom": -1
+      },
+      "povs": {
+        "up": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "down": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        },
+        "left": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 27000
+        },
+        "right": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 9000
+        },
+        "strumUp": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 0
+        },
+        "strumDown": {
+          "hatNo": 0,
+          "neutral": 4294967295,
+          "active": 18000
+        }
+      },
+      "axes": {
+        "whammy": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 127,
+          "min": 32767
+        },
+        "slider": {
+          "name": "Z",
+          "axisNo": 2,
+          "max": 65407,
+          "min": 32767
+        },
+        "xGyro": {
+          "name": "X",
+          "axisNo": 0,
+          "max": 65535,
+          "min": 0
+        },
+        "yGyro": {
+          "name": "Y",
+          "axisNo": 1,
+          "max": 0,
+          "min": 65535
+        }
+      }
+    }
+  ]
+}

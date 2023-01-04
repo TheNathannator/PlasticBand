@@ -96,3 +96,4 @@ struct PS3RockBandGuitarState
 - https://sanjay900.github.io/guitar-configurator/controller-reverse-engineering/ps3-rockband-guitar.html
 - https://sites.google.com/site/infnorm/rbguitartechnicaldetails
 - https://docs.google.com/spreadsheets/d/1Y3QM1tEcf0bGiUTjT7R-3mwEAKrCL0qYoySmk3RLo8c/edit?usp=sharing
+- [Phase Shift mappings file](../../Other/device_list.json)
