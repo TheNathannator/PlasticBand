@@ -28,18 +28,14 @@ Velocities:
 
 **TODO:** These are speculated, need to be verified with actual hardware 
 
-- Key:
-  - `B` = This bit is used.
-  - `x` = This bit doesn't matter.
-
 | Action | Input         | Bits                     |
 | :----- | :----         | :--:                     |
-| Red    | Left stick Y  | `0b_BBBB_BBBB_xxxx_xxxx` |
-| Yellow | Right stick X | `0b_xxxx_xxxx_BBBB_BBBB` |
-| Blue   | Right stick X | `0b_BBBB_BBBB_xxxx_xxxx` |
-| Orange | Right stick Y | `0b_xxxx_xxxx_BBBB_BBBB` |
-| Green  | Left stick Y  | `0b_xxxx_xxxx_BBBB_BBBB` |
-| Kick   | Right stick Y | `0b_BBBB_BBBB_xxxx_xxxx` |
+| Red    | Left stick Y  | `0b_1111_1111_xxxx_xxxx` |
+| Yellow | Right stick X | `0b_xxxx_xxxx_1111_1111` |
+| Blue   | Right stick X | `0b_1111_1111_xxxx_xxxx` |
+| Orange | Right stick Y | `0b_xxxx_xxxx_1111_1111` |
+| Green  | Left stick Y  | `0b_xxxx_xxxx_1111_1111` |
+| Kick   | Right stick Y | `0b_1111_1111_xxxx_xxxx` |
 
 Hi-hat pedal port: TODO 
 

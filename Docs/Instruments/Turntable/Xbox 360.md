@@ -11,26 +11,23 @@ Face buttons work like a standard Xbox 360 controller.
 
 Tables:
 
-- `x` = This bit doesn't matter.
-- `B` = This bit is used.
-
 - Left table:
 
   | Action  | Input                           |
   | :-----  | :---:                           |
   | Scratch | Left stick X                    |
-  | Green   | A + Left trigger `0b_xxxx_xxxB` |
-  | Red     | B + Left trigger `0b_xxxx_xxBx` |
-  | Blue    | X + Left trigger `0b_xxxx_xBxx` |
+  | Green   | A + Left trigger `0b_xxxx_xxx1` |
+  | Red     | B + Left trigger `0b_xxxx_xx1x` |
+  | Blue    | X + Left trigger `0b_xxxx_x1xx` |
 
 - Right table:
 
   | Action  | Input                            |
   | :-----  | :---:                            |
   | Scratch | Left stick Y                     |
-  | Green   | A + Right trigger `0b_xxxx_xxxB` |
-  | Red     | B + Right trigger `0b_xxxx_xxBx` |
-  | Blue    | X + Right trigger `0b_xxxx_xBxx` |
+  | Green   | A + Right trigger `0b_xxxx_xxx1` |
+  | Red     | B + Right trigger `0b_xxxx_xx1x` |
+  | Blue    | X + Right trigger `0b_xxxx_x1xx` |
 
 - Scratching:
   - Positive is clockwise, negative is counter-clockwise.
