@@ -70,8 +70,9 @@ struct XInputSixFretGuitarGamepad
     bool white1 : 1;
     bool black3 : 1;
 
-    uint16_t unused1;
-    uint16_t unused2;
+    uint8_t unused1[2];
+    int16_t unused2;
+
     int16_t strumBar;
     int16_t tilt;
     int16_t whammy;

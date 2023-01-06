@@ -64,7 +64,9 @@ struct XInputFiveLaneDrumsGamepad
     bool blue : 1;
     bool yellow : 1;
 
-    int32_t unused; // TODO: The hi-hat pedal data is probably here somewhere
+    // TODO: The hi-hat pedal data is probably here somewhere
+    uint8_t unused1[2];
+    int16_t unused2;
     uint8_t greenVelocity;
     uint8_t redVelocity;
     uint8_t yellowVelocity;

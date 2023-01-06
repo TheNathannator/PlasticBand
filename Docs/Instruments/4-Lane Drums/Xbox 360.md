@@ -82,7 +82,7 @@ struct XInputFourLaneDrumsGamepad
     bool blue : 1;
     bool yellow : 1;
 
-    uint16_t unused;
+    uint8_t unused[2];
     int16_t redVelocity;
     int16_t yellowVelocity;
     int16_t blueVelocity;
