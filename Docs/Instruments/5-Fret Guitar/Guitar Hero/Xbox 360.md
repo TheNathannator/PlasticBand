@@ -120,4 +120,5 @@ enum XInputGuitarAlternateTouchBar
 
 ## References
 
+- Observations from my own hardware
 - https://github.com/spitfirex86/SliderBarThing for touchbar info

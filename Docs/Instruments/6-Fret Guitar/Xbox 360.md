@@ -78,3 +78,7 @@ struct XInputSixFretGuitarGamepad
     int16_t whammy;
 }
 ```
+
+## References
+
+- Observations from my own hardware

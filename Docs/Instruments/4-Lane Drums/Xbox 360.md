@@ -89,3 +89,7 @@ struct XInputFourLaneDrumsGamepad
     int16_t greenVelocity;
 }
 ```
+
+## References
+
+- Observations from my own hardware

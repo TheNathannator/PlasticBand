@@ -111,3 +111,7 @@ Toggling auto-calibration sensors:
 - Microphone: Right vibration `0x6000`
 - Light sensor: Right vibration `0xFFFF`
 - Off: Right vibration `0x0000` (or any other non-specified value)
+
+## References
+
+- Observations from my own hardware

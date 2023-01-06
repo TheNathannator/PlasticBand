@@ -94,3 +94,7 @@ Euphoria button light: Right vibration
 
 - First turns on at around 7936 (`0x1F00`). Maxes out at 65535 (`0xFFFF`).
 - The low-level XUSB vibration report is only bytes instead of shorts, so on that end it turns on at `0x1F` and maxes out at `0xFF`.
+
+## References
+
+- Observations from my own hardware

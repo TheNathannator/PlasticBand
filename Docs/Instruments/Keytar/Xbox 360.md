@@ -110,5 +110,6 @@ struct XInputKeytarGamepad
 
 ## References
 
+- Observations from my own hardware
 - https://github.com/bearzly/RockBandPiano
 - https://github.com/TheNathannator/RB3_X360_Keyboard

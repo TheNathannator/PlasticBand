@@ -75,3 +75,7 @@ struct XInputFiveLaneDrumsGamepad
     uint8_t kickVelocity;
 }
 ```
+
+## References
+
+- https://github.com/raphaelgoulart/360GHDrums2Midi
