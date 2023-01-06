@@ -52,12 +52,12 @@ struct XInputFiveLaneDrumsGamepad
     bool start : 1;
     bool back : 1;
     bool isFiveLane : 1;
-    bool rightThumbClick : 1;
+    bool : 1;
 
     bool kick : 1;
     bool orange : 1;
     bool guide : 1;
-    bool reserved : 1;
+    bool : 1;
 
     bool green : 1;
     bool red : 1;

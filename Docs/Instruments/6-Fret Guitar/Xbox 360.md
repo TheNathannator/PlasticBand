@@ -58,12 +58,12 @@ struct XInputSixFretGuitarGamepad
     bool start : 1;
     bool back : 1;
     bool ghtv : 1;
-    bool rightThumbClick : 1;
+    bool : 1;
 
     bool white2 : 1;
     bool white3 : 1;
     bool guide : 1;
-    bool reserved : 1;
+    bool : 1;
 
     bool black1 : 1;
     bool black2 : 1;

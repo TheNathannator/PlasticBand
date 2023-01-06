@@ -60,7 +60,7 @@ Length: Typically 6 bytes (descriptor reports max length as 10 bytes)
 struct GipDrumkitState
 {
     bool sync : 1;
-    bool reserved : 1;
+    bool : 1;
     bool menu : 1;
     bool view : 1;
 
@@ -76,8 +76,8 @@ struct GipDrumkitState
 
     bool kick1 : 1;
     bool kick2 : 1;
-    bool unused1 : 1;
-    bool unused2 : 1;
+    bool : 1;
+    bool : 1;
 
     uint8_t yellowPad : 4;
     uint8_t redPad : 4;
@@ -86,7 +86,7 @@ struct GipDrumkitState
 
     uint8_t blueCymbal : 4;
     uint8_t yellowCymbal : 4;
-    uint8_t padding : 4;
+    uint8_t : 4;
     uint8_t greenCymbal : 4;
 }
 ```

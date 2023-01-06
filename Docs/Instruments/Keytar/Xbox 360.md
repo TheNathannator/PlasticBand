@@ -79,13 +79,13 @@ struct XInputKeytarGamepad
 
     bool start : 1;
     bool back : 1;
-    bool leftThumbClick : 1;
-    bool rightThumbClick : 1;
+    bool : 1;
+    bool : 1;
 
-    bool leftShoulder : 1;
-    bool rightShoulder : 1;
+    bool : 1;
+    bool : 1;
     bool guide : 1;
-    bool reserved : 1;
+    bool : 1;
 
     bool a : 1;
     bool b : 1;
@@ -96,7 +96,7 @@ struct XInputKeytarGamepad
     uint8_t velocity[5]; // Also contains last key in top-most bit of velocity[0]
                          // Bit clunky but it's the only practical way to represent this stuff and
                          // be able to work with it programmatically
-    uint8_t padding : 7;
+    uint8_t : 7;
     bool overdrive : 1;
     uint8_t pedalAnalog : 7;
     bool pedalDigital : 1;
@@ -104,7 +104,7 @@ struct XInputKeytarGamepad
     // These two fields aren't available via standard XInput.
     // Ignore or remove these fields if you're using it.
     uint8_t touchPad : 7;
-    bool padding2 : 1;
+    bool : 1;
 };
 ```
 

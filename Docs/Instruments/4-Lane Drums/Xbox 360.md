@@ -75,7 +75,7 @@ struct XInputFourLaneDrumsGamepad
     bool pedal1 : 1;
     bool cymbalFlag : 1;
     bool guide : 1;
-    bool unused : 1;
+    bool : 1;
 
     bool green : 1;
     bool red : 1;

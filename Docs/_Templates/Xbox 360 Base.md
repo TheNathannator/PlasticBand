@@ -47,7 +47,7 @@ struct XInput<type>Gamepad
     bool leftShoulder : 1;
     bool rightShoulder : 1;
     bool guide : 1;
-    bool reserved : 1;
+    bool : 1;
 
     bool a : 1;
     bool b : 1;

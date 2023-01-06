@@ -55,16 +55,16 @@ struct PS3GuitarHeroGuitarState
 
     bool orange : 1;
     bool spPedal : 1;
-    bool l2 : 1;
-    bool r2 : 1;
+    bool : 1;
+    bool : 1;
 
     bool select : 1;
     bool start : 1;
-    bool l3 : 1;
-    bool r3 : 1;
+    bool : 1;
+    bool : 1;
 
     bool ps : 1;
-    uint8_t padding : 3;
+    uint8_t : 3;
 
     //      0
     //   7     1

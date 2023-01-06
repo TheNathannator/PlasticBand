@@ -32,7 +32,7 @@ struct Ps3Report
     bool r3 : 1;
 
     bool ps : 1;
-    uint8_t padding : 3;
+    uint8_t : 3;
 
     // This value is not a bitmask, rather it encodes different possible states as individual numbers.
     // Visual representation:

@@ -77,7 +77,7 @@ Although the readme for these docs says that little-endian is assumed, it's reco
 struct GipGamepadState
 {
     bool sync : 1;
-    bool reserved : 1;
+    bool : 1;
     bool menu : 1;
     bool view : 1;
 

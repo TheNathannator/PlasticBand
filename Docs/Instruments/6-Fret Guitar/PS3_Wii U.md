@@ -50,16 +50,16 @@ struct PS3WiiUSixFretGuitarState
 
     bool white2 : 1;
     bool white3 : 1;
-    bool l2 : 1;
-    bool r2 : 1;
+    bool : 1;
+    bool : 1;
 
     bool heroPower : 1;
     bool start : 1;
     bool ghtv : 1;
-    bool r3 : 1;
+    bool : 1;
 
     bool dpad_center : 1;
-    uint8_t padding : 3;
+    uint8_t : 3;
 
     //      0
     //   7     1

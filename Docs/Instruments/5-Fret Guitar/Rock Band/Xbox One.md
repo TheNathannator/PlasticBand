@@ -64,7 +64,7 @@ Length: Typically 10 bytes (descriptor reports max length as 14 bytes)
 struct GipGuitarState
 {
     bool sync : 1;
-    bool reserved : 1;
+    bool : 1;
     bool menu : 1;
     bool view : 1;
 
@@ -79,9 +79,9 @@ struct GipGuitarState
     bool dpadRight : 1;
 
     bool orangeFlag : 1;
-    bool unused1 : 1;
+    bool : 1;
     bool soloFlag : 1;
-    bool unused2 : 1;
+    bool : 1;
 
     uint8_t tilt;
     uint8_t whammy;
@@ -92,14 +92,14 @@ struct GipGuitarState
     bool upperYellow : 1;
     bool upperBlue : 1;
     bool upperOrange : 1;
-    bool upperPadding : 3;
+    bool : 3;
 
     bool lowerGreen : 1;
     bool lowerRed : 1;
     bool lowerYellow : 1;
     bool lowerBlue : 1;
     bool lowerOrange : 1;
-    bool lowerPadding : 3;
+    bool : 3;
 
     uint8_t unknown[3];
 }
