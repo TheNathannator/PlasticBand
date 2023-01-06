@@ -54,7 +54,7 @@ struct PS3WiiUSixFretGuitarState
     bool : 1;
 
     bool heroPower : 1;
-    bool start : 1;
+    bool pause : 1;
     bool ghtv : 1;
     bool : 1;
 
