@@ -11,14 +11,14 @@ The d-pad works as normal, with the exception that it is neutral at 15 (`0x0F`) 
 
 Frets:
 
-| Fret    | Button | Bit |
-| :---    | :---:  | :-: |
-| Black 1 | ×      | 1   |
-| Black 2 | ○      | 2   |
-| Black 3 | Δ      | 3   |
-| White 1 | □      | 0   |
-| White 2 | L1     | 4   |
-| White 3 | L2     | 5   |
+| Fret    | Button |
+| :---    | :---:  |
+| Black 1 | ×      |
+| Black 2 | ○      |
+| Black 3 | Δ      |
+| White 1 | □      |
+| White 2 | L1     |
+| White 3 | L2     |
 
 Strumbar: Left stick Y
 

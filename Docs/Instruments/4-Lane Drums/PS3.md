@@ -12,35 +12,35 @@ Face buttons and d-pad function as normal.
 
 Pads/cymbals:
 
-| Pad/cymbal    | Buttons             | Bits                         |
-| :--------:    | :------             | :---                         |
-| Red pad       | ○ + L3              | 2 + 10                       |
-| Yellow pad    | Δ + L3              | 3 + 10                       |
-| Blue pad      | □ + L3              | 0 + 10                       |
-| Green pad     | × + L3              | 1 + 10                       |
-| Yellow cymbal | Δ + R3 + d-pad up   | 3 + 11 + (byte offset 3 = 0) |
-| Blue cymbal   | □ + R3 + d-pad down | 0 + 11 + (byte offset 3 = 4) |
-| Green cymbal  | × + R3              | 1 + 11                       |
+| Pad/cymbal    | Buttons             |
+| :--------:    | :------             |
+| Red pad       | ○ + L3              |
+| Yellow pad    | Δ + L3              |
+| Blue pad      | □ + L3              |
+| Green pad     | × + L3              |
+| Yellow cymbal | Δ + R3 + d-pad up   |
+| Blue cymbal   | □ + R3 + d-pad down |
+| Green cymbal  | × + R3              |
 
 Or, as flags:
 
-| Flag   | Button | Bit |
-| :--:   | :----: | :-: |
-| Red    | ○      | 2   |
-| Yellow | Δ      | 3   |
-| Blue   | □      | 0   |
-| Green  | ×      | 1   |
-| Pad    | L3     | 10  |
-| Cymbal | R3     | 11  |
+| Flag   | Button |
+| :--:   | :----: |
+| Red    | ○      |
+| Yellow | Δ      |
+| Blue   | □      |
+| Green  | ×      |
+| Pad    | L3     |
+| Cymbal | R3     |
 
 with the yellow and blue cymbals doing d-pad up and down, respectively.
 
 Pedals:
 
-| Pedal  | Button | Bit |
-| :---:  | :----: | :-: |
-| Kick 1 | L1     | 4   |
-| Kick 2 | R1     | 5   |
+| Pedal  | Button |
+| :---:  | :----: |
+| Kick 1 | L1     |
+| Kick 2 | R1     |
 
 Velocities:
 

@@ -11,40 +11,40 @@ Start/select, PS button, and d-pad work as normal.
 
 Upper frets:
 
-| Fret   | Button | Bit |
-| :--:   | :----: | :-: |
-| Green  | ×      | 1   |
-| Red    | ○      | 2   |
-| Yellow | Δ      | 3   |
-| Blue   | □      | 0   |
-| Orange | L1     | 4   |
+| Fret   | Button |
+| :--:   | :----: |
+| Green  | ×      |
+| Red    | ○      |
+| Yellow | Δ      |
+| Blue   | □      |
+| Orange | L1     |
 
 Lower frets:
 
-| Fret   | Buttons | Bits  |
-| :--:   | :------ | :---  |
-| Green  | × + L2  | 1 + 6 |
-| Red    | ○ + L2  | 2 + 6 |
-| Yellow | Δ + L2  | 3 + 6 |
-| Blue   | □ + L2  | 0 + 6 |
-| Orange | L1 + L2 | 4 + 6 |
+| Fret   | Buttons |
+| :--:   | :------ |
+| Green  | × + L2  |
+| Red    | ○ + L2  |
+| Yellow | Δ + L2  |
+| Blue   | □ + L2  |
+| Orange | L1 + L2 |
 
 Or, as flags:
 
-| Flag      | Button | Bit |
-| :--:      | :----: | :-: |
-| Green     | ×      | 1   |
-| Red       | ○      | 2   |
-| Yellow    | Δ      | 3   |
-| Blue      | □      | 0   |
-| Orange    | L1     | 4   |
-| Solo flag | L2     | 6   |
+| Flag      | Button |
+| :--:      | :----: |
+| Green     | ×      |
+| Red       | ○      |
+| Yellow    | Δ      |
+| Blue      | □      |
+| Orange    | L1     |
+| Solo flag | L2     |
 
 Strumbar: D-pad up/down
 
 Whammy: Right stick X
 
-Tilt: R1 (bit 5)
+Tilt: R1
 
 Pickup switch: Right stick Y
 

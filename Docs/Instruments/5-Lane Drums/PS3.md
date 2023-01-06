@@ -11,14 +11,14 @@ Face buttons and d-pad function as normal.
 
 Pads:
 
-| Pad    | Button | Bit |
-| :-:    | :----: | :-: |
-| Red    | ○      | 2   |
-| Yellow | Δ      | 3   |
-| Blue   | □      | 0   |
-| Orange | R1     | 5   |
-| Green  | ×      | 1   |
-| Kick   | L1     | 4   |
+| Pad    | Button |
+| :-:    | :----: |
+| Red    | ○      |
+| Yellow | Δ      |
+| Blue   | □      |
+| Orange | R1     |
+| Green  | ×      |
+| Kick   | L1     |
 
 Velocities:
 

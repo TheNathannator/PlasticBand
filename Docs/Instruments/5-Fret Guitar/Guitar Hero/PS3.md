@@ -11,13 +11,13 @@ Start/select, PS button, and d-pad work as normal, with the exception that the d
 
 Frets:
 
-| Fret   | Button | Bit |
-| :--:   | :----: | :-: |
-| Green  | ×      | 1   |
-| Red    | ○      | 2   |
-| Yellow | □      | 0   |
-| Blue   | Δ      | 3   |
-| Orange | L1     | 4   |
+| Fret   | Button |
+| :--:   | :----: |
+| Green  | ×      |
+| Red    | ○      |
+| Yellow | □      |
+| Blue   | Δ      |
+| Orange | L1     |
 
 Strumbar: D-pad up/down
 
@@ -33,7 +33,7 @@ Touch/slider bar: Right stick Y
 
 - See the [General Notes](General%20Notes.md) document for more info.
 
-RJ14 (pedal) port: R1 (bit 5)
+RJ14 (pedal) port: R1
 
 Pressure axes:
 
