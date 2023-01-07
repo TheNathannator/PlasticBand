@@ -26,7 +26,7 @@ Pads, cymbals, and kick:
 
 Velocities:
 
-**TODO:** These are speculated, need to be verified with actual hardware 
+- TODO: Determine what exactly the values are, we have the byte offsets but not the values
 
 | Action | Input         | Bits                     |
 | :----- | :----         | :--:                     |
@@ -79,3 +79,5 @@ struct XInputFiveLaneDrumsGamepad
 ## References
 
 - https://github.com/raphaelgoulart/360GHDrums2Midi
+- https://github.com/mcclymont/ps360prodrummer
+  - Note: This program uses HID to interact with the drumkit instead of XInput. Xbox 360 devices via HID have different layouts compared to XInput, and the inputs behave differently. While you can compare byte offsets and figure out what's equivalent to what, the actual values do not work the same (sticks are centered at `0x8000` instead of 0, triggers are mashed into one value, d-pad uses states instead of flags).
