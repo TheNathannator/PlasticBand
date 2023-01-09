@@ -81,4 +81,4 @@ struct XInputSixFretGuitarGamepad
 
 ## References
 
-- Observations from my own hardware
+- Observations sent by [Ahriana](https://github.com/Ahriana) via DMs
