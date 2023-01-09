@@ -62,6 +62,7 @@ Data structures in these documents assume that the processor and data are little
   - [ ] Rock Band 4 Legacy Wireless Adapter
   - [ ] Rock Band 4 Legacy Wired Adapter
     - Document is partially done, needs additional research and verification
+  - [x] Xbox 360 Rock Band 2 Stage Kit
 
 ## License
 
