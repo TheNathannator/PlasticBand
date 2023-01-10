@@ -5,6 +5,7 @@
 - Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
 - Product ID: `0x0210` ("Harmonix Drum Kit for PlayStation(R)3")
   - MIDI Pro Adapter in drums mode: `0x0218`
+- PS3 ID: 
 
 ## Input Info
 

@@ -4,6 +4,7 @@
 
 - Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
 - Product ID: `0x0140`
+- PS3 ID: 
 
 ## Input Info
 

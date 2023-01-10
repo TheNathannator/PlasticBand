@@ -126,7 +126,7 @@ struct PS3Descriptor
 }
 ```
 
-The `ps3_id` field varies between devices, and could potentially be used as another way of identifying these devices.
+The `ps3_id` field varies between devices, on standard PS3 gamepads it's `0x07`. It could potentially be used as another way of identifying devices.
 
 ## References
 

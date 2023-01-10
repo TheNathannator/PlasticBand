@@ -4,6 +4,7 @@
 
 - Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
 - Product ID: `0x0100` ("RedOctane Guitar for PlayStation(R)3")
+- PS3 ID: `0x06`
 
 ## Input Info
 
