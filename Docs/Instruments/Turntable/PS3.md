@@ -106,9 +106,28 @@ struct PS3TurntableState
 
 ## Output Info
 
-TODO 
+### Output Type `0x91`: Euphoria Light
+
+This report controls the Euphoria button's light.
+
+Unlike the Xbox 360 turntable, the light is not controlled using an absolute brightness value. Rather, it's a simple on-off value, and the LED fades in and out on its own.
+
+Length: 8 bytes
+
+```cpp
+struct PS3TurntableEuphoria
+{
+    uint8_t reportId = 0x01;
+
+    uint8_t outputType = 0x91;
+    uint8_t unknown1 = 0x01;
+    uint8_t enable; // 1 to enable, 0 to disable
+    uint8_t padding[5];
+};
+```
 
 ## References
 
 - https://github.com/RPCS3/rpcs3/blob/master/rpcs3/Emu/Io/Turntable.cpp
 - https://github.com/ghlre/GHLtarUtility
+- Observations by [sanjay900](https://github.com/sanjay900) and [shockdude](https://github.com/shockdude)
