@@ -6,7 +6,7 @@ Unfortunately, if these devices are anything like a regular PS3 gamepad, the HID
 
 Vendor ID is typically `0x12BA` but may vary. The IDs for a device are noted in the docs for the device.
 
-## Report Format
+## Input Reports
 
 The base report goes like this:
 
@@ -75,6 +75,60 @@ struct Ps3Report
 
 What everything means changes between devices, but the amount of data does not.
 
+## Output Reports
+
+These output reports are ones that all of the PS3 devices documented in this repo support. These do not apply to PS3 gamepad controllers, those use a different output report format.
+
+The output reports follow this general format:
+
+```cpp
+struct PS3GenericOutputReport
+{
+    // The main report ID
+    // Might not matter what this is set to, but games on PS3 typically send these with a
+    // USB transfer wValue of 0x0201, which would imply an ID of 0x01
+    uint8_t reportId = 0x01;
+
+    // A secondary ID used to determine the type of request
+    uint8_t outputType;
+    uint8_t data[7];
+}
+```
+
+### Output Type `0x01`: Player LEDs
+
+```cpp
+struct PS3PlayerLeds
+{
+    uint8_t reportId = 0x01;
+
+    uint8_t outputType = 0x01;
+    uint8_t unk1 = 0x08;
+    uint8_t leds; // Bitmask of LEDs to be enabled (1 = 0x01, 2 = 0x02, 3 = 0x04, 4 = 0x08, all off = 0x00)
+    uint8_t padding[5];
+}
+```
+
+## Feature Reports
+
+PS3 controllers have a feature report that can be requested, which contains some data about the controller:
+
+```cpp
+struct PS3Descriptor
+{
+    uint8_t reportId = 0x00;
+
+    uint8_t unk1 = 0x21;
+    uint8_t unk2 = 0x26;
+    uint8_t unk3 = 0x01;
+    uint8_t ps3_id;
+    uint8_t unknown[4];
+}
+```
+
+The `ps3_id` field varies between devices, and could potentially be used as another way of identifying these devices.
+
 ## References
 
 - https://sanjay900.github.io/guitar-configurator/controller-reverse-engineering/ps3-controllers.html
+- Additional information provided by [sanjay900](https://github.com/sanjay900)
