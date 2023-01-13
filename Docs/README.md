@@ -20,38 +20,38 @@ Data structures in these documents assume that the processor and data are little
   - Guitar Hero
     - [x] Xbox 360
     - [ ] PS2 (assuming they can be differentiated from regular PS3 controllers at all, and hoping the PS2 adapter landscape isn't too fragmented)
-    - [ ] PS3
+    - [x] PS3
     - [ ] Wii
   - Rock Band
     - [x] Xbox 360
     - [x] Xbox One
-    - [ ] PS2/3
+    - [x] PS2/3
     - [ ] PS4
     - [ ] Wii
 - 6-fret guitar
   - [x] Xbox 360
   - [ ] Xbox One
-  - [ ] PS3/Wii U
+  - [x] PS3/Wii U
   - [ ] PS4
   - [ ] iOS
 - 4-lane (Rock Band) drums
   - [x] Xbox 360
   - [x] Xbox One
-  - [ ] PS2/3
+  - [x] PS2/3
   - [ ] PS4
   - [ ] Wii
 - 5-lane (Guitar Hero) drums
-  - [ ] Xbox 360
-    - Document is partially done, needs hardware verification
-  - [ ] PS2/3
+  - [x] Xbox 360
+    - Needs hardware verification
+  - [x] PS2/3
   - [ ] Wii
 - Turntable (DJ Hero)
   - [x] Xbox 360
   - [ ] PS3
   - [ ] Wii
 - Pro Guitar (Rock Band)
-  - [ ] Xbox 360
-    - Document is partially done, needs hardware verification
+  - [x] Xbox 360
+    - Needs hardware verification
   - [ ] PS3
   - [ ] Wii
 - Keyboard/keytar (Rock Band)
@@ -60,8 +60,8 @@ Data structures in these documents assume that the processor and data are little
   - [ ] Wii
 - Other
   - [ ] Rock Band 4 Legacy Wireless Adapter
-  - [ ] Rock Band 4 Legacy Wired Adapter
-    - Document is partially done, needs additional research and verification
+  - [x] Rock Band 4 Legacy Wired Adapter
+    - Needs additional research and verification
   - [x] Xbox 360 Rock Band 2 Stage Kit
 
 ## License
