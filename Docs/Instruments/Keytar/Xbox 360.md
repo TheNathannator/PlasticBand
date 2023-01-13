@@ -92,10 +92,44 @@ struct XInputKeytarGamepad
     bool x : 1;
     bool y : 1;
 
-    uint8_t keys[3];
-    uint8_t velocity[5]; // Also contains last key in top-most bit of velocity[0]
-                         // Bit clunky but it's the only practical way to represent this stuff and
-                         // be able to work with it programmatically
+    bool key8 : 1;
+    bool key7 : 1;
+    bool key6 : 1;
+    bool key5 : 1;
+    bool key4 : 1;
+    bool key3 : 1;
+    bool key2 : 1;
+    bool key1 : 1;
+
+    bool key16 : 1;
+    bool key15 : 1;
+    bool key14 : 1;
+    bool key13 : 1;
+    bool key12 : 1;
+    bool key11 : 1;
+    bool key10 : 1;
+    bool key9 : 1;
+
+    bool key24 : 1;
+    bool key23 : 1;
+    bool key22 : 1;
+    bool key21 : 1;
+    bool key20 : 1;
+    bool key19 : 1;
+    bool key18 : 1;
+    bool key17 : 1;
+
+    uint8_t velocity1 : 7;
+    bool key25 : 1;
+    uint8_t velocity2 : 7;
+    bool : 1;
+    uint8_t velocity3 : 7;
+    bool : 1;
+    uint8_t velocity4 : 7;
+    bool : 1;
+    uint8_t velocity5 : 7;
+    bool : 1;
+
     uint8_t : 7;
     bool overdrive : 1;
     uint8_t pedalAnalog : 7;

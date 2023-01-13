@@ -74,16 +74,28 @@ struct XInputProGuitarState
     bool x : 1;
     bool y : 1;
 
-    uint16_t frets[2];
-    uint8_t velocities[6];
-}
+    uint8_t lowEFret : 5;
+    uint8_t aFret : 5;
+    uint8_t dFret : 5;
+    bool : 1;
+    uint8_t gFret : 5;
+    uint8_t bFret : 5;
+    uint8_t highEFret : 5;
+    bool soloFlag : 1;
 
-// Indexes into velocities[] where the flag for a specific 5-fret color can be found at the top-most bit
-#define VelocityColorIndex_Green   0
-#define VelocityColorIndex_Red     1
-#define VelocityColorIndex_Yellow  2
-#define VelocityColorIndex_Blue    3
-#define VelocityColorIndex_Orange  4
+    uint8_t lowEVelocity : 7;
+    bool greenFret: 1;
+    uint8_t aVelocity : 7;
+    bool redFret: 1;
+    uint8_t dVelocity : 7;
+    bool yellowFret: 1;
+    uint8_t gVelocity : 7;
+    bool blueFret: 1;
+    uint8_t bVelocity : 7;
+    bool orangeFret: 1;
+    uint8_t highEVelocity : 7;
+    bool : 1;
+}
 ```
 
 ## References
