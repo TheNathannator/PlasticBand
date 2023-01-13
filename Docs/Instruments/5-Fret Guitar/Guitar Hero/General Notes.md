@@ -1,4 +1,4 @@
-# General Notes for 5-Fret Guitars
+# General Notes for Guitar Hero Guitars
 
 ## Touch/Slider Bar
 

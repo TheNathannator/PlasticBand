@@ -1,4 +1,4 @@
-# PS3 Guitar Hero Guitars
+# PS3 Guitar Hero Drums
 
 ## Device Info
 
