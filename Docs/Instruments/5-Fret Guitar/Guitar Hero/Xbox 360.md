@@ -27,14 +27,16 @@ Whammy: Right stick X
 
 - Ranges from -32768 (not pressed) to 32767 (fully pressed).
 
-Tilt: Right stick Y
+Accelerometers:
 
-- Tilted up is positive, tilted down is negative.
-- Values vary; on some guitars the range might max out at a fairly high angle, on others you might hardly be able to hold it regularly without it maxing out.
-
-Other accelerometer data: Left and right triggers
-
-- Unsure if these are present on guitars other than the Xplorer and Les Paul
+- These guitars feature a full 3-axis accelerometer which output values relative to gravity. The axis names used here are based on the equivalent axes on the PS3 guitars.
+- X axis (used for standard tilt): Right stick Y
+  - Positive when the guitar is pointed up, negative when the guitar is pointed down.
+- Y axis: Left trigger (centered at `0x80`, not accounting for miscalibrations)
+  - Above `0x80` when the guitar is face down, below when the guitar is face up.
+- Z axis: Right trigger (centered at `0x80`, not accounting for miscalibrations)
+  - Above `0x80` when the guitar is pointed right, below when the guitar is pointed left.
+- Values and ranges may vary. On some guitars (notably the Les Paul) the accelerometer is miscalibrated and maxes out for a significant portion of the range, with no way to fix or calibrate for it.
 
 Touch/slider bar: Left stick X
 
@@ -68,12 +70,12 @@ struct XInputGuitarAlternateGamepad
     bool blue : 1;
     bool yellow : 1;
 
-    uint8_t accel1;
-    uint8_t accel2;
+    uint8_t accelZ;
+    uint8_t accelX;
     int16_t touchBar;
     int16_t unused;
     int16_t whammy;
-    int16_t tilt;
+    int16_t tilt_accelY;
 }
 
 enum XInputGuitarAlternateTouchBar

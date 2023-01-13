@@ -26,9 +26,16 @@ Strumbar: D-pad up/down
 
 Whammy: Right stick X
 
-Tilt: Accelerometer X
+Accelerometers:
 
-Other accelerometer data: Accelerometer Y and Z
+- These guitars feature a full 3-axis accelerometer which output values relative to gravity. The axis names used here match the fields that they're placed on compared to the normal PS3 controller report.
+- X axis (used for standard tilt): Accelerometer X
+  - Above `0x200` the guitar is pointed up, below when the guitar is pointed down.
+- Y axis: Accelerometer Y
+  - Above `0x200` the guitar is face down, below when the guitar is face up.
+- Z axis: Accelerometer Z
+  - Above `0x200` the guitar is pointed right, below when the guitar is pointed left.
+- Values and ranges may vary.
 
 Touch/slider bar: Right stick Y
 
