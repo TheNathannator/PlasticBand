@@ -24,7 +24,7 @@ Fret numbers:
 | B      | Left Thumb X  | `0b_xxxx_xx11_111x_xxxx` |
 | High E | Left Thumb X  | `0b_x111_11xx_xxxx_xxxx` |
 
-String velocity?:
+String velocity:
 
 | String | Input         | Bits                     |
 | :----- | :----         | :---                     |
