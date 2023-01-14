@@ -152,7 +152,8 @@ struct PS3KeytarState
 
     uint8_t unused2[4];
 
-    uint8_t pedalConnection; // Always 0 with the MIDI Pro Adapter
+    bool pedalConnection : 1; // Always 0 with the MIDI Pro Adapter
+    uint8_t : 7;
 
     uint8_t unused3[4];
 
