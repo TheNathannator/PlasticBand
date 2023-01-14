@@ -62,9 +62,11 @@ See the [general notes doc](General%20Notes.md) for details on [velocity behavio
 
 Overdrive button: Pressure L1 (byte offset 14), `0b_1xxx_xxxx`
 
-Pedal port digital input: Pressure R1 (byte offset 15), `0b_1xxx_xxxx`
+Pedal port:
 
-Pedal port analog input: Pressure R1 (byte offset 15), `0b_x111_1111`
+- Digital input: Pressure R1 (byte offset 15), `0b_1xxx_xxxx`
+- Analog input: Pressure R1 (byte offset 15), `0b_x111_1111`
+- Pedal connection: Accel X high byte (byte offset 21), `0b_0000_0001`
 
 - This value may have an inverted range (0 = max, 127 = min). Needs confirmation though, as this is taken from observatons on the Xbox 360 keyboard.
 - These bits are all 1 when nothing is plugged in.
