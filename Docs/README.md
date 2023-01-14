@@ -42,17 +42,15 @@ Data structures in these documents assume that the processor and data are little
   - [ ] Wii
 - 5-lane (Guitar Hero) drums
   - [x] Xbox 360
-    - Needs hardware verification
   - [x] PS2/3
   - [ ] Wii
 - Turntable (DJ Hero)
   - [x] Xbox 360
-  - [ ] PS3
+  - [x] PS3
   - [ ] Wii
 - Pro Guitar (Rock Band)
   - [x] Xbox 360
-    - Needs hardware verification
-  - [ ] PS3
+  - [x] PS3
   - [ ] Wii
 - Keyboard/keytar (Rock Band)
   - [x] Xbox 360
@@ -61,7 +59,6 @@ Data structures in these documents assume that the processor and data are little
 - Other
   - [ ] Rock Band 4 Legacy Wireless Adapter
   - [x] Rock Band 4 Legacy Wired Adapter
-    - Needs additional research and verification
   - [x] Xbox 360 Rock Band 2 Stage Kit
 
 ## License
