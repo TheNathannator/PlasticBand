@@ -27,7 +27,7 @@ Data structures in these documents assume that the processor and data are little
     - [x] Xbox One
     - [x] PS2/3
     - [ ] PS4
-    - [ ] Wii
+    - [x] Wii
 - 6-fret guitar
   - [x] Xbox 360
   - [ ] Xbox One
@@ -39,7 +39,7 @@ Data structures in these documents assume that the processor and data are little
   - [x] Xbox One
   - [x] PS2/3
   - [ ] PS4
-  - [ ] Wii
+  - [x] Wii
 - 5-lane (Guitar Hero) drums
   - [x] Xbox 360
   - [x] PS2/3
@@ -51,11 +51,11 @@ Data structures in these documents assume that the processor and data are little
 - Pro Guitar (Rock Band)
   - [x] Xbox 360
   - [x] PS3
-  - [ ] Wii
+  - [x] Wii
 - Keyboard/keytar (Rock Band)
   - [x] Xbox 360
   - [ ] PS3
-  - [ ] Wii
+  - [x] Wii
 - Other
   - [ ] Rock Band 4 Legacy Wireless Adapter
   - [x] Rock Band 4 Legacy Wired Adapter
