@@ -8,7 +8,9 @@ PS3:
 - Product ID:
   - Mustang: `0x2430`
   - Squire: `0x2530` (assumed based on patterns with other RB device PIDs)
-  - MIDI Pro Adapter in guitar mode: `0x2538`
+  - MIDI Pro Adapter in guitar mode:
+    - Default: `0x2538`
+    - Using the Mustang: `0x2438`
 - PS3 ID: 
 
 Wii:
@@ -17,7 +19,9 @@ Wii:
 - Product ID:
   - Mustang: `0x3430`
   - Squire: `0x3530` (assumed based on patterns with other RB device PIDs)
-  - MIDI Pro Adapter in guitar mode: `0x3538`
+  - MIDI Pro Adapter in guitar mode:
+    - Default: `0x3538`
+    - Using the Mustang: `0x3438`
 
 ## Input Info
 
