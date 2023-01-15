@@ -1,11 +1,21 @@
-# PlayStation 3 Rock Band 3 Keyboard
+# PS3 and Wii Rock Band 3 Keyboard
 
 ## Controller Info
 
+PS3:
+
 - Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
-- Product ID: `0x2330`
-  - Via MIDI Pro Adapter: `0x2338`
+- Product ID:
+  - Keyboard: `0x2330`
+  - MIDI Pro Adapter in keys mode: `0x2338`
 - PS3 ID: 
+
+Wii:
+
+- Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
+- Product ID:
+  - Keyboard: `0x3330`
+  - MIDI Pro Adapter in keys mode: `0x3338`
 
 ## Input Info
 
@@ -186,6 +196,8 @@ struct PS3KeyboardEnableMidi
     };
 }
 ```
+
+The Wii Keyboard does not require this report, it sends the data regardless.
 
 **TODO:**
 

@@ -1,13 +1,23 @@
-# PS3 Rock Band 3 Pro Guitar
+# PS3 and Wii Rock Band 3 Pro Guitar
 
 ## Controller Info
+
+PS3:
 
 - Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
 - Product ID:
   - Mustang: `0x2430`
   - Squire: `0x2530` (assumed based on patterns with other RB device PIDs)
-  - MIDI Pro Adapter: `0x2538`
+  - MIDI Pro Adapter in guitar mode: `0x2538`
 - PS3 ID: 
+
+Wii:
+
+- Vendor ID: `0x1BAD` ("Harmonix Music")
+- Product ID:
+  - Mustang: `0x3430`
+  - Squire: `0x3530` (assumed based on patterns with other RB device PIDs)
+  - MIDI Pro Adapter in guitar mode: `0x3538`
 
 ## Input Info
 
@@ -166,6 +176,7 @@ struct PS3ProGuitarEnableMidi
 
 - Unsure of the details on how these messages are sent, maybe there's a standard MIDI input endpoint?
 - Is this supposed to be sent as 5 separate reports like the auto-calibration reports are, or does it work either way?
+- Do Wii Pro Guitars send the data regardless like Wii Keyboards do?
 
 ### Auto-Calibration Sensors
 
@@ -206,21 +217,21 @@ Optionally, a feature report can be read after the reports are sent. The returne
 **TODO:**
 
 - Does this work on regular guitars as well, or does that have a different report?
-- Is this actually the report PS3 guitars expect? sanjay's page for this has different reports for PS3 vs Wii, but the spreadsheet linked below has the same report as Wii on its page for PS3 Pro Guitars
+- Is this actually the same for both consoles? sanjay's page for this has different reports for PS3 vs Wii, but the spreadsheet linked below has the same report as Wii on its page for PS3 Pro Guitars
 
 As C/C++ code:
 
 ```cpp
 #include <hidapi.h>
 
-enum PS3ProGuitarAutoCalibrationState
+enum PS3WiiProGuitarAutoCalibrationState
 {
     Disabled = 0x00,
     LightSensor = 0x01,
     Microphone = 0x02
 };
 
-struct PS3ProGuitarAutoCalibration
+struct PS3WiiProGuitarAutoCalibration
 {
     uint8_t reportId = 0x00;
 
@@ -235,7 +246,7 @@ uint8_t otherReports[4][9] = {
   {0x00, 0xE9, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}
 };
 
-send_report(hid_device *dev, PS3ProGuitarAutoCalibration *data)
+send_report(hid_device *dev, PS3WiiProGuitarAutoCalibration *data)
 {
     // Send reports
     hid_send_feature_report(dev, (uint8_t*)data, sizeof(data));

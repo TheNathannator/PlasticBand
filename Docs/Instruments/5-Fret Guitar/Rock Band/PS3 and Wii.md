@@ -1,10 +1,19 @@
-# PS3 Rock Band Guitars
+# PS3 and Wii Rock Band Guitars
 
 ## Device Info
+
+PS3:
 
 - Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
 - Product ID: `0x0200` ("Harmonix Guitar for PlayStation(R)3")
 - PS3 ID: `0x00`
+
+Wii:
+
+- Vendor ID: `0x1BAD` ("Harmonix Music")
+- Product ID:
+  - RB1: `0x0004`
+  - RB2 and later: `0x3010`
 
 ## Input Info
 

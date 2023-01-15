@@ -1,11 +1,22 @@
-# PS3 Rock Band Drums
+# PS3 and Wii Rock Band Drums
 
 ## Device Info
 
+PS3:
+
 - Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
-- Product ID: `0x0210` ("Harmonix Drum Kit for PlayStation(R)3")
+- Product ID:
+  - Drumkit: `0x0210` ("Harmonix Drum Kit for PlayStation(R)3")
   - MIDI Pro Adapter in drums mode: `0x0218`
 - PS3 ID: 
+
+Wii:
+
+- Vendor ID: `0x1BAD` ("Harmonix Music")
+- Product ID:
+  - RB1: `0x0005`
+  - RB2 and later: `0x3110`
+  - MIDI Pro Adapter in drums mode: `0x3118`
 
 ## Input Info
 
