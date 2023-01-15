@@ -166,6 +166,32 @@ struct PS3KeytarState
 }
 ```
 
+## Feature Reports
+
+### MIDI Data
+
+The PS3 keyboard has a feature report to enable MIDI messages to be sent alongside normal input data:
+
+```cpp
+struct PS3KeyboardEnableMidi
+{
+    uint8_t reportId = 0x00;
+
+    uint8_t data[40] = {
+        0xE9, 0x00, 0x89, 0x1B, 0x00, 0x00, 0x00, 0x02,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00,
+        0x00, 0x00, 0x89, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0xE9, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    };
+}
+```
+
+**TODO:**
+
+- Unsure of the details on how these messages are sent, maybe there's a standard MIDI input endpoint?
+- Is this supposed to be sent as 5 separate reports like the Pro Guitar auto-calibration reports are, or does it work either way?
+
 ## References
 
 - https://jasonharley2o.com/wiki/doku.php?id=rb3keyboard
