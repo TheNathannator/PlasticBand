@@ -59,7 +59,7 @@ Velocities:
 
 ### As A Struct
 
-```c
+```cpp
 struct XInputFourLaneDrumsGamepad
 {
     bool dpadUp : 1;

@@ -51,7 +51,7 @@ TODO: There are probably more inputs present on the guitar than just these, such
 
 ### As A Struct
 
-```c
+```cpp
 struct XInputProGuitarState
 {
     bool dpadUp : 1;

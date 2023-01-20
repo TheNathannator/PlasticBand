@@ -41,7 +41,7 @@ Hi-hat pedal port: TODO
 
 ### As A Struct
 
-```c
+```cpp
 struct XInputFiveLaneDrumsGamepad
 {
     bool dpadUp : 1;

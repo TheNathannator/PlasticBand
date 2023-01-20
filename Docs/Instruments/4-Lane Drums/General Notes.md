@@ -10,7 +10,7 @@ This code is designed for checking the instantaneous state, it doesn't work well
 
 This may not work 100% for the MIDI Pro Adapters, there's some known issues with them even on console (though ideally e-kit users would use direct MIDI input where possible).
 
-```c
+```cpp
 // Bitmask of individual pads/cymbals
 enum FourLanePad
 {

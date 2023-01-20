@@ -24,7 +24,7 @@ Detail any information about what vibration reports will do, if applicable.
 
 ### As A Struct
 
-```c
+```cpp
 // Remove the comments here when done, as these are for guidance purposes only.
 // Replace <type> here with a name for the device type. This struct can be usable in place of the regular XINPUT_GAMEPAD struct.
 // You may add your own comments wherever needed to explain quirks in the inputs.

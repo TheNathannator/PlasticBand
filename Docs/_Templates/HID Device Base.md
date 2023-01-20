@@ -39,7 +39,7 @@ Output reports should be detailed here, if applicable.
 
 You may include C/C++ struct representations of the data reports here.
 
-```c
+```cpp
 // Remove the comments here when done, as these are for tutorial purposes only.
 // Replace <device> here with a name for the device.
 struct <device>State

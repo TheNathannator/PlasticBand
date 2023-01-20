@@ -65,7 +65,7 @@ Velocities:
 
 ### As A Struct
 
-```c
+```cpp
 struct PS3FourLaneDrumsState
 {
     uint8_t reportId;

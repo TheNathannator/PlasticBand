@@ -56,7 +56,7 @@ Length: Typically 6 bytes (descriptor reports max length as 10 bytes)
   - Byte 5, bits 4-7 (`0xF0`) - Green Cymbal
   - Range seems to be 0-7
 
-```c
+```cpp
 struct GipDrumkitState
 {
     bool sync : 1;

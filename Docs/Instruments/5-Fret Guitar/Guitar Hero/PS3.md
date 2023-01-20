@@ -51,7 +51,7 @@ Pressure axes:
 
 ### As A Struct
 
-```c
+```cpp
 struct PS3GuitarHeroGuitarState
 {
     uint8_t reportId;

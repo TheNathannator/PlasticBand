@@ -55,7 +55,7 @@ Pressure axes:
 
 ### As A Struct
 
-```c
+```cpp
 struct PS3TurntableState
 {
     uint8_t reportId;

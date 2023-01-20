@@ -47,7 +47,7 @@ RJ14 (pedal) port: Right bumper
 
 ### As Data Types
 
-```c
+```cpp
 struct XInputGuitarAlternateGamepad
 {
     bool dpadStrumUp : 1;

@@ -39,7 +39,7 @@ GHTV button: L3
 
 ### As A Struct
 
-```c
+```cpp
 struct PS3WiiUSixFretGuitarState
 {
     uint8_t reportId;

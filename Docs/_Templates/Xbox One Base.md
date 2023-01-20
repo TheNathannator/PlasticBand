@@ -73,7 +73,7 @@ Although the readme for these docs says that little-endian is assumed, it's reco
 - Bytes 10-11: Right stick X (little-endian, signed)
 - Bytes 12-13: Right stick Y (little-endian, signed)
 
-```c
+```cpp
 struct GipGamepadState
 {
     bool sync : 1;
@@ -139,7 +139,7 @@ Bytes:
 - Byte 8: Number of times to repeat
   - Typically `0xEB` for instantaneous rumble effects.
 
-```c
+```cpp
 enum GipGamepadMotorFlags
 {
     GipGamepadMotor_RightRumble = 0x01,

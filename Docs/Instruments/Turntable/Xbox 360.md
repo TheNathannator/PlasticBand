@@ -47,7 +47,7 @@ Crossfader: Right stick Y
 
 ### As A Struct
 
-```c
+```cpp
 struct XInputTurntableState
 {
     bool dpadUp : 1;

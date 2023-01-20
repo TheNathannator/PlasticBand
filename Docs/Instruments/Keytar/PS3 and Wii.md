@@ -85,7 +85,7 @@ Effects touchpad: Pressure Δ (byte offset 16), `0b_x111_1111`
 
 ### As A Struct
 
-```c
+```cpp
 struct PS3KeytarState
 {
     uint8_t reportId;

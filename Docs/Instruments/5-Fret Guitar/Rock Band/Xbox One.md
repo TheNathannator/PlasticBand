@@ -60,7 +60,7 @@ Length: Typically 10 bytes (descriptor reports max length as 14 bytes)
 - Bytes 7-9: unknown
   - These are most likely used for the auto-calibration sensors once those are activated.
 
-```c
+```cpp
 struct GipGuitarState
 {
     bool sync : 1;

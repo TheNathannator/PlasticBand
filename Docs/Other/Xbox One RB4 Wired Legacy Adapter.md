@@ -77,7 +77,7 @@ Bytes:
   - Bytes 15-16: Right stick Y (little-endian, signed)
   - Bytes 17-22: Reserved
 
-```c
+```cpp
 struct GipLegacyWiredState
 {
     bool sync : 1;
@@ -145,7 +145,7 @@ Length: 5 bytes
 - Byte 1-2: Vendor ID (big-endian)
 - Byte 3-4: Product ID (big-endian)
 
-```c
+```cpp
 struct GipLegacyWiredDeviceInfo
 {
     uint8_t subType;
@@ -163,7 +163,7 @@ Length: 1 byte
 - Byte 0: Subtype?
   - The only instance of this in the packet log is set to `0x08`, closest match is the subtype.
 
-```c
+```cpp
 typedef GipLegacyWired_0x23 uint8_t;
 ```
 
