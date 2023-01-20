@@ -77,5 +77,6 @@ On Linux, Xbox 360 controller support is built directly into the kernel. There a
 
 - [xboxdrv](https://gitlab.com/xboxdrv/xboxdrv)
 - a modified [xpad](https://github.com/paroj/xpad)
+- [xpad-noone](https://github.com/medusalix/xpad-noone) (required if using [xone](https://github.com/medusalix/xone))
 
 (TODO: how to identify and interface with devices)
