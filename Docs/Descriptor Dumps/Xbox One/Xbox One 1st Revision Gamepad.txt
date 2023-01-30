@@ -15,48 +15,23 @@ F8-2F-21-26-3A-CF-B7-02-17-00-20-0E-00-01-00-10-00-00-00-00-00-00-00-00-00-00-00
 
 - Custom commands:
   1.
-  - unk1: 0x0017
-  - Command: 0x20
-  - Max length: 0x0E
-  - unk2: 0x01
+  - Command ID: 0x20
+  - Max command length: 14
   - Flags: 0x10 (Input)
-  - unk3: 0000000000000000
-  - unk4: 00000000
-  - unk5: 0000
-  - unk6: 00
   2.
-  - unk1: 0x0017
-  - Command: 0x09
-  - Max length: 0x3C
-  - unk2: 0x01
+  - Command ID: 0x09
+  - Max command length: 60
   - Flags: 0x08 (Output)
-  - unk3: 0000000000000000
-  - unk4: 00000000
-  - unk5: 0000
-  - unk6: 00
 
-- Versions:
-  1. v1.0
-  2. v1.1
-  3. v1.2
-  4. v1.3
-  5. v2.0
-  6. v2.1
-  7. v2.2
-  8. v2.3
-
-- Audio formats: None
-
-- Output commands: 01-02-03-04-06-07-0C-1E
-- Input commands: 01-04-05-06-0A-0C-1E
+- Output commands: 01, 02, 03, 04, 06, 07, 0C, 1E
+- Input commands: 01, 04, 05, 06, 0A, 0C, 1E
 
 - Class names:
-  1. Windows.Xbox.Input.Gamepad
+  - Windows.Xbox.Input.Gamepad
 
 - Interface GUIDs:
-  1. 9776FF56-9BFD-4581-AD45-B645BBA526D6
-  2. 082E402C-07DF-45E1-A5AB-A3127AF197B5
-  3. B8F31FE7-7386-40E9-A9F8-2F21263ACFB7
+  - 9776FF56-9BFD-4581-AD45-B645BBA526D6
+  - 082E402C-07DF-45E1-A5AB-A3127AF197B5
+  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7
 
 - HID descriptor: None
-

@@ -16,41 +16,24 @@ Descriptor:
 
 - Custom commands:
   1.
-  - unk1: 0x0017
-  - Command: 0x20
-  - Max length: 0x0E
-  - unk2: 0x01
-  - Flags: 0x14 (unk, Input)
-  - unk3: 0000000000000000
-  - unk4: 00000000
-  - unk5: 0000
-  - unk6: 00
+  - Command ID: 0x20
+  - Max command length: 14
+  - Flags: 0x14 (Input, unknown flag)
   2.
-  - unk1: 0x0017
-  - Command: 0x21
-  - Max length: 0x05
-  - unk2: 0x01
-  - Flags: 0x0C (unk, Output)
-  - unk3: 0000000000000000
-  - unk4: 00000000
-  - unk5: 0000
-  - unk6: 00
+  - Command ID: 0x21
+  - Max command length: 5
+  - Flags: 0x0C (Output, unknown flag)
 
-- Versions:
-  1. v1.0
-
-- Audio formats: None
-
-- Output commands: 01-02-03-04-06-07
-- Input commands: 01-04-05-06-0A
+- Output commands: 01, 02, 03, 04, 06, 07
+- Input commands: 01, 04, 05, 06, 0A
 
 - Class names:
-  1. MadCatz.Xbox.Guitar.Stratocaster
-  2. Windows.Xbox.Input.NavigationController
+  - MadCatz.Xbox.Guitar.Stratocaster
+  - Windows.Xbox.Input.NavigationController
 
 - Interface GUIDs:
-  1. 0D2AE438-7F7D-4933-8693-30FC55018E77
-  2. B8F31FE7-7386-40E9-A9F8-2F21263ACFB7
-  3. 9776FF56-9BFD-4581-AD45-B645BBA526D6
+  - 0D2AE438-7F7D-4933-8693-30FC55018E77
+  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7
+  - 9776FF56-9BFD-4581-AD45-B645BBA526D6
 
 - HID descriptor: None

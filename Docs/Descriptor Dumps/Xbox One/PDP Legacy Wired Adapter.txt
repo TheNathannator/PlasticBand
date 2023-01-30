@@ -18,71 +18,36 @@ CF-B7-56-FF-76-97-FD-9B-81-45-AD-45-B6-45-BB-A5-26-D6-05-17-00-20-17-00-01-00-10
 
 - Custom commands:
   1.
-  - unk1: 0x0017
-  - Command: 0x20
-  - Max length: 0x17
-  - unk2: 0x01
+  - Command ID: 0x20
+  - Max command length: 23
   - Flags: 0x10 (Input)
-  - unk3: 0000000000000000
-  - unk4: 00000000
-  - unk5: 0000
-  - unk6: 00
   2.
-  - unk1: 0x0017
-  - Command: 0x21
-  - Max length: 0x17
-  - unk2: 0x01
+  - Command ID: 0x21
+  - Max command length: 23
   - Flags: 0x08 (Output)
-  - unk3: 0000000000000000
-  - unk4: 00000000
-  - unk5: 0000
-  - unk6: 00
   3.
-  - unk1: 0x0017
-  - Command: 0x22
-  - Max length: 0x05
-  - unk2: 0x01
+  - Command ID: 0x22
+  - Max command length: 5
   - Flags: 0x10 (Input)
-  - unk3: 0000000000000000
-  - unk4: 00000000
-  - unk5: 0000
-  - unk6: 00
   4.
-  - unk1: 0x0017
-  - Command: 0x23
-  - Max length: 0x01
-  - unk2: 0x01
+  - Command ID: 0x23
+  - Max command length: 1
   - Flags: 0x10 (Input)
-  - unk3: 0000000000000000
-  - unk4: 00000000
-  - unk5: 0000
-  - unk6: 00
   5.
-  - unk1: 0x0017
-  - Command: 0x24
-  - Max length: 0x00
-  - unk2: 0x01
+  - Command ID: 0x24
+  - Max command length: 0
   - Flags: 0x08 (Output)
-  - unk3: 0000000000000000
-  - unk4: 00000000
-  - unk5: 0000
-  - unk6: 00
 
-- Versions:
-  1. v1.0
-
-- Audio formats: None
-
-- Output commands: 01-02-03-04-06-07
-- Input commands: 01-04-05-06-0A
+- Output commands: 01, 02, 03, 04, 06, 07
+- Input commands: 01, 04, 05, 06, 0A
 
 - Class names:
-  1. PDP.Xbox.RBAdapter.LegacyUSB
-  2. Windows.Xbox.Input.NavigationController
+  - PDP.Xbox.RBAdapter.LegacyUSB
+  - Windows.Xbox.Input.NavigationController
 
 - Interface GUIDs:
-  1. FD019937-9816-45E7-8034-CFD6AB3AE6BF
-  2. B8F31FE7-7386-40E9-A9F8-2F21263ACFB7
-  3. 9776FF56-9BFD-4581-AD45-B645BBA526D6
+  - FD019937-9816-45E7-8034-CFD6AB3AE6BF
+  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7
+  - 9776FF56-9BFD-4581-AD45-B645BBA526D6
 
 - HID descriptor: None
