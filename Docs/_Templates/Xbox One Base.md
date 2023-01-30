@@ -41,9 +41,7 @@ Detail information about commands that may be received from the device, excludin
 
 Typically, devices will report input data via the `0x20` command ID. As an example, this section details the standard gamepad's state info.
 
-Length: Typically 14 bytes (descriptor reports max length as 20 bytes)
-
-- Sometimes the in-practice length differs from what the descriptor reports as its max length.
+Length: 14 bytes
 
 Although the readme for these docs says that little-endian is assumed, it's recommended to specify big-endian or little-endian for values spanning across multiple bytes. Signedness should also be specified.
 
@@ -114,7 +112,9 @@ Detail info about any commands that can be sent to the device.
 
 This command is found in the standard Xbox One gamepad's descriptor, and is used to set the state of its four vibration motors.
 
-Length: Typically 9 bytes (descriptor reports max length as 60 bytes)
+Length: Typically 9 bytes (listed max: 60 bytes)
+
+- Sometimes the in-practice length of a command differs from what the descriptor reports as its max length.
 
 Bytes:
 
