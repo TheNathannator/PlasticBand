@@ -107,7 +107,11 @@ struct PS3PlayerLeds
 
     uint8_t outputType = 0x01;
     uint8_t unk1 = 0x08;
-    uint8_t leds; // Bitmask of LEDs to be enabled (1 = 0x01, 2 = 0x02, 3 = 0x04, 4 = 0x08, all off = 0x00)
+    bool player1 : 1;
+    bool player2 : 1;
+    bool player3 : 1;
+    bool player4 : 1;
+    uint8_t : 4;
     uint8_t padding[5];
 }
 ```
