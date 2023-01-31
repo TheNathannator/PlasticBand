@@ -26,70 +26,9 @@ This section needs to be verified with additional hardware observations.
 
 This command is the standard input report that the Xbox expects and uses for menu navigation. Presumably, it defaults to this when the keep-alive packet is not sent.
 
-Based on the interface GUIDs, class strings, and command length listed in the descriptor, this report will likely match that of the standard gamepad, so that is what's listed here.
-
 Length: 14 bytes
 
-Although the readme for these docs says that little-endian is assumed, it's recommended to specify big-endian or little-endian for values spanning across multiple bytes. Signedness should also be specified.
-
-- Bytes 0-1: 16-bit button bitmask
-  - Byte 0, bit 0 (`0x01`) - Sync button
-  - Byte 0, bit 1 (`0x02`) - Unused
-  - Byte 0, bit 2 (`0x04`) - Menu button
-  - Byte 0, bit 3 (`0x08`) - View button (Hero Power)
-  - Byte 0, bit 4 (`0x10`) - A button (Black 1)
-  - Byte 0, bit 5 (`0x20`) - B button (Black 2)
-  - Byte 0, bit 6 (`0x40`) - X button (White 1)
-  - Byte 0, bit 7 (`0x80`) - Y button (Black 3)
-  - Byte 1, bit 0 (`0x01`) - D-pad up
-  - Byte 1, bit 1 (`0x02`) - D-pad down
-  - Byte 1, bit 2 (`0x04`) - D-pad left
-  - Byte 1, bit 3 (`0x08`) - D-pad right
-  - Byte 1, bit 4 (`0x10`) - Left bumper
-  - Byte 1, bit 5 (`0x20`) - Right bumper
-  - Byte 1, bit 6 (`0x40`) - Left stick press
-  - Byte 1, bit 7 (`0x80`) - Right stick press
-- Bytes 2-3: Left trigger (little-endian, unsigned)
-  - Unpressed: 0, fully pressed: roughly `0x03FF`
-- Bytes 4-5: Right trigger (little-endian, unsigned)
-  - Same as above
-- Bytes 6-7: Left stick X (little-endian, signed)
-- Bytes 8-9: Left stick Y (little-endian, signed)
-- Bytes 10-11: Right stick X (little-endian, signed)
-- Bytes 12-13: Right stick Y (little-endian, signed)
-
-```cpp
-struct GipGamepadState
-{
-    bool sync : 1;
-    bool : 1;
-    bool menu : 1;
-    bool view : 1;
-
-    bool a : 1;
-    bool b : 1;
-    bool x : 1;
-    bool y : 1;
-
-    bool dpadUp : 1;
-    bool dpadDown : 1;
-    bool dpadLeft : 1;
-    bool dpadRight : 1;
-
-    bool leftShoulder : 1;
-    bool rightShoulder : 1;
-    bool leftThumbClick : 1;
-    bool rightThumbClick : 1;
-
-    uint16_t leftTrigger;
-    uint16_t rightTrigger;
-
-    int16_t leftStickX;
-    int16_t leftStickY;
-    int16_t rightStickX;
-    int16_t rightStickY;
-}
-```
+No format is known yet, so nothing is listed here currently.
 
 ### Command ID `0x21`: Guitar Input State
 
