@@ -45,12 +45,15 @@ struct Ps3Report
 
     // Stick axes
     // Neutral state is 0x80
+    // X axis is left at 0x00, right at 0xFF
+    // Y axis is top at 0x00, bottom at 0xFF
     uint8_t leftStickX;
     uint8_t leftStickY;
     uint8_t rightStickX;
     uint8_t rightStickY;
 
     // Pressure axes for buttons
+    // Neutral state is 0x00, max is 0xFF
     uint8_t pressure_dpadUp;
     uint8_t pressure_dpadRight;
     uint8_t pressure_dpadLeft;
@@ -65,11 +68,11 @@ struct Ps3Report
     uint8_t pressure_square;
 
     // Each of the following are 10 bits in accuracy
-    // Centered/neutral state is 0x0200
-    int16_t accelX;
-    int16_t accelZ;
-    int16_t accelY;
-    int16_t gyro;
+    // Centered/neutral state is nominally 0x0200, actual values may vary
+    int16_t accelX; // Left/right acceleration (roll)
+    int16_t accelZ; // Forward/back acceleration (pitch)
+    int16_t accelY; // Up/down acceleration (gravity)
+    int16_t gyro;   // Left/right instantaneous rotation (yaw)
 };
 ```
 
