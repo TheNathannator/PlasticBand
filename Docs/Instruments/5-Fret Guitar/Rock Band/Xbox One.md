@@ -25,7 +25,7 @@
 
 ### Command ID `0x20`: Input State
 
-Length: Typically 10 bytes (descriptor reports max length as 14 bytes)
+Length: 10 bytes
 
 - Bytes 0-1: 16-bit button bitmask
   - Byte 0, bit 0 (`0x01`) - Sync Button
@@ -109,7 +109,7 @@ struct GipGuitarState
 
 ### Command ID `0x21`
 
-- Reported length: 5 bytes
+- Length: 1 byte
 
 The data for this one is unknown, it's reported in the descriptor but unfortunately it doesn't provide any important info outside of the ID, length, and that it's an output command. It's probably used for enabling/disabling the auto-calibration sensors.
 

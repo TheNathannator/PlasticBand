@@ -17,12 +17,12 @@ Descriptor:
 - Custom commands:
   1.
   - Command ID: 0x20
-  - Max command length: 14
-  - Flags: 0x14 (Input, unknown flag)
+  - Max command length: 14 - 4 = 10
+  - Flags: 0x14 (Input, header included in length)
   2.
   - Command ID: 0x21
-  - Max command length: 5
-  - Flags: 0x0C (Output, unknown flag)
+  - Max command length: 5 - 4 = 1
+  - Flags: 0x0C (Output, header included in length)
 
 - Output commands: 01, 02, 03, 04, 06, 07
 - Input commands: 01, 04, 05, 06, 0A

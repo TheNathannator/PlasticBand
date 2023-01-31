@@ -27,7 +27,7 @@ NOTE: These drumkits typically send every packet twice! Respecting the packet co
 
 ### Command ID `0x20`: Input State
 
-Length: Typically 6 bytes (descriptor reports max length as 10 bytes)
+Length: 6 bytes
 
 - Bytes 0-1: 16-bit button bitmask
   - Byte 0, bit 0 (`0x01`) - Sync Button
