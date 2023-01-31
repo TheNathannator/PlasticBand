@@ -1,0 +1,53 @@
+Arrival:
+xx-xx-xx-xx-xx-xx-xx-xx-38-07-64-41-01-00-00-00-6F-00-00-00-00-02-01-00-01-00-01-00
+
+- Vendor ID: 0x0738
+- Product ID: 0x4164
+
+Descriptor:
+10-00-01-00-00-00-00-00-00-00-00-00-00-00-25-01-A1-00-16-00-1B-00-1C-00-23-00-29-00-70-00-00-00
+00-00-00-00-00-00-01-01-00-00-00-00-06-01-02-03-04-06-07-05-01-04-05-06-0A-02-1B-00-4D-61-64-43
+61-74-7A-2E-58-62-6F-78-2E-4D-6F-64-75-6C-65-2E-42-72-61-6E-67-75-73-27-00-57-69-6E-64-6F-77-73
+2E-58-62-6F-78-2E-49-6E-70-75-74-2E-4E-61-76-69-67-61-74-69-6F-6E-43-6F-6E-74-72-6F-6C-6C-65-72
+03-0F-9D-25-AF-B0-76-DB-4C-BF-D1-CE-A8-C0-A8-F5-EE-E7-1F-F3-B8-86-73-E9-40-A9-F8-2F-21-26-3A-CF
+B7-56-FF-76-97-FD-9B-81-45-AD-45-B6-45-BB-A5-26-D6-05-17-00-20-36-00-01-00-14-00-00-00-00-00-00
+00-00-00-00-00-00-00-00-00-17-00-21-06-00-01-00-0C-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+17-00-22-02-01-01-00-14-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-17-00-23-05-00-01-00-14-00
+00-00-00-00-00-00-00-00-00-00-00-00-00-00-17-00-24-04-00-01-00-0C-00-00-00-00-00-00-00-00-00-00
+00-00-00-00-00
+
+- Custom commands:
+  1.
+  - Command ID: 0x20
+  - Max command length: 54 - 4 = 50
+  - Flags: 0x14 (Input, header included in length)
+  2.
+  - Command ID: 0x21
+  - Max command length: 6 - 4 = 2
+  - Flags: 0x0C (Output, header included in length)
+  3.
+  - Command ID: 0x22
+  - Max command length: 258 - 4 = 254
+  - Flags: 0x14 (Input, header included in length)
+  4.
+  - Command ID: 0x23
+  - Max command length: 5 - 4 = 1
+  - Flags: 0x14 (Input, header included in length)
+  5.
+  - Command ID: 0x24
+  - Max command length: 4 - 4 = 0
+  - Flags: 0x0C (Output, header included in length)
+
+- Output commands: 01, 02, 03, 04, 06, 07
+- Input commands: 01, 04, 05, 06, 0A
+
+- Class names:
+  - MadCatz.Xbox.Module.Brangus
+  - Windows.Xbox.Input.NavigationController
+
+- Interface GUIDs:
+  - AF259D0F-76B0-4CDB-BFD1-CEA8C0A8F5EE
+  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7
+  - 9776FF56-9BFD-4581-AD45-B645BBA526D6
+
+- HID descriptor: None
