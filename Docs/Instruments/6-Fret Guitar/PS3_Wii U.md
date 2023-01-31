@@ -23,9 +23,11 @@ Frets:
 
 Strumbar: Left stick Y
 
+- `0x80` when not pressed, `0x00` when strumming up, `0xFF` when strumming down.
+
 Whammy: Right stick Y
 
-- TODO: This might behave more strangely than other guitars, based on the RPCS3 emulation code for this. 
+- Ranges from `0x80` when not pressed to `0xFF` when fully pressed. (Assumed based on other GHL guitars)
 
 Tilt: Accelerometer X
 
