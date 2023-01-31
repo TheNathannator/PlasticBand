@@ -1,0 +1,34 @@
+Arrival:
+xx-xx-xx-xx-xx-xx-xx-xx-38-07-62-42-01-00-00-00-E6-00-00-00-00-02-01-00-01-00-01-00
+
+- Vendor ID: 0x0738
+- Product ID: 0x4262
+
+Descriptor:
+10-00-01-00-00-00-00-00-00-00-00-00-00-00-C5-00-9D-00-16-00-1B-00-1C-00-23-00-29-00-6C-00-00-00
+00-00-00-00-00-00-01-01-00-00-00-00-06-01-02-03-04-06-07-05-01-04-05-06-0A-02-17-00-4D-61-64-43
+61-74-7A-2E-58-62-6F-78-2E-44-72-75-6D-73-2E-47-6C-61-6D-27-00-57-69-6E-64-6F-77-73-2E-58-62-6F
+78-2E-49-6E-70-75-74-2E-4E-61-76-69-67-61-74-69-6F-6E-43-6F-6E-74-72-6F-6C-6C-65-72-03-93-28-18
+06-E0-CC-85-4B-92-71-0A-10-DB-AB-7E-07-E7-1F-F3-B8-86-73-E9-40-A9-F8-2F-21-26-3A-CF-B7-56-FF-76
+97-FD-9B-81-45-AD-45-B6-45-BB-A5-26-D6-01-17-00-20-0A-00-01-00-14-00-00-00-00-00-00-00-00-00-00
+00-00-00-00-00-00-00-00-00-00
+
+- Custom commands:
+  1.
+  - Command ID: 0x20
+  - Max command length: 10 - 4 = 6
+  - Flags: 0x14 (Input, header included in length)
+
+- Output commands: 01, 02, 03, 04, 06, 07
+- Input commands: 01, 04, 05, 06, 0A
+
+- Class names:
+  - MadCatz.Xbox.Drums.Glam
+  - Windows.Xbox.Input.NavigationController
+
+- Interface GUIDs:
+  - 06182893-CCE0-4B85-9271-0A10DBAB7E07
+  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7
+  - 9776FF56-9BFD-4581-AD45-B645BBA526D6
+
+- HID descriptor: None
