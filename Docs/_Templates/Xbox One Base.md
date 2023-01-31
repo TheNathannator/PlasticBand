@@ -46,28 +46,29 @@ Length: 14 bytes
 Although the readme for these docs says that little-endian is assumed, it's recommended to specify big-endian or little-endian for values spanning across multiple bytes. Signedness should also be specified.
 
 - Bytes 0-1: 16-bit button bitmask
-  - Byte 0, bit 0 (`0x01`) - Sync Button
+  - Byte 0, bit 0 (`0x01`) - Sync button
   - Byte 0, bit 1 (`0x02`) - Unused
-  - Byte 0, bit 2 (`0x04`) - Menu Button
-  - Byte 0, bit 3 (`0x08`) - View Button
-  - Byte 0, bit 4 (`0x10`) - A Button
-  - Byte 0, bit 5 (`0x20`) - B Button
-  - Byte 0, bit 6 (`0x40`) - X Button
-  - Byte 0, bit 7 (`0x80`) - Y Button
-  - Byte 1, bit 0 (`0x01`) - D-pad Up
-  - Byte 1, bit 1 (`0x02`) - D-pad Down
-  - Byte 1, bit 2 (`0x04`) - D-pad Left
-  - Byte 1, bit 3 (`0x08`) - D-pad Right
-  - Byte 1, bit 4 (`0x10`) - Left Bumper
-  - Byte 1, bit 5 (`0x20`) - Right Bumper
-  - Byte 1, bit 6 (`0x40`) - Left Stick Press
-  - Byte 1, bit 7 (`0x80`) - Right Stick Press
+  - Byte 0, bit 2 (`0x04`) - Menu button
+  - Byte 0, bit 3 (`0x08`) - View button
+  - Byte 0, bit 4 (`0x10`) - A button
+  - Byte 0, bit 5 (`0x20`) - B button
+  - Byte 0, bit 6 (`0x40`) - X button
+  - Byte 0, bit 7 (`0x80`) - Y button
+  - Byte 1, bit 0 (`0x01`) - D-pad up
+  - Byte 1, bit 1 (`0x02`) - D-pad down
+  - Byte 1, bit 2 (`0x04`) - D-pad left
+  - Byte 1, bit 3 (`0x08`) - D-pad right
+  - Byte 1, bit 4 (`0x10`) - Left bumper
+  - Byte 1, bit 5 (`0x20`) - Right bumper
+  - Byte 1, bit 6 (`0x40`) - Left stick press
+  - Byte 1, bit 7 (`0x80`) - Right stick press
 - Bytes 2-3: Left trigger (little-endian, unsigned)
-  - Unpressed: 0, fully pressed: roughly `0x03FF`
+  - Unpressed at 0, fully pressed at `0x03FF`.
 - Bytes 4-5: Right trigger (little-endian, unsigned)
-  - Same as above
 - Bytes 6-7: Left stick X (little-endian, signed)
+  - Centered at 0, left at -32768, right at 32767.
 - Bytes 8-9: Left stick Y (little-endian, signed)
+  - Centered at 0, down at -32768, up at 32767.
 - Bytes 10-11: Right stick X (little-endian, signed)
 - Bytes 12-13: Right stick Y (little-endian, signed)
 
@@ -131,10 +132,10 @@ Bytes:
 - Byte 4: Left rumble motor strength
 - Byte 5: Right rumble motor strength
 - Byte 6: Rumble duration
-  - The exact unit of this value is unknown.
+  - Unsure of the exact unit for this value.
   - Typically `0xFF` for instantaneous rumble effects.
 - Byte 7: Activation delay
-  - The exact unit of this value is unknown.
+  - Unsure of the exact unit for this value.
   - Typically `0x00` for instantaneous rumble effects.
 - Byte 8: Number of times to repeat
   - Typically `0xEB` for instantaneous rumble effects.

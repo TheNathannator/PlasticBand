@@ -29,20 +29,20 @@ Bytes:
   - These buttons are provided for compatibility with the Navigation Controller interface to allow navigation in the Xbox One menus.
   - Byte 0, bit 0 (`0x01`) - Sync button
   - Byte 0, bit 1 (`0x02`) - Unused
-  - Byte 0, bit 2 (`0x04`) - Menu Button
-  - Byte 0, bit 3 (`0x08`) - View Button
-  - Byte 0, bit 4 (`0x10`) - Green Fret Flag (equivalent to A Button)
-  - Byte 0, bit 5 (`0x20`) - Red Fret Flag (equivalent to B Button)
-  - Byte 0, bit 6 (`0x40`) - Blue Fret Flag (equivalent to X Button)
-  - Byte 0, bit 7 (`0x80`) - Yellow Fret Flag (equivalent to Y Button)
-  - Byte 1, bit 0 (`0x01`) - D-pad Up/Strum Up
-  - Byte 1, bit 1 (`0x02`) - D-pad Down/Strum Down
-  - Byte 1, bit 2 (`0x04`) - D-pad Left
-  - Byte 1, bit 3 (`0x08`) - D-pad Right
-  - Byte 1, bit 4 (`0x10`) - Orange Fret Flag (equivalent to Left Bumper)
-  - Byte 1, bit 5 (`0x20`) - Unused (equivalent to Right Bumper)
-  - Byte 1, bit 6 (`0x40`) - Solo Fret Flag (equivalent to Left Stick Press)
-  - Byte 1, bit 7 (`0x80`) - Unused (equivalent to Right Stick Press)
+  - Byte 0, bit 2 (`0x04`) - Menu button
+  - Byte 0, bit 3 (`0x08`) - View button
+  - Byte 0, bit 4 (`0x10`) - A button
+  - Byte 0, bit 5 (`0x20`) - B button
+  - Byte 0, bit 6 (`0x40`) - X button
+  - Byte 0, bit 7 (`0x80`) - Y button
+  - Byte 1, bit 0 (`0x01`) - D-pad up
+  - Byte 1, bit 1 (`0x02`) - D-pad down
+  - Byte 1, bit 2 (`0x04`) - D-pad left
+  - Byte 1, bit 3 (`0x08`) - D-pad right
+  - Byte 1, bit 4 (`0x10`) - Left bumper
+  - Byte 1, bit 5 (`0x20`) - Right bumper
+  - Byte 1, bit 6 (`0x40`) - Left stick press
+  - Byte 1, bit 7 (`0x80`) - Right stick press
 - Byte 2: Unknown
   - In the packet captures, this is `0x08` (subtype?)
 - Byte 3: XUSB report ID
@@ -51,24 +51,24 @@ Bytes:
   - Typically `0x14`
   - This seems to include the report ID and the length byte itself, the actual state data after this is only 18 bytes long (`0x12`)
 - Bytes 5-22: XUSB report
+  - Formatted identically to the `XINPUT_GAMEPAD` struct from XInput.
   - Bytes 5-6: Buttons
-    - Formatted identically to the `XINPUT_GAMEPAD` struct from XInput.
-    - Byte 5, bit 0 (`0x01`) - D-pad Up
-    - Byte 5, bit 1 (`0x02`) - D-pad Down
-    - Byte 5, bit 2 (`0x04`) - D-pad Left
-    - Byte 5, bit 3 (`0x08`) - D-pad Right
-    - Byte 5, bit 4 (`0x10`) - Start Button
-    - Byte 5, bit 5 (`0x20`) - Back Button
-    - Byte 5, bit 6 (`0x40`) - Left Stick Press
-    - Byte 5, bit 7 (`0x80`) - Right Stick Press
-    - Byte 6, bit 0 (`0x01`) - Left Bumper
-    - Byte 6, bit 1 (`0x02`) - Right Bumper
-    - Byte 6, bit 2 (`0x04`) - Guide Button
-    - Byte 6, bit 3 (`0x08`) - Sync Button
-    - Byte 6, bit 4 (`0x10`) - A Button
-    - Byte 6, bit 5 (`0x20`) - B Button
-    - Byte 6, bit 6 (`0x40`) - X Button
-    - Byte 6, bit 7 (`0x80`) - Y Button
+    - Byte 5, bit 0 (`0x01`) - D-pad up
+    - Byte 5, bit 1 (`0x02`) - D-pad down
+    - Byte 5, bit 2 (`0x04`) - D-pad left
+    - Byte 5, bit 3 (`0x08`) - D-pad right
+    - Byte 5, bit 4 (`0x10`) - Start button
+    - Byte 5, bit 5 (`0x20`) - Back button
+    - Byte 5, bit 6 (`0x40`) - Left stick press
+    - Byte 5, bit 7 (`0x80`) - Right stick press
+    - Byte 6, bit 0 (`0x01`) - Left bumper
+    - Byte 6, bit 1 (`0x02`) - Right bumper
+    - Byte 6, bit 2 (`0x04`) - Guide button
+    - Byte 6, bit 3 (`0x08`) - Sync button
+    - Byte 6, bit 4 (`0x10`) - A button
+    - Byte 6, bit 5 (`0x20`) - B button
+    - Byte 6, bit 6 (`0x40`) - X button
+    - Byte 6, bit 7 (`0x80`) - Y button
   - Byte 7: Left trigger
   - Byte 8: Right trigger
   - Bytes 9-10: Left stick X (little-endian, signed)
@@ -81,7 +81,7 @@ Bytes:
 struct GipLegacyWiredState
 {
     bool sync : 1;
-    bool reserved : 1;
+    bool : 1;
     bool menu : 1;
     bool view : 1;
 
@@ -100,7 +100,7 @@ struct GipLegacyWiredState
     bool leftThumbClick : 1;
     bool rightThumbClick : 1;
 
-    uint8_t subType; //? In the referenced packet capture this is always 0x08, the closest match is the subtype
+    uint8_t subType;
     uint8_t reportId;
     uint8_t reportLength;
 
@@ -164,7 +164,10 @@ Length: 1 byte
   - The only instance of this in the packet log is set to `0x08`, closest match is the subtype.
 
 ```cpp
-typedef GipLegacyWired_0x23 uint8_t;
+struct GipLegacyWirelessDisconnection
+{
+    uint8_t subType;
+};
 ```
 
 ## Output Command Info
@@ -175,11 +178,11 @@ Reported length: 23 bytes
 
 The data for this one is unknown, it's reported in the descriptor but unfortunately it's not present in the referenced packet captures.
 
-### Command ID `0x24`: Request XUSB Device Info
+### Command ID `0x24`: Request Device Info
 
 Length: 0 bytes
 
-This request is sent to retrieve information about the connected XUSB device. The info is returned under command ID `0x22`.
+This request is sent to retrieve information about the connected device. The info is returned under command ID `0x22`.
 
 ## References
 

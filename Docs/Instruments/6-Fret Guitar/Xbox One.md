@@ -130,7 +130,7 @@ struct GipGHLGuitarState
 
 ### Command ID `0x22`: PS3-Style Output Reports
 
-This command is used to send similar output reports to what is seen on PS3 controllers.
+This command is used to send the same output reports as what is seen on PS3 controllers.
 
 Length: 8
 

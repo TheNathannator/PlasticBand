@@ -28,30 +28,30 @@ NOTE: These drumkits typically send every packet twice! Respecting the packet co
 Length: 6 bytes
 
 - Bytes 0-1: 16-bit button bitmask
-  - Byte 0, bit 0 (`0x01`) - Sync Button
+  - Byte 0, bit 0 (`0x01`) - Sync button
   - Byte 0, bit 1 (`0x02`) - Unused
-  - Byte 0, bit 2 (`0x04`) - Menu Button
-  - Byte 0, bit 3 (`0x08`) - View Button
-  - Byte 0, bit 4 (`0x10`) - A Button/Green Pad
-  - Byte 0, bit 5 (`0x20`) - B Button/Red Pad
-  - Byte 0, bit 6 (`0x40`) - X Button
-  - Byte 0, bit 7 (`0x80`) - Y Button
-  - Byte 1, bit 0 (`0x01`) - D-pad Up
-  - Byte 1, bit 1 (`0x02`) - D-pad Down
-  - Byte 1, bit 2 (`0x04`) - D-pad Left
-  - Byte 1, bit 3 (`0x08`) - D-pad Right
-  - Byte 1, bit 4 (`0x10`) - 1st Kick Pedal (equivalent to Left Bumper)
-  - Byte 1, bit 5 (`0x20`) - 2nd Kick Pedal (equivalent to Right Bumper)
-  - Byte 1, bit 6 (`0x40`) - Unused (equivalent to Left Stick Press)
-  - Byte 1, bit 7 (`0x80`) - Unused (equivalent to Right Stick Press)
+  - Byte 0, bit 2 (`0x04`) - Menu button
+  - Byte 0, bit 3 (`0x08`) - View button
+  - Byte 0, bit 4 (`0x10`) - A button/green pad
+  - Byte 0, bit 5 (`0x20`) - B button/red pad
+  - Byte 0, bit 6 (`0x40`) - X button
+  - Byte 0, bit 7 (`0x80`) - Y button
+  - Byte 1, bit 0 (`0x01`) - D-pad up
+  - Byte 1, bit 1 (`0x02`) - D-pad down
+  - Byte 1, bit 2 (`0x04`) - D-pad left
+  - Byte 1, bit 3 (`0x08`) - D-pad right
+  - Byte 1, bit 4 (`0x10`) - 1st kick pedal
+  - Byte 1, bit 5 (`0x20`) - 2nd kick pedal
+  - Byte 1, bit 6 (`0x40`) - Unused
+  - Byte 1, bit 7 (`0x80`) - Unused
 - Bytes 2-5 - Velocities
-  - Byte 2, bits 0-3 (`0x0F`) - Yellow Pad
-  - Byte 2, bits 4-7 (`0xF0`) - Red Pad
-  - Byte 3, bits 0-3 (`0x0F`) - Green Pad
-  - Byte 3, bits 4-7 (`0xF0`) - Blue Pad
-  - Byte 4, bits 0-3 (`0x0F`) - Blue Cymbal
-  - Byte 4, bits 4-7 (`0xF0`) - Yellow Cymbal
-  - Byte 5, bits 4-7 (`0xF0`) - Green Cymbal
+  - Byte 2, bits 0-3 (`0x0F`) - Yellow pad
+  - Byte 2, bits 4-7 (`0xF0`) - Red pad
+  - Byte 3, bits 0-3 (`0x0F`) - Green pad
+  - Byte 3, bits 4-7 (`0xF0`) - Blue pad
+  - Byte 4, bits 0-3 (`0x0F`) - Blue cymbal
+  - Byte 4, bits 4-7 (`0xF0`) - Yellow cymbal
+  - Byte 5, bits 4-7 (`0xF0`) - Green cymbal
   - Range seems to be 0-7
 
 ```cpp

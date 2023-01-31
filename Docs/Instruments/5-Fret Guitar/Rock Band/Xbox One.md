@@ -28,22 +28,22 @@
 Length: 10 bytes
 
 - Bytes 0-1: 16-bit button bitmask
-  - Byte 0, bit 0 (`0x01`) - Sync Button
+  - Byte 0, bit 0 (`0x01`) - Sync button
   - Byte 0, bit 1 (`0x02`) - Unused
-  - Byte 0, bit 2 (`0x04`) - Menu Button
-  - Byte 0, bit 3 (`0x08`) - View Button
-  - Byte 0, bit 4 (`0x10`) - Green Fret Flag (equivalent to A Button)
-  - Byte 0, bit 5 (`0x20`) - Red Fret Flag (equivalent to B Button)
-  - Byte 0, bit 6 (`0x40`) - Blue Fret Flag (equivalent to X Button)
-  - Byte 0, bit 7 (`0x80`) - Yellow Fret Flag (equivalent to Y Button)
-  - Byte 1, bit 0 (`0x01`) - D-pad Up/Strum Up
-  - Byte 1, bit 1 (`0x02`) - D-pad Down/Strum Down
-  - Byte 1, bit 2 (`0x04`) - D-pad Left
-  - Byte 1, bit 3 (`0x08`) - D-pad Right
-  - Byte 1, bit 4 (`0x10`) - Orange Fret Flag (equivalent to Left Bumper)
-  - Byte 1, bit 5 (`0x20`) - Unused (equivalent to Right Bumper)
-  - Byte 1, bit 6 (`0x40`) - Solo Fret Flag (equivalent to Left Stick Press)
-  - Byte 1, bit 7 (`0x80`) - Unused (equivalent to Right Stick Press)
+  - Byte 0, bit 2 (`0x04`) - Menu button
+  - Byte 0, bit 3 (`0x08`) - View button
+  - Byte 0, bit 4 (`0x10`) - Green fret flag
+  - Byte 0, bit 5 (`0x20`) - Red fret flag
+  - Byte 0, bit 6 (`0x40`) - Blue fret flag
+  - Byte 0, bit 7 (`0x80`) - Yellow fret flag
+  - Byte 1, bit 0 (`0x01`) - D-pad/strum up
+  - Byte 1, bit 1 (`0x02`) - D-pad/strum down
+  - Byte 1, bit 2 (`0x04`) - D-pad left
+  - Byte 1, bit 3 (`0x08`) - D-pad right
+  - Byte 1, bit 4 (`0x10`) - Orange fret flag
+  - Byte 1, bit 5 (`0x20`) - Unused
+  - Byte 1, bit 6 (`0x40`) - Solo fret flag
+  - Byte 1, bit 7 (`0x80`) - Unused
 - Byte 2: Tilt
   - Has a minimum value of `0x70`, angles below this point register as just `0x00`
 - Byte 3: Whammy bar
