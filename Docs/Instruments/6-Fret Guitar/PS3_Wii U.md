@@ -85,15 +85,23 @@ struct PS3WiiUSixFretGuitarState
 }
 ```
 
-## Keep-Alive Packet
+## Output Reports
 
-This guitar requires a keep-alive packet to be sent every 10 seconds at minimum in order for full input data to be sent. This is sent as an HID output report, and there are 3 variations of this packet used by different projects that all seem to work:
+### Output Type `0x02`: Keep-Alive Packet
 
-- GHLtarUtility: `0x02, 0x08, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00` (though the code seems to only send 8 bytes of this)
-- hid-ghlive-dkms: `0x02, 0x08, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00`
-- GHLPokeMachine: `0x02, 0x02, 0x08, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00`
+This guitar requires a keep-alive packet to be sent every 10 seconds at minimum in order for full input data to be sent. Without it, the strumbar will cut out any fret inputs being held.
 
-Without this, the strumbar will cut out any fret inputs being held.
+Length: 8 bytes
+
+```cpp
+struct PS3GHLGuitarKeepAlive
+{
+    uint8_t reportId = 0x01;
+
+    uint8_t outputType = 0x02;
+    uint8_t data[7] = { 0x08, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00 };
+};
+```
 
 ## References
 
