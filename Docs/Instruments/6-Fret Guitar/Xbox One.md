@@ -22,23 +22,72 @@ This one is interesting, it's basically just a PS3/Wii U GHL guitar masquerading
 
 ### Command ID `0x20`: Standard Input State
 
-This section needs to be verified with additional hardware observations.
-
-This command is the standard input report that the Xbox expects and uses for menu navigation. Presumably, it defaults to this when the keep-alive packet is not sent.
+This command is the standard input report that the Xbox expects and uses for menu navigation. This gets sent whenever the state of an input that is used for menu navigation changes, such as the frets (excluding White 2 and 3) and strumbar.
 
 Length: 14 bytes
 
-No format is known yet, so nothing is listed here currently.
+The format matches that of an Xbox One gamepad, with guitar controls mapped to specific inputs. Only the corresponding guitar controls are listed here.
+
+- Bytes 0-1: 16-bit button bitmask
+  - Byte 0, bit 0 (`0x01`) - Unused
+  - Byte 0, bit 1 (`0x02`) - Unused
+  - Byte 0, bit 2 (`0x04`) - Pause button
+  - Byte 0, bit 3 (`0x08`) - Hero Power button
+  - Byte 0, bit 4 (`0x10`) - Black 1
+  - Byte 0, bit 5 (`0x20`) - Black 2
+  - Byte 0, bit 6 (`0x40`) - White 1
+  - Byte 0, bit 7 (`0x80`) - Black 3
+  - Byte 1, bit 0 (`0x01`) - D-pad up
+  - Byte 1, bit 1 (`0x02`) - D-pad down
+  - Byte 1, bit 2 (`0x04`) - D-pad left
+  - Byte 1, bit 3 (`0x08`) - D-pad right
+  - Byte 1, bit 4 (`0x10`) - Unused
+  - Byte 1, bit 5 (`0x20`) - Unused
+  - Byte 1, bit 6 (`0x40`) - Unused
+  - Byte 1, bit 7 (`0x80`) - Unused
+- Bytes 2-7: Unused
+- Bytes 8-9: Strumbar (little-endian, signed)
+  - Centered at 0, down at -32768, up at 32767.
+- Bytes 10-13: Unused
+
+```cpp
+struct GipGHLNavigationState
+{
+    bool : 1;
+    bool : 1;
+    bool pause : 1;
+    bool heroPower : 1;
+
+    bool black1 : 1;
+    bool black2 : 1;
+    bool white1 : 1;
+    bool black3 : 1;
+
+    bool dpadUp : 1;
+    bool dpadDown : 1;
+    bool dpadLeft : 1;
+    bool dpadRight : 1;
+
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+
+    uint16_t unused1[2];
+
+    int16_t unused2;
+    int16_t strum;
+    int16_t unused3[2];
+}
+```
 
 ### Command ID `0x21`: Guitar Input State
 
-This command is used to send the actual guitar input reports.
-
-The report format here is identical to that of the PS3/Wii U guitar.
+This command is used to send the actual guitar input reports. Unlike the standard input report, it is sent at a consistent poll rate, not just when an input changes.
 
 Length: 27
 
-Bytes:
+The format is identical to that of the PS3/Wii U guitar.
 
 - Byte 0-1: 16-bit button bitmask
   - Byte 0, bit 0 (`0x01`) - White 1
