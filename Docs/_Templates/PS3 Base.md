@@ -107,7 +107,7 @@ struct PS3PlayerLeds
     uint8_t reportId = 0x00;
 
     uint8_t outputType = 0x01;
-    uint8_t unk1 = 0x08;
+    uint8_t unk1 = 0x08; // data length?
     bool player1 : 1;
     bool player2 : 1;
     bool player3 : 1;
@@ -118,6 +118,8 @@ struct PS3PlayerLeds
 ```
 
 ## Feature Reports
+
+### PS3 Descriptor
 
 PS3 controllers have a feature report that can be requested, which contains some data about the controller:
 

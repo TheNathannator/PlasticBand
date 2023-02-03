@@ -198,9 +198,11 @@ struct GipGhlGuitarGenericCommand
 
 #### Sub-command ID `0x01`: LED control
 
+This command sets the player LEDs on the guitar.
+
 Data bytes:
 
-- Byte 0: `0x08`
+- Byte 0: `0x08` (data length?)
 - Byte 1: Player LED bitmask
   - Bit 0: LED 1
   - Bit 1: LED 2
