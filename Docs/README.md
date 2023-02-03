@@ -19,21 +19,24 @@ Data structures in these documents assume that the processor and data are little
 - 5-fret guitar
   - Guitar Hero
     - [x] Xbox 360
-    - [ ] PS2 (assuming they can be differentiated from regular PS3 controllers at all, and hoping the PS2 adapter landscape isn't too fragmented)
+    - [ ] PS2
+      - This is assuming they can be differentiated from regular PS3 controllers at all, and hoping the PS2 adapter landscape isn't too fragmented. Chances are they will require manual mapping, though.
     - [x] PS3
     - [ ] Wii
   - Rock Band
     - [x] Xbox 360
     - [x] Xbox One
+      - [x] Stratocaster
+      - [ ] Jaguar
     - [x] PS2/3
     - [ ] PS4
     - [x] Wii
 - 6-fret guitar
   - [x] Xbox 360
-  - [ ] Xbox One
+  - [x] Xbox One
   - [x] PS3/Wii U
   - [ ] PS4
-  - [ ] iOS
+  - [x] iOS
 - 4-lane (Rock Band) drums
   - [x] Xbox 360
   - [x] Xbox One
@@ -57,7 +60,7 @@ Data structures in these documents assume that the processor and data are little
   - [ ] PS3
   - [x] Wii
 - Other
-  - [ ] Rock Band 4 Legacy Wireless Adapter
+  - [x] Rock Band 4 Legacy Wireless Adapter
   - [x] Rock Band 4 Legacy Wired Adapter
   - [x] Xbox 360 Rock Band 2 Stage Kit
 
