@@ -90,7 +90,8 @@ struct PS3GenericOutputReport
     // The main report ID
     // Might not matter what this is set to, but games on PS3 typically send these with a
     // USB transfer wValue of 0x0201, which would imply an ID of 0x01
-    uint8_t reportId = 0x01;
+    // For safety, a report ID of 0x00 is used
+    uint8_t reportId = 0x00;
 
     // A secondary ID used to determine the type of request
     uint8_t outputType;
@@ -103,7 +104,7 @@ struct PS3GenericOutputReport
 ```cpp
 struct PS3PlayerLeds
 {
-    uint8_t reportId = 0x01;
+    uint8_t reportId = 0x00;
 
     uint8_t outputType = 0x01;
     uint8_t unk1 = 0x08;

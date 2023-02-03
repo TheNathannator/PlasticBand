@@ -118,7 +118,7 @@ Length: 8 bytes
 ```cpp
 struct PS3TurntableEuphoria
 {
-    uint8_t reportId = 0x01;
+    uint8_t reportId = 0x00;
 
     uint8_t outputType = 0x91;
     uint8_t unknown1 = 0x01;

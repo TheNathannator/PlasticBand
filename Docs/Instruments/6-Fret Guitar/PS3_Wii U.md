@@ -96,7 +96,7 @@ Length: 8 bytes
 ```cpp
 struct PS3GHLGuitarKeepAlive
 {
-    uint8_t reportId = 0x01;
+    uint8_t reportId = 0x00;
 
     uint8_t outputType = 0x02;
     uint8_t data[7] = { 0x08, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00 };
