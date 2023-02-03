@@ -26,7 +26,7 @@ Frets:
 | Black 3 | Δ      |
 | White 1 | □      |
 | White 2 | L1     |
-| White 3 | L2     |
+| White 3 | R1     |
 
 Strumbar: Left stick Y
 
