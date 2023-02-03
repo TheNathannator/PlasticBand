@@ -250,7 +250,7 @@ uint8_t otherReports[4][9] = {
   {0x00, 0xE9, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}
 };
 
-send_report(hid_device *dev, PS3WiiProGuitarAutoCalibration *data)
+void send_report(hid_device *dev, PS3WiiProGuitarAutoCalibration *data)
 {
     // Send reports
     hid_send_feature_report(dev, (uint8_t*)data, sizeof(data));
