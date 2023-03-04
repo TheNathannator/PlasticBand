@@ -4,6 +4,8 @@ Some general notes that apply to all 4-lane drumkits regardless of platform.
 
 ## Deciphering Pads and Cymbals
 
+(This section does not apply to Xbox One or PS4 drumkits.)
+
 Decoding the button flags on Rock Band kits is not particularly trivial. There are some pitfalls, complications, and hardware issues that need to be accounted for in order for things to work correctly. I spent a few hours cumulative getting some logic figured out so no one will ever have to do this again, hopefully there are no platform-specific issues or additional hardware bugs to throw a wrench in things lol
 
 This code is designed for checking the instantaneous state, it doesn't work well with methods that only give you an input on the frame it happens. There's some examples and comments on how to filter the instantaneous state further if that's desired.
