@@ -41,7 +41,7 @@ Data structures in these documents assume that the processor and data are little
   - [x] Xbox 360
   - [x] Xbox One
   - [x] PS2/3
-  - [ ] PS4
+  - [x] PS4
   - [x] Wii
 - 5-lane (Guitar Hero) drums
   - [x] Xbox 360
