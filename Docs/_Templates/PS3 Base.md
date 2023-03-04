@@ -11,7 +11,7 @@ Vendor ID is typically `0x12BA` but may vary. The IDs for a device are noted in 
 The base report goes like this:
 
 ```cpp
-struct Ps3Report
+struct PS3Report
 {
     uint8_t reportId;
 
