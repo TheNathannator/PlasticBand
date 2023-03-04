@@ -35,7 +35,7 @@ Data structures in these documents assume that the processor and data are little
   - [x] Xbox 360
   - [x] Xbox One
   - [x] PS3/Wii U
-  - [ ] PS4
+  - [x] PS4
   - [x] iOS
 - 4-lane (Rock Band) drums
   - [x] Xbox 360
