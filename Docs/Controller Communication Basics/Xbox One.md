@@ -16,15 +16,19 @@ There is also the `Windows.Gaming.Input.Custom` namespace, however there is no o
 
 Since all other options fail for reading Xbox One drums/guitars, some other method had to be devised.
 
-Xbox One receivers, at their lowest-level infrastructure, are 802.11 networking devices. They are proprietary, but that doesn't prevent capturing packets through WinPcap/Npcap and USBPcap (note: at the time of writing, Npcap doesn't seem to pick up on Xbox One receivers). These packets can be interpreted, and all data sent from connected devices can be read.
+Xbox One receivers, at their lowest-level infrastructure, are 802.11 networking devices. They are proprietary, but that doesn't prevent capturing packets through WinPcap/Npcap (note: at the time of writing, Npcap doesn't seem to pick up on Xbox One receivers). These packets can be interpreted, and all data sent from connected devices can be read.
 
-Packet sniffing isn't the most elegant solution since it requires a number of dependencies to be installed on the user's PC. It would be nice if there was a more direct way to get this data...
+The captured data starts with a standard 802.11 data header. The only packets of interest are those with a type of Data (2) and a subtype of QoS Data (8), other traffic types are not protocol/input data and should be ignored. The receiver address (address 1) in the header is, well, the address of the Xbox One receiver. The transmitter address is the address of the controller, and the destination address is usually that of the receiver but in some cases it will be slightly different (where the first byte of the address would normally be `0x62`, it will instead be `0x60`).
+
+After the 802.11 header comes the protocol data. It has its own header to describe what is happening, which is then followed by the actual packet data. A reference on this header and the following data may be found here [here](https://gist.github.com/TheNathannator/c5d3b41a12db739b7ffc3d8d1a87c60a).
+
+Packet sniffing isn't the most elegant solution since it requires additional dependencies to be installed on the user's PC. However, it is currently the only way to get data from wireless devices directly without running into certain limitations imposed by the Xbox One driver's interface. This limitation only really matters for things such as remapper programs though, for games this is perfectly fine.
 
 ### Directly via the Driver
 
-And indeed there is! Once the time was put into it, it wasn't difficult to work out what exactly `Windows.Gaming.Input` was doing to interact with Xbox One devices.
+If you want to implement support for Xbox One devices directly and don't care about the limitations it has, the Xbox One driver exposes an interface which may be used to get similar data to that which you would get through packet sniffing. Certain semantics of the protocol are already handled by the time the driver hands over the data to these programs, so it is arguably the easiest method of interacting with Xbox One devices directly to implement. A full writeup on the driver interface may be found [here](https://gist.github.com/TheNathannator/bcebc77e653f71e77634144940871596).
 
-A full writeup on the driver interface may be found [here](https://gist.github.com/TheNathannator/bcebc77e653f71e77634144940871596). This information was determined through [detours and DLL injection](https://github.com/nefarius/XInputHooker), alongside a bit of reverse-engineering and existing knowledge of the Xbox One protocol.
+The limitations this interface has are minor, but make it unusable in certain niche scenarios. Certain types of data are not sent if your app doesn't have a focused, non-console window, including input data. This is a limitation imposed by the driver, and means that only direct users of Xbox One devices should use this interface. While there are potentially ways around it, there are currently no known ways to do so.
 
 In summary:
 
@@ -61,12 +65,8 @@ while (ReadFile(hFile, &readBuffer, sizeof(readBuffer), &bytesRead, nullptr))
 // To send messages, use WriteFile.
 // Sent messages must start with the same header that received messages do.
 BYTE sendBuffer[] { ... };
-WriteFile(hFile, &writeBuffer, sizeof(writeBuffer), nullptr, nullptr)
+WriteFile(hFile, &writeBuffer, sizeof(writeBuffer), nullptr, nullptr);
 ```
-
-A note of warning: this interface does not send input data if your app doesn't have a non-console window. It also does not send input while the window is unfocused. This is a limitation imposed by the driver, and while there are potentially ways around it, more research is needed to determine how it's done.
-
-This limitation means that only direct users of Xbox One devices should use this interface. Remapper programs and the like still have to use the packet sniffing method.
 
 ## Mac
 
@@ -84,3 +84,9 @@ Linux natively supports wired Xbox One controllers through the built-in xpad dri
 - [xpadneo](https://github.com/atar-axis/xpadneo/)
 
 (TODO: how to identify and interface with devices)
+
+## The Shotgun Method (libusb)
+
+Of course, on all of these platforms you can just completely ignore any potential existing solutions and just implement everything yourself using libusb. On Windows this is the most invasive method, as most libusb drivers completely override the original driver and make the device unusable in other programs (however for remapper programs and the like this would be acceptable, as the entire point of the program is to re-interpret the data for other programs).
+
+Side-effects aside, it's the most complicated method of interacting with devices as you have to implement the entire protocol handling yourself. This route is very advanced and not recommended, as there is a lot that can go wrong.
