@@ -4,7 +4,30 @@
 
 The slider bar is a little complicated. Rather than being a bitmask, it uses several unique numbers for various states.
 
-The following is a table of all of its possible values, at least for Guitar Hero 5 guitars:
+### World Tour
+
+The following is a table of all of its possible values for the World Tour slider:
+
+```
+None = 0x7B - 0x7D
+
+G = 0x20 - 0x22
+R = 0x51 - 0x53
+Y = 0x95 - 0x97
+B = 0xBD - 0xBF
+O = 0xFB - 0xFC
+
+GR = 0x39 - 0x3B
+RY = 0x67 - 0x6A
+YB = 0xA7 - 0xA8
+BO = 0xD4 - 0xD6
+```
+
+On this guitar, only individual segments and adjacent segments have values. The values also seem to vary slightly, being ranges instead of just a single one. The capacitive touch strip itself is capable of everything the GH5 slider can do, but the guitar just doesn't handle it in the same way.
+
+### Guitar Hero 5
+
+The following is a table of all of its possible values for the Guitar Hero 5 slider:
 
 ```
 None = 0
