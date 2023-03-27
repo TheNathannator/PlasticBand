@@ -7,9 +7,7 @@
 
 ## Input Info
 
-TODO: Some details may need to be double-checked, notably the d-pad center, pause, Hero Power, and GHTV buttons. 
-
-The d-pad works as normal, with the exception that it is neutral at 15 (`0x0F`) instead of 8.
+The d-pad works as normal.
 
 Frets:
 
@@ -26,19 +24,25 @@ Strumbar: Left stick Y
 
 - `0x80` when not pressed, `0x00` when strumming up, `0xFF` when strumming down.
 
-Whammy: Right stick X
+Whammy: Right stick Y
 
-- Ranges from `0x80` when not pressed to `0xFF` when fully pressed. (Assumed based on other GHL guitars)
+- Ranges from `0x80` when not pressed to `0xFF` when fully pressed.
 
-Tilt: Right stick Y
+Tilt: Right stick X
 
-D-pad center button: Share button
+- Centered at `0x80`, `0xFF` when fully tilted up, `0x00` when fully tilted down.
+- Also mirrored onto accelerometer X (bottom byte is the value, top byte is 0).
+- Accelerometer Y (bytes 22-23) is `0x100` normally, `0x200` when fully tilted up, and `0x000` when fully tilted down.
 
-Pause buttons: L3
+D-pad center button: PlayStation button
+
+Pause buttons: Options button
 
 Hero Power button: R3
 
-GHTV button: L2
+GHTV button: L3
+
+There are some other details as well; these are listed in the state struct below.
 
 ### As A Struct
 
@@ -49,14 +53,14 @@ struct PS4SixFretGuitarState
 
     uint8_t unused1;
     uint8_t strum;
-    uint8_t whammy;
     uint8_t tilt;
+    uint8_t whammy;
 
-    //      0
-    //   7     1
-    // 6    15   2
-    //   5     3
-    //      4
+    //     0
+    //   7   1
+    // 6   8   2
+    //   5   3
+    //     4
     uint8_t dpad : 4;
     bool white1 : 1;
     bool black1 : 1;
@@ -65,14 +69,23 @@ struct PS4SixFretGuitarState
 
     bool white2 : 1;
     bool white3 : 1;
-    bool ghtv : 1;
-    bool : 1;
-    bool dpadCenter : 1;
-    bool : 1;
+    uint8_t : 3;
     bool pause : 1;
+    bool ghtv : 1;
     bool heroPower : 1;
 
-    uint8_t unused2[57];
+    bool dpadCenter : 1;
+    uint8_t : 7;
+
+    uint8_t unused2[11];
+
+    int16_t tilt2;
+    int16_t tiltActive;
+    int16_t unused3;
+
+    bool isConnected; // 0 when guitar not connected, 1 when connected
+
+    uint8_t unused4[38];
 };
 ```
 
