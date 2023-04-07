@@ -28,14 +28,14 @@ Whammy: Right stick X
 
 Accelerometers:
 
-- These guitars feature a full 3-axis accelerometer which output values relative to gravity. The axis names used here match the fields that they're placed on compared to the normal PS3 controller report.
+- These guitars feature a full 3-axis accelerometer which outputs values relative to gravity. The axis names used here match the fields that they're placed on compared to the normal PS3 controller report.
 - X axis (used for standard tilt): Accelerometer X
-  - Above `0x200` the guitar is pointed up, below when the guitar is pointed down.
+  - Above `0x200` when the guitar is pointed up, below when the guitar is pointed down.
 - Y axis: Accelerometer Y
-  - Above `0x200` the guitar is face down, below when the guitar is face up.
+  - Above `0x200` when the guitar is face down, below when the guitar is face up.
 - Z axis: Accelerometer Z
-  - Above `0x200` the guitar is pointed right, below when the guitar is pointed left.
-- Values and ranges may vary.
+  - Above `0x200` when the guitar is pointed right, below when the guitar is pointed left.
+- Values and ranges may vary. All values listed are nominal, for proper handling calibration will need to be provided.
 
 Some World Tour-specific(?) accelerometer quirks:
 
