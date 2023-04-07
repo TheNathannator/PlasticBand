@@ -29,7 +29,7 @@ Data structures in these documents assume that the processor and data are little
       - [x] Stratocaster
       - [ ] Jaguar
     - [x] PS2/3
-    - [ ] PS4
+    - [x] PS4
     - [x] Wii
 - 6-fret guitar
   - [x] Xbox 360
