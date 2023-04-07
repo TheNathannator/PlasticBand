@@ -98,7 +98,7 @@ This guitar requires a keep-alive packet to be sent every 8 seconds at minimum i
 Length: 8 bytes
 
 ```cpp
-struct PS3GHLGuitarKeepAlive
+struct PS4GHLGuitarKeepAlive
 {
     uint8_t reportId = 0x30;
 
