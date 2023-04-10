@@ -14,12 +14,18 @@
     - Secondary:
       - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
       - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Unknown)
-  - Jaguar: (Unknown, possibly the same)
+  - Jaguar:
+    - Primary: `1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE`
+    - Secondary:
+      - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
+      - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Unknown)
 - Class string:
   - Stratocaster:
     - Primary: `MadCatz.Xbox.Guitar.Stratocaster`
     - Secondary: `Windows.Xbox.Input.NavigationController`
-  - Jaguar: (Unknown)
+  - Jaguar:
+    - Primary: `PDP.Xbox.Guitar.Jaguar`
+    - Secondary: `Windows.Xbox.Input.NavigationController`
 
 ## Input Command Info
 

@@ -26,8 +26,6 @@ Data structures in these documents assume that the processor and data are little
   - Rock Band
     - [x] Xbox 360
     - [x] Xbox One
-      - [x] Stratocaster
-      - [ ] Jaguar
     - [x] PS2/3
     - [x] PS4
     - [x] Wii
