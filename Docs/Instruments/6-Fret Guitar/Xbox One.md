@@ -11,7 +11,7 @@ This one is interesting, it's basically just a PS3/Wii U GHL guitar masquerading
   - Secondary:
     - `082E402C-07DF-45E1-A5AB-A3127AF197B5` (Gamepad)
     - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Unknown)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
 - Class strings:
   - Primary: `Activision.Xbox.Input.GH7`
   - Secondary:

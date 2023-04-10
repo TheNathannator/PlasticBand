@@ -13,7 +13,7 @@
   - Primary (PDP): `A503F9B0-955E-47C4-A2ED-B1336FA7703E`
   - Secondary:
     - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Unknown)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
 - Class strings:
   - Primary (MadCatz): `MadCatz.Xbox.Drums.Glam`
   - Primary (PDP): `PDP.Xbox.Drums.Tablah`

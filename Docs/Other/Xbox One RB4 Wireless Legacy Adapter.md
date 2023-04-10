@@ -8,7 +8,7 @@
   - Primary: `AF259D0F-76B0-4CDB-BFD1-CEA8C0A8F5EE`
   - Secondary:
     - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Unknown)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
 - Class strings:
   - Primary: `MadCatz.Xbox.Module.Brangus`
   - Secondary: `Windows.Xbox.Input.NavigationController`
