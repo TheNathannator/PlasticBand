@@ -48,10 +48,10 @@ struct PS4FourLaneDrumsState
     //   5   3
     //     4 
     uint8_t dpad : 4;
-    bool square : 1;
-    bool cross : 1;
-    bool circle : 1;
-    bool triangle : 1;
+    bool square_blue : 1;
+    bool cross_green : 1;
+    bool circle_red : 1;
+    bool triangle_yellow : 1;
 
     bool kick1 : 1;
     bool kick2 : 1;

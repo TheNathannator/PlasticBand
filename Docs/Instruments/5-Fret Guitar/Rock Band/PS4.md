@@ -3,8 +3,8 @@
 ## Device Info
 
 - Vendor/product ID:
-  - MadCatz: `0738:8261`
-  - PDP: `0E6F:0173`
+  - Stratocaster (MadCatz): `0738:8261`
+  - Jaguar (PDP): `0E6F:0173`
 
 ## Input Info
 

@@ -238,7 +238,7 @@ struct PS3WiiProGuitarAutoCalibration
     uint8_t reportId = 0x00;
 
     uint8_t unk1[7] = {0xE9, 0x00, 0x83, 0x1B, 0x00, 0x00, 0x00};
-    uint8_t enabledSensor;
+    uint8_t sensorState;
 };
 
 uint8_t otherReports[4][9] = {
@@ -251,7 +251,7 @@ uint8_t otherReports[4][9] = {
 void send_report(hid_device *dev, PS3WiiProGuitarAutoCalibration *data)
 {
     // Send reports
-    hid_send_feature_report(dev, (uint8_t*)data, sizeof(data));
+    hid_send_feature_report(dev, (uint8_t*)data, sizeof(*data));
     for (int i = 0; i < 4; i++)
     {
         hid_send_feature_report(dev, otherReports[i], sizeof(otherReports[i]));
