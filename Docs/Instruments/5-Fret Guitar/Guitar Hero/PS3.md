@@ -2,7 +2,9 @@
 
 ## Device Info
 
-- Vendor/product ID: `12BA:0100`
+- Vendor/product ID:
+  - PS3 guitars: `12BA:0100`
+  - World Tour PC guitar: `1430:474C`
 - PS3 ID: `0x06`
 
 ## Input Info
