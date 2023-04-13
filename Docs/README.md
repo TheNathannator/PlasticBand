@@ -62,6 +62,12 @@ Data structures in these documents assume that the processor and data are little
   - [x] Rock Band 4 Legacy Wireless Adapter
   - [x] Rock Band 4 Legacy Wired Adapter
   - [x] Xbox 360 Rock Band 2 Stage Kit
+  - [ ] Raphnet Adapter
+    - [ ] With a guitar connected
+    - [ ] With a drumkit connected
+    - [ ] With a turntable connected
+    - [ ] etc...
+  - [ ] Ardwiino Devices
 
 There may be other things not listed here, search for `TODO` in all files to see what else there is.
 
