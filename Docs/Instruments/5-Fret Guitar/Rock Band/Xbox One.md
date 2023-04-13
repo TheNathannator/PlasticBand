@@ -6,23 +6,15 @@
   - Stratocaster (MadCatz): `0738:4161`
   - Jaguar (PDP): `0E6F:0170`
 - Interface GUID:
-  - Stratocaster:
-    - Primary: `0D2AE438-7F7D-4933-8693-30FC55018E77`
-    - Secondary:
-      - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-      - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
-  - Jaguar:
-    - Primary: `1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE`
-    - Secondary:
-      - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-      - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
+  - Primary (Stratocaster): `0D2AE438-7F7D-4933-8693-30FC55018E77`
+  - Primary (Jaguar): `1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE`
+  - Secondary:
+    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
 - Class string:
-  - Stratocaster:
-    - Primary: `MadCatz.Xbox.Guitar.Stratocaster`
-    - Secondary: `Windows.Xbox.Input.NavigationController`
-  - Jaguar:
-    - Primary: `PDP.Xbox.Guitar.Jaguar`
-    - Secondary: `Windows.Xbox.Input.NavigationController`
+  - Primary (Stratocaster): `MadCatz.Xbox.Guitar.Stratocaster`
+  - Primary (Jaguar): `PDP.Xbox.Guitar.Jaguar`
+  - Secondary: `Windows.Xbox.Input.NavigationController`
 
 ## Input Command Info
 
