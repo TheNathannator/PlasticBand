@@ -2,12 +2,9 @@
 
 ## Device Info
 
-- Vendor ID:
-  - MadCatz: `0x0738`
-  - PDP: `0x0E6F`
-- Product ID:
-  - MadCatz: `0x8261`
-  - PDP: `0x0173`
+- Vendor/product ID:
+  - MadCatz: `0738:8261`
+  - PDP: `0E6F:0173`
 
 ## Input Info
 

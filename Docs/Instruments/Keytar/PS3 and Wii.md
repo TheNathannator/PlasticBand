@@ -4,18 +4,16 @@
 
 PS3:
 
-- Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
-- Product ID:
-  - Keyboard: `0x2330`
-  - MIDI Pro Adapter in keys mode: `0x2338`
+- Vendor/product ID:
+  - Keyboard: `12BA:2330`
+  - MIDI Pro Adapter in keys mode: `12BA:2338`
 - PS3 ID: 
 
 Wii:
 
-- Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
-- Product ID:
-  - Keyboard: `0x3330`
-  - MIDI Pro Adapter in keys mode: `0x3338`
+- Vendor/product ID:
+  - Keyboard: `12BA:3330`
+  - MIDI Pro Adapter in keys mode: `12BA:3338`
 
 ## Input Info
 

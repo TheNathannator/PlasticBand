@@ -4,8 +4,7 @@ This one is interesting, it's basically just a PS3/Wii U GHL guitar masquerading
 
 ## Controller Info
 
-- Vendor ID: `0x1430`
-- Product ID: `0x079B`
+- Vendor/product ID: `1430:079B`
 - Interface GUIDs:
   - Primary: `FD12FDD9-8E73-47C7-A231-96268C38009A`
   - Secondary:

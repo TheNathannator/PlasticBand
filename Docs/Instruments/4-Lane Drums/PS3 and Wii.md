@@ -4,19 +4,17 @@
 
 PS3:
 
-- Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
-- Product ID:
-  - Drumkit: `0x0210` ("Harmonix Drum Kit for PlayStation(R)3")
-  - MIDI Pro Adapter in drums mode: `0x0218`
+- Vendor/product ID:
+  - Drumkit: `12BA:0210`
+  - MIDI Pro Adapter in drums mode: `12BA:0218`
 - PS3 ID: 
 
 Wii:
 
-- Vendor ID: `0x1BAD` ("Harmonix Music")
-- Product ID:
-  - RB1: `0x0005`
-  - RB2 and later: `0x3110`
-  - MIDI Pro Adapter in drums mode: `0x3118`
+- Vendor/product ID:
+  - RB1: `1BAD:0005`
+  - RB2 and later: `1BAD:3110`
+  - MIDI Pro Adapter in drums mode: `1BAD:3118`
 
 ## Input Info
 

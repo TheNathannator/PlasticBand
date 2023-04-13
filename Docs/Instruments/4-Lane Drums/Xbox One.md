@@ -2,12 +2,9 @@
 
 ## Controller Info
 
-- Vendor ID:
-  - MadCatz: `0x0738`
-  - PDP: `0x0E6F`
-- Product ID:
-  - MadCatz: `0x4262`
-  - PDP: `0x0171`
+- Vendor/product ID:
+  - MadCatz: `0738:4262`
+  - PDP: `0E6F:0171`
 - Interface GUIDs:
   - Primary (MadCatz): `06182893-CCE0-4B85-9271-0A10DBAB7E07`
   - Primary (PDP): `A503F9B0-955E-47C4-A2ED-B1336FA7703E`

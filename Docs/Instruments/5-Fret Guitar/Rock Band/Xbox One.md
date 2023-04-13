@@ -2,12 +2,9 @@
 
 ## Controller Info
 
-- Vendor ID:
-  - Stratocaster (MadCatz): `0x0738`
-  - Jaguar (PDP): `0x0E6F`
-- Product ID:
-  - Stratocaster: `0x4161`
-  - Jaguar: `0x0170`
+- Vendor/product ID:
+  - Stratocaster (MadCatz): `0738:4161`
+  - Jaguar (PDP): `0E6F:0170`
 - Interface GUID:
   - Stratocaster:
     - Primary: `0D2AE438-7F7D-4933-8693-30FC55018E77`

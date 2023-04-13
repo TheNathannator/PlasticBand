@@ -4,16 +4,14 @@
 
 PS3:
 
-- Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
-- Product ID: `0x0200` ("Harmonix Guitar for PlayStation(R)3")
+- Vendor/product ID: `0x12BA:0200`
 - PS3 ID: `0x00`
 
 Wii:
 
-- Vendor ID: `0x1BAD` ("Harmonix Music")
-- Product ID:
-  - RB1: `0x0004`
-  - RB2 and later: `0x3010`
+- Vendor/product ID:
+  - RB1: `1BAD:0004`
+  - RB2 and later: `1BAD:3010`
 
 ## Input Info
 

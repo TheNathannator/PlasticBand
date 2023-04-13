@@ -2,8 +2,7 @@
 
 ## Device Info
 
-- Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
-- Product ID: `0x0120` ("RedOctane Drum Kit for PlayStation(R)3")
+- Vendor/product ID: `12BA:0120`
 - PS3 ID: 
 
 ## Input Info

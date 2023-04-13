@@ -2,8 +2,7 @@
 
 ## Device Info
 
-- Vendor ID: (Unknown) 
-- Product ID: (Unknown) 
+- Vendor/product ID: Unknown 
 - Device name: `Ble Guitar`
 - Bluetooth LE GATT characteristic UUID: `533E1524-3ABE-F33F-CD00-594E8B0A8EA3`
 

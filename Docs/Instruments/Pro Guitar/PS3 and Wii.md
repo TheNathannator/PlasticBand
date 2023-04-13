@@ -4,24 +4,22 @@
 
 PS3:
 
-- Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
-- Product ID:
-  - Mustang: `0x2430`
-  - Squire: `0x2530` (assumed based on patterns with other RB device PIDs)
+- Vendor/product ID:
+  - Mustang: `12BA:2430`
+  - Squire: `12BA:2530` (assumed based on patterns with other RB device PIDs)
   - MIDI Pro Adapter in guitar mode:
-    - Default: `0x2538`
-    - Using the Mustang: `0x2438`
+    - Default: `12BA:2538`
+    - Using the Mustang: `12BA:2438`
 - PS3 ID: 
 
 Wii:
 
-- Vendor ID: `0x1BAD` ("Harmonix Music")
-- Product ID:
-  - Mustang: `0x3430`
-  - Squire: `0x3530` (assumed based on patterns with other RB device PIDs)
+- Vendor/product ID:
+  - Mustang: `1BAD:3430`
+  - Squire: `1BAD:3530` (assumed based on patterns with other RB device PIDs)
   - MIDI Pro Adapter in guitar mode:
-    - Default: `0x3538`
-    - Using the Mustang: `0x3438`
+    - Default: `1BAD:3538`
+    - Using the Mustang: `1BAD:3438`
 
 ## Input Info
 

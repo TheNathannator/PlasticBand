@@ -2,8 +2,7 @@
 
 ## Device Info
 
-- Vendor ID: `0x12BA` ("Licensed by Sony Computer Entertainment America")
-- Product ID: `0x07BB`
+- Vendor ID: `12BA:07BB`
 
 ## Input Info
 
