@@ -9,8 +9,7 @@ Resources to assist in the documentation process:
 
 ## Controller Info
 
-- Vendor ID:
-- Product ID:
+- Vendor/product ID: `<Hex vendor ID>:<Hex product ID>`
 - Interface GUIDs:
   - Primary:
   - Secondary:

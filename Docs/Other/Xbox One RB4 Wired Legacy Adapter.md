@@ -6,8 +6,7 @@ Documenting this device is a bit pointless with regards to PC use since Xbox 360
 
 ## Device Info
 
-- Vendor ID: `0x0E6F`
-- Product ID: `0x0175`
+- Vendor/product ID: `0E6F:0175`
 - Interface GUIDs:
   - Primary: `FD019937-9816-45E7-8034-CFD6AB3AE6BF`
   - Secondary:

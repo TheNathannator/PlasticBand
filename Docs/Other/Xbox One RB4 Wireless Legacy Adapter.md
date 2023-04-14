@@ -2,8 +2,7 @@
 
 ## Device Info
 
-- Vendor ID: `0x0738`
-- Product ID: `0x4164`
+- Vendor/product ID: `0738:4164`
 - Interface GUIDs:
   - Primary: `AF259D0F-76B0-4CDB-BFD1-CEA8C0A8F5EE`
   - Secondary:

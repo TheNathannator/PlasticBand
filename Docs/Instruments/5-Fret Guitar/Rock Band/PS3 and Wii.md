@@ -4,7 +4,7 @@
 
 PS3:
 
-- Vendor/product ID: `0x12BA:0200`
+- Vendor/product ID: `12BA:0200`
 - PS3 ID: `0x00`
 
 Wii:

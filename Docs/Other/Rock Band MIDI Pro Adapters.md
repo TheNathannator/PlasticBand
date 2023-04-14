@@ -26,21 +26,19 @@ Xbox 360:
 
 PS3:
 
-- Vendor ID: `0x12BA`
-- Product ID:
-  - Guitar mode with the Pro Mustang: `0x2438`
-  - Guitar mode with the Pro Squire: `0x2538`
-  - Drums mode: `0x0218`
-  - Keyboard mode: `0x2338`
+- Vendor/product ID:
+  - Guitar mode (Mustang): `12BA:2438`
+  - Guitar mode (Squire): `12BA:2538`
+  - Drums mode: `12BA:0218`
+  - Keyboard mode: `12BA:2338`
 
 Wii:
 
-- Vendor ID: `0x1BAD`
-- Product ID:
-  - Guitar mode with the Pro Mustang: `0x3438`
-  - Guitar mode with the Pro Squire: `0x3538`
-  - Drums mode: `0x3138`
-  - Keyboard mode: `0x3338`
+- Vendor/product ID:
+  - Guitar mode (Mustang): `1BAD:3438`
+  - Guitar mode (Squire): `1BAD:3538`
+  - Drums mode: `1BAD:3138`
+  - Keyboard mode: `1BAD:3338`
 
 ## References
 

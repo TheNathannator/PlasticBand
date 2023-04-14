@@ -2,7 +2,7 @@
 
 ## Device Info
 
-- Vendor/product ID: `0x12BA:0140`
+- Vendor/product ID: `12BA:0140`
 - PS3 ID: 
 
 ## Input Info
