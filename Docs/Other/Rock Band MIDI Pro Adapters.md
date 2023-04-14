@@ -17,9 +17,8 @@ Some product IDs are assumed based on observed patterns:
 
 Xbox 360:
 
-- XInput Type: Gamepad (1)
-- XInput Subtype:
-- Product ID:
+- XInput type: Gamepad (1)
+- XInput subtype:
   - Guitar mode: 25, not part of XInput standards
   - Drums mode: Drumkit (8)
   - Keyboard mode: 15, not part of XInput standards
@@ -31,6 +30,10 @@ PS3:
   - Guitar mode (Squire): `12BA:2538`
   - Drums mode: `12BA:0218`
   - Keyboard mode: `12BA:2338`
+- Revision:
+  - Default: `0x0001`
+  - Drums mode: `0x0200`
+- Device name:
 
 Wii:
 
@@ -39,6 +42,8 @@ Wii:
   - Guitar mode (Squire): `1BAD:3538`
   - Drums mode: `1BAD:3138`
   - Keyboard mode: `1BAD:3338`
+- Revision:
+- Device name:
 
 ## References
 

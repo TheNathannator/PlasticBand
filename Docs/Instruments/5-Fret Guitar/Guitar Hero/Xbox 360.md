@@ -4,8 +4,8 @@
 
 TODO: Check World Tour, GH5, and Warriors of Rock guitars
 
-- XInput Type: Gamepad (1)
-- XInput Subtype: Guitar Alternate (7)
+- XInput type: Gamepad (1)
+- XInput subtype: Guitar Alternate (7)
 
 ## Input Info
 

@@ -4,16 +4,18 @@
 
 PS3:
 
-- Vendor/product ID:
-  - Keyboard: `12BA:2330`
-  - MIDI Pro Adapter in keys mode: `12BA:2338`
-- PS3 ID: 
+- Vendor/product ID: `12BA:2330`
+- Revision: `0x0005`
+- Device name:
+- PS3 ID:
 
 Wii:
 
-- Vendor/product ID:
-  - Keyboard: `12BA:3330`
-  - MIDI Pro Adapter in keys mode: `12BA:3338`
+- Vendor/product ID: `12BA:3330`
+- Revision: `0x0005`
+- Device name:
+
+MIDI Pro Adapter information may be found in [its own document](../../Other/Rock%20Band%20MIDI%20Pro%20Adapters.md).
 
 ## Input Info
 
@@ -110,7 +112,7 @@ struct PS3KeytarState
     //   7   1
     // 6   8   2
     //   5   3
-    //     4 
+    //     4
     uint8_t dpad;
 
     uint8_t unused1[2];

@@ -5,6 +5,18 @@
 - Vendor/product ID:
   - PS3 guitars: `12BA:0100`
   - World Tour PC guitar: `1430:474C`
+- Revision:
+  - Les Paul:
+  - World Tour (PS3): `0x0108`
+  - World Tour (PC):
+  - GH5:
+  - WoR:
+- Device name:
+  - Les Paul:
+  - World Tour (PS3): `Guitar Hero4 for PlayStation (R) 3`
+  - World Tour (PC):
+  - GH5: `Guitar Hero5 for PlayStation (R) 3`
+  - WoR:
 - PS3 ID: `0x06`
 
 ## Input Info

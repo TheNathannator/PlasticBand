@@ -4,8 +4,8 @@ TODO: This document was written without actual hardware to test with. Everything
 
 ## Controller Info
 
-- XInput Type: Gamepad (1)
-- XInput Subtype: Drumkit (8)
+- XInput type: Gamepad (1)
+- XInput subtype: Drumkit (8)
 
 Guitar Hero kits differentiate themselves from Rock Band kits by holding the left stick click input. This conflicts with the second kick pedal input on Rock Band kits, but should be easy to detect when first finding a drumkit. The only issue will be if a Rock Band kit user happens to be holding the second pedal as the kit gets detected, which isn't likely but is entirely possible.
 

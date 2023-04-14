@@ -2,8 +2,8 @@
 
 ## Controller Info
 
-- XInput Type: Gamepad (1)
-- XInput Subtype: Guitar (6)
+- XInput type: Gamepad (1)
+- XInput subtype: Guitar (6)
 
 TODO: Rock Band is able to differentiate between RB guitars with auto-calibration and those without, most likely either a flag or reported vibration capabilities
 

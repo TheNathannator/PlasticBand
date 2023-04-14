@@ -2,8 +2,8 @@
 
 ## Controller Info
 
-- XInput Type: Gamepad (1)
-- XInput Subtype: 9, not part of XInput standards
+- XInput type: Gamepad (1)
+- XInput subtype: 9, not part of XInput standards
 
 ## Input Info
 

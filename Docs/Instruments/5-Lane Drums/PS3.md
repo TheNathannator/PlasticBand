@@ -3,7 +3,11 @@
 ## Device Info
 
 - Vendor/product ID: `12BA:0120`
-- PS3 ID: 
+- Revision:
+  - World Tour:
+  - GH5/Band Hero/WoR:
+- Device name:
+- PS3 ID:
 
 ## Input Info
 

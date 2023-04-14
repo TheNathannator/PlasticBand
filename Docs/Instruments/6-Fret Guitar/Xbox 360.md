@@ -2,8 +2,8 @@
 
 ## Controller Info
 
-- XInput Type: Gamepad (1)
-- XInput Subtype: Guitar Alternate (7)
+- XInput type: Gamepad (1)
+- XInput subtype: Guitar Alternate (7)
   - Annoyingly, the subtype is not unique, so additional capabilities info is required.
 - XInput Flags: Voice supported, plug-in modules supported, no navigation (`0x1C`)
   - Interestingly, the no navigation flag is set, but clearly this shouldn't be the case, it has equivalents for d-pad, ABXY, start, back, and the guide button. This flag is probably how Guitar Hero Live distinguishes between 5-fret and 6-fret guitars.

@@ -2,8 +2,8 @@
 
 ## Controller Info
 
-- XInput Type: Gamepad (1)
-- XInput Subtype: Drumkit (8)
+- XInput type: Gamepad (1)
+- XInput subtype: Drumkit (8)
 
 ## Input Info
 

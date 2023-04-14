@@ -4,7 +4,13 @@
 
 - Vendor/product ID:
   - MadCatz: `0738:8262`
-  - PDP: `0E6F` (product ID not known yet)
+  - PDP: `0E6F:????` (product ID not known yet)
+- Revision:
+  - MadCatz:
+  - PDP:
+- Device name:
+  - MadCatz:
+  - PDP:
 
 ## Input Info
 
@@ -46,7 +52,7 @@ struct PS4FourLaneDrumsState
     //   7   1
     // 6   8   2
     //   5   3
-    //     4 
+    //     4
     uint8_t dpad : 4;
     bool square_blue : 1;
     bool cross_green : 1;

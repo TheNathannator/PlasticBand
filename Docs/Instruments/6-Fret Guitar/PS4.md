@@ -3,6 +3,8 @@
 ## Device Info
 
 - Vendor/product ID: `1430:07BB`
+- Revision:
+- Device name: 
 
 ## Input Info
 

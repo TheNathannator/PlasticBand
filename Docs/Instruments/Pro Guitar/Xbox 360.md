@@ -1,11 +1,9 @@
 # Xbox 360 Rock Band 3 Pro Guitar
 
-TODO: This document was written without actual hardware to test with. Everything here needs to be verified, and missing information needs to be filled out. 
-
 ## Controller Info
 
-- XInput Type: Gamepad (1)
-- XInput Subtype: 25, not part of XInput standards
+- XInput type: Gamepad (1)
+- XInput subtype: 25, not part of XInput standards
 
 ## Input Info
 

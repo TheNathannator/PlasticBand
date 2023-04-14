@@ -3,6 +3,8 @@
 ## Device Info
 
 - Vendor/product ID: `12BA:074B`
+- Revision:
+- Device name: 
 - PS3 ID: 
 
 ## Input Info

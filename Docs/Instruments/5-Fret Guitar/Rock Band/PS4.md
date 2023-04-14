@@ -5,6 +5,12 @@
 - Vendor/product ID:
   - Stratocaster (MadCatz): `0738:8261`
   - Jaguar (PDP): `0E6F:0173`
+- Revision:
+  - Stratocaster:
+  - Jaguar:
+- Device name:
+  - Stratocaster:
+  - Jaguar:
 
 ## Input Info
 
@@ -62,7 +68,7 @@ struct PS4RockBandGuitarState
     //   7   1
     // 6   8   2
     //   5   3
-    //     4 
+    //     4
     uint8_t dpad_strum : 4;
     bool blue : 1;
     bool green : 1;

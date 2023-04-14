@@ -38,7 +38,7 @@ struct PS3Report
     //   7   1
     // 6   8   2
     //   5   3
-    //     4 
+    //     4
     uint8_t dpad;
 
     // Stick axes

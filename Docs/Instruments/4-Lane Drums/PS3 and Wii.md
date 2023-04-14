@@ -6,15 +6,25 @@ PS3:
 
 - Vendor/product ID:
   - Drumkit: `12BA:0210`
-  - MIDI Pro Adapter in drums mode: `12BA:0218`
-- PS3 ID: 
+- Revision:
+  - RB1: `0x1000`
+  - RB2:
+  - RB3:
+- Device name:
+- PS3 ID:
 
 Wii:
 
 - Vendor/product ID:
   - RB1: `1BAD:0005`
   - RB2 and later: `1BAD:3110`
-  - MIDI Pro Adapter in drums mode: `1BAD:3118`
+- Revision:
+  - RB1:
+  - RB2:
+  - RB3:
+- Device name:
+
+MIDI Pro Adapter information may be found in [its own document](../../Other/Rock%20Band%20MIDI%20Pro%20Adapters.md).
 
 ## Input Info
 

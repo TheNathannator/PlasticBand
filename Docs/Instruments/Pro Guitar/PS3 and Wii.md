@@ -4,22 +4,26 @@
 
 PS3:
 
-- Vendor/product ID:
-  - Mustang: `12BA:2430`
-  - Squire: `12BA:2530` (assumed based on patterns with other RB device PIDs)
-  - MIDI Pro Adapter in guitar mode:
-    - Default: `12BA:2538`
-    - Using the Mustang: `12BA:2438`
-- PS3 ID: 
+- Mustang:
+  - Vendor/product ID: `12BA:2430`
+  - Revision: `0x0000`
+  - Device name:
+  - PS3 ID:
+- Squire:
+  - Vendor/product ID: `12BA:2530` (assumed based on patterns with other RB device PIDs)
+  - Revision:
+  - Device name:
+  - PS3 ID:
 
 Wii:
 
 - Vendor/product ID:
   - Mustang: `1BAD:3430`
   - Squire: `1BAD:3530` (assumed based on patterns with other RB device PIDs)
-  - MIDI Pro Adapter in guitar mode:
-    - Default: `1BAD:3538`
-    - Using the Mustang: `1BAD:3438`
+- Revision: `0x0005`
+- Device name:
+
+MIDI Pro Adapter information may be found in [its own document](../../Other/Rock%20Band%20MIDI%20Pro%20Adapters.md).
 
 ## Input Info
 
@@ -105,7 +109,7 @@ struct Ps3Report
     //   7   1
     // 6   8   2
     //   5   3
-    //     4 
+    //     4
     uint8_t dpad;
 
     uint8_t unused1[2];
@@ -131,7 +135,7 @@ struct Ps3Report
     bool orangeFret: 1;
     uint8_t highEVelocity : 7;
     bool : 1;
-  
+
     uint8_t autoCal_Microphone; // When the sensor isn't activated, this
     uint8_t autoCal_Light; // and this just duplicate the tilt axis
     uint8_t tilt;

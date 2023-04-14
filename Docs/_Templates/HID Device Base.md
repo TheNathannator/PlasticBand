@@ -15,9 +15,11 @@ Resources to assist in the documentation process:
 
 - Vendor/product ID: `<Hex vendor ID>:<Hex product ID>` (no `0x` prefixes)
   - One way vendor and product IDs may be retrieved is through Device Manager on Windows. HID APIs should also be capable of reporting this information, and they are also typically included in device instance paths.
-- Device Descriptor: (link to a descriptor dump in the [Descriptor Dumps](../Descriptor%20Dumps/) folder)
+- Revision: `<Hex binary-coded decimal revision>`
+- Device name: `<Name reported by the device>`
+- Device descriptor (if available): (link to a descriptor dump in the [Descriptor Dumps](../Descriptor%20Dumps/) folder)
 
-If there are other IDs or properties that are necessary for distinguishing a device, those should be listed here as well.
+If there are other IDs or properties that are necessary for a device, those should be listed here as well.
 
 ## Additional Steps
 

@@ -8,8 +8,8 @@ Resources to assist in the documentation process:
 
 ## Controller Info
 
-- XInput Type: Name (Number)
-- XInput Subtype: Name (Number)
+- XInput type: Name (Number)
+- XInput subtype: Name (Number)
   - If the subtype is not part of standard XInput subtypes, instead use "Number, not part of XInput standards" (replace `Number` with the subtype number).
 
 XInput type and subtype may be retrieved through the XInputGetCapabilities function of XInput.
