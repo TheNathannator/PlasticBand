@@ -16,6 +16,9 @@ Data structures in these documents assume that the processor and data are little
 
 ## Todo List
 
+- All HID devices:
+  - [ ] Revision numbers
+  - [ ] Reported device names
 - 5-fret guitar
   - Guitar Hero
     - [x] Xbox 360
