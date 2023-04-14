@@ -2,7 +2,7 @@
 
 ## Device Info
 
-- Vendor ID: `12BA:07BB`
+- Vendor ID: `1430:07BB`
 
 ## Input Info
 
