@@ -13,11 +13,9 @@ Resources to assist in the documentation process:
 
 ## Device Info
 
-One way vendor and product IDs may be retrieved is through Device Manager on Windows. HID APIs should also be capable of reporting this information, and they are also typically included in device instance paths.
-
 - Vendor/product ID: `<Hex vendor ID>:<Hex product ID>` (no `0x` prefixes)
-- Device Descriptor: Link (set this to link to a descriptor dump in the [Descriptor Dumps](../Descriptor%20Dumps/) folder, such as `[Link](../Descriptor%20Dumps/PS3/PS3 Rock Band Guitar.txt)`)
-  - Some HID devices might have broken report descriptors. If this is the case, make sure to note it as such.
+  - One way vendor and product IDs may be retrieved is through Device Manager on Windows. HID APIs should also be capable of reporting this information, and they are also typically included in device instance paths.
+- Device Descriptor: (link to a descriptor dump in the [Descriptor Dumps](../Descriptor%20Dumps/) folder)
 
 If there are other IDs or properties that are necessary for distinguishing a device, those should be listed here as well.
 
@@ -35,7 +33,7 @@ Output reports should be detailed here, if applicable.
 
 ### As A Struct
 
-You may include C/C++ struct representations of the data reports here.
+C/C++ struct representations of the data reports are listed here.
 
 ```cpp
 // Remove the comments here when done, as these are for tutorial purposes only.

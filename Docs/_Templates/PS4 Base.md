@@ -96,7 +96,7 @@ struct PS4WirelessReport : PS4Report
 };
 ```
 
-The CRC is calculated using the standard CRC32 algorithm, however you *must* prepend the Bluetooth HID command byte used for input reports (`0xA1`) to the beginning of the report for it to calculate correctly (assuming you are just using HID to read the device). For example, if the report starts with `01 80 80 80 80 ...`, the CRC buffer should start with `A1 01 80 80 80 80 ...`.
+The CRC is calculated using the standard CRC32 algorithm, however you *must* prepend the Bluetooth HID command byte used for input reports (`0xA1`) to the beginning of the buffer for it to calculate correctly (assuming you are just using HID to read the device). For example, if the report starts with `01 80 80 80 80 ...`, the CRC buffer should start with `A1 01 80 80 80 80 ...`.
 
 ## References
 

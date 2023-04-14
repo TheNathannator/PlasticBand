@@ -1,10 +1,8 @@
 # Communicating with PS3 Guitars, Drums, and Similar
 
-The PS3 Guitar Hero and Rock Band peripherals are standard HID devices that all follow a similar report format.
+The PS3 Guitar Hero and Rock Band peripherals are standard HID devices that all follow a similar report format. The Wii Rock Band peripherals follow this format as well. However, the DualShock 3 does not necessarily follow this format itself. Presumably the PS3/4/5 properly makes use of the HID descriptor for its input handling rather than assuming a specific state format.
 
-Unfortunately, if these devices are anything like a regular PS3 gamepad, the HID descriptor is not formed correctly. Manual parsing of the input report or use of a fixed descriptor is needed.
-
-Vendor ID is typically `0x12BA` but may vary. The IDs for a device are noted in the docs for the device.
+The HID descriptor for these devices unfortunately does not expose all of the axes with well-defined usage values, and instead throws the pressure and accelerometer axes into the vendor-defined usage page. Manual handling of these values is required if they contain desired state.
 
 ## Input Reports
 
@@ -80,7 +78,7 @@ What everything means changes between devices, but the amount of data does not.
 
 ## Output Reports
 
-These output reports are ones that all of the PS3 devices documented in this repo support. These do not apply to PS3 gamepad controllers, those use a different output report format.
+These output reports are ones that all of the PS3 devices documented in this repo support. These do not apply to DualShock 3 controllers, those use a different output report format.
 
 The output reports follow this general format:
 
@@ -90,7 +88,8 @@ struct PS3GenericOutputReport
     // The main report ID
     // Might not matter what this is set to, but games on PS3 typically send these with a
     // USB transfer wValue of 0x0201, which would imply an ID of 0x01
-    // For safety, a report ID of 0x00 is used
+    // For safety, a report ID of 0x00 is used, as there doesn't seem to
+    // actually be any report ID specified by the device
     uint8_t reportId = 0x00;
 
     // A secondary ID used to determine the type of request
@@ -100,6 +99,8 @@ struct PS3GenericOutputReport
 ```
 
 ### Output Type `0x01`: Player LEDs
+
+This report is used to set the player LEDs on the device.
 
 ```cpp
 struct PS3PlayerLeds
@@ -117,9 +118,7 @@ struct PS3PlayerLeds
 }
 ```
 
-## Feature Reports
-
-### PS3 Descriptor
+## Feature Report
 
 PS3 controllers have a feature report that can be requested, which contains some data about the controller:
 
@@ -136,7 +135,7 @@ struct PS3Descriptor
 }
 ```
 
-The `ps3_id` field varies between devices, on standard PS3 gamepads it's `0x07`. It could potentially be used as another way of identifying devices.
+The exact purpose of this data is unknown, the only value that's observed as changing between different devices is the `ps3_id` field (which is `0x07` on DualShock 3s). It could potentially be used as another way of identifying devices if it is fully unique between device types.
 
 ## References
 
