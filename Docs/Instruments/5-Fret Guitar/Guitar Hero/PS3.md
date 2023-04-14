@@ -12,9 +12,9 @@
   - GH5:
   - WoR:
 - Device name:
-  - Les Paul:
+  - Les Paul: `Guitar Hero3 for PlayStation (R) 3`
   - World Tour (PS3): `Guitar Hero4 for PlayStation (R) 3`
-  - World Tour (PC):
+  - World Tour (PC): `Guitar Hero for PC/MAC`
   - GH5: `Guitar Hero5 for PlayStation (R) 3`
   - WoR:
 - PS3 ID: `0x06`

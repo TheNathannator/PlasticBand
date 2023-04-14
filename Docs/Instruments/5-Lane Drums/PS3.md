@@ -7,6 +7,10 @@
   - World Tour:
   - GH5/Band Hero/WoR:
 - Device name:
+  - The Phase Shift device list has like 3 different names for these lol
+  - `GuitarHero for Playstation (R) 3`
+  - World Tour: `Guitar Hero4 for PlayStation (R) 3`
+  - GH5/Band Hero/WoR: `Guitar Hero5 for PlayStation (R) 3`
 - PS3 ID:
 
 ## Input Info

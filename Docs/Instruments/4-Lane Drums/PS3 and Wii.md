@@ -11,6 +11,9 @@ PS3:
   - RB2:
   - RB3:
 - Device name:
+  - The Phase Shift device list has 2 different names listed
+  - `Harmonix Drum kit for PlayStation®3` (sic)
+  - `Harmonix Drum Kit for PlayStation(R)3`
 - PS3 ID:
 
 Wii:

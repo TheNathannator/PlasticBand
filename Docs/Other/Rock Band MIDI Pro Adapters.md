@@ -34,6 +34,7 @@ PS3:
   - Default: `0x0001`
   - Drums mode: `0x0200`
 - Device name:
+  - Drums mode: `Harmonix Drum kit for PlayStation®3` (sic)
 
 Wii:
 
