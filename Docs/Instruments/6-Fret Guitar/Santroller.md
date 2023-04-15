@@ -93,24 +93,6 @@ struct SantrollerSixFretGuitarState
 }
 ```
 
-## Output Reports
-
-### Output Type `0x02`: Keep-Alive Packet
-
-This guitar requires a keep-alive packet to be sent every 10 seconds at minimum in order for full input data to be sent. Without it, the strumbar will cut out any fret inputs being held.
-
-Length: 8 bytes
-
-```cpp
-struct PS3GHLGuitarKeepAlive
-{
-    uint8_t reportId = 0x00;
-
-    uint8_t outputType = 0x02;
-    uint8_t data[7] = { 0x08, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00 };
-};
-```
-
 ## References
 
 - https://github.com/ghlre/GHLtarUtility
