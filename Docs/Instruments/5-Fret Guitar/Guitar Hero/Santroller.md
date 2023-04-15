@@ -53,8 +53,6 @@ Accelerometers:
   - Above `0x200` when the guitar is pointed right, below when the guitar is pointed left.
 - Values and ranges may vary. All values listed are nominal, for proper handling calibration will need to be provided.
 
-Some World Tour-specific(?) accelerometer quirks:
-
 - X and Z are limited to a range of `0x180`-`0x280`.
 - When reaching its minimum, X will snap to the maximum. After a certain point beyond that, it will somewhat jitter between max and min.
 
