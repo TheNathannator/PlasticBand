@@ -2,14 +2,41 @@
 
 Santroller Devices are devices programmed using the newest version of the [Santroller Configuration Tool](https://github.com/sanjay900/guitar-configurator). This is a tool written by [sanjay900](https://github.com/sanjay900) for emulating most instruments. On a PC, these will use a format similar to a PS3 Instrument, or an Xbox 360 instrument on Windows. However, these devices also have some additional features that the standard instruments dont have, along with some semantics to their revision number.
 
+## Table of Contents
+
+- [Device Info](#device-info)
+  - [Device Types](#device-types)
+  - [Rhythm Types](#rhythm-types)
+  - [Console Types](#console-types)
+- [Input Information](#input-information)
+  - [HID Mode Differences](#hid-mode-differences)
+- [Output Report Info](#output-report-info)
+  - [XInput Mode](#xinput-mode)
+  - [HID Mode](#hid-mode)
+  - [Commands](#commands)
+    - [General](#general)
+    - [5-Fret Guitars](#5-fret-guitars)
+    - [6-Fret Guitars](#6-fret-guitars)
+    - [Rock Band Drums](#rock-band-drums)
+    - [Guitar Hero Drums](#guitar-hero-drums)
+    - [Turntable](#turntable)
+
 ## Device Info
 
-- Vendor/product ID: `1209:2882`
+- Vendor/product ID:
+  - Standard: `1209:2882`
+  - XInput mode: `1209:2884`
 - Device name: `Santroller`
 - Manufacturer name: `sanjay900`
 - Revision:
   - This value is used to encode certain properties of the device, such as device and console types. It makes use of the standard binary-coded-decimal format already used for revision numbers, `0xMMmr`, where `MM` is the major number, `m` is the minor, and `r` is the revision.
   - Major is used for the device type, minor for the rhythm (i.e. alternate) type, and revision for the console type.
+
+When in XInput mode, the information above is encoded into the standard XInput capabilities:
+
+- Left stick X: Vendor ID (`0x1209`)
+- Left stick Y: Product ID (always uses `0x2882`)
+- Right stick X: Revision
 
 ### Device Types
 
@@ -27,6 +54,7 @@ The device type indicates what kind of device is being emulated.
 | `0x08` | Guitar Hero Live guitar |
 | `0x09` | Drumkit                 |
 | `0x0A` | DJ Hero turntable       |
+| `0x0B` | Stage kit               |
 
 ### Rhythm Types
 
@@ -49,7 +77,6 @@ For USB devices this will always be 0 (universal). For Bluetooth devices, this c
 | :---- | :-----------               |
 | `0x0` | Universal                  |
 | `0x1` | Keyboard or mouse          |
-| `0x3` | Stage kit                  |
 | `0x2` | MIDI                       |
 | `0x4` | Xbox 360                   |
 | `0x5` | PS3 (when used on PC)      |
@@ -63,10 +90,14 @@ For USB devices this will always be 0 (universal). For Bluetooth devices, this c
 
 Some specific notes:
 
-- The PS3 console type in gamepad mode will use a report format similar to the rhythm devices rather than replicating the one used by an actual DualShock 3, due to quirks with emulating PS3 controllers.
+- The gamepad device type in PS3 console mode will use a report format similar to the rhythm devices rather than replicating the one used by an actual DualShock 3, due to quirks with emulating PS3 controllers.
 - The Windows/Xbox One detection type is used if the controller is trying to detect whether it is plugged into a Windows PC or an Xbox One.
 
-## Notable PS3 Mode Input Report Differences
+## Input Information
+
+Input reports sent by a device match those of the standard devices being emulated.
+
+### HID Mode Differences
 
 These devices use a report ID unlike the original PS3 instruments, as this was necessary for PS4 console detection. Tilt information on guitars is also copied to left stick X, as this makes it easier to use in games with generic controller support.
 
@@ -78,7 +109,7 @@ Santroller devices support a number of output commands for setting the state of 
 
 ### XInput Mode
 
-In XInput mode, output reports are handled the same way as the Stage Kit, using XInput rumble state to send commands.
+In XInput mode, output reports are handled the same way as the Stage Kit, using XInput rumble data to send commands.
 
 ```cpp
 struct XInputSantrollerCommand
@@ -95,6 +126,8 @@ struct XInputSantrollerCommand
 }
 ```
 
+Just like with the Stage Kit, command IDs and parameters are listed in byte form. When using XInput to send commands, these values must have an additional `0x00` byte appended.
+
 ### HID Mode
 
 In HID mode, the following report is used to send commands:
@@ -105,45 +138,94 @@ struct HidSantrollerCommand
     uint8_t reportId = 0x01;
 
     uint8_t outputType = 0x5A;
-    uint8_t unk1 = 0x08;
     uint8_t parameter;
     uint8_t commandId;
-    uint8_t padding[4];
 }
 ```
 
+The padding normally present on other PS3 device commands is not required, and will not cause problems if sent.
+
 ### Commands
 
-In addition to the command IDs supported by the stage kit, the following command IDs are supported:
+#### General
 
-| Command ID | Description                 | Parameter
-| :--------- | :----------                 | :--------
-| `0x0A`     | Multiplier number           | The current multiplier number
-| `0x0B`     | Solo section                | 1 to enable, 0 to disable
-|            |                             |
-| `0x0C`     | Open note                   | 1 to enable, 0 to disable
-| `0x0D`     | Green note                  | 1 to enable, 0 to disable
-| `0x0E`     | Red note                    | 1 to enable, 0 to disable
-| `0x0F`     | Yellow note                 | 1 to enable, 0 to disable
-| `0x10`     | Blue note                   | 1 to enable, 0 to disable
-| `0x11`     | Orange note                 | 1 to enable, 0 to disable
-|            |                             |
-| `0x12`     | Yellow cymbal               | 1 to enable, 0 to disable
-| `0x13`     | Blue cymbal                 | 1 to enable, 0 to disable
-| `0x14`     | Green cymbal                | 1 to enable, 0 to disable
-| `0x15`     | Kick pedal                  | 1 to enable, 0 to disable
-|            |                             |
-| `0x16`     | Star Power gauge (inactive) | Fill amount: 0 = empty, 255 = full
-| `0x17`     | Star Power gauge (active)   | Fill amount: 0 = empty, 255 = full
+In addition to the commands supported by the stage kit, the following general commands are supported:
 
-Note that the commands for specific notes (`0x0C`-`0x15`) are meant for things like bot playback; the devices themselves will already handle lighting up LEDs for pressed inputs and this does not need to be handled during actual gameplay.
+| Command ID    | Description              | Parameter
+| :---------    | :----------              | :--------
+| `0x08`        | Star Power gauge fill    | Fill amount: 0 = empty, 255 = full
+| `0x09`        | Star Power active        | 1 to enable, 0 to disable
+| `0x0A`        | Multiplier number        | The current multiplier number plus 10 (11-255)
+| `0x0B`        | Solo section             | 1 to enable, 0 to disable
+|               |                          |
+| `0x90`-`0xBF` | Device-specific commands |
 
-#### Turntable-Specific
+Some notes:
 
-Santroller turntables have a dedicated command for setting the brightness of the euphoria button's LED:
+- Commands will be ignored if both the command ID and parameter value are the same. This is a workaround for DJ Hero on Xbox 360, which sweeps through the full vibration range on the left and right motors, and is the reason why the multiplier number command specifies "plus 10" for the value.
+- Some device-specific commands allow manual triggering of lights that are normally triggered by pressing inputs. These commands are meant for things like bot playback, and should not be used during normal gameplay.
 
-| Command ID | Description             | Parameter
-| :--------- | :----------             | :--------
-| `0x18`     | Euphoria LED brightness | Brightness: 0 = off, 255 = max
+#### 5-Fret Guitars
 
-This command is not required for HID mode, the report used with the PS3 turntable will work as well. It *is* required for XInput mode, as the way normal XInput turntables set the euphoria LED is incompatible with the command system used here.
+| Command ID | Description | Parameter
+| :--------- | :---------- | :--------
+| `0x90`     | Open note   | 1 to enable, 0 to disable
+| `0x91`     | Green note  | 1 to enable, 0 to disable
+| `0x92`     | Red note    | 1 to enable, 0 to disable
+| `0x93`     | Yellow note | 1 to enable, 0 to disable
+| `0x94`     | Blue note   | 1 to enable, 0 to disable
+| `0x95`     | Orange note | 1 to enable, 0 to disable
+
+#### 6-Fret Guitars
+
+| Command ID | Description  | Parameter
+| :--------- | :----------  | :--------
+| `0x90`     | Open note    | 1 to enable, 0 to disable
+| `0x91`     | Black 1 note | 1 to enable, 0 to disable
+| `0x92`     | Black 2 note | 1 to enable, 0 to disable
+| `0x93`     | Black 3 note | 1 to enable, 0 to disable
+| `0x94`     | White 1 note | 1 to enable, 0 to disable
+| `0x95`     | White 2 note | 1 to enable, 0 to disable
+| `0x96`     | White 3 note | 1 to enable, 0 to disable
+
+#### Rock Band Drums
+
+| Command ID | Description   | Parameter
+| :--------- | :----------   | :--------
+| `0x90`     | Kick pedal    | 1 to enable, 0 to disable
+| `0x91`     | Red pad       | 1 to enable, 0 to disable
+| `0x92`     | Yellow pad    | 1 to enable, 0 to disable
+| `0x93`     | Blue pad      | 1 to enable, 0 to disable
+| `0x94`     | Green pad     | 1 to enable, 0 to disable
+| `0x95`     | Yellow cymbal | 1 to enable, 0 to disable
+| `0x96`     | Blue cymbal   | 1 to enable, 0 to disable
+| `0x97`     | Green cymbal  | 1 to enable, 0 to disable
+
+#### Guitar Hero Drums
+
+| Command ID | Description   | Parameter
+| :--------- | :----------   | :--------
+| `0x90`     | Kick pedal    | 1 to enable, 0 to disable
+| `0x91`     | Red pad       | 1 to enable, 0 to disable
+| `0x92`     | Yellow cymbal | 1 to enable, 0 to disable
+| `0x93`     | Blue pad      | 1 to enable, 0 to disable
+| `0x94`     | Orange cymbal | 1 to enable, 0 to disable
+| `0x95`     | Green pad     | 1 to enable, 0 to disable
+
+#### Turntable
+
+| Command ID | Description              | Parameter
+| :--------- | :----------              | :--------
+| `0x90`     | Green note (both tables) | 1 to enable, 0 to disable
+| `0x91`     | Red note (both tables)   | 1 to enable, 0 to disable
+| `0x92`     | Blue note (both tables)  | 1 to enable, 0 to disable
+|            |                          |
+| `0x93`     | Green note (left table)  | 1 to enable, 0 to disable
+| `0x94`     | Red note (left table)    | 1 to enable, 0 to disable
+| `0x95`     | Blue note (left table)   | 1 to enable, 0 to disable
+|            |                          |
+| `0x96`     | Green note (right table) | 1 to enable, 0 to disable
+| `0x97`     | Red note (right table)   | 1 to enable, 0 to disable
+| `0x98`     | Blue note (right table)  | 1 to enable, 0 to disable
+|            |                          |
+| `0xA0`     | Euphoria LED brightness  | Brightness: 0 = off, 255 = max
