@@ -1,5 +1,7 @@
 # Xbox 360 Rock Band Stage Kit
 
+The Rock Band Stage Kit is a controller that emulates certain effects that may be used during a live stage performance. It contains a panel of LEDs and a strobe light, and can optionally connect to a fog machine.
+
 ## Controller Info
 
 - XInput type: Gamepad (1)
@@ -11,42 +13,33 @@ The stage kit has no special inputs. It has face buttons, a d-pad, start, select
 
 ## Output Info
 
-The vibration control is where the stage kit's specialty lies. It uses vibration info as a protocol to control the various parts of the kit. The right motor value is a sort of report ID, and the left motor value is the data of that report. This is the nomenclature that will be used.
+The vibration control is where the stage kit's specialty lies. It uses vibration info as a protocol to control the various parts of the kit. The right motor value is a sort of command ID, and the left motor value is the parameter to that report. This is the nomenclature that will be used.
 
-Be aware that although XInput exposes the motor values as a 16-bit unsigned integer, it internally turns this value into a byte, so only the top 8 bits are really sent to the device. For simplicity, motor values will be listed in byte form, and an XInput implementation will need to pad on an additional `0x00` byte to these values.
+Be aware that although XInput exposes the motor values as a 16-bit unsigned integer, only the top byte ends up getting sent to the controller. For simplicity, motor values will be listed in byte form, and an XInput implementation will need to append an additional `0x00` byte to these values (such as by left-shifting by 8).
 
-### Fog Machine
+### Commands
 
-The fog machine is enabled and disabled with the following reports. They don't have any additional data, and should be sent with the left motor set to 0.
+The following table lists each available command ID, along with what they do and what parameter they take, if any.
 
-- ID `0x01`: Fog machine on
-- ID `0x02`: Fog machine off
+| Command ID | Description          | Parameter
+| :--------- | :----------          | :--------
+| `0x01`     | Fog machine on       | None
+| `0x02`     | Fog machine off      | None
+|            |                      |
+| `0x03`     | Strobe light slow    | None
+| `0x04`     | Strobe light medium  | None
+| `0x05`     | Strobe light fast    | None
+| `0x06`     | Strobe light fastest | None
+| `0x07`     | Strobe light off     | None
+|            |                      |
+| `0x20`     | Set blue LEDs        | Bitmask for which of the 8 LEDs to set
+| `0x40`     | Set green LEDs       | Bitmask for which of the 8 LEDs to set
+| `0x60`     | Set yellow LEDs      | Bitmask for which of the 8 LEDs to set
+| `0x80`     | Set red LEDs         | Bitmask for which of the 8 LEDs to set
+|            |                      |
+| `0xFF`     | Reset everything     | None
 
-### Strobe Light
-
-The strobe light is controlled using the following reports. They don't have any additional data, and should be sent with the left motor set to 0.
-
-- ID `0x03`: Strobe light slow
-- ID `0x04`: Strobe light medium
-- ID `0x05`: Strobe light fast
-- ID `0x06`: Strobe light fastest
-- ID `0x07`: Strobe light off
-
-### LED Display
-
-The stage kit has a set of LEDs that can be toggled. There are 4 sets of 8 LEDs, each colored red, yellow, blue, and green. The reports for these use the left motor as a bitmask of which LEDs should be enabled or disabled. The least-order bit (bit 0) is the first LED, the highest-order bit (bit 7) is the 8th LED.
-
-- ID `0x20`: Blue LEDs
-- ID `0x40`: Green LEDs
-- ID `0x60`: Yellow LEDs
-- ID `0x80`: Red LEDs
-
-### Miscellaneous
-
-- ID `0x00`: Neutral state
-- ID `0xFF`: Disable everything (no left motor data)
-
-### Report ID Enum
+### As A Struct
 
 ```cpp
 enum XInputStageKitReportId
@@ -67,6 +60,19 @@ enum XInputStageKitReportId
 
     DisableAll = 0xFF
 };
+
+struct XInputStageKitCommand
+{
+    uint16_t parameter;
+    uint16_t commandId;
+
+    // Helper constructor for using byte values
+    XInputStageKitCommand(uint8_t command, uint8_t param)
+        : commandId(command << 8)
+        : parameter(param << 8)
+    {
+    }
+}
 ```
 
 ## References
