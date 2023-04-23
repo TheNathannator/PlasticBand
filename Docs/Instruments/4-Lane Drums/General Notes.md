@@ -31,6 +31,10 @@ typedef enum
 // The previously-calculated pads.
 static FourLanePad previousPads;
 
+// Hack needed to work around a hardware bug where some Pro kits release the pad/cymbal flags before the color flag
+// If you have a mapping system that directly maps each flag individually, this can be determined ahead of time
+static hasFlags = false;
+
 FourLanePad GetCurrentPads(uint8_t[] report)
 {
     // The currently-calculated pads.
@@ -50,6 +54,11 @@ FourLanePad GetCurrentPads(uint8_t[] report)
     // The kit only sends either d-pad up or down, not both at the same time (even when hitting both Yc+Bc)
     bool dpadUp = ...
     bool dpadDown = ...
+
+    // Determine whether or not the kit sends the pad/cymbal flags
+    // This check is only required if this can't be determined ahead of time, i.e. through control mapping which directly handles the flags
+    if (pad || cymbal)
+        hasFlags = true;
 
     // Pad + cymbal hits can be ambiguous, resolve them first
     if (pad && cymbal)
@@ -96,9 +105,9 @@ FourLanePad GetCurrentPads(uint8_t[] report)
     // Now that disambiguation has been applied, we can process things normally
 
     // Check for pad hits
-    // Rock Band 1 kits don't send the pad or cymbal flags, so we also check if cymbal is not set for compatibility with those
-    // This does mean that just pressing the face buttons will count as pad hits; this behavior can be observed in Rock Band as well
-    if (pad || !cymbal)
+    // Rock Band 1 kits don't send the pad or cymbal flags, so we also check if flags have not been detected and if the cymbal flag is not active
+    // This does mean that pressing the face buttons will count as pad hits on RB1 kits; this behavior can be observed in Rock Band as well for all kits
+    if (pad || (!cymbal && !hasFlags))
     {
         if (red) pads |= FourLanePad_Red;
         if (yellow) pads |= FourLanePad_Yellow;
