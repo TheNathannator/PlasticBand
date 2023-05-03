@@ -11,7 +11,7 @@ PS3:
 
 Wii:
 
-- Vendor/product ID: `12BA:3330`
+- Vendor/product ID: `1BAD:3330`
 - Revision: `0x0005`
 - Device name:
 
