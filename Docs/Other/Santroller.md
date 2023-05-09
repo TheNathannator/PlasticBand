@@ -1,6 +1,9 @@
 # Santroller Devices
 
-Santroller Devices are devices programmed using the newest version of the [Santroller Configuration Tool](https://github.com/sanjay900/guitar-configurator). This is a tool written by [sanjay900](https://github.com/sanjay900) for emulating most instruments. On a PC, these will use a format similar to a PS3 Instrument, or an Xbox 360 instrument on Windows. However, these devices also have some additional features that the standard instruments dont have, along with some semantics to their revision number.
+Santroller Devices are devices programmed using the newest version of the [Santroller Configuration Tool](https://github.com/sanjay900/guitar-configurator). This is a tool written by [sanjay900](https://github.com/sanjay900) for emulating most instruments.
+On a PC, these will use a format similar to a PS3 instrument, or an Xbox 360 instrument on Windows. However, these devices also have some additional features that the standard instruments don't have, along with semantics to some device IDs.
+
+**NOTE:** Since the new version of the configurator is still in development, the details here are subject to change. Things should be finalized when it releases fully.
 
 ## Table of Contents
 
@@ -23,9 +26,7 @@ Santroller Devices are devices programmed using the newest version of the [Santr
 
 ## Device Info
 
-- Vendor/product ID:
-  - Standard: `1209:2882`
-  - XInput mode: `1209:2884`
+- Vendor/product ID: `1209:2882`
 - Device name: `Santroller`
 - Manufacturer name: `sanjay900`
 - Revision:
@@ -35,7 +36,7 @@ Santroller Devices are devices programmed using the newest version of the [Santr
 When in XInput mode, the information above is encoded into the standard XInput capabilities:
 
 - Left stick X: Vendor ID (`0x1209`)
-- Left stick Y: Product ID (always uses `0x2882`)
+- Left stick Y: Product ID (`0x2882`)
 - Right stick X: Revision
 
 ### Device Types
@@ -53,8 +54,8 @@ The device type indicates what kind of device is being emulated.
 | `0x07` | Guitar                  |
 | `0x08` | Guitar Hero Live guitar |
 | `0x09` | Drumkit                 |
-| `0x0A` | DJ Hero turntable       |
-| `0x0B` | Stage kit               |
+| `0x10` | DJ Hero turntable       |
+| `0x11` | Stage kit               |
 
 ### Rhythm Types
 
@@ -76,17 +77,15 @@ For USB devices this will always be 0 (universal). For Bluetooth devices, this c
 | Value | Console Type               |
 | :---- | :-----------               |
 | `0x0` | Universal                  |
-| `0x1` | Keyboard or mouse          |
-| `0x2` | MIDI                       |
-| `0x4` | Xbox 360                   |
-| `0x5` | PS3 (when used on PC)      |
-| `0x6` | Wii (Rock Band)            |
-| `0x7` | Switch                     |
-| `0x8` | PS4                        |
-| `0x9` | Xbox One                   |
-| `0xA` | PS3 (when used on console) |
-| `0xB` | Windows/Xbox One detection |
-| `0xC` | Windows in XInput mode     |
+| `0x1` | Xbox 360                   |
+| `0x2` | PS3 (when used on PC)      |
+| `0x3` | Wii (Rock Band)            |
+| `0x4` | Switch                     |
+| `0x5` | PS4                        |
+| `0x6` | Xbox One                   |
+| `0x7` | PS3 (when used on console) |
+| `0x8` | Windows/Xbox One detection |
+| `0x9` | Windows in XInput mode     |
 
 Some specific notes:
 
