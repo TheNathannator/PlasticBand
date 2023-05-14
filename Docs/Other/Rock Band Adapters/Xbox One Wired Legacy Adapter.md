@@ -1,8 +1,8 @@
 # Xbox One Rock Band 4 PDP Wired Legacy Adapter
 
-The PDP wired legacy adapter is a bit of an interesting device. It's an adapter for connecting wired Xbox 360 controllers to an Xbox One, and although it was made specifically for Rock Band 4, it doesn't seem like there's anything stopping it from allowing non-Rock Band 360 controllers to be used.
+The PDP wired legacy adapter allows connecting wired Xbox 360 controllers to an Xbox One. Although it was made specifically for Rock Band 4, it doesn't seem like there's anything stopping it from allowing other Xbox 360 controllers to be used, as it just passes in raw input data from the connected controller.
 
-Documenting this device is a bit pointless with regards to PC use since Xbox 360 devices work perfectly regardless, but the packet capture was there and it's not that difficult to understand, so why not lol
+Documenting this is a bit pointless with regards to PC use since Xbox 360 devices are usable without it, but the packet capture was there and it's not that difficult to understand, so why not? lol
 
 ## Device Info
 

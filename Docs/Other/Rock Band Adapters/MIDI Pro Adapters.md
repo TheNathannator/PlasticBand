@@ -2,7 +2,7 @@
 
 The Rock Band MIDI Pro Adapter (MPA) allows connecting MIDI drumkits and keyboards, along with the Pro Squier guitar, for use in Rock Band 3. As implied, it has 3 modes: guitar, keyboard, and drums, each of which emulate the regular Pro Guitar, Drums, and Keyboard instrument controllers.
 
-Aside from some product ID differences on PS3 and Wii, there is no additional logic needed to support the MPA. It functions identically to each of the respective instruments for each mode, with potentially extremely minor differences that won't matter for anything.
+Aside from some product ID differences on PS3 and Wii, there is no additional logic needed to support the MPA. It functions identically to each of the respective instruments for each mode, with potentially only extremely minor differences that won't matter for anything.
 
 ## Hardware IDs
 

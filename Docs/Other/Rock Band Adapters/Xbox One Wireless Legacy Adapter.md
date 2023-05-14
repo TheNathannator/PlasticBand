@@ -1,5 +1,9 @@
 # Xbox One Rock Band 4 MadCatz Wireless Legacy Adapter
 
+The MadCatz wireless legacy adapter allows using wireless Xbox 360 instruments on Xbox One for use in Rock Band 4. This device seems like it might have less broad controller support, as it actually translates the input data instead of passing it in raw, however no observations have been made about what it does with other controllers yet.
+
+With regards to PC use, this may also seem pointless to document, as there's an official receiver for connecting wireless controllers, but it's still handy in the case someone has the wireless legacy adapter and not an Xbox 360 receiver. It could also be used for some more exotic scenarios, such as using more than 4 wireless controllers at once alongside a regular receiver.
+
 ## Device Info
 
 - Vendor/product ID: `0738:4164`
