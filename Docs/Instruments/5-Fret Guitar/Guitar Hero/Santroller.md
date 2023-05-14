@@ -4,13 +4,10 @@ The only real difference between this and a PS3 Guitar Hero Guitar, is that we a
 
 ## Device Info
 
-- Vendor/product ID:
-  - `1209:2882`
-- Revision:
-  - `0x070x`
+- Vendor/product ID: `1209:2882`
+- Revision: `0x070x`
   - The last nibble may vary, see [the main Santroller doc](../../Other/Santroller.md).
-- Device name:
-  - Santroller
+- Device name: `Santroller`
 
 ## Input Info
 

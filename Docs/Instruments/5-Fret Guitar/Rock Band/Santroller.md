@@ -4,13 +4,10 @@ The only real difference between this and a PS3 Rock Band Guitar, is that we als
 
 ## Device Info
 
-- Vendor/product ID:
-  - `1209:2882`
-- Revision:
-  - `0x071x`
+- Vendor/product ID: `1209:2882`
+- Revision: `0x071x`
   - The last nibble may vary, see [the main Santroller doc](../../Other/Santroller.md).
-- Device name:
-  - Santroller
+- Device name: `Santroller`
 
 ## Input Info
 

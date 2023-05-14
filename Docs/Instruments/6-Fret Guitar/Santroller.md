@@ -2,13 +2,10 @@
 
 ## Device Info
 
-- Vendor/product ID:
-  - `1209:2882`
-- Revision:
-  - `0x080x`
+- Vendor/product ID: `1209:2882`
+- Revision: `0x080x`
   - The last nibble may vary, see [the main Santroller doc](../../Other/Santroller.md).
-- Device name:
-  - Santroller
+- Device name: `Santroller`
 
 ## Input Info
 
