@@ -1,7 +1,5 @@
 # Santroller HID Rock Band Guitars
 
-The only real difference between this and a PS3 Rock Band Guitar, is that we also map tilt to the left stick x, as that way games can take advantage of an analog tilt.
-
 ## Device Info
 
 - Vendor/product ID: `1209:2882`
@@ -11,52 +9,11 @@ The only real difference between this and a PS3 Rock Band Guitar, is that we als
 
 ## Input Info
 
-Start/select, PS button, and d-pad work as normal.
+Most inputs are the same as the PS3 RB guitar, the ones that differ are listed here.
 
-Upper frets:
+Tilt: Left stick X (instead of R1)
 
-| Fret   | Button |
-| :--:   | :----: |
-| Green  | ×      |
-| Red    | ○      |
-| Yellow | Δ      |
-| Blue   | □      |
-| Orange | L1     |
-
-Lower frets:
-
-| Fret   | Buttons |
-| :--:   | :------ |
-| Green  | × + L2  |
-| Red    | ○ + L2  |
-| Yellow | Δ + L2  |
-| Blue   | □ + L2  |
-| Orange | L1 + L2 |
-
-Or, as flags:
-
-| Flag      | Button |
-| :--:      | :----: |
-| Green     | ×      |
-| Red       | ○      |
-| Yellow    | Δ      |
-| Blue      | □      |
-| Orange    | L1     |
-| Solo flag | L2     |
-
-Strumbar: D-pad up/down
-
-Tilt: Left Stick X
-
-- This is centered at 128, and is above 128 if the guitar is tilted up and below 128 if it is tilted down.
-
-Whammy: Right stick X
-
-Tilt: R1
-
-Pickup switch: Right stick Y
-
-- TODO: Define ranges for each of the notches 
+- Nominally centered at `0x80`, `0xFF` when fully tilted up, `0x00` when fully tilted down.
 
 ### As A Struct
 
@@ -71,7 +28,7 @@ struct SantrollerRockBandGuitarState
     bool yellow : 1;
 
     bool orange : 1;
-    bool tiltButton : 1;
+    bool : 1;
     bool solo : 1;
     bool : 1;
 
