@@ -34,7 +34,7 @@ Santroller:
   - The last nibble may vary, see [the main Santroller doc](../../Other/Santroller.md).
 - Device name: `Santroller`
 
-MIDI Pro Adapter information may be found in [its own document](../../Other/Rock%20Band%20MIDI%20Pro%20Adapters.md).
+MIDI Pro Adapter information may be found in [its own document](../../Other/Rock%20Band%20Adapters/MIDI%20Pro%20Adapters.md).
 
 ## Input Info
 
