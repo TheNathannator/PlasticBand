@@ -215,16 +215,14 @@ Some notes:
 
 | Command ID | Description              | Parameter
 | :--------- | :----------              | :--------
-| `0x90`     | Green note (both tables) | 1 to enable, 0 to disable
-| `0x91`     | Red note (both tables)   | 1 to enable, 0 to disable
-| `0x92`     | Blue note (both tables)  | 1 to enable, 0 to disable
+| `0x90`     | Scratch (left table)     | 1 to enable, 0 to disable
+| `0x91`     | Green note (left table)  | 1 to enable, 0 to disable
+| `0x92`     | Red note (left table)    | 1 to enable, 0 to disable
+| `0x93`     | Blue note (left table)   | 1 to enable, 0 to disable
 |            |                          |
-| `0x93`     | Green note (left table)  | 1 to enable, 0 to disable
-| `0x94`     | Red note (left table)    | 1 to enable, 0 to disable
-| `0x95`     | Blue note (left table)   | 1 to enable, 0 to disable
-|            |                          |
-| `0x96`     | Green note (right table) | 1 to enable, 0 to disable
-| `0x97`     | Red note (right table)   | 1 to enable, 0 to disable
-| `0x98`     | Blue note (right table)  | 1 to enable, 0 to disable
+| `0x98`     | Scratch (right table)    | 1 to enable, 0 to disable
+| `0x99`     | Green note (right table) | 1 to enable, 0 to disable
+| `0x9A`     | Red note (right table)   | 1 to enable, 0 to disable
+| `0x9B`     | Blue note (right table)  | 1 to enable, 0 to disable
 |            |                          |
 | `0xA0`     | Euphoria LED brightness  | Brightness: 0 = off, 255 = max
