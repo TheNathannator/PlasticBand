@@ -5,7 +5,7 @@
 - Vendor/product ID: `12BA:0140`
 - Revision:
 - Device name:
-- PS3 ID:
+- PS3 ID: 0x06
 
 Santroller:
 
@@ -25,9 +25,9 @@ Tables:
   | Action  | Input                                        |
   | :-----  | :---:                                        |
   | Scratch | Right stick X                                |
-  | Green   | × + Accelerometer Y `0b_xxxx_xxxx_xxxx_1xxx` |
-  | Red     | ○ + Accelerometer Y `0b_xxxx_xxxx_xxx1_xxxx` |
-  | Blue    | □ + Accelerometer Y `0b_xxxx_xxxx_xx1x_xxxx` |
+  | Green   | × + Accelerometer Y `0b_xxxx_xxxx_xxx1_xxxx` |
+  | Red     | ○ + Accelerometer Y `0b_xxxx_xxxx_xx1x_xxxx` |
+  | Blue    | □ + Accelerometer Y `0b_xxxx_xxxx_x1xx_xxxx` |
 
 - Right table:
 
