@@ -23,31 +23,33 @@ int CalculateNotch(byte rawValue)
 }
 ```
 
-### Xbox 360 Approximate Values
+### Xbox 360 Notes
 
-In practice, the value reported for each of the notches on Xbox 360 guitars only varies by 3-10 at most. The threshold calculation suggested above just happens to work with both Xbox 360 and PS3/Wii guitars, so it's the easiest way to handle both of them.
+For reference, these are the values I recorded using my own Xbox 360 guitar's pickup switch at each of the notches:
 
-For reference, these are the values I recorded using my own guitar's pickup switch at each of the notches:
+| Value        | Notch | Range |
+| :----        | :---- | :---- |
+| `0x17` (23)  | 1st   | 0.45  |
+| `0x4B` (75)  | 2nd   | 1.47  |
+| `0x79` (121) | 3rd   | 2.37  |
+| `0xAB` (171) | 4th   | 3.35  |
+| `0xE0` (224) | 5th   | 4.39  |
 
-| Value  | Notch |
-| :----  | :---- |
-| `0x17` | 1st   |
-| `0x4B` | 2nd   |
-| `0x79` | 3rd   |
-| `0xAB` | 4th   |
-| `0xE0` | 5th   |
+If the pickup is between a notch, it will report a value that is somewhere between these values. In practice these values will be very brief, and the value reported at the notches only varies by 3-10.
 
-If the pickup is between a notch, it will report a value that is somewhere between these values.
+The values at the notches are very close to those in the table in the PS3/Wii section below, which doesn't seem to be a coincidence. The only exception is with the third notch, and that's due to a technical reason on PS3 that necessitated a different value there (though you could argue the same technical reason exists on Xbox 360).
 
-### PS3/Wii Discrete Values
+### PS3/Wii Notes
 
 For reference, the values that the PS3/Wii pickup switch uses are listed below:
 
-| Value  | Notch   |
-| :----  | :----   |
-| `0x19` | 1st     |
-| `0x4C` | 2nd     |
-| `0x96` | 3rd     |
-| `0xB2` | 4th     |
-| `0xE5` | 5th     |
-| `0x7F` | At rest |
+| Value        | Notch   | Range |
+| :----        | :----   | :---- |
+| `0x19` (25)  | 1st     | 0.49  |
+| `0x4C` (76)  | 2nd     | 1.49  |
+| `0x96` (150) | 3rd     | 2.94  |
+| `0xB2` (178) | 4th     | 3.49  |
+| `0xE5` (229) | 5th     | 4.49  |
+| `0x7F` (127) | At rest | 2.49  |
+
+These values line up almost exactly with the midpoints of each range that the method described above calculates. The only exception is the third notch, which would be `0x7F` if it was following the pattern, but has to be a different value since that's already used for the neutral/inactive state of the pickup switch. The neutral state is done so that the pickup switch isn't constantly registering as the right stick being pressed up or down. The value that replaced it seems to have been chosen with the requirement that it still works with the calculation given above.
