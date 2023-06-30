@@ -55,7 +55,7 @@ Tilt: Right Stick Y
 
 Pickup switch: Left trigger
 
-- TODO: Define ranges for each of the notches 
+- See the [General Notes](General%20Notes.md) doc for more details.
 
 Pedal port (3.5mm port): Right Stick Y
 
