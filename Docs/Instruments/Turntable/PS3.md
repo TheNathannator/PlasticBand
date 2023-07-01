@@ -3,8 +3,9 @@
 ## Device Info
 
 - Vendor/product ID: `12BA:0140`
-- Revision:
-- Device name:
+- Revision: `0x0005`
+- Manufacturer string: "RedOctane DJ"
+- Device name: "Guitar Hero5 for PlayStation (R) 3"
 - PS3 ID: 0x06
 
 Santroller:
@@ -42,7 +43,7 @@ Tables:
 
 - Scratching:
   - Positive is clockwise, negative is counter-clockwise.
-  - Unsure of range used. TODO 
+  - The full range is used here, unlike Xbox 360 turntables.
 
 Euphoria button: Δ button
 
@@ -53,7 +54,7 @@ Effects knob: Accelerometer X
 
 Crossfader: Accelerometer Z
 
-- Unsure if range is inverted like the Xbox 360 turntable. TODO 
+- Range is inverted: left is maximum, right is minimum.
 
 Pressure axes:
 
