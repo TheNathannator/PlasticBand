@@ -42,7 +42,7 @@ struct PS3Report
     uint8_t dpad;
 
     // Stick axes
-    // Neutral state is 0x80
+    // Neutral state is 0x7F/0x80
     // X axis is left at 0x00, right at 0xFF
     // Y axis is top at 0x00, bottom at 0xFF
     uint8_t leftStickX;
@@ -78,7 +78,7 @@ What everything means changes between devices, but the amount of data does not.
 
 ## Output Reports
 
-These output reports are ones that all of the PS3 devices documented in this repo support. These do not apply to DualShock 3 controllers, those use a different output report format.
+These output reports are ones that all of the PS3 devices documented in this repo support. These do not apply to actual DualShock 3 controllers however, those use a different output report format.
 
 The output reports follow this general format:
 
@@ -131,7 +131,7 @@ struct PS3Descriptor
     uint8_t unk2 = 0x26;
     uint8_t unk3 = 0x01;
     uint8_t ps3_id;
-    uint8_t unknown[4];
+    uint8_t unk4[4];
 }
 ```
 

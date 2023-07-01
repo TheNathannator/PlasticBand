@@ -9,7 +9,7 @@ For wired devices, the report goes like this:
 ```cpp
 struct PS4Report
 {
-    uint8_t reportId;
+    uint8_t reportId = 0x01;
 
     uint8_t leftStickX;
     uint8_t leftStickY;
