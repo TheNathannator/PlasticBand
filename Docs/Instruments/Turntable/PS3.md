@@ -54,7 +54,7 @@ Effects knob: Accelerometer X
 
 Crossfader: Accelerometer Z
 
-- Range is inverted: left is maximum, right is minimum.
+- Unlike the Xbox 360 turntable, the range is *not* inverted: left is minimum (`0x000`), right is maximum (`0x3FF`).
 
 Pressure axes:
 
