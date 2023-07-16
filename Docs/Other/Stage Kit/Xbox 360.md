@@ -74,6 +74,14 @@ struct XInputStageKitCommand
     }
 }
 ```
+## Stage kit responses to Venue track
+
+As tested on an xbox 360, using Rock Band 2, the stage kit responses to the following calls on a song chart's venue track:
+
+| Call       | Description          | Notes
+| :--------- | :----------          | :--------
+| [FogOn]    | Fog machine on       | No other calls interact with the fog machine
+| [FogOff]   | Fog machine off      | No other calls interact with the fog machine
 
 ## References
 
