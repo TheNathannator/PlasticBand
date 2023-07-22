@@ -13,13 +13,6 @@
   - GH5/Band Hero/WoR: `Guitar Hero5 for PlayStation (R) 3`
 - PS3 ID:
 
-Santroller:
-
-- Vendor/product ID: `1209:2882`
-- Revision: `0x090x`
-  - The last nibble may vary, see [the main Santroller doc](../../Other/Santroller.md).
-- Device name: `Santroller`
-
 ## Input Info
 
 Face buttons and d-pad function as normal.
