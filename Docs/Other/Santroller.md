@@ -7,22 +7,20 @@ On a PC, these will use a format similar to a PS3 instrument, or an Xbox 360 ins
 
 ## Table of Contents
 
-- [Santroller Devices](#santroller-devices)
-  - [Table of Contents](#table-of-contents)
-  - [Device Info](#device-info)
-    - [Device Types](#device-types)
-    - [Rhythm Types](#rhythm-types)
-  - [Input Information](#input-information)
-  - [Output Report Info](#output-report-info)
-    - [XInput Mode](#xinput-mode)
-    - [HID Mode](#hid-mode)
-    - [Commands](#commands)
-      - [General](#general)
-      - [5-Fret Guitars](#5-fret-guitars)
-      - [6-Fret Guitars](#6-fret-guitars)
-      - [Rock Band Drums](#rock-band-drums)
-      - [Guitar Hero Drums](#guitar-hero-drums)
-      - [Turntable](#turntable)
+- [Device Info](#device-info)
+  - [Device Types](#device-types)
+  - [Rhythm Types](#rhythm-types)
+- [Input Information](#input-information)
+- [Output Report Info](#output-report-info)
+  - [XInput Mode](#xinput-mode)
+  - [HID Mode](#hid-mode)
+  - [Commands](#commands)
+    - [General](#general)
+    - [5-Fret Guitars](#5-fret-guitars)
+    - [6-Fret Guitars](#6-fret-guitars)
+    - [Rock Band Drums](#rock-band-drums)
+    - [Guitar Hero Drums](#guitar-hero-drums)
+    - [Turntable](#turntable)
 
 ## Device Info
 
