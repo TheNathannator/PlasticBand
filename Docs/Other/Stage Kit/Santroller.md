@@ -4,9 +4,10 @@ While there was never a PS3 or Wii version of the stage kit, a Santroller versio
 
 ## Device Info
 
-- Vendor/product ID: `1209:2882`
-- Revision: `0x110x`
-  - The last nibble may vary, see [the main Santroller doc](../../Other/Santroller.md).
+- Vendor/product ID:
+  - USB: `1209:2882`
+  - Bluetooth:  `1209:2885`
+- Revision: `0x0900`
 - Device name: `Santroller`
 
 ## Input Info
@@ -42,6 +43,5 @@ struct SantrollerStageKitState
     uint8_t dpad;
 
     uint8_t unused2[16];
-    int16_t unused3[4];
 }
 ```
