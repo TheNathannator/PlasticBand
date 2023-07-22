@@ -8,13 +8,6 @@
 - Device name: "Guitar Hero5 for PlayStation (R) 3"
 - PS3 ID: 0x06
 
-Santroller:
-
-- Vendor/product ID: `1209:2882`
-- Revision: `0x100x`
-  - The last nibble may vary, see [the main Santroller doc](../../Other/Santroller.md).
-- Device name: `Santroller`
-
 ## Input Info
 
 Face buttons and d-pad work as normal, with the exception that the d-pad is neutral at 15 (`0x0F`) instead of 8.
