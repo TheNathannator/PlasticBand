@@ -9,7 +9,6 @@ On a PC, these will use a format similar to a PS3 instrument, or an Xbox 360 ins
 
 - [Device Info](#device-info)
   - [Device Types](#device-types)
-  - [Rhythm Types](#rhythm-types)
 - [Input Information](#input-information)
 - [Output Report Info](#output-report-info)
   - [XInput Mode](#xinput-mode)
@@ -30,8 +29,7 @@ On a PC, these will use a format similar to a PS3 instrument, or an Xbox 360 ins
 - Device name: `Santroller`
 - Manufacturer name: `sanjay900`
 - Revision:
-  - This value is used to encode certain properties of the device, such as device and console types. It makes use of the standard binary-coded-decimal format already used for revision numbers, `0xMMm0`, where `MM` is the major number, `m` is the minor.
-  - Major is used for the device type, minor for the rhythm (i.e. alternate) type.
+  - This value encodes the device type into the highest byte `0xXX00`
 
 When in XInput mode, the information above is encoded into the standard XInput capabilities:
 
@@ -45,28 +43,14 @@ The device type indicates what kind of device is being emulated.
 | Value  | Device Type             |
 | :----  | :----------             |
 | `0x01` | Gamepad                 |
-| `0x02` | Wheel                   |
-| `0x03` | Arcade stick            |
-| `0x04` | Flight stick            |
-| `0x05` | Dance pad               |
-| `0x06` | Arcade pad              |
-| `0x07` | Guitar                  |
-| `0x08` | Guitar Hero Live guitar |
-| `0x09` | Drumkit                 |
-| `0x10` | DJ Hero turntable       |
-| `0x11` | Stage kit               |
-
-### Rhythm Types
-
-The rhythm type is used for variants of the same kind of device.
-
-For most devices, this will be 0. For guitars and drumkits, this value is used to distinguish between Rock Band and Guitar Hero devices.
-  
-| Value | Rhythm Type |
-| :---- | :---------- |
-| `0x0` | Guitar Hero |
-| `0x1` | Rock Band   |
-
+| `0x02` | Dance Pad               |
+| `0x03` | Guitar Hero Guitar      |
+| `0x04` | Rock Band Guitar        |
+| `0x05` | Guitar Hero Drums       |
+| `0x06` | Rock Band Drums         |
+| `0x07` | Guitar Hero Live guitar |
+| `0x08` | DJ Hero turntable       |
+| `0x09` | Stage kit               |
 
 ## Input Information
 

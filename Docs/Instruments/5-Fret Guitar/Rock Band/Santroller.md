@@ -5,7 +5,7 @@
 - Vendor/product ID
   - USB: `1209:2882`
   - Bluetooth: `1209:2885`
-- Revision: `0x0710`
+- Revision: `0x0400`
 - Device name: `Santroller`
 
 ## Input Info
