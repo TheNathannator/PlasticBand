@@ -7,37 +7,38 @@ On a PC, these will use a format similar to a PS3 instrument, or an Xbox 360 ins
 
 ## Table of Contents
 
-- [Device Info](#device-info)
-  - [Device Types](#device-types)
-  - [Rhythm Types](#rhythm-types)
-  - [Console Types](#console-types)
-- [Input Information](#input-information)
-  - [HID Mode Differences](#hid-mode-differences)
-- [Output Report Info](#output-report-info)
-  - [XInput Mode](#xinput-mode)
-  - [HID Mode](#hid-mode)
-  - [Commands](#commands)
-    - [General](#general)
-    - [5-Fret Guitars](#5-fret-guitars)
-    - [6-Fret Guitars](#6-fret-guitars)
-    - [Rock Band Drums](#rock-band-drums)
-    - [Guitar Hero Drums](#guitar-hero-drums)
-    - [Turntable](#turntable)
+- [Santroller Devices](#santroller-devices)
+  - [Table of Contents](#table-of-contents)
+  - [Device Info](#device-info)
+    - [Device Types](#device-types)
+    - [Rhythm Types](#rhythm-types)
+  - [Input Information](#input-information)
+  - [Output Report Info](#output-report-info)
+    - [XInput Mode](#xinput-mode)
+    - [HID Mode](#hid-mode)
+    - [Commands](#commands)
+      - [General](#general)
+      - [5-Fret Guitars](#5-fret-guitars)
+      - [6-Fret Guitars](#6-fret-guitars)
+      - [Rock Band Drums](#rock-band-drums)
+      - [Guitar Hero Drums](#guitar-hero-drums)
+      - [Turntable](#turntable)
 
 ## Device Info
 
-- Vendor/product ID: `1209:2882`
+- Vendor/product ID:
+  - USB:  `1209:2882`
+  - Bluetooth:  `1209:2885`
 - Device name: `Santroller`
 - Manufacturer name: `sanjay900`
 - Revision:
-  - This value is used to encode certain properties of the device, such as device and console types. It makes use of the standard binary-coded-decimal format already used for revision numbers, `0xMMmr`, where `MM` is the major number, `m` is the minor, and `r` is the revision.
-  - Major is used for the device type, minor for the rhythm (i.e. alternate) type, and revision for the console type.
+  - This value is used to encode certain properties of the device, such as device and console types. It makes use of the standard binary-coded-decimal format already used for revision numbers, `0xMMm0`, where `MM` is the major number, `m` is the minor.
+  - Major is used for the device type, minor for the rhythm (i.e. alternate) type.
 
 When in XInput mode, the information above is encoded into the standard XInput capabilities:
 
 - Left stick X: Vendor ID (`0x1209`)
 - Left stick Y: Product ID (`0x2882`)
-- Right stick X: Revision
 
 ### Device Types
 
@@ -68,39 +69,10 @@ For most devices, this will be 0. For guitars and drumkits, this value is used t
 | `0x0` | Guitar Hero |
 | `0x1` | Rock Band   |
 
-### Console Types
-
-The console type indicates the console/input mode that the device is using.
-
-For USB devices this will always be 0 (universal). For Bluetooth devices, this can change if the user has plugged the receiver into a console or held down a console mode binding.
-
-| Value | Console Type               |
-| :---- | :-----------               |
-| `0x0` | Universal                  |
-| `0x1` | Xbox 360                   |
-| `0x2` | PS3 (when used on PC)      |
-| `0x3` | Wii (Rock Band)            |
-| `0x4` | Switch                     |
-| `0x5` | PS4                        |
-| `0x6` | Xbox One                   |
-| `0x7` | PS3 (when used on console) |
-| `0x8` | Windows/Xbox One detection |
-| `0x9` | Windows in XInput mode     |
-
-Some specific notes:
-
-- The gamepad device type in PS3 console mode will use a report format similar to the rhythm devices rather than replicating the one used by an actual DualShock 3, due to quirks with emulating PS3 controllers.
-- The Windows/Xbox One detection type is used if the controller is trying to detect whether it is plugged into a Windows PC or an Xbox One.
 
 ## Input Information
 
-Input reports sent by a device match those of the standard devices being emulated.
-
-### HID Mode Differences
-
-These devices use a report ID unlike the original PS3 instruments, as this was necessary for PS4 console detection. Tilt information on guitars is also copied to left stick X, as this makes it easier to use in games with generic controller support.
-
-These differences do not apply to XInput mode.
+Santroller devices will either emulate XInput instruments, or utilise custom HID reports.
 
 ## Output Report Info
 
