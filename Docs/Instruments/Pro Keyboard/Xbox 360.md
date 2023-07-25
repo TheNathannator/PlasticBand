@@ -139,7 +139,7 @@ struct XInputKeytarGamepad
     // Ignore or remove these fields if you're using it.
     uint8_t touchPad : 7;
     bool : 1;
-};
+} __attribute__((__packed__));
 ```
 
 ## References

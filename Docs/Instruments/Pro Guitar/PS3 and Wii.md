@@ -154,7 +154,7 @@ struct Ps3Report
                      // No description is provided for it until more investigation can be done.
 
     uint8_t unused4;
-};
+} __attribute__((__packed__));
 ```
 
 ## Feature Reports
@@ -175,7 +175,7 @@ struct PS3ProGuitarEnableMidi
         0x00, 0x00, 0x89, 0x00, 0x00, 0x00, 0x00, 0x00,
         0xE9, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
     };
-}
+} __attribute__((__packed__));
 ```
 
 **TODO:**
@@ -243,7 +243,7 @@ struct PS3WiiProGuitarAutoCalibration
 
     uint8_t unk1[7] = {0xE9, 0x00, 0x83, 0x1B, 0x00, 0x00, 0x00};
     uint8_t sensorState;
-};
+} __attribute__((__packed__));
 
 uint8_t otherReports[4][9] = {
     {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},

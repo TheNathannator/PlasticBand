@@ -71,7 +71,7 @@ struct PS3Report
     int16_t accelZ; // Forward/back acceleration (pitch)
     int16_t accelY; // Up/down acceleration (gravity)
     int16_t gyro;   // Left/right instantaneous rotation (yaw)
-};
+} __attribute__((__packed__));
 ```
 
 What everything means changes between devices, but the amount of data does not.
@@ -95,7 +95,7 @@ struct PS3GenericOutputReport
     // A secondary ID used to determine the type of request
     uint8_t outputType;
     uint8_t data[7];
-}
+} __attribute__((__packed__));
 ```
 
 ### Output Type `0x01`: Player LEDs
@@ -115,7 +115,7 @@ struct PS3PlayerLeds
     bool player4 : 1;
     uint8_t : 4;
     uint8_t padding[5];
-}
+} __attribute__((__packed__));
 ```
 
 ## Feature Report
@@ -132,7 +132,7 @@ struct PS3Descriptor
     uint8_t unk3 = 0x01;
     uint8_t ps3_id;
     uint8_t unk4[4];
-}
+} __attribute__((__packed__));
 ```
 
 The exact purpose of this data is unknown, the only value that's observed as changing between different devices is the `ps3_id` field (which is `0x07` on DualShock 3s). It could potentially be used as another way of identifying devices if it is fully unique between device types.

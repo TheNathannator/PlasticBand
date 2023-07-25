@@ -11,6 +11,7 @@
 ## Input Info
 
 Length: 8 bytes
+
 - Byte 0: Report ID (always 1)
 - Bytes 1-2: 16-bit button bitmask
   - Byte 0, bit 0 (`0x01`) - A Button
@@ -81,5 +82,5 @@ struct SantrollerTurntableState
     uint8_t rightTableVelocity;
     uint8_t effectsKnob;
     uint8_t crossfader;
-}
+} __attribute__((__packed__));
 ```

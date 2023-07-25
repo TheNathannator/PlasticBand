@@ -68,5 +68,5 @@ struct SantrollerSixFretGuitarState
 
     uint8_t whammy;
     uint8_t tilt;
-}
+} __attribute__((__packed__));
 ```

@@ -76,7 +76,7 @@ struct GipLegacyWirelessState
         GipDrumkitState drums;
         uint8_t raw[10];
     };
-}
+} __attribute__((__packed__));
 ```
 
 ### Command ID `0x22`: Device Information
@@ -103,7 +103,7 @@ struct GipLegacyWirelessDeviceInfo
     uint8_t unk;
     uint8_t subType;
     wchar_t[] name; // max length is 124
-}
+} __attribute__((__packed__));
 ```
 
 ### Command ID `0x23`: Disconnection
@@ -116,7 +116,7 @@ Length: 1 byte
 struct GipLegacyWirelessDisconnection
 {
     uint8_t userIndex;
-};
+} __attribute__((__packed__));
 ```
 
 ## Output Command Info
@@ -135,7 +135,7 @@ struct GipLegacyWirelessSetState
 {
     uint8_t leftMotor;
     uint8_t rightMotor;
-};
+} __attribute__((__packed__));
 ```
 
 ### Command ID `0x24`: Request Device Info

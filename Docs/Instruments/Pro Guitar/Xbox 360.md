@@ -93,7 +93,7 @@ struct XInputProGuitarState
     bool orangeFret: 1;
     uint8_t highEVelocity : 7;
     bool : 1;
-}
+} __attribute__((__packed__));
 ```
 
 ## References

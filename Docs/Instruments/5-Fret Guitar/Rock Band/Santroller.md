@@ -11,6 +11,7 @@
 ## Input Info
 
 Length: 8 bytes
+
 - Byte 0: Report ID (always 1)
 - Bytes 1-3: 16-bit button bitmask
   - Byte 0, bit 0 (`0x01`) - A Button
@@ -89,5 +90,5 @@ struct SantrollerRockBandGuitarState
     uint8_t whammy;
     uint8_t pickup;
     uint8_t tilt;
-}
+} __attribute__((__packed__));
 ```

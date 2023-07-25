@@ -82,7 +82,7 @@ struct PS3FiveLaneDrumsState
 
     uint8_t unused2[2];
     int16_t unused3[4];
-}
+} __attribute__((__packed__));
 ```
 
 ## References

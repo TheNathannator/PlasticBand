@@ -98,7 +98,7 @@ struct GipGuitarState
     bool : 3;
 
     uint8_t unknown[3];
-}
+} __attribute__((__packed__));
 ```
 
 ## Output Command Info

@@ -76,7 +76,7 @@ struct XInputGuitarAlternateGamepad
     int16_t unused;
     int16_t whammy;
     int16_t tilt_accelY;
-}
+} __attribute__((__packed__));
 
 enum XInputGuitarAlternateTouchBar
 {
@@ -117,7 +117,7 @@ enum XInputGuitarAlternateTouchBar
     TouchBar_RYBO = 0x6363,
 
     TouchBar_GRYBO = 0x5F5F
-}
+};
 ```
 
 ## References

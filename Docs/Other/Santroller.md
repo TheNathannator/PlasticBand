@@ -76,7 +76,7 @@ struct XInputSantrollerCommand
         : parameter(param << 8)
     {
     }
-}
+} __attribute__((__packed__));
 ```
 
 Just like with the Stage Kit, command IDs and parameters are listed in byte form. When using XInput to send commands, these values must have an additional `0x00` byte appended.
@@ -93,7 +93,7 @@ struct HidSantrollerCommand
     uint8_t outputType = 0x5A;
     uint8_t parameter;
     uint8_t commandId;
-}
+} __attribute__((__packed__));
 ```
 
 The padding normally present on other PS3 device commands is not required, and will not cause problems if sent.

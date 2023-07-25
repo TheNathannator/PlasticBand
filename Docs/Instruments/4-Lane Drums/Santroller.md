@@ -89,8 +89,7 @@ struct SantrollerFourLaneDrumsState
     uint8_t velocity_greenCymbal;
     uint8_t velocity_yellowCymbal;
     uint8_t velocity_blueCymbal;
-
-}
+} __attribute__((__packed__));
 ```
 
 ## References

@@ -69,5 +69,5 @@ struct SantrollerGuitarHeroGuitarState
     uint8_t whammy;
     uint8_t tapBar;
     uint8_t tilt;
-}
+} __attribute__((__packed__));
 ```

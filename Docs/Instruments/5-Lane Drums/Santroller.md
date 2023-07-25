@@ -11,6 +11,7 @@
 ## Input Info
 
 Length: 10 bytes
+
 - Byte 0: Report ID (always 1)
 - Bytes 1-2: 16-bit button bitmask
   - Byte 0, bit 0 (`0x01`) - Green
@@ -74,8 +75,7 @@ struct SantrollerFiveLaneDrumsState
     uint8_t velocity_blue;
     uint8_t velocity_orange;
     uint8_t velocity_kick;
-
-}
+} __attribute__((__packed__));
 ```
 
 ## References

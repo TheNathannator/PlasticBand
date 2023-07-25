@@ -97,7 +97,7 @@ struct PS4RockBandGuitarState
 
     uint8_t unused4[43];
     uint32_t crc32;
-};
+} __attribute__((__packed__));
 ```
 
 ## References

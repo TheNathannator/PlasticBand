@@ -60,7 +60,7 @@ struct XInput<type>Gamepad
     int16_t leftStickY;
     int16_t rightStickX;
     int16_t rightStickY;
-}
+} __attribute__((__packed__));
 ```
 
 ## References

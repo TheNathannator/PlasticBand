@@ -76,7 +76,7 @@ struct XInputSixFretGuitarGamepad
     int16_t strumBar;
     int16_t tilt;
     int16_t whammy;
-}
+} __attribute__((__packed__));
 ```
 
 ## References

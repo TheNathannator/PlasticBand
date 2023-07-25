@@ -85,7 +85,7 @@ struct XInputTurntableState
 
     int16_t effectsKnob; // Whether or not this is signed doesn't really matter, as either way it's gonna loop over when it reaches min/max
     int16_t crossfader;
-}
+} __attribute__((__packed__));
 ```
 
 ## Vibration Info

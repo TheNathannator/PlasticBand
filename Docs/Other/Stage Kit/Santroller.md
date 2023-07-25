@@ -43,5 +43,5 @@ struct SantrollerStageKitState
     uint8_t dpad;
 
     uint8_t unused2[16];
-}
+} __attribute__((__packed__));
 ```

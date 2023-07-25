@@ -173,7 +173,7 @@ struct PS3KeytarState
                         // No description is provided for it until more investigation can be done.
 
     uint8_t unused4;
-}
+} __attribute__((__packed__));
 ```
 
 ## Feature Reports
@@ -194,7 +194,7 @@ struct PS3KeyboardEnableMidi
         0x00, 0x00, 0x89, 0x00, 0x00, 0x00, 0x00, 0x00,
         0xE9, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
     };
-}
+} __attribute__((__packed__));
 ```
 
 The Wii Keyboard does not require this report, it sends the data regardless.
