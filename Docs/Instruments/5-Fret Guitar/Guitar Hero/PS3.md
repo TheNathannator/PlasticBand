@@ -39,6 +39,8 @@ Strumbar: D-pad up/down
 
 Whammy: Right stick X
 
+- Ranges from `0x7F`/`0x80` when not pressed to `0xFF` when fully pressed.
+
 Accelerometers:
 
 - These guitars feature a full 3-axis accelerometer which outputs values relative to gravity. The axis names used here match the fields that they're placed on compared to the normal PS3 controller report.

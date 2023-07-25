@@ -51,6 +51,8 @@ Strumbar: D-pad up/down
 
 Whammy: L2 Axis
 
+- Assuming it works the same as the PS3/Wii guitars, ranges from `0x00` when not pressed to `0xFF` when fully pressed, and resets to `0x7F` after a second or two of no movement.
+
 Tilt: R2 Axis
 
 Pickup switch: (Unknown)

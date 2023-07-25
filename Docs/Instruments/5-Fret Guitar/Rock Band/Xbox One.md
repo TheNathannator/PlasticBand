@@ -42,6 +42,7 @@ Length: 10 bytes
 - Byte 2: Tilt
   - Has a minimum value of `0x70`, angles below this point register as just `0x00`
 - Byte 3: Whammy bar
+  - Ranges from `0x00` when not pressed to `0xFF` when fully pressed.
 - Byte 4: Pickup switch
   - Seems to use top 4 bytes, values from the Guitar Sniffer logs are `0x00`, `0x10`, `0x20`, `0x30`, and `0x40`
 - Byte 5: 8-bit upper fret bitmask

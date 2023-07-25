@@ -46,7 +46,7 @@ Strumbar: D-pad up/down
 
 Whammy: Right Stick X
 
-- Ranges from -32768 (not pressed) to 32767 (fully pressed). Note that the actual max may vary.
+- Ranges from -32768 when not pressed to 32767 when fully pressed. Note that the logical max might never actually be reached on these guitars, the whammy bar physically stops a little ways before then.
 
 Tilt: Right Stick Y
 

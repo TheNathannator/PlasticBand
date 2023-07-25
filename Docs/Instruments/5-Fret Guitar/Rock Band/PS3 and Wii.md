@@ -62,6 +62,8 @@ Strumbar: D-pad up/down
 
 Whammy: Right stick X
 
+- Ranges from `0x00` when not pressed to `0xFF` when fully pressed. Resets to `0x7F` after a second or two of no movement.
+
 Tilt: R1
 
 Pickup switch: Right stick Y

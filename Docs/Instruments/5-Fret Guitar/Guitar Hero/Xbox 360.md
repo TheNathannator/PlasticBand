@@ -25,7 +25,7 @@ Strumbar: D-pad up/down
 
 Whammy: Right stick X
 
-- Ranges from -32768 (not pressed) to 32767 (fully pressed).
+- Ranges from -32768 when not pressed to 32767 when fully pressed.
 
 Accelerometers:
 
