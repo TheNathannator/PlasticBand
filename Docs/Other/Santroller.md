@@ -24,17 +24,18 @@ On a PC, these will use a format similar to a PS3 instrument, or an Xbox 360 ins
 ## Device Info
 
 - Vendor/product ID:
-  - USB:  `1209:2882`
-  - Bluetooth:  `1209:2885`
+  - USB: `1209:2882`
+  - Bluetooth: `1209:2885`
 - Device name: `Santroller`
 - Manufacturer name: `sanjay900`
 - Revision:
-  - This value encodes the device type into the highest byte `0xXX00`
+  - This value encodes the device type into the highest byte (`0xXX00`). See the [Device Types](#device-types) table below for more info.
 
 When in XInput mode, the information above is encoded into the standard XInput capabilities:
 
 - Left stick X: Vendor ID (`0x1209`)
 - Left stick Y: Product ID (`0x2882`)
+- Right stick X: Revision (used to better identify controller type)
 
 ### Device Types
 
@@ -54,11 +55,11 @@ The device type indicates what kind of device is being emulated.
 
 ## Input Information
 
-Santroller devices will either emulate XInput instruments, or utilise custom HID reports.
+Santroller devices will either emulate XInput instruments or utilise custom HID reports. Each of the device types has its own document for the input reports alongside the standard devices.
 
 ## Output Report Info
 
-Santroller devices support a number of output commands for setting the state of some LEDs, using a format based on the Xbox 360 Stage Kit's output reports. Most/all of the Stage Kit commands are supported, along with a number of additional commands for more specific events.
+Santroller devices support a number of output commands for setting the state of LEDs and the like, using a format based on the Xbox 360 Stage Kit's output reports. Most/all of the Stage Kit commands are supported, along with a number of additional commands for more specific events.
 
 ### XInput Mode
 
@@ -108,7 +109,7 @@ In addition to the commands supported by the stage kit, the following general co
 | :---------    | :----------              | :--------
 | `0x08`        | Star Power gauge fill    | Fill amount: 0 = empty, 255 = full
 | `0x09`        | Star Power active        | 1 to enable, 0 to disable
-| `0x0A`        | Multiplier number        | The current multiplier number plus 10 (11-255)
+| `0x0A`        | Multiplier number        | The current multiplier number, plus `0x0A` (11-255)
 | `0x0B`        | Solo section             | 1 to enable, 0 to disable
 |               |                          |
 | `0x90`-`0xBF` | Device-specific commands |

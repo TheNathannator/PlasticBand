@@ -28,9 +28,8 @@ Length: 8 bytes
   - Byte 1, bit 3 (`0x08`) - Start button
   - Byte 1, bit 4 (`0x10`) - Home button
   - Byte 1, bit 5-7 - Unused
-- Byte 3 - Dpad
-  - Same format as a ps3 controller
-  - This value is not a bitmask, rather it encodes different possible states as individual numbers.\
+- Byte 3 - D-pad
+  - Same format as the PS3 guitars. This value is not a bitmask, rather it encodes different possible states as individual numbers.\
     Visual representation:
 
     ```
@@ -42,11 +41,11 @@ Length: 8 bytes
     ```
 
 - Byte 4 - Whammy
-  - Full range, 0-255
+  - Full range: resting at 0, fully pressed at 255.
 - Byte 5 - Pickup
-  - Full range, 0-255
+  - See the [General Notes](General%20Notes.md) doc for more details.
 - Byte 6 - Tilt
-  - Full range, 0-255
+  - Full range: centered at `0x80`, tilted up all the way at 255, tilted all the way down at 0.
 
 ### As A Struct
 
@@ -67,10 +66,10 @@ struct SantrollerRockBandGuitarState
 
     bool soloBlue : 1;
     bool soloOrange : 1;
-    bool back : 1;          // select
+    bool select : 1;
     bool start : 1;
 
-    bool guide : 1;  // ps
+    bool home : 1;  // ps
     uint8_t : 3;
 
     //     0
