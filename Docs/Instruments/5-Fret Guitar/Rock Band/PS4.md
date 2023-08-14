@@ -14,6 +14,8 @@
 
 ## Input Info
 
+Report ID: `0x01`
+
 Options, Share, PS button, and d-pad work as normal.
 
 Upper frets:
@@ -66,7 +68,7 @@ Pickup switch: Byte offset 43
 ```cpp
 struct PS4RockBandGuitarState
 {
-    uint8_t reportId;
+    uint8_t reportId = 0x01;
 
     uint8_t unused1[4];
 

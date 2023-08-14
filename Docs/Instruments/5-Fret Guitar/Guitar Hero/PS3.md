@@ -74,7 +74,9 @@ Pressure axes:
 ```cpp
 struct PS3GuitarHeroGuitarState
 {
-    uint8_t reportId;
+#ifdef WINDOWS
+    uint8_t reportId = 0x00;
+#endif
 
     bool yellow : 1;
     bool green : 1;

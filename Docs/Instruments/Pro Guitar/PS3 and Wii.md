@@ -85,7 +85,9 @@ Pedal port:
 ```cpp
 struct Ps3Report
 {
-    uint8_t reportId;
+#ifdef WINDOWS
+    uint8_t reportId = 0x00;
+#endif
 
     bool square : 1;
     bool cross : 1;
@@ -166,7 +168,9 @@ The PS3 Pro Guitars have a feature report to enable MIDI messages to be sent alo
 ```cpp
 struct PS3ProGuitarEnableMidi
 {
+#ifdef WINDOWS
     uint8_t reportId = 0x00;
+#endif
 
     uint8_t data[40] = {
         0xE9, 0x00, 0x89, 0x1B, 0x00, 0x00, 0x00, 0x02,
@@ -239,7 +243,9 @@ enum PS3WiiProGuitarAutoCalibrationState
 
 struct PS3WiiProGuitarAutoCalibration
 {
+#ifdef WINDOWS
     uint8_t reportId = 0x00;
+#endif
 
     uint8_t unk1[7] = {0xE9, 0x00, 0x83, 0x1B, 0x00, 0x00, 0x00};
     uint8_t sensorState;

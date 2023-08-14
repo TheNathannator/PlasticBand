@@ -57,7 +57,7 @@ Length: 11 bytes
 ```cpp
 struct SantrollerFourLaneDrumsState
 {
-    uint8_t reportId;
+    uint8_t reportId = 0x01;
     
     uint8_t a : 1; // cross
     uint8_t b : 1; // circle
@@ -93,7 +93,7 @@ struct SantrollerFourLaneDrumsState
     uint8_t velocity_greenCymbal;
     uint8_t velocity_yellowCymbal;
     uint8_t velocity_blueCymbal;
-} __attribute__((__packed__));
+} __attribute__((__packed__)); // 11 bytes
 ```
 
 ## References

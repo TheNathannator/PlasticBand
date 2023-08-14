@@ -4,6 +4,8 @@ The PS4 Guitar Hero and Rock Band peripherals are standard HID devices that all 
 
 ## Input Reports
 
+All PS3 instruments use a report ID of `0x01`, and only send a single type of report.
+
 For wired devices, the report goes like this:
 
 ```cpp
@@ -56,7 +58,7 @@ struct PS4Report
     int16_t accelerometerY;
     int16_t accelerometerZ;
 
-    uint8_t[5] extData;
+    uint8_t extData[5];
 
     uint8_t powerLevel : 4; // 0x00-0x0A, or 0x01-0x0B if plugged in
     bool pluggedPowerCable : 1;
@@ -77,13 +79,15 @@ struct PS4Report
         struct {
             uint8_t index : 7;
             uint8_t notTouching : 1;
+            // warning: MSVC does not pack the following fields correctly, even with "#include <pshpack1.h>"!
+            // it will always add an extra byte of padding
             uint16_t fingerX : 12;
             uint16_t fingerY : 12;
         } finger[2];
     } touches[3];
 
     uint8_t padding[3];
-} __attribute__((__packed__));
+} __attribute__((__packed__)); // 64 bytes
 ```
 
 For wireless devices, there are an additional 14 bytes at the end of the report:
@@ -93,7 +97,7 @@ struct PS4WirelessReport : PS4Report
 {
     uint8_t padding2[10];
     uint32_t crc32;
-} __attribute__((__packed__));
+} __attribute__((__packed__)); // 78 bytes
 ```
 
 The CRC is calculated using the standard CRC32 algorithm, however you *must* prepend the Bluetooth HID command byte used for input reports (`0xA1`) to the beginning of the buffer for it to calculate correctly (assuming you are just using HID to read the device). For example, if the report starts with `01 80 80 80 80 ...`, the CRC buffer should start with `A1 01 80 80 80 80 ...`.

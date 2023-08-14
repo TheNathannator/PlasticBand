@@ -50,7 +50,7 @@ Length: 10 bytes
 ```cpp
 struct SantrollerFiveLaneDrumsState
 {
-    uint8_t reportId;
+    uint8_t reportId = 0x01;
     
     uint8_t green_a : 1; // cross
     uint8_t red_b : 1; // circle
@@ -78,7 +78,7 @@ struct SantrollerFiveLaneDrumsState
     uint8_t velocity_blue;
     uint8_t velocity_orange;
     uint8_t velocity_kick;
-} __attribute__((__packed__));
+} __attribute__((__packed__)); // 10 bytes
 ```
 
 ## References

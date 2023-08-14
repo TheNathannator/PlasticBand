@@ -88,7 +88,9 @@ Effects touchpad: Pressure Δ (byte offset 16), `0b_x111_1111`
 ```cpp
 struct PS3KeytarState
 {
-    uint8_t reportId;
+#ifdef WINDOWS
+    uint8_t reportId = 0x00;
+#endif
 
     bool square : 1;
     bool cross : 1;
@@ -185,7 +187,9 @@ The PS3 keyboard has a feature report to enable MIDI messages to be sent alongsi
 ```cpp
 struct PS3KeyboardEnableMidi
 {
+#ifdef WINDOWS
     uint8_t reportId = 0x00;
+#endif
 
     uint8_t data[40] = {
         0xE9, 0x00, 0x89, 0x1B, 0x00, 0x00, 0x00, 0x02,

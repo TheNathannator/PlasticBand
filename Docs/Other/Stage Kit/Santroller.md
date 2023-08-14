@@ -41,7 +41,7 @@ Length: 8 bytes
 ```cpp
 struct SantrollerStageKitState
 {
-    uint8_t reportId;
+    uint8_t reportId = 0x01;
 
     bool a : 1; // cross
     bool b : 1; // circle
@@ -59,5 +59,5 @@ struct SantrollerStageKitState
     //   5   3
     //     4
     uint8_t dpad;
-} __attribute__((__packed__));
+} __attribute__((__packed__)); // 3 bytes
 ```

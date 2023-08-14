@@ -79,7 +79,9 @@ Velocities:
 ```cpp
 struct PS3FourLaneDrumsState
 {
-    uint8_t reportId;
+#ifdef WINDOWS
+    uint8_t reportId = 0x00;
+#endif
 
     bool square_blue : 1;
     bool cross_green : 1;

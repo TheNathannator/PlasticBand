@@ -75,7 +75,9 @@ Pickup switch: Right stick Y
 ```cpp
 struct PS3RockBandGuitarState
 {
-    uint8_t reportId;
+#ifdef WINDOWS
+    uint8_t reportId = 0x00;
+#endif
 
     bool blue : 1;
     bool green : 1;

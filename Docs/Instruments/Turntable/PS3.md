@@ -60,7 +60,9 @@ Pressure axes:
 ```cpp
 struct PS3TurntableState
 {
-    uint8_t reportId;
+#ifdef WINDOWS
+    uint8_t reportId = 0x00;
+#endif
 
     bool square : 1;
     bool cross : 1;
@@ -120,7 +122,9 @@ Length: 8 bytes
 ```cpp
 struct PS3TurntableEuphoria
 {
+#ifdef WINDOWS
     uint8_t reportId = 0x00;
+#endif
 
     uint8_t outputType = 0x91;
     uint8_t unknown1 = 0x01;

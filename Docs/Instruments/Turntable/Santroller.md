@@ -55,7 +55,7 @@ Length: 8 bytes
 ```cpp
 struct SantrollerTurntableState
 {
-    uint8_t reportId;
+    uint8_t reportId = 0x01;
 
     bool a : 1; // cross
     bool b : 1; // circle
@@ -86,5 +86,5 @@ struct SantrollerTurntableState
     uint8_t rightTableVelocity;
     uint8_t effectsKnob;
     uint8_t crossfader;
-} __attribute__((__packed__));
+} __attribute__((__packed__)); // 8 bytes
 ```

@@ -47,7 +47,7 @@ Length: 6 bytes
 ```cpp
 struct SantrollerSixFretGuitarState
 {
-    uint8_t reportId;
+    uint8_t reportId = 0x01;
 
     bool black1 : 1;
     bool black2 : 1;
@@ -72,5 +72,5 @@ struct SantrollerSixFretGuitarState
 
     uint8_t whammy;
     uint8_t tilt;
-} __attribute__((__packed__));
+} __attribute__((__packed__)); // 6 bytes
 ```
