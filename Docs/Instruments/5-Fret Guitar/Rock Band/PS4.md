@@ -49,13 +49,17 @@ Or, as flags:
 
 Strumbar: D-pad up/down
 
-Whammy: L2 Axis
+Whammy: Byte offset 44
 
-- Assuming it works the same as the PS3/Wii guitars, ranges from `0x00` when not pressed to `0xFF` when fully pressed, and resets to `0x7F` after a second or two of no movement.
+- Ranges from `0x00` when not pressed to `0xFF` when fully pressed.
 
-Tilt: R2 Axis
+Tilt: Byte offset 45
 
-Pickup switch: (Unknown)
+- Nominally, `0x00` when parallel, `0xFF` when straight up.
+
+Pickup switch: Byte offset 43
+
+- Ranges from 0 to 4, with each number being a discrete notch of the switch.
 
 ### As A Struct
 
@@ -77,7 +81,7 @@ struct PS4RockBandGuitarState
     bool red : 1;
     bool yellow : 1;
 
-    bool orange : 1
+    bool orange : 1;
     uint8_t : 3;
     bool share : 1;
     bool options : 1;
@@ -87,15 +91,18 @@ struct PS4RockBandGuitarState
     bool ps : 1;
     uint8_t : 7;
 
-    uint8_t whammy;
-    uint8_t tilt;
-
-    uint8_t unused2[20];
+    uint8_t unused2[22];
 
     uint8_t powerLevel : 4;
     uint8_t : 4;
 
-    uint8_t unused4[43];
+    uint8_t unused4[12];
+
+    uint8_t pickup;
+    uint8_t whammy;
+    uint8_t tilt;
+
+    uint8_t unused4[28];
     uint32_t crc32;
 } __attribute__((__packed__));
 ```

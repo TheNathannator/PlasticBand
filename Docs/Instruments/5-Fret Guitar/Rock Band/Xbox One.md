@@ -40,11 +40,13 @@ Length: 10 bytes
   - Byte 1, bit 6 (`0x40`) - Solo fret flag
   - Byte 1, bit 7 (`0x80`) - Unused
 - Byte 2: Tilt
-  - Has a minimum value of `0x70`, angles below this point register as just `0x00`
+  - Nominally, `0x00` when parallel, `0xFF` when straight up.
+  - Has a minimum value of `0x70`, angles below this point register as just `0x00`.
 - Byte 3: Whammy bar
   - Ranges from `0x00` when not pressed to `0xFF` when fully pressed.
 - Byte 4: Pickup switch
-  - Seems to use top 4 bytes, values from the Guitar Sniffer logs are `0x00`, `0x10`, `0x20`, `0x30`, and `0x40`
+  - Ranges from 0 to 4, with each number being a discrete notch of the switch.
+  - Uses the top 4 bytes instead of the bottom 4, values from the Guitar Sniffer logs are `0x00`, `0x10`, `0x20`, `0x30`, and `0x40`.
 - Byte 5: 8-bit upper fret bitmask
   - Bit 0 (`0x01`) - Green
   - Bit 1 (`0x02`) - Red
