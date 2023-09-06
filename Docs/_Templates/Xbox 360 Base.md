@@ -2,9 +2,7 @@
 
 This is a template and guide for creating Xbox 360 controller data documents. Text that is not part of describing the device should be removed, as it is for guidance purposes only.
 
-Resources to assist in the documentation process:
-
-- TODO: XInput test app 
+See the [Tools](../../Tools) folder for tools and resources to assist with research.
 
 ## Controller Info
 

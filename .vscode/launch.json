@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch GipReportTool",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Tools/GipReportTool/bin/Debug/net7.0/GipReportTool.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Tools/GipReportTool",
+            "console": "externalTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Launch HidReportTool",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Tools/HidReportTool/bin/Debug/net7.0/HidReportTool.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Tools/HidReportTool",
+            "console": "externalTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Launch XusbReportTool",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Tools/XusbReportTool/bin/Debug/net7.0/XusbReportTool.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Tools/XusbReportTool",
+            "console": "externalTerminal",
+            "stopAtEntry": false
+        },
+    ]
+}
