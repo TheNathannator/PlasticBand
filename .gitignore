@@ -1,5 +1,10 @@
 # General-purpose ignore directory
 _Ignored/
 
-# Obsidian configuration directory
+# Configuration/cache directories
+.vs/
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
 .obsidian/
