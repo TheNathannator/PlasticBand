@@ -123,18 +123,18 @@ struct GipLegacyWirelessDisconnection
 
 ### Command ID `0x21`: Set State?
 
-This is entirely speculative, needs testing.
+This one is unknown, needs more research done.
 
 Length: 2 bytes
 
-- Byte 0: Left motor speed?
-- Byte 1: Right motor speed?
+- Byte 0: Device ID?
+- Byte 1: Unknown
 
 ```cpp
 struct GipLegacyWirelessSetState
 {
-    uint8_t leftMotor;
-    uint8_t rightMotor;
+    uint8_t deviceId;
+    uint8_t unknown;
 } __attribute__((__packed__));
 ```
 
