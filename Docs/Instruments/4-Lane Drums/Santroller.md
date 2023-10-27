@@ -12,24 +12,24 @@
 
 Length: 11 bytes
 
+To ensure better user experience regarding menu navigation, the method used on Xbox 360/PS3/Wii drumkits for pad/cymbal hits is used here. Without it, there is no easy way to ensure games which do more generic control binding will recognize the face buttons and pads as the same thing, which is important for menus.
+
+In particular, this is done for compatibility with Clone Hero; it does not allow multiple bindings to an action and does not have separate menu navigation actions, so separate face button bits will cause issues with binding and also prevent using the face buttons on menus.
+
 - Byte 0: Report ID (always 1)
 - Bytes 1-2: 16-bit button bitmask
-  - Byte 0, bit 0 (`0x01`) - A / × button
-  - Byte 0, bit 1 (`0x02`) - B / ○ button
-  - Byte 0, bit 2 (`0x04`) - X / □ button
-  - Byte 0, bit 3 (`0x08`) - Y / Δ button
-  - Byte 0, bit 4 (`0x10`) - Green pad
-  - Byte 0, bit 5 (`0x20`) - Red pad
-  - Byte 0, bit 6 (`0x40`) - Yellow pad
-  - Byte 0, bit 7 (`0x80`) - Blue pad
-  - Byte 1, bit 0 (`0x01`) - Green cymbal
-  - Byte 1, bit 1 (`0x02`) - Yellow cymbal
-  - Byte 1, bit 2 (`0x04`) - Blue cymbal
-  - Byte 1, bit 3 (`0x08`) - 1st kick pedal
-  - Byte 1, bit 4 (`0x10`) - 2nd kick pedal
-  - Byte 1, bit 5 (`0x20`) - Select button
-  - Byte 1, bit 6 (`0x40`) - Start button
-  - Byte 1, bit 7 (`0x80`) - Home button
+  - Byte 0, bit 0 (`0x01`) - A / × button, green pad/cymbal
+  - Byte 0, bit 1 (`0x02`) - B / ○ button, red pad
+  - Byte 0, bit 2 (`0x04`) - X / □ button, blue pad/cymbal
+  - Byte 0, bit 3 (`0x08`) - Y / Δ button, yellow pad/cymbal
+  - Byte 0, bit 4 (`0x10`) - Pad hit flag
+  - Byte 0, bit 5 (`0x20`) - Cymbal hit flag
+  - Byte 0, bit 6 (`0x40`) - 1st kick pedal
+  - Byte 0, bit 7 (`0x80`) - 2nd kick pedal
+  - Byte 1, bit 0 (`0x01`) - Select button
+  - Byte 1, bit 1 (`0x02`) - Start button
+  - Byte 1, bit 2 (`0x04`) - Home button
+  - Byte 1, bit 3-7 - Unused
 - Byte 3 - D-pad
   - Same format as the PS3 drums. This value is not a bitmask, rather it encodes different possible states as individual numbers.\
     Visual representation:
@@ -41,6 +41,8 @@ Length: 11 bytes
       5   3
         4
     ```
+
+    The d-pad is also used on cymbal hits for pad/cymbal distinguishing purposes, yellow cymbal does up and blue cymbal does down. Refer to the [General Notes](General%20Notes.md#deciphering-pads-and-cymbals) doc for full details.
 
 - Bytes 4-10 - Velocities
   - Byte 4 - Green pad
@@ -58,26 +60,21 @@ Length: 11 bytes
 struct SantrollerFourLaneDrumsState
 {
     uint8_t reportId = 0x01;
-    
-    uint8_t a : 1; // cross
-    uint8_t b : 1; // circle
-    uint8_t x : 1; // square
-    uint8_t y : 1; // triangle
 
-    uint8_t green : 1;
-    uint8_t red : 1;
-    uint8_t yellow : 1;
-    uint8_t blue : 1;
+    uint8_t a_green : 1;  // cross
+    uint8_t b_red : 1;  // circle
+    uint8_t x_blue : 1;  // square
+    uint8_t y_yellow : 1;  // triangle
 
-    uint8_t greenCymbal : 1;
-    uint8_t redCymbal : 1;
-    uint8_t blueCymbal : 1;
+    uint8_t padFlag : 1; 
+    uint8_t cymbalFlag : 1;
     uint8_t kick1 : 1;
-
     uint8_t kick2 : 1;
+
     uint8_t select : 1;
     uint8_t start : 1;
-    uint8_t home : 1;
+    uint8_t guide : 1;
+    uint8_t : 5;
 
     //     0
     //   7   1
