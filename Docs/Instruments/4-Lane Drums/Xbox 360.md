@@ -32,7 +32,7 @@ Or, as flags:
 | Pad flag    | Right stick click |
 | Cymbal flag | Right bumper      |
 
-with the yellow and blue cymbals doing d-pad up and down, respectively.
+with the yellow and blue cymbals doing d-pad up and down, respectively. Refer to the [General Notes](General%20Notes.md#deciphering-pads-and-cymbals) doc for an example of how to distinguish things.
 
 Pedals:
 
