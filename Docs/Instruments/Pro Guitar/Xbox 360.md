@@ -37,6 +37,7 @@ Standard 5-fret color flags:
 
 | Fret Color | Input         | Bits                     |
 | :--------- | :----         | :---                     |
+| Solo flag (speculated) | Left Thumb X  | `0b_1xxx_xxxx_xxxx_xxxx` |
 | Green      | Left Thumb Y  | `0b_xxxx_xxxx_1xxx_xxxx` |
 | Red        | Left Thumb Y  | `0b_1xxx_xxxx_xxxx_xxxx` |
 | Yellow     | Right Thumb X | `0b_xxxx_xxxx_1xxx_xxxx` |
