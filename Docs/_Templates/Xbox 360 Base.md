@@ -12,11 +12,17 @@ Resources to assist in the documentation process:
 - XInput subtype: Name (Number)
   - If the subtype is not part of standard XInput subtypes, instead use "Number, not part of XInput standards" (replace `Number` with the subtype number).
 
-XInput type and subtype may be retrieved through the XInputGetCapabilities function of XInput.
+XInput type and subtype may be retrieved through the `XInputGetCapabilities` function of XInput.
 
 ## Input Info
 
 Detail input information here.
+
+### XUSB-Only Info
+
+Some input data is not present in the normal XInput report and instead requires lower-level access to the raw report that the device sends. Xbox 360 controllers all send 6 bytes at the end of their report which normally go unused, but some less conventional controllers such as some of the instruments make use of this data.
+
+Accessing this data usually requires raw USB access or interfacing directly with a driver, see the [Other Options](../Controller%20Communication%20Basics/Xbox%20360.md#other-options) section of the Xbox 360 communication doc for more info.
 
 ## Vibration Info
 
@@ -32,8 +38,7 @@ struct XInput<type>Gamepad
 {
     // Rename and/or redefine the data members here to more closely match the reported data from the controller.
     // The data for XInput devices is always in little-endian order (to my knowledge at least), so keep that in mind when redefining.
-    // Ensure that the struct remains the same size in bytes as the original struct, unless there's data beyond standard XInput
-    // data that needs to be included for a complete definition of everything.
+    // Ensure that the struct remains the same size in bytes as the original struct.
     bool dpadUp : 1;
     bool dpadDown : 1;
     bool dpadLeft : 1;
@@ -60,6 +65,11 @@ struct XInput<type>Gamepad
     int16_t leftStickY;
     int16_t rightStickX;
     int16_t rightStickY;
+
+    // Any XUSB-only data should be wrapped in an `#ifdef USING_XUSB` block like so:
+#ifdef USING_XUSB
+    uint8_t reserved[6];
+#endif
 } __attribute__((__packed__));
 ```
 

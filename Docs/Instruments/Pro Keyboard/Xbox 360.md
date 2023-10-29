@@ -65,7 +65,10 @@ Pedal port analog input: Right Stick Y, `0b_x111_1111_xxxx_xxxx`
 - This value appears to have an inverted range (0 = max, 127 = min). Not 100% sure on that though as this wasn't tested with an actual analog pedal, instead I used a headphone/microphone splitter on a pair of headphones that have a built-in mic and connected the mic part into the port.
 - These bits are all 1 when nothing is plugged in.
 
-Effects touchpad: Present in the first byte beyond the standard XUSB data. Not accessible through standard XInput, requires interfacing with the XUSB driver or something like hacking into the [OpenXinput](https://github.com/Nemirtingas/OpenXinput) project to make an XInput function that provides extended input data.
+### [XUSB-Only Info](../../_Templates/Xbox%20360%20Base.md#xusb-only-info)
+
+- Effects touchpad: `reserved[0]` (Byte offet 12)
+- Pedal connection: `reserved[5]` (byte offset 17), `0b_0000_0001`
 
 ### As A Struct
 
@@ -135,10 +138,15 @@ struct XInputKeytarGamepad
     uint8_t pedalAnalog : 7;
     bool pedalDigital : 1;
 
-    // These two fields aren't available via standard XInput.
-    // Ignore or remove these fields if you're using it.
+#ifdef USING_XUSB
     uint8_t touchPad : 7;
     bool : 1;
+
+    uint8_t unused2[4];
+
+    bool pedalConnection : 1; // If this matches PS3 MPA behavior, always 0 with the MIDI Pro Adapter
+    uint8_t : 7;
+#endif
 } __attribute__((__packed__));
 ```
 
