@@ -27,61 +27,61 @@ C1 is the leftmost key, C3 is the rightmost key.
 
 | Key | Input                | Byte Offset | Bits           |
 | :-- | :----                | :---------- | :--:           |
-| C1  | Right stick X        | 6           | `0b_1xxx_xxxx` |
-| Db1 | Right stick X        | 6           | `0b_x1xx_xxxx` |
-| D1  | Right stick X        | 6           | `0b_xx1x_xxxx` |
-| Eb1 | Right stick X        | 6           | `0b_xxx1_xxxx` |
-| E1  | Right stick X        | 6           | `0b_xxxx_1xxx` |
-| F1  | Right stick X        | 6           | `0b_xxxx_x1xx` |
-| Gb1 | Right stick X        | 6           | `0b_xxxx_xx1x` |
-| G1  | Right stick X        | 6           | `0b_xxxx_xxx1` |
+| C1  | Right stick X        | 5           | `0b_1xxx_xxxx` |
+| Db1 | Right stick X        | 5           | `0b_x1xx_xxxx` |
+| D1  | Right stick X        | 5           | `0b_xx1x_xxxx` |
+| Eb1 | Right stick X        | 5           | `0b_xxx1_xxxx` |
+| E1  | Right stick X        | 5           | `0b_xxxx_1xxx` |
+| F1  | Right stick X        | 5           | `0b_xxxx_x1xx` |
+| Gb1 | Right stick X        | 5           | `0b_xxxx_xx1x` |
+| G1  | Right stick X        | 5           | `0b_xxxx_xxx1` |
 |     |                      |             |                |
-| Ab1 | Right stick Y        | 7           | `0b_1xxx_xxxx` |
-| A1  | Right stick Y        | 7           | `0b_x1xx_xxxx` |
-| Bb1 | Right stick Y        | 7           | `0b_xx1x_xxxx` |
-| B1  | Right stick Y        | 7           | `0b_xxx1_xxxx` |
-| C2  | Right stick Y        | 7           | `0b_xxxx_1xxx` |
-| Db2 | Right stick Y        | 7           | `0b_xxxx_x1xx` |
-| D2  | Right stick Y        | 7           | `0b_xxxx_xx1x` |
-| Eb2 | Right stick Y        | 7           | `0b_xxxx_xxx1` |
+| Ab1 | Right stick Y        | 6           | `0b_1xxx_xxxx` |
+| A1  | Right stick Y        | 6           | `0b_x1xx_xxxx` |
+| Bb1 | Right stick Y        | 6           | `0b_xx1x_xxxx` |
+| B1  | Right stick Y        | 6           | `0b_xxx1_xxxx` |
+| C2  | Right stick Y        | 6           | `0b_xxxx_1xxx` |
+| Db2 | Right stick Y        | 6           | `0b_xxxx_x1xx` |
+| D2  | Right stick Y        | 6           | `0b_xxxx_xx1x` |
+| Eb2 | Right stick Y        | 6           | `0b_xxxx_xxx1` |
 |     |                      |             |                |
-| E2  | Pressure d-pad up    | 8           | `0b_1xxx_xxxx` |
-| F2  | Pressure d-pad up    | 8           | `0b_x1xx_xxxx` |
-| Gb2 | Pressure d-pad up    | 8           | `0b_xx1x_xxxx` |
-| G2  | Pressure d-pad up    | 8           | `0b_xxx1_xxxx` |
-| Ab2 | Pressure d-pad up    | 8           | `0b_xxxx_1xxx` |
-| A2  | Pressure d-pad up    | 8           | `0b_xxxx_x1xx` |
-| Bb2 | Pressure d-pad up    | 8           | `0b_xxxx_xx1x` |
-| B2  | Pressure d-pad up    | 8           | `0b_xxxx_xxx1` |
+| E2  | Pressure d-pad up    | 7           | `0b_1xxx_xxxx` |
+| F2  | Pressure d-pad up    | 7           | `0b_x1xx_xxxx` |
+| Gb2 | Pressure d-pad up    | 7           | `0b_xx1x_xxxx` |
+| G2  | Pressure d-pad up    | 7           | `0b_xxx1_xxxx` |
+| Ab2 | Pressure d-pad up    | 7           | `0b_xxxx_1xxx` |
+| A2  | Pressure d-pad up    | 7           | `0b_xxxx_x1xx` |
+| Bb2 | Pressure d-pad up    | 7           | `0b_xxxx_xx1x` |
+| B2  | Pressure d-pad up    | 7           | `0b_xxxx_xxx1` |
 |     |                      |             |                |
-| C3  | Pressure d-pad right | 9           | `0b_1xxx_xxxx` |
+| C3  | Pressure d-pad right | 8           | `0b_1xxx_xxxx` |
 
 ### Velocity
 
 | Key     | Input                | Byte Offset | Bits           |
 | :--     | :----                | :---------- | :--:           |
-| 1st key | Pressure d-pad right | 9           | `0b_x111_1111` |
-| 2nd key | Pressure d-pad left  | 10          | `0b_x111_1111` |
-| 3rd key | Pressure d-pad down  | 11          | `0b_x111_1111` |
-| 4th key | Pressure L2          | 12          | `0b_x111_1111` |
-| 5th key | Pressure R2          | 13          | `0b_x111_1111` |
+| 1st key | Pressure d-pad right | 8           | `0b_x111_1111` |
+| 2nd key | Pressure d-pad left  | 9           | `0b_x111_1111` |
+| 3rd key | Pressure d-pad down  | 10          | `0b_x111_1111` |
+| 4th key | Pressure L2          | 11          | `0b_x111_1111` |
+| 5th key | Pressure R2          | 12          | `0b_x111_1111` |
 
 See the [general notes doc](General%20Notes.md) for details on [velocity behavior](General%20Notes.md#key-velocities) and [pairing velocities with keys](General%20Notes.md#pairing-keys-and-velocities).
 
 ### Other
 
-Overdrive button: Pressure L1 (byte offset 14), `0b_1xxx_xxxx`
+Overdrive button: Pressure L1 (byte offset 13), `0b_1xxx_xxxx`
 
 Pedal port:
 
-- Digital input: Pressure R1 (byte offset 15), `0b_1xxx_xxxx`
-- Analog input: Pressure R1 (byte offset 15), `0b_x111_1111`
-- Pedal connection: Accel X high byte (byte offset 21), `0b_0000_0001`
+- Digital input: Pressure R1 (byte offset 14), `0b_1xxx_xxxx`
+- Analog input: Pressure R1 (byte offset 14), `0b_x111_1111`
+- Pedal connection: Accel X high byte (byte offset 20), `0b_0000_0001`
 
 - This value may have an inverted range (0 = max, 127 = min). Needs confirmation though, as this is taken from observatons on the Xbox 360 keyboard.
 - These bits are all 1 when nothing is plugged in.
 
-Effects touchpad: Pressure Δ (byte offset 16), `0b_x111_1111`
+Effects touchpad: Pressure Δ (byte offset 15), `0b_x111_1111`
 
 ### As A Struct
 

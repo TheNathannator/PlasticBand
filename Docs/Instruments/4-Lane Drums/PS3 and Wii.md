@@ -69,10 +69,10 @@ Velocities:
 
 | Pad    | Axis        | Byte offset |
 | :-:    | :--:        | :---------: |
-| Red    | R2 Pressure | 13          |
-| Yellow | L2 Pressure | 12          |
-| Blue   | R1 Pressure | 15          |
-| Green  | L1 Pressure | 14          |
+| Red    | R2 Pressure | 12          |
+| Yellow | L2 Pressure | 11          |
+| Blue   | R1 Pressure | 14          |
+| Green  | L1 Pressure | 13          |
 
 ### As A Struct
 
