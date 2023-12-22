@@ -84,10 +84,12 @@ struct GipLegacyWirelessState
 Max length: 254
 
 - Byte 0: User index
-- Byte 1: Type? (`0x01`)
+- Byte 1: Device type
+  - Guitar: `0x01`
+  - Drums: `0x02`
 - Bytes 2-3: Vendor ID (big-endian)
 - Byte 4: Unknown (`0x00`)
-- Byte 5: Subtype + `0x80`?
+- Byte 5: XInput subtype (mask with `0x7F`)
   - Guitar: `0x87`
   - Drums: `0x88`
 - Byte 6 and onward: Little-endian wide-character name string
@@ -98,10 +100,10 @@ Max length: 254
 struct GipLegacyWirelessDeviceInfo
 {
     uint8_t userIndex;
-    uint8_t type;
+    uint8_t deviceType;
     uint16be_t vendorID;
     uint8_t unk;
-    uint8_t subType;
+    uint8_t xinputSubtype;
     wchar_t[] name; // max length is 124
 } __attribute__((__packed__));
 ```
@@ -127,14 +129,15 @@ This one is unknown, needs more research done.
 
 Length: 2 bytes
 
-- Byte 0: Device ID?
-- Byte 1: Unknown
+- Byte 0: Device ID
+- Byte 1: Device type
+  - Same as in the device information message.
 
 ```cpp
 struct GipLegacyWirelessSetState
 {
     uint8_t deviceId;
-    uint8_t unknown;
+    uint8_t deviceType;
 } __attribute__((__packed__));
 ```
 
