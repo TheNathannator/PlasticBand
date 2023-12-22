@@ -41,6 +41,7 @@ Accelerometers:
 Touch/slider bar: Left stick X
 
 - Only the bottom byte of the value matters. The top byte is the same as the bottom, except for values with the bottom byte above `0x80`, where it is one less. (When viewing those values in signed hexadecimal, they still appear the same.)
+  - Emulating this behavior can be done using the formula `-(value * -257)`, where `value` is a signed byte. Odd way of scaling up a byte to a short, but it technically works lol
 - See the [General Notes](General%20Notes.md) document for more info.
 
 RJ14 (pedal) port: Right bumper
