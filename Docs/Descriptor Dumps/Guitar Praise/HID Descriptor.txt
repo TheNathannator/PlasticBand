@@ -1,0 +1,119 @@
+Reconstructed via HidSharp, so might not be byte-for-byte accurate.
+0314:0830 - GUITAR PRAISE
+DESCRIPTOR:
+ 05 01 09 04 A1 01 85 01 09 00 A1 02 09 32 15 00
+ 25 FF 35 00 45 FF 65 00 55 00 75 08 95 01 81 02
+ 09 35 81 02 09 30 81 02 09 31 81 02 09 39 25 07
+ 46 3B 01 65 14 75 04 81 42 05 09 19 01 29 08 25
+ 01 45 01 65 00 75 01 95 08 81 02 95 0C 81 03 C1
+ 00 06 00 FF 09 00 A1 02 09 02 25 FF 45 FF 75 08
+ 95 04 91 02 C1 00 C1 00
+ (104 bytes)
+
+Decoding from hidrdd:
+
+//--------------------------------------------------------------------------------
+// Decoded Application Collection
+//--------------------------------------------------------------------------------
+
+/*
+05 01        (GLOBAL) USAGE_PAGE         0x0001 Generic Desktop Page 
+09 04        (LOCAL)  USAGE              0x00010004 Joystick (Application Collection)  
+A1 01        (MAIN)   COLLECTION         0x01 Application (Usage=0x00010004: Page=Generic Desktop Page, Usage=Joystick, Type=Application Collection)
+85 01          (GLOBAL) REPORT_ID          0x01 (1)  
+09 00          (LOCAL)  USAGE              0x00010000 Undefined  <-- Info: Consider replacing 09 00 with 08
+A1 02          (MAIN)   COLLECTION         0x02 Logical (Usage=0x00010000: Page=Generic Desktop Page, Usage=Undefined, Type=) <-- Error: COLLECTION must be preceded by a known USAGE <-- Warning: USAGE type should be CL (Logical Collection)
+09 32            (LOCAL)  USAGE              0x00010032 Z (Dynamic Value)  
+15 00            (GLOBAL) LOGICAL_MINIMUM    0x00 (0)  <-- Info: Consider replacing 15 00 with 14
+25 FF            (GLOBAL) LOGICAL_MAXIMUM    0xFF (-1)  
+35 00            (GLOBAL) PHYSICAL_MINIMUM   0x00 (0)  <-- Info: Consider replacing 35 00 with 34
+45 FF            (GLOBAL) PHYSICAL_MAXIMUM   0xFF (-1)  
+65 00            (GLOBAL) UNIT               0x00 No unit (0=None) <-- Redundant: UNIT is already 0x00000000 <-- Info: Consider replacing 65 00 with 64
+55 00            (GLOBAL) UNIT_EXPONENT      0x00 (Unit Value x 10⁰) <-- Redundant: UNIT_EXPONENT is already 0 <-- Info: Consider replacing 55 00 with 54
+75 08            (GLOBAL) REPORT_SIZE        0x08 (8) Number of bits per field  
+95 01            (GLOBAL) REPORT_COUNT       0x01 (1) Number of fields  
+81 02            (MAIN)   INPUT              0x00000002 (1 field x 8 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap  <-- Error: LOGICAL_MAXIMUM (-1) is less than LOGICAL_MINIMUM (0) <-- Error: PHYSICAL_MAXIMUM (-1) is less than PHYSICAL_MINIMUM (0)
+09 35            (LOCAL)  USAGE              0x00010035 Rz (Dynamic Value)  
+81 02            (MAIN)   INPUT              0x00000002 (1 field x 8 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap  <-- Error: LOGICAL_MAXIMUM (-1) is less than LOGICAL_MINIMUM (0) <-- Error: PHYSICAL_MAXIMUM (-1) is less than PHYSICAL_MINIMUM (0)
+09 30            (LOCAL)  USAGE              0x00010030 X (Dynamic Value)  
+81 02            (MAIN)   INPUT              0x00000002 (1 field x 8 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap  <-- Error: LOGICAL_MAXIMUM (-1) is less than LOGICAL_MINIMUM (0) <-- Error: PHYSICAL_MAXIMUM (-1) is less than PHYSICAL_MINIMUM (0)
+09 31            (LOCAL)  USAGE              0x00010031 Y (Dynamic Value)  
+81 02            (MAIN)   INPUT              0x00000002 (1 field x 8 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap  <-- Error: LOGICAL_MAXIMUM (-1) is less than LOGICAL_MINIMUM (0) <-- Error: PHYSICAL_MAXIMUM (-1) is less than PHYSICAL_MINIMUM (0)
+09 39            (LOCAL)  USAGE              0x00010039 Hat switch (Dynamic Value)  
+25 07            (GLOBAL) LOGICAL_MAXIMUM    0x07 (7)  
+46 3B01          (GLOBAL) PHYSICAL_MAXIMUM   0x013B (315)  
+65 14            (GLOBAL) UNIT               0x14 Rotation in degrees [1° units] (4=System=English Rotation, 1=Rotation=Degrees)  
+75 04            (GLOBAL) REPORT_SIZE        0x04 (4) Number of bits per field  
+81 42            (MAIN)   INPUT              0x00000042 (1 field x 4 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 1=Null 0=NonVolatile 0=Bitmap 
+05 09            (GLOBAL) USAGE_PAGE         0x0009 Button Page 
+19 01            (LOCAL)  USAGE_MINIMUM      0x00090001 Button 1 Primary/trigger (Selector, On/Off Control, Momentary Control, or One Shot Control)  
+29 08            (LOCAL)  USAGE_MAXIMUM      0x00090008 Button 8 (Selector, On/Off Control, Momentary Control, or One Shot Control)  
+25 01            (GLOBAL) LOGICAL_MAXIMUM    0x01 (1)  
+45 01            (GLOBAL) PHYSICAL_MAXIMUM   0x01 (1)  
+65 00            (GLOBAL) UNIT               0x00 No unit (0=None)  <-- Info: Consider replacing 65 00 with 64
+75 01            (GLOBAL) REPORT_SIZE        0x01 (1) Number of bits per field  
+95 08            (GLOBAL) REPORT_COUNT       0x08 (8) Number of fields  
+81 02            (MAIN)   INPUT              0x00000002 (8 fields x 1 bit) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
+95 0C            (GLOBAL) REPORT_COUNT       0x0C (12) Number of fields  
+81 03            (MAIN)   INPUT              0x00000003 (12 fields x 1 bit) 1=Constant 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap 
+C1 00          (MAIN)   END_COLLECTION     Logical <-- Error: Data (00) is not applicable to END_COLLECTION items <-- Warning: Physical units are still in effect PHYSICAL(MIN=0,MAX=1) UNIT(0x00000000,EXP=0)
+06 00FF        (GLOBAL) USAGE_PAGE         0xFF00 Vendor-defined 
+09 00          (LOCAL)  USAGE              0xFF000000   <-- Info: Consider replacing 09 00 with 08
+A1 02          (MAIN)   COLLECTION         0x02 Logical (Usage=0xFF000000: Page=Vendor-defined, Usage=, Type=) <-- Error: COLLECTION must be preceded by a known USAGE
+09 02            (LOCAL)  USAGE              0xFF000002 <-- Warning: Undocumented usage (document it by inserting 0002 into file FF00.conf)
+25 FF            (GLOBAL) LOGICAL_MAXIMUM    0xFF (-1)  
+45 FF            (GLOBAL) PHYSICAL_MAXIMUM   0xFF (-1)  
+75 08            (GLOBAL) REPORT_SIZE        0x08 (8) Number of bits per field  
+95 04            (GLOBAL) REPORT_COUNT       0x04 (4) Number of fields  
+91 02            (MAIN)   OUTPUT             0x00000002 (4 fields x 8 bits) 0=Data 1=Variable 0=Absolute 0=NoWrap 0=Linear 0=PrefState 0=NoNull 0=NonVolatile 0=Bitmap  <-- Error: LOGICAL_MAXIMUM (-1) is less than LOGICAL_MINIMUM (0) <-- Error: PHYSICAL_MAXIMUM (-1) is less than PHYSICAL_MINIMUM (0)
+C1 00          (MAIN)   END_COLLECTION     Logical <-- Error: Data (00) is not applicable to END_COLLECTION items <-- Warning: Physical units are still in effect PHYSICAL(MIN=0,MAX=-1) UNIT(0x00000000,EXP=0)
+C1 00        (MAIN)   END_COLLECTION     Application <-- Error: Data (00) is not applicable to END_COLLECTION items <-- Warning: Physical units are still in effect PHYSICAL(MIN=0,MAX=-1) UNIT(0x00000000,EXP=0)
+*/
+
+//--------------------------------------------------------------------------------
+// Generic Desktop Page inputReport 01 (Device --> Host)
+//--------------------------------------------------------------------------------
+
+typedef struct
+{
+  uint8_t  reportId;                                 // Report ID = 0x01 (1)
+                                                     // Collection: CA:Joystick CL:Undefined
+  uint8_t  GD_JoystickUndefinedZ;                    // Usage 0x00010032: Z, Value = 0 to -1, Physical = Value x --1
+  uint8_t  GD_JoystickUndefinedRz;                   // Usage 0x00010035: Rz, Value = 0 to -1, Physical = Value x --1
+  uint8_t  GD_JoystickUndefinedX;                    // Usage 0x00010030: X, Value = 0 to -1, Physical = Value x --1
+  uint8_t  GD_JoystickUndefinedY;                    // Usage 0x00010031: Y, Value = 0 to -1, Physical = Value x --1
+  uint8_t  GD_JoystickUndefinedHatSwitch : 4;        // Usage 0x00010039: Hat switch, Value = 0 to 7, Physical = Value x 45 in degrees
+  uint8_t  BTN_JoystickUndefinedButton1 : 1;         // Usage 0x00090001: Button 1 Primary/trigger, Value = 0 to 1, Physical = Value
+  uint8_t  BTN_JoystickUndefinedButton2 : 1;         // Usage 0x00090002: Button 2 Secondary, Value = 0 to 1, Physical = Value
+  uint8_t  BTN_JoystickUndefinedButton3 : 1;         // Usage 0x00090003: Button 3 Tertiary, Value = 0 to 1, Physical = Value
+  uint8_t  BTN_JoystickUndefinedButton4 : 1;         // Usage 0x00090004: Button 4, Value = 0 to 1, Physical = Value
+  uint8_t  BTN_JoystickUndefinedButton5 : 1;         // Usage 0x00090005: Button 5, Value = 0 to 1, Physical = Value
+  uint8_t  BTN_JoystickUndefinedButton6 : 1;         // Usage 0x00090006: Button 6, Value = 0 to 1, Physical = Value
+  uint8_t  BTN_JoystickUndefinedButton7 : 1;         // Usage 0x00090007: Button 7, Value = 0 to 1, Physical = Value
+  uint8_t  BTN_JoystickUndefinedButton8 : 1;         // Usage 0x00090008: Button 8, Value = 0 to 1, Physical = Value
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+  uint8_t  : 1;                                      // Pad
+} inputReport01_t;
+
+
+//--------------------------------------------------------------------------------
+// Vendor-defined outputReport 01 (Device <-- Host)
+//--------------------------------------------------------------------------------
+
+typedef struct
+{
+  uint8_t  reportId;                                 // Report ID = 0x01 (1)
+                                                     // Collection: CA:Joystick CL:
+  uint8_t  VEN_Joystick0002[4];                      // Usage 0xFF000002: , Value = 0 to -1, Physical = Value x --1
+} outputReport01_t;
+
