@@ -161,16 +161,14 @@ struct Ps3Report
 
 ## Feature Reports
 
-### MIDI Data
+### Enable Guitar Data (PS3)
 
-The PS3 Pro Guitars have a feature report to enable MIDI messages to be sent alongside normal input data:
+The PS3 Pro Guitars require a feature report to be sent before they will output information for the frets and such:
 
 ```cpp
-struct PS3ProGuitarEnableMidi
+struct PS3ProGuitarEnable
 {
-#ifdef WINDOWS
     uint8_t reportId = 0x00;
-#endif
 
     uint8_t data[40] = {
         0xE9, 0x00, 0x89, 0x1B, 0x00, 0x00, 0x00, 0x02,
@@ -182,11 +180,9 @@ struct PS3ProGuitarEnableMidi
 } __attribute__((__packed__));
 ```
 
-**TODO:**
+The Wii Pro Guitars do not require this report, they send the data regardless.
 
-- Unsure of the details on how these messages are sent, maybe there's a standard MIDI input endpoint?
-- Is this supposed to be sent as 5 separate reports like the auto-calibration reports are, or does it work either way?
-- Do Wii Pro Guitars send the data regardless like Wii Keyboards do?
+**TODO:** Is this supposed to be sent as 5 separate reports like the auto-calibration reports are, or does it work either way?
 
 ### Auto-Calibration Sensors
 
