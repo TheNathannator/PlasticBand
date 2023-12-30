@@ -14,17 +14,17 @@ Length: 6 bytes
 
 - Byte 0: Report ID (always 1)
 - Bytes 1-2: 16-bit button bitmask
-  - Byte 0, bit 0 (`0x01`) - Black 1
-  - Byte 0, bit 1 (`0x02`) - Black 2
-  - Byte 0, bit 2 (`0x04`) - Black 3
-  - Byte 0, bit 3 (`0x08`) - White 1
-  - Byte 0, bit 4 (`0x10`) - White 2
-  - Byte 0, bit 5 (`0x20`) - White 3
-  - Byte 0, bit 6 (`0x40`) - Select button / Hero Power
-  - Byte 0, bit 7 (`0x80`) - Start button / Pause Button
-  - Byte 1, bit 0 (`0x01`) - GHTV button
-  - Byte 1, bit 1 (`0x02`) - Home button
-  - Byte 1, bit 2-7 - Unused
+  - Byte 1, bit 0 (`0x01`) - Black 1
+  - Byte 1, bit 1 (`0x02`) - Black 2
+  - Byte 1, bit 2 (`0x04`) - Black 3
+  - Byte 1, bit 3 (`0x08`) - White 1
+  - Byte 1, bit 4 (`0x10`) - White 2
+  - Byte 1, bit 5 (`0x20`) - White 3
+  - Byte 1, bit 6 (`0x40`) - Select button / Hero Power
+  - Byte 1, bit 7 (`0x80`) - Start button / Pause Button
+  - Byte 2, bit 0 (`0x01`) - GHTV button
+  - Byte 2, bit 1 (`0x02`) - Home button
+  - Byte 2, bit 2-7 - Unused
 - Byte 3 - D-pad
   - Same format as the PS3 guitars. This value is not a bitmask, rather it encodes different possible states as individual numbers.\
     Visual representation:

@@ -14,20 +14,20 @@ Length: 8 bytes
 
 - Byte 0: Report ID (always 1)
 - Bytes 1-2: 16-bit button bitmask
-  - Byte 0, bit 0 (`0x01`) - A / × button
-  - Byte 0, bit 1 (`0x02`) - B / ○ button
-  - Byte 0, bit 2 (`0x04`) - X / □ button
-  - Byte 0, bit 3 (`0x08`) - Y / Δ button
-  - Byte 0, bit 4 (`0x10`) - Select button
-  - Byte 0, bit 5 (`0x20`) - Start button
-  - Byte 0, bit 6 (`0x40`) - Home button
-  - Byte 0, bit 7 (`0x80`) - Right table green
-  - Byte 1, bit 0 (`0x01`) - Right table red
-  - Byte 1, bit 1 (`0x02`) - Right table blue
-  - Byte 1, bit 2 (`0x04`) - Left table green
-  - Byte 1, bit 3 (`0x08`) - Left table red
-  - Byte 1, bit 4 (`0x10`) - Left table blue
-  - Byte 1, bits 5-7 - Unused
+  - Byte 1, bit 0 (`0x01`) - A / × button
+  - Byte 1, bit 1 (`0x02`) - B / ○ button
+  - Byte 1, bit 2 (`0x04`) - X / □ button
+  - Byte 1, bit 3 (`0x08`) - Y / Δ button
+  - Byte 1, bit 4 (`0x10`) - Select button
+  - Byte 1, bit 5 (`0x20`) - Start button
+  - Byte 1, bit 6 (`0x40`) - Home button
+  - Byte 1, bit 7 (`0x80`) - Right table green
+  - Byte 2, bit 0 (`0x01`) - Right table red
+  - Byte 2, bit 1 (`0x02`) - Right table blue
+  - Byte 2, bit 2 (`0x04`) - Left table green
+  - Byte 2, bit 3 (`0x08`) - Left table red
+  - Byte 2, bit 4 (`0x10`) - Left table blue
+  - Byte 2, bits 5-7 - Unused
 - Byte 3 - D-pad
   - Same format as the PS3 turntable. This value is not a bitmask, rather it encodes different possible states as individual numbers.\
     Visual representation:

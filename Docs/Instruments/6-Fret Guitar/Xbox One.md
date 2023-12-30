@@ -88,7 +88,7 @@ Length: 27
 
 The format is identical to that of the PS3/Wii U guitar.
 
-- Byte 0-1: 16-bit button bitmask
+- Bytes 0-1: 16-bit button bitmask
   - Byte 0, bit 0 (`0x01`) - White 1
   - Byte 0, bit 1 (`0x02`) - Black 1
   - Byte 0, bit 2 (`0x04`) - Black 2

@@ -16,14 +16,14 @@ Length: 8 bytes
 
 - Byte 0: Report ID (always 1)
 - Byte 1: 8-bit button bitmask
-  - Byte 0, bit 0 (`0x01`) - A / × button
-  - Byte 0, bit 1 (`0x02`) - B / ○ button
-  - Byte 0, bit 2 (`0x04`) - X / □ button
-  - Byte 0, bit 3 (`0x08`) - Y / Δ button
-  - Byte 0, bit 4 (`0x10`) - Select button
-  - Byte 0, bit 5 (`0x20`) - Start button
-  - Byte 0, bit 6 (`0x40`) - Home button
-  - Byte 0, bit 7 (`0x80`) - Not used
+  - Bit 0 (`0x01`) - A / × button
+  - Bit 1 (`0x02`) - B / ○ button
+  - Bit 2 (`0x04`) - X / □ button
+  - Bit 3 (`0x08`) - Y / Δ button
+  - Bit 4 (`0x10`) - Select button
+  - Bit 5 (`0x20`) - Start button
+  - Bit 6 (`0x40`) - Home button
+  - Bit 7 (`0x80`) - Not used
 - Byte 3 - D-pad
   - Same format as the PS3 instruments. This value is not a bitmask, rather it encodes different possible states as individual numbers.\
     Visual representation:

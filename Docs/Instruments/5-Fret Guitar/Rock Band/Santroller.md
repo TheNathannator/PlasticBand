@@ -14,20 +14,20 @@ Length: 8 bytes
 
 - Byte 0: Report ID (always 1)
 - Bytes 1-2: 16-bit button bitmask
-  - Byte 0, bit 0 (`0x01`) - Green
-  - Byte 0, bit 1 (`0x02`) - Red
-  - Byte 0, bit 2 (`0x04`) - Yellow
-  - Byte 0, bit 3 (`0x08`) - Blue
-  - Byte 0, bit 4 (`0x10`) - Orange
-  - Byte 0, bit 5 (`0x20`) - Solo Green
-  - Byte 0, bit 6 (`0x40`) - Solo Red
-  - Byte 0, bit 7 (`0x80`) - Solo Yellow
-  - Byte 1, bit 0 (`0x01`) - Solo Blue
-  - Byte 1, bit 1 (`0x02`) - Solo Orange
-  - Byte 1, bit 2 (`0x04`) - Select button
-  - Byte 1, bit 3 (`0x08`) - Start button
-  - Byte 1, bit 4 (`0x10`) - Home button
-  - Byte 1, bit 5-7 - Unused
+  - Byte 1, bit 0 (`0x01`) - Green
+  - Byte 1, bit 1 (`0x02`) - Red
+  - Byte 1, bit 2 (`0x04`) - Yellow
+  - Byte 1, bit 3 (`0x08`) - Blue
+  - Byte 1, bit 4 (`0x10`) - Orange
+  - Byte 1, bit 5 (`0x20`) - Solo Green
+  - Byte 1, bit 6 (`0x40`) - Solo Red
+  - Byte 1, bit 7 (`0x80`) - Solo Yellow
+  - Byte 2, bit 0 (`0x01`) - Solo Blue
+  - Byte 2, bit 1 (`0x02`) - Solo Orange
+  - Byte 2, bit 2 (`0x04`) - Select button
+  - Byte 2, bit 3 (`0x08`) - Start button
+  - Byte 2, bit 4 (`0x10`) - Home button
+  - Byte 2, bit 5-7 - Unused
 - Byte 3 - D-pad
   - Same format as the PS3 guitars. This value is not a bitmask, rather it encodes different possible states as individual numbers.\
     Visual representation:
