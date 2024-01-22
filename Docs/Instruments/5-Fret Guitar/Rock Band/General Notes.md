@@ -1,4 +1,4 @@
-# General Notes for Guitar Hero Guitars
+# General Notes for Rock Band Guitars
 
 ## Pickup Switch (Xbox 360, PS3, Wii)
 
