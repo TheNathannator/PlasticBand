@@ -20,23 +20,23 @@ Options, Share, PS button, and d-pad work as normal.
 
 Upper frets:
 
-| Fret   | Button |
-| :--:   | :----: |
-| Green  | ×      |
-| Red    | ○      |
-| Yellow | Δ      |
-| Blue   | □      |
-| Orange | L1     |
+| Fret   | Button | Additional
+| :--:   | :----: | :---------
+| Green  | ×      | Byte offset 46 bit 0
+| Red    | ○      | Byte offset 46 bit 1
+| Yellow | Δ      | Byte offset 46 bit 2
+| Blue   | □      | Byte offset 46 bit 3
+| Orange | L1     | Byte offset 46 bit 4
 
 Lower frets:
 
-| Fret   | Buttons |
-| :--:   | :------ |
-| Green  | × + L3  |
-| Red    | ○ + L3  |
-| Yellow | Δ + L3  |
-| Blue   | □ + L3  |
-| Orange | L1 + L3 |
+| Fret   | Buttons | Additional
+| :--:   | :------ | :---------
+| Green  | × + L3  | Byte offset 47 bit 0
+| Red    | ○ + L3  | Byte offset 47 bit 1
+| Yellow | Δ + L3  | Byte offset 47 bit 2
+| Blue   | □ + L3  | Byte offset 47 bit 3
+| Orange | L1 + L3 | Byte offset 47 bit 4
 
 Or, as flags:
 
@@ -78,16 +78,16 @@ struct PS4RockBandGuitarState
     //   5   3
     //     4
     uint8_t dpad_strum : 4;
-    bool blue : 1;
-    bool green : 1;
-    bool red : 1;
-    bool yellow : 1;
+    bool blue_flag : 1;
+    bool green_flag : 1;
+    bool red_flag : 1;
+    bool yellow_flag : 1;
 
-    bool orange : 1;
+    bool orange_flag : 1;
     uint8_t : 3;
     bool share : 1;
     bool options : 1;
-    bool solo : 1;
+    bool solo_flag : 1;
     bool : 1;
 
     bool ps : 1;
@@ -104,7 +104,25 @@ struct PS4RockBandGuitarState
     uint8_t whammy;
     uint8_t tilt;
 
-    uint8_t unused4[28];
+    bool green : 1;
+    bool red : 1;
+    bool yellow : 1;
+    bool blue : 1;
+    bool orange : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+
+    bool soloGreen : 1;
+    bool soloRed : 1;
+    bool soloYellow : 1;
+    bool soloBlue : 1;
+    bool soloOrange : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+
+    uint8_t unused4[26];
     uint32_t crc32;
 } __attribute__((__packed__));
 ```
