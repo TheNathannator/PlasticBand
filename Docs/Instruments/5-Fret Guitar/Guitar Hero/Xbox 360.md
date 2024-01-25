@@ -2,10 +2,16 @@
 
 ## Controller Info
 
-TODO: Check World Tour, GH5, and Warriors of Rock guitars
+TODO: Check Warriors of Rock guitars
 
 - XInput type: Gamepad (1)
 - XInput subtype: Guitar Alternate (7)
+
+The GH5 guitar reports some hardware IDs through the stick capabilities:
+
+- Vendor ID (left stick X): `0x1430`
+- Product ID (left stick Y): `0x0705`
+- Revision (right stick X): `0x0001`
 
 ## Input Info
 
