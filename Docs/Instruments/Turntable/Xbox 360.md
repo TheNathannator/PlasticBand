@@ -4,6 +4,14 @@
 
 - XInput type: Gamepad (1)
 - XInput subtype: 23, not part of XInput standards
+- Wireless stick hardware IDs:
+  - Vendor ID (left stick X): `0x1430`
+  - Product ID (left stick Y): `0x1705`
+  - Revision (right stick X): `0x0001`
+- Kiosk stick hardware IDs:
+  - Vendor ID (left stick X): `0x1430`
+  - Product ID (left stick Y): `0x1715`
+  - Revision (right stick X): `0x0001`
 
 ## Input Info
 

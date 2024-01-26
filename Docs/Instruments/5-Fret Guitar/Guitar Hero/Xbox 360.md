@@ -4,14 +4,19 @@
 
 - XInput type: Gamepad (1)
 - XInput subtype: Guitar Alternate (7)
-- Guitar Hero 5 stick hardware IDs:
+- World Tour kiosk stick hardware IDs:
+  - Vendor ID (left stick X): `0x1430`
+  - Product ID (left stick Y): `0x4734`
+  - Revision (right stick X): `0x3122`
+- Guitar Hero 5 wireless/kiosk stick hardware IDs:
   - Vendor ID (left stick X): `0x1430`
   - Product ID (left stick Y): `0x0705`
   - Revision (right stick X): `0x0001`
-- Warriors of Rock stick hardware IDs:
+- Warriors of Rock kiosk stick hardware IDs:
   - Vendor ID (left stick X): `0x1430`
   - Product ID (left stick Y): `0x0706`
   - Revision (right stick X): `0x0001`
+  - Probably the same on wireless, but not confirmed yet.
 
 ## Input Info
 
