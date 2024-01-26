@@ -2,16 +2,16 @@
 
 ## Controller Info
 
-TODO: Check Warriors of Rock guitars
-
 - XInput type: Gamepad (1)
 - XInput subtype: Guitar Alternate (7)
-
-The GH5 guitar reports some hardware IDs through the stick capabilities:
-
-- Vendor ID (left stick X): `0x1430`
-- Product ID (left stick Y): `0x0705`
-- Revision (right stick X): `0x0001`
+- Guitar Hero 5 stick hardware IDs:
+  - Vendor ID (left stick X): `0x1430`
+  - Product ID (left stick Y): `0x0705`
+  - Revision (right stick X): `0x0001`
+- Warriors of Rock stick hardware IDs:
+  - Vendor ID (left stick X): `0x1430`
+  - Product ID (left stick Y): `0x0706`
+  - Revision (right stick X): `0x0001`
 
 ## Input Info
 

@@ -4,6 +4,10 @@
 
 - XInput type: Gamepad (1)
 - XInput subtype: 15, not part of XInput standards
+- Stick hardware IDs:
+  - Vendor ID (left stick X): `0x1BAD`
+  - Product ID (left stick Y): `0x1330`
+  - Revision (right stick X): `0x0004`
 
 ## Input Info
 

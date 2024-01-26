@@ -11,12 +11,11 @@ Resources to assist in the documentation process:
 - XInput type: Name (Number)
 - XInput subtype: Name (Number)
   - If the subtype is not part of standard XInput subtypes, instead use "Number, not part of XInput standards" (replace `Number` with the subtype number).
-
-Some controllers report additional hardware IDs through the stick capabilities:
-
-- Vendor ID (left stick X): `<Hex value>`
-- Product ID (left stick Y): `<Hex value>`
-- Revision (right stick X): `<Hex value>`
+- Stick hardware IDs:
+  - Some controllers report additional hardware IDs through the stick capabilities.
+  - Vendor ID (left stick X): `<Hex value>`
+  - Product ID (left stick Y): `<Hex value>`
+  - Revision (right stick X): `<Hex value>`
 
 XInput type and subtype may be retrieved through the `XInputGetCapabilities` function of XInput.
 
