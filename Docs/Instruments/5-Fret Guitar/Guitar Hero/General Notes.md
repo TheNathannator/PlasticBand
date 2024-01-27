@@ -65,6 +65,8 @@ PS3 <-> 360 conversions:
 
 On the Guitar Hero 5 guitars, all possible combinations of segments have a corresponding value. These values are constant and don't vary, there are no ranges involved. The values that exist in the World Tour ranges are backwards-compatible with those ranges.
 
+This is also the format used by all Santroller guitars, as it has full fret permutations, and all GH games support both slider formats including World Tour.
+
 PS3 <-> 360 conversions:
 
 - 360 -> PS3: `(value ^ 0x80) & 0xFF`

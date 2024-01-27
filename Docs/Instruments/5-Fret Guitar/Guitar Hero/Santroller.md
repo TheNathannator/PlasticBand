@@ -38,8 +38,8 @@ Length: 7 bytes
 
 - Byte 4 - Whammy
   - Full range: resting at 0, fully pressed at 255.
-- Byte 5 - Tap bar
-  - See the [General Notes](General%20Notes.md) document for more info.
+- Byte 5 - Touch/slider bar
+  - This follows the GH5 format for encoding fret presses. See the [General Notes](General%20Notes.md) document for more info.
 - Byte 6 - Tilt
   - Full range: centered at `0x80`, tilted up all the way at 255, tilted all the way down at 0.
 
