@@ -115,7 +115,7 @@ In addition to the commands supported by the stage kit, the following general co
 | :---------    | :----------              | :--------
 | `0x08`        | Star Power gauge fill    | Fill amount: 0 = empty, 255 = full
 | `0x09`        | Star Power active        | 1 to enable, 0 to disable
-| `0x0A`        | Multiplier number        | The current multiplier number, plus `0x0A` (11-255)
+| `0x0A`        | Multiplier number        | The current multiplier number (1-255, 0 to disable)
 | `0x0B`        | Solo section             | 1 to enable, 0 to disable
 |               |                          |
 | `0x90`-`0xBF` | Device-specific commands |
@@ -123,67 +123,37 @@ In addition to the commands supported by the stage kit, the following general co
 Some notes:
 
 - Commands will be ignored if both the command ID and parameter value are the same. This is a workaround for DJ Hero on Xbox 360, which sweeps through the full vibration range on the left and right motors, and is the reason why the multiplier number command specifies "plus 10" for the value.
-- Some device-specific commands allow manual triggering of lights that are normally triggered by pressing inputs. These commands are meant for things like bot playback, and should not be used during normal gameplay.
+- Most device-specific commands are for triggering lights in response to notes being hit in-game. These are separate from lights triggered directly by inputs, and are not meant for displaying inputs from e.g. replays.
 
 #### 5-Fret Guitars
 
 | Command ID | Description | Parameter
 | :--------- | :---------- | :--------
-| `0x90`     | Open note   | 1 to enable, 0 to disable
-| `0x91`     | Green note  | 1 to enable, 0 to disable
-| `0x92`     | Red note    | 1 to enable, 0 to disable
-| `0x93`     | Yellow note | 1 to enable, 0 to disable
-| `0x94`     | Blue note   | 1 to enable, 0 to disable
-| `0x95`     | Orange note | 1 to enable, 0 to disable
+| `0x90`     | Note hits   | `0x01`: Open<br/>`0x02`: Green<br/>`0x04`: Red<br/>`0x08`: Yellow<br/>`0x10`: Blue<br/>`0x20`: Orange
 
 #### 6-Fret Guitars
 
-| Command ID | Description  | Parameter
-| :--------- | :----------  | :--------
-| `0x90`     | Open note    | 1 to enable, 0 to disable
-| `0x91`     | Black 1 note | 1 to enable, 0 to disable
-| `0x92`     | Black 2 note | 1 to enable, 0 to disable
-| `0x93`     | Black 3 note | 1 to enable, 0 to disable
-| `0x94`     | White 1 note | 1 to enable, 0 to disable
-| `0x95`     | White 2 note | 1 to enable, 0 to disable
-| `0x96`     | White 3 note | 1 to enable, 0 to disable
+| Command ID | Description | Parameter
+| :--------- | :---------- | :--------
+| `0x90`     | Note hits   | `0x01`: Open<br/>`0x02`: Black 1<br/>`0x04`: Black 2<br/>`0x08`: Black 3<br/>`0x10`: White 1<br/>`0x20`: White 2<br/>`0x40`: White 3
 
 #### Rock Band Drums
 
-| Command ID | Description   | Parameter
-| :--------- | :----------   | :--------
-| `0x90`     | Kick pedal    | 1 to enable, 0 to disable
-| `0x91`     | Red pad       | 1 to enable, 0 to disable
-| `0x92`     | Yellow pad    | 1 to enable, 0 to disable
-| `0x93`     | Blue pad      | 1 to enable, 0 to disable
-| `0x94`     | Green pad     | 1 to enable, 0 to disable
-| `0x95`     | Yellow cymbal | 1 to enable, 0 to disable
-| `0x96`     | Blue cymbal   | 1 to enable, 0 to disable
-| `0x97`     | Green cymbal  | 1 to enable, 0 to disable
+| Command ID | Description | Parameter
+| :--------- | :---------- | :--------
+| `0x90`     | Note hits   | `0x01`: Kick<br/>`0x02`: Red pad<br/>`0x04`: Yellow pad<br/>`0x08`: Blue pad<br/>`0x10`: Green pad<br/>`0x20`: Yellow cymbal<br/>`0x40`: Blue cymbal<br/>`0x80`: Green cymbal
 
 #### Guitar Hero Drums
 
-| Command ID | Description   | Parameter
-| :--------- | :----------   | :--------
-| `0x90`     | Kick pedal    | 1 to enable, 0 to disable
-| `0x91`     | Red pad       | 1 to enable, 0 to disable
-| `0x92`     | Yellow cymbal | 1 to enable, 0 to disable
-| `0x93`     | Blue pad      | 1 to enable, 0 to disable
-| `0x94`     | Orange cymbal | 1 to enable, 0 to disable
-| `0x95`     | Green pad     | 1 to enable, 0 to disable
+| Command ID | Description | Parameter
+| :--------- | :---------- | :--------
+| `0x90`     | Note hits   | `0x01`: Kick<br/>`0x02`: Red pad<br/>`0x04`: Yellow cymbal<br/>`0x08`: Blue pad<br/>`0x10`: Orange cymbal<br/>`0x20`: Green pad
 
 #### Turntable
 
-| Command ID | Description              | Parameter
-| :--------- | :----------              | :--------
-| `0x90`     | Scratch (left table)     | 1 to enable, 0 to disable
-| `0x91`     | Green note (left table)  | 1 to enable, 0 to disable
-| `0x92`     | Red note (left table)    | 1 to enable, 0 to disable
-| `0x93`     | Blue note (left table)   | 1 to enable, 0 to disable
-|            |                          |
-| `0x98`     | Scratch (right table)    | 1 to enable, 0 to disable
-| `0x99`     | Green note (right table) | 1 to enable, 0 to disable
-| `0x9A`     | Red note (right table)   | 1 to enable, 0 to disable
-| `0x9B`     | Blue note (right table)  | 1 to enable, 0 to disable
-|            |                          |
-| `0xA0`     | Euphoria LED brightness  | Brightness: 0 = off, 255 = max
+| Command ID | Description  | Parameter
+| :--------- | :----------  | :--------
+| `0x90`     | Note hits    | `0x01`: Left scratch<br/>`0x02`: Left green<br/>`0x04`: Left red<br/>`0x08`: Left blue<br/>`0x10`: Right scratch<br/>`0x20`: Right green<br/>`0x40`: Right red<br/>`0x80`: Right blue
+| `0xA0`     | Euphoria LED | Brightness: 0 = off, 255 = max
+
+On turntables, commands will be ignored if both the command ID and parameter value are the same until a valid non-equal command is received. This is a workaround for DJ Hero on Xbox 360, which sweeps through the full vibration range on the left and right motors when pulsing the Euphoria LED.
