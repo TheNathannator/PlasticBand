@@ -108,7 +108,7 @@ The padding normally present on other PS3 device commands is not required, and w
 
 #### Alternate Reports
 
-In HID mode, each device also has an alternate output report style using the `0x5B` output type to send several commands at once:
+In HID mode, each device also has an alternate output report style using the `0x5B` output type to send several commands at once. The base report is as follows:
 
 ```cpp
 enum class StageKitStrobe : uint8_t
@@ -141,8 +141,6 @@ struct SantrollerHidCommandEx
     bool soloActive : 1;
     bool noteMiss : 1;
     uint8_t : 5;
-
-    uint8_t data[...]; // placeholder for device-specific data
 } __attribute__((__packed__)); // 10 bytes
 ```
 
@@ -282,7 +280,7 @@ struct SantrollerHidTurntableOutput : SantrollerHidCommandEx
     bool rightBlueHit : 1;
 
     uint8_t euphoriaBrightness;
-} __attribute__((__packed__)); // 11 bytes
+} __attribute__((__packed__)); // 12 bytes
 ```
 
 On turntables, commands will be ignored if both the command ID and parameter value are the same until a valid non-equal command is received. This is a workaround for DJ Hero on Xbox 360, which sweeps through the full vibration range on the left and right motors when pulsing the Euphoria LED.
