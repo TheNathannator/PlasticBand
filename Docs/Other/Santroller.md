@@ -139,7 +139,8 @@ struct SantrollerHidCommandEx
   
     bool starPowerActive : 1;
     bool soloActive : 1;
-    uint8_t : 6;
+    bool noteMiss : 1;
+    uint8_t : 5;
 
     uint8_t data[...]; // placeholder for device-specific data
 } __attribute__((__packed__)); // 10 bytes
@@ -159,6 +160,7 @@ In addition to the commands supported by the stage kit, the following general co
 | `0x09`        | Star Power active        | 1 to enable, 0 to disable
 | `0x0A`        | Multiplier number        | The current multiplier number (1-255, 0 to disable)
 | `0x0B`        | Solo section             | 1 to enable, 0 to disable
+| `0x0C`        | Note miss                | 1 to enable, 0 to disable
 |               |                          |
 | `0x90`-`0xBF` | Device-specific commands |
 
