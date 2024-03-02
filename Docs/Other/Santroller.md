@@ -12,6 +12,7 @@ Santroller devices are devices programmed using the the [Santroller Configuratio
 - [Output Report Info](#output-report-info)
   - [XInput Mode](#xinput-mode)
   - [HID Mode](#hid-mode)
+    - [Alternate Reports](#alternate-reports)
   - [Commands](#commands)
     - [General](#general)
     - [5-Fret Guitars](#5-fret-guitars)
@@ -83,14 +84,14 @@ struct XInputSantrollerCommand
         : parameter(param << 8)
     {
     }
-} __attribute__((__packed__));
+} __attribute__((__packed__)); // 4 bytes
 ```
 
 Just like with the stage kit, command IDs and parameters are listed in byte form. When using XInput to send commands, these values must have an additional `0x00` byte appended.
 
 ### HID Mode
 
-In HID mode, the following report is used to send commands:
+In HID mode, a PS3-style output report is used to send commands, using the `0x5A` output type:
 
 ```cpp
 struct HidSantrollerCommand
@@ -100,10 +101,51 @@ struct HidSantrollerCommand
     uint8_t outputType = 0x5A;
     uint8_t parameter;
     uint8_t commandId;
-} __attribute__((__packed__));
+} __attribute__((__packed__)); // 4 bytes
 ```
 
 The padding normally present on other PS3 device commands is not required, and will not cause problems if sent.
+
+#### Alternate Reports
+
+In HID mode, each device also has an alternate output report style using the `0x5B` output type to send several commands at once:
+
+```cpp
+enum class StageKitStrobe : uint8_t
+{
+    StrobeSlow = 1,
+    StrobeMedium = 2,
+    StrobeFast = 3,
+    StrobeFastest = 4,
+    StrobeOff = 5,
+};
+
+struct SantrollerHidCommandEx
+{
+    uint8_t reportId = 0x01;
+
+    uint8_t outputType = 0x5B;
+  
+    StageKitStrobe stageKitStrobe : 7;
+    bool stageKitFog : 1;
+
+    uint8_t stageKitBlue;
+    uint8_t stageKitGreen;
+    uint8_t stageKitYellow;
+    uint8_t stageKitRed;
+  
+    uint8_t multiplier;
+    uint8_t starPowerState;
+  
+    bool starPowerActive : 1;
+    bool soloActive : 1;
+    uint8_t : 6;
+
+    uint8_t data[...]; // placeholder for device-specific data
+} __attribute__((__packed__)); // 10 bytes
+```
+
+This command is necessary for Bluetooth connections, where sending an output report tends to have a lot of overhead and batching data is extremely valuable.
 
 ### Commands
 
@@ -131,11 +173,44 @@ Some notes:
 | :--------- | :---------- | :--------
 | `0x90`     | Note hits   | `0x01`: Open<br/>`0x02`: Green<br/>`0x04`: Red<br/>`0x08`: Yellow<br/>`0x10`: Blue<br/>`0x20`: Orange
 
+Alternate:
+
+```cpp
+struct SantrollerHidFiveFretGuitarOutput : SantrollerHidCommandEx
+{
+    bool openHit : 1;
+    bool greenHit : 1;
+    bool redHit : 1;
+    bool yellowHit : 1;
+
+    bool blueHit : 1;
+    bool orangeHit : 1;
+    uint8_t : 2;
+} __attribute__((__packed__)); // 11 bytes
+```
+
 #### 6-Fret Guitars
 
 | Command ID | Description | Parameter
 | :--------- | :---------- | :--------
 | `0x90`     | Note hits   | `0x01`: Open<br/>`0x02`: Black 1<br/>`0x04`: Black 2<br/>`0x08`: Black 3<br/>`0x10`: White 1<br/>`0x20`: White 2<br/>`0x40`: White 3
+
+Alternate:
+
+```cpp
+struct SantrollerHidSixFretGuitarOutput : SantrollerHidCommandEx
+{
+    bool openHit : 1;
+    bool black1Hit : 1;
+    bool black2Hit : 1;
+    bool black3Hit : 1;
+
+    bool white1Hit : 1;
+    bool white2Hit : 1;
+    bool white3Hit : 1;
+    uint8_t : 1;
+} __attribute__((__packed__)); // 11 bytes
+```
 
 #### Rock Band Drums
 
@@ -143,17 +218,69 @@ Some notes:
 | :--------- | :---------- | :--------
 | `0x90`     | Note hits   | `0x01`: Kick<br/>`0x02`: Red pad<br/>`0x04`: Yellow pad<br/>`0x08`: Blue pad<br/>`0x10`: Green pad<br/>`0x20`: Yellow cymbal<br/>`0x40`: Blue cymbal<br/>`0x80`: Green cymbal
 
+Alternate:
+
+```cpp
+struct SantrollerHidRockBandDrumsOutput : SantrollerHidCommandEx
+{
+    bool kickHit : 1;
+    bool redPadHit : 1;
+    bool yellowPadHit : 1;
+    bool bluePadHit : 1;
+
+    bool greenPadHit : 1;
+    bool yellowCymbalHit : 1;
+    bool blueCymbalHit : 1;
+    bool greenCymbalHit : 1;
+} __attribute__((__packed__)); // 11 bytes
+```
+
 #### Guitar Hero Drums
 
 | Command ID | Description | Parameter
 | :--------- | :---------- | :--------
 | `0x90`     | Note hits   | `0x01`: Kick<br/>`0x02`: Red pad<br/>`0x04`: Yellow cymbal<br/>`0x08`: Blue pad<br/>`0x10`: Orange cymbal<br/>`0x20`: Green pad
 
+Alternate:
+
+```cpp
+struct SantrollerHidGuitarHeroDrumsOutput : SantrollerHidCommandEx
+{
+    bool kickHit : 1;
+    bool redPadHit : 1;
+    bool yellowCymbalHit : 1;
+    bool bluePadHit : 1;
+
+    bool orangeCymbalHit : 1;
+    bool greenPadHit : 1;
+    uint8_t : 2;
+} __attribute__((__packed__)); // 11 bytes
+```
+
 #### Turntable
 
 | Command ID | Description  | Parameter
 | :--------- | :----------  | :--------
-| `0x90`     | Note hits    | `0x01`: Left scratch<br/>`0x02`: Left green<br/>`0x04`: Left red<br/>`0x08`: Left blue<br/>`0x10`: Right scratch<br/>`0x20`: Right green<br/>`0x40`: Right red<br/>`0x80`: Right blue
+| `0x90`     | Note hits    | `0x01`: Left "open" scratch<br/>`0x02`: Left green<br/>`0x04`: Left red<br/>`0x08`: Left blue<br/>`0x10`: Right "open" scratch<br/>`0x20`: Right green<br/>`0x40`: Right red<br/>`0x80`: Right blue
 | `0xA0`     | Euphoria LED | Brightness: 0 = off, 255 = max
+
+Alternate:
+
+```cpp
+struct SantrollerHidTurntableOutput : SantrollerHidCommandEx
+{
+    bool leftScratchHit : 1;
+    bool leftGreenHit : 1;
+    bool leftRedHit : 1;
+    bool leftBlueHit : 1;
+
+    bool rightScratchHit : 1;
+    bool rightGreenHit : 1;
+    bool rightRedHit : 1;
+    bool rightBlueHit : 1;
+
+    uint8_t euphoriaBrightness;
+} __attribute__((__packed__)); // 11 bytes
+```
 
 On turntables, commands will be ignored if both the command ID and parameter value are the same until a valid non-equal command is received. This is a workaround for DJ Hero on Xbox 360, which sweeps through the full vibration range on the left and right motors when pulsing the Euphoria LED.
