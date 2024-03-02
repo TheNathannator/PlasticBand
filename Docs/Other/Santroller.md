@@ -1,9 +1,8 @@
 # Santroller Devices
 
-Santroller Devices are devices programmed using the newest version of the [Santroller Configuration Tool](https://github.com/sanjay900/guitar-configurator). This is a tool written by [sanjay900](https://github.com/sanjay900) for emulating most instruments.
-On a PC, these will use a format similar to a PS3 instrument, or an Xbox 360 instrument on Windows. However, these devices also have some additional features that the standard instruments don't have, along with semantics to some device IDs.
+Santroller devices are devices programmed using the the [Santroller Configuration Tool](https://github.com/Santroller/Santroller), which is a tool written by [sanjay900](https://github.com/sanjay900) for emulating instrument controllers using an Arduino/Raspberry Pi microcontroller. While emulation is the primary goal of the project, there are also additional features it supports which games can use if desired.
 
-**NOTE:** Since the new version of the configurator is still in development, the details here are subject to change. Things should be finalized when it releases fully.
+**NOTE:** The Santroller firmware is still in active development, and some things have yet to be finalized. Details such as report formats and LED output reports are subject to change. Supporting many different consoles is a rather finnicky process, and unexpected side-effects can occur that necessitate a change in format.
 
 ## Table of Contents
 
@@ -23,6 +22,8 @@ On a PC, these will use a format similar to a PS3 instrument, or an Xbox 360 ins
 
 ## Device Info
 
+HID mode uses standard HID/USB device information for identification:
+
 - Vendor/product ID:
   - USB: `1209:2882`
   - Bluetooth: `1209:2885`
@@ -31,7 +32,7 @@ On a PC, these will use a format similar to a PS3 instrument, or an Xbox 360 ins
 - Revision:
   - This value encodes the device type into the highest byte (`0xXX00`). See the [Device Types](#device-types) table below for more info.
 
-When in XInput mode, the information above is encoded into the standard XInput capabilities:
+XInput mode encodes some of the information above into the standard XInput capabilities:
 
 - Left stick X: Vendor ID (`0x1209`)
 - Left stick Y: Product ID (`0x2882`)
@@ -44,26 +45,31 @@ The device type indicates what kind of device is being emulated.
 | Value  | Device Type             |
 | :----  | :----------             |
 | `0x01` | Gamepad                 |
-| `0x02` | Dance Pad               |
-| `0x03` | Guitar Hero Guitar      |
-| `0x04` | Rock Band Guitar        |
-| `0x05` | Guitar Hero Drums       |
-| `0x06` | Rock Band Drums         |
+| `0x02` | Dance pad               |
+| `0x03` | Guitar Hero guitar      |
+| `0x04` | Rock Band guitar        |
+| `0x05` | Guitar Hero drums       |
+| `0x06` | Rock Band drums         |
 | `0x07` | Guitar Hero Live guitar |
 | `0x08` | DJ Hero turntable       |
-| `0x09` | Stage kit               |
+| `0x09` | Rock Band stage kit     |
 
 ## Input Information
 
-Santroller devices will either emulate XInput instruments or utilise custom HID reports. Each of the device types has its own document for the input reports alongside the standard devices.
+On PC, Santroller devices will either emulate XInput instruments or utilize a custom HID mode:
+
+- XInput mode is identical to the instrument being emulated (aside from the capability information mentioned above).
+- HID mode has its own custom report format per-device. Each device type has its own document alongside the other instrument documents.
+
+On consoles, Santroller devices will automatically emulate the corresponding device for that platform.
 
 ## Output Report Info
 
-Santroller devices support a number of output commands for setting the state of LEDs and the like, using a format based on the Xbox 360 Stage Kit's output reports. Most/all of the Stage Kit commands are supported, along with a number of additional commands for more specific events.
+Santroller devices support a number of output commands for setting the state of LEDs and the like, using a format based on the Xbox 360 stage kit's output reports. All of the stage kit commands are supported, along with a number of additional commands for more specific events.
 
 ### XInput Mode
 
-In XInput mode, output reports are handled the same way as the Stage Kit, using XInput rumble data to send commands.
+In XInput mode, output reports are handled the same way as the stage kit, using XInput rumble data to send commands.
 
 ```cpp
 struct XInputSantrollerCommand
@@ -80,7 +86,7 @@ struct XInputSantrollerCommand
 } __attribute__((__packed__));
 ```
 
-Just like with the Stage Kit, command IDs and parameters are listed in byte form. When using XInput to send commands, these values must have an additional `0x00` byte appended.
+Just like with the stage kit, command IDs and parameters are listed in byte form. When using XInput to send commands, these values must have an additional `0x00` byte appended.
 
 ### HID Mode
 
