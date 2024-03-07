@@ -164,7 +164,6 @@ In addition to the commands supported by the stage kit, the following general co
 
 Some notes:
 
-- Commands will be ignored if both the command ID and parameter value are the same. This is a workaround for DJ Hero on Xbox 360, which sweeps through the full vibration range on the left and right motors, and is the reason why the multiplier number command specifies "plus 10" for the value.
 - Most device-specific commands are for triggering lights in response to notes being hit in-game. These are separate from lights triggered directly by inputs, and are not meant for displaying inputs from e.g. replays.
 
 #### 5-Fret Guitars
