@@ -98,12 +98,5 @@ struct SantrollerStageKitState
     // Neutral state is 0x00, maxes out at 0xFF
     uint8_t leftTrigger;
     uint8_t rightTrigger;
-
-    //     0
-    //   7   1
-    // 6   8   2
-    //   5   3
-    //     4
-    uint8_t dpad;
 } __attribute__((__packed__)); // 10 bytes
 ```
