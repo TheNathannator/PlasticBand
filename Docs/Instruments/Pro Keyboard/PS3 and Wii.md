@@ -13,7 +13,7 @@ Wii:
 
 - Vendor/product ID: `1BAD:3330`
 - Revision: `0x0005`
-- Device name:
+- Device name: `Harmonix RB3 Keyboard for Nintendo Wii`
 
 MIDI Pro Adapter information may be found in [its own document](../../Other/Rock%20Band%20Adapters/MIDI%20Pro%20Adapters.md).
 
