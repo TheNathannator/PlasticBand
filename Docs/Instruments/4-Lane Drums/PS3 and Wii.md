@@ -26,6 +26,7 @@ Wii:
   - RB2:
   - RB3:
 - Device name:
+  - `Harmonix Drum Controller for Nintendo Wii` 
 
 MIDI Pro Adapter information may be found in [its own document](../../Other/Rock%20Band%20Adapters/MIDI%20Pro%20Adapters.md).
 
