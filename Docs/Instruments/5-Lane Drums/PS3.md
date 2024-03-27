@@ -4,14 +4,14 @@
 
 - Vendor/product ID: `12BA:0120`
 - Revision:
-  - World Tour:
+  - World Tour: `0x0108`
   - GH5/Band Hero/WoR:
 - Device name:
   - The Phase Shift device list has like 3 different names for these lol
   - `GuitarHero for Playstation (R) 3`
   - World Tour: `Guitar Hero4 for PlayStation (R) 3`
   - GH5/Band Hero/WoR: `Guitar Hero5 for PlayStation (R) 3`
-- PS3 ID:
+- PS3 ID: `0x07`
 
 ## Input Info
 
