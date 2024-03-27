@@ -7,10 +7,12 @@ PS3:
 - Vendor/product ID: `12BA:0200`
 - Revision:
   - RB1: `0x0313`
-  - RB2:
+  - RB2: 
   - RB3:
 - Device name: `Harmonix Guitar for PlayStation®3`
-- PS3 ID: `0x00`
+- PS3 ID:
+  - RB1: `0x00`
+  - RB2: `0X06`
 
 Wii:
 
@@ -19,7 +21,7 @@ Wii:
   - RB2 and later: `1BAD:3010`
 - Revision:
   - RB1: `0x0100`
-  - RB2:
+  - RB2: `0x0200`
   - RB3:
 - Device name: `Harmonix Guitar Controller for Nintendo Wii`
 
