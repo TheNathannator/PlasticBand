@@ -8,7 +8,7 @@ PS3:
   - Vendor/product ID: `12BA:2430`
   - Revision: `0x0000`
   - Device name: `Harmonix RB3 Mustang Guitar for PlayStation®3`
-  - PS3 ID:
+  - PS3 ID: `0x06`
 - Squire:
   - Vendor/product ID: `12BA:2530` (assumed based on patterns with other RB device PIDs)
   - Revision:
