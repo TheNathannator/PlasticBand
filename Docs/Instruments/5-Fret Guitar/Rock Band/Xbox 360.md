@@ -4,8 +4,7 @@
 
 - XInput type: Gamepad (1)
 - XInput subtype: Guitar (6)
-
-TODO: Rock Band is able to differentiate between RB guitars with auto-calibration and those without, most likely either a flag or reported vibration capabilities
+- RB2 guitars are always wireless, and have sThumbRX > 0x100 in the vibration capabilities.
 
 ## Input Info
 
