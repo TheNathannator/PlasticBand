@@ -19,8 +19,8 @@ Descriptor:
   - Max command length: 10 - 4 = 6
   - Flags: 0x14 (Input, header included in length)
 
-- Output commands: 01, 02, 03, 04, 06, 07
-- Input commands: 01, 04, 05, 06, 0A
+- Input commands: 01, 02, 03, 04, 06, 07
+- Output commands: 01, 04, 05, 06, 0A
 
 - Class names:
   - PDP.Xbox.Drums.Tablah

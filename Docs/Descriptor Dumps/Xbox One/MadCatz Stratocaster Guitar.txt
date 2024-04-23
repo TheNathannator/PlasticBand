@@ -24,8 +24,8 @@ Descriptor:
   - Max command length: 5 - 4 = 1
   - Flags: 0x0C (Output, header included in length)
 
-- Output commands: 01, 02, 03, 04, 06, 07
-- Input commands: 01, 04, 05, 06, 0A
+- Input commands: 01, 02, 03, 04, 06, 07
+- Output commands: 01, 04, 05, 06, 0A
 
 - Class names:
   - MadCatz.Xbox.Guitar.Stratocaster

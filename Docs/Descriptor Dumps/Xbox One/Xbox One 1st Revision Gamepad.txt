@@ -23,8 +23,8 @@ F8-2F-21-26-3A-CF-B7-02-17-00-20-0E-00-01-00-10-00-00-00-00-00-00-00-00-00-00-00
   - Max command length: 60
   - Flags: 0x08 (Output)
 
-- Output commands: 01, 02, 03, 04, 06, 07, 0C, 1E
-- Input commands: 01, 04, 05, 06, 0A, 0C, 1E
+- Input commands: 01, 02, 03, 04, 06, 07, 0C, 1E
+- Output commands: 01, 04, 05, 06, 0A, 0C, 1E
 
 - Class names:
   - Windows.Xbox.Input.Gamepad

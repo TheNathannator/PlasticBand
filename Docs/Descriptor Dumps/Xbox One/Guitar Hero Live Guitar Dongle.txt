@@ -30,8 +30,8 @@ FD-12-FD-73-8E-C7-47-A2-31-96-26-8C-38-00-9A-2C-40-2E-08-DF-07-E1-45-A5-AB-A3-12
   - Max command length: 8
   - Flags: 0x08 (Output)
 
-- Output commands: 01, 02, 03, 04, 06, 07
-- Input commands: 01, 04, 05, 06, 0A
+- Input commands: 01, 02, 03, 04, 06, 07
+- Output commands: 01, 04, 05, 06, 0A
 
 - Class names:
   - Activision.Xbox.Input.GH7

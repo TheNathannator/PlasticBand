@@ -38,8 +38,8 @@ B7-56-FF-76-97-FD-9B-81-45-AD-45-B6-45-BB-A5-26-D6-05-17-00-20-36-00-01-00-14-00
   - Max command length: 4 - 4 = 0
   - Flags: 0x0C (Output, header included in length)
 
-- Output commands: 01, 02, 03, 04, 06, 07
-- Input commands: 01, 04, 05, 06, 0A
+- Input commands: 01, 02, 03, 04, 06, 07
+- Output commands: 01, 04, 05, 06, 0A
 
 - Class names:
   - MadCatz.Xbox.Module.Brangus
