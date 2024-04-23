@@ -4,6 +4,11 @@
 
 - XInput type: Gamepad (1)
 - XInput subtype: Drumkit (8)
+- ION Drum Rocker stick hardware IDs:
+  - Vendor ID (left stick X): `0x15E4`
+  - Product ID (left stick Y): `0x0130`
+  - Revision (right stick X): `0x0100`
+  - Using these IDs to distinguish the Drum Rocker from Guitar Hero drumkits is recommended, as they have a hardware quirk that prevents the normal method from working correctly: the kick pedal being plugged in tends to hold down the right stick click input.
 
 ## Input Info
 
