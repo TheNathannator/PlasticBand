@@ -27,8 +27,8 @@ Descriptor:
   - Windows.Xbox.Input.NavigationController
 
 - Interface GUIDs:
-  - 06182893-CCE0-4B85-9271-0A10DBAB7E07
-  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7
-  - 9776FF56-9BFD-4581-AD45-B645BBA526D6
+  - 06182893-CCE0-4B85-9271-0A10DBAB7E07 - MadCatz.Xbox.Drums.Glam
+  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7 - Windows.Xbox.Input.NavigationController
+  - 9776FF56-9BFD-4581-AD45-B645BBA526D6 - Input device
 
 - HID descriptor: None
