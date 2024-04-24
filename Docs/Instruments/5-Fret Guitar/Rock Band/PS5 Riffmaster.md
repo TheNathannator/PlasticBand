@@ -10,11 +10,15 @@ The PS4/5 Riffmaster in PS5 mode.
 
 ## Input Info
 
-This input report deviates from the rest and uses the PS5 DualSense output report. For simplicity, the report will be documented similarly to how Xbox One reports are documented.
+This input report deviates from other PlayStation devices and uses the PS5 DualSense output report. For simplicity, the report will be documented similarly to how Xbox One reports are documented.
 
 Length: 64 bytes
 
 - Byte 0: Report ID (`0x01`)
+- Byte 1: Joystick X
+  - Left is `0x00`, right is `0xFF`.
+- Byte 2: Joystick Y
+  - Up is `0x00`, down is `0xFF`.
 - Bytes 1-7: Unused
   - 1-4 are the DualSense stick axes, and are `0x80`
   - 5-7 are `0x00`
@@ -42,7 +46,7 @@ Length: 64 bytes
   - Byte 9, bit 3 (`0x08`): Unused
   - Byte 9, bit 4 (`0x10`): Select (Share / `\|/`) button
   - Byte 9, bit 5 (`0x20`): Start (Options / `≡`) button
-  - Byte 9, bit 6 (`0x40`): Solo fret flag (L3 button)
+  - Byte 9, bit 6 (`0x40`): Solo fret flag / Joystick click (L3 button)
   - Byte 9, bit 7 (`0x80`): P1 button default (R3 button)
     - Note that the P1 button is a programmable button, and can be remapped to any other input on the guitar.
   - Byte 10, bit 0 (`0x01`): PlayStation button
@@ -70,8 +74,6 @@ Length: 64 bytes
 - Bytes 56-63: Checksum
   - Unsure how this checksum is implemented; for general purposes it likely doesn't matter.
 
-TODO: The joystick input was not seen anywhere in the packet capture provided to me.
-
 ### As A Struct
 
 ```cpp
@@ -79,7 +81,10 @@ struct PS5RiffmasterGuitarState
 {
     uint8_t reportId = 0x01;
 
-    uint8_t unused1[7];
+    uint8_t joystickX;
+    uint8_t joystickY;
+
+    uint8_t unused1[5];
 
     //     0
     //   7   1
@@ -131,5 +136,7 @@ struct PS5RiffmasterGuitarState
 
     uint8_t unused4[11];
     uint64_t checksum;
+
+    bool joystickClick() { return soloFlag && !(soloGreen | soloRed | soloYellow | soloBlue | soloOrange); }
 } __attribute__((__packed__));
 ```
