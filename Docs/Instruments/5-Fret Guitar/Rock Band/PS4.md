@@ -68,9 +68,11 @@ Pickup switch: Byte offset 43
 
 - Ranges from 0 to 4, with each number being a discrete notch of the switch.
 
-### Riffmaster Joystick
+### Riffmaster Additions
 
-The Riffmaster features a joystick on the back of its headstock. It uses the standard left stick inputs:
+The Riffmaster features a joystick on the back of its headstock and a programmable P1 button.
+
+Joystick:
 
 | Input          | Report
 | :---:          | :----:
@@ -79,8 +81,11 @@ The Riffmaster features a joystick on the back of its headstock. It uses the sta
 | Joystick click | L3 button
 
 - Reminder that the joystick is top-left oriented: 0 on the X axis is left, 0 on the Y axis is up.
+- Note that the joystick click overlaps with the solo fret flag input. For this reason, it's recommended to rely only on the values in byte offsets 46-47 for reading fret inputs.
 
-Note that the joystick click overlaps with the solo fret flag input. For this reason, it's recommended to rely only on the values in byte offsets 46-47 for reading fret inputs.
+P1 button: R3 by default
+
+- This button is programmable and can be remapped to any other input available on the guitar. This is simply its default, which does not correspond to any other input on the guitar.
 
 ### As A Struct
 
