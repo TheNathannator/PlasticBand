@@ -5,16 +5,20 @@
 - Vendor/product ID:
   - Stratocaster (MadCatz): `0738:4161`
   - Jaguar (PDP): `0E6F:0170`
+  - Riffmaster (PDP): `0E6F:0248`
 - Interface GUID:
   - Primary (Stratocaster): `0D2AE438-7F7D-4933-8693-30FC55018E77`
-  - Primary (Jaguar): `1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE`
+  - Primary (Jaguar and Riffmaster): `1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE`
   - Secondary:
+    - `ECDDD2FE-D387-4294-BD96-1A712E3DC77D` (Console function map; only present on Riffmaster)
     - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
     - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
 - Class string:
   - Primary (Stratocaster): `MadCatz.Xbox.Guitar.Stratocaster`
-  - Primary (Jaguar): `PDP.Xbox.Guitar.Jaguar`
+  - Primary (Jaguar and Riffmaster): `PDP.Xbox.Guitar.Jaguar`
   - Secondary: `Windows.Xbox.Input.NavigationController`
+
+The Riffmaster does not have a unique interface GUID, it must be distinguished by vendor/product ID.
 
 ## Input Command Info
 
@@ -41,7 +45,6 @@ Length: 10 bytes
   - Byte 1, bit 7 (`0x80`) - Unused
 - Byte 2: Tilt
   - Nominally, `0x00` when parallel, `0xFF` when straight up.
-  - Has a minimum value of `0x70`, angles below this point register as just `0x00`.
 - Byte 3: Whammy bar
   - Ranges from `0x00` when not pressed to `0xFF` when fully pressed.
 - Byte 4: Pickup switch
@@ -53,10 +56,24 @@ Length: 10 bytes
   - Bit 2 (`0x04`) - Yellow
   - Bit 3 (`0x08`) - Blue
   - Bit 4 (`0x10`) - Orange
-- Byte 6: 8-bit lower fret bitmask
+- Byte 6: 8-bit lower (solo) fret bitmask
   - Same as previous
 - Bytes 7-9: unknown
   - These are most likely used for the auto-calibration sensors once those are activated.
+
+#### Riffmaster Additions
+
+The Riffmaster expands this input report to 28 bytes long, and adds a joystick and the Share button.
+
+TODO: Joystick click
+
+- Bytes 10-11: Joystick X (little-endian)
+  - Left is negative, right is positive.
+- Bytes 12-13: Joystick Y (little-endian)
+  - Up is positive, down is negative.
+- Byte 14: Console function buttons
+  - Byte 14, bit 0 (`0x01`): Share button
+- Bytes 15-27: Unknown
 
 ```cpp
 struct GipGuitarState
@@ -100,6 +117,17 @@ struct GipGuitarState
     bool : 3;
 
     uint8_t unknown[3];
+} __attribute__((__packed__));
+
+struct GipRiffmasterGuitarState : GipGuitarState
+{
+    uint16le_t joystickX;
+    uint16le_t joystickY;
+
+    bool share : 1;
+    bool : 7;
+
+    uint8_t unknown2[13];
 } __attribute__((__packed__));
 ```
 
