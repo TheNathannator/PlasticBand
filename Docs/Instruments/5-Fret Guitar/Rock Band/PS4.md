@@ -80,8 +80,8 @@ Joystick:
 | Joystick Y     | Left stick Y (byte offset 2)
 | Joystick click | L3 button
 
-- Reminder that the joystick is top-left oriented: 0 on the X axis is left, 0 on the Y axis is up.
-- Note that the joystick click overlaps with the solo fret flag input. For this reason, it's recommended to rely only on the values in byte offsets 46-47 for reading fret inputs.
+- Reminder that the stick inputs are top-left oriented: 0 on the X axis is left, 0 on the Y axis is up.
+- Note that the joystick click overlaps with the solo fret flag input. For this reason, it's recommended to rely only on the values in byte offsets 46-47 for reading fret inputs. Additionally, the stick click should only be respected if none of the solo fret bits in byte 47 are active.
 
 P1 button: R3 by default
 
@@ -117,12 +117,12 @@ struct PS4RockBandGuitarState
     uint8_t : 3;
     bool share : 1;
     bool options : 1;
-#ifdef RIFFMASTER
-    bool soloFlag_joystickClick : 1;
-#else
     bool soloFlag : 1;
-#endif
+#ifdef RIFFMASTER
+    bool p1 : 1;
+#else
     bool : 1;
+#endif
 
     bool ps : 1;
     uint8_t : 7;
@@ -143,21 +143,21 @@ struct PS4RockBandGuitarState
     bool yellow : 1;
     bool blue : 1;
     bool orange : 1;
-    bool : 1;
-    bool : 1;
-    bool : 1;
+    bool : 3;
 
     bool soloGreen : 1;
     bool soloRed : 1;
     bool soloYellow : 1;
     bool soloBlue : 1;
     bool soloOrange : 1;
-    bool : 1;
-    bool : 1;
-    bool : 1;
+    bool : 3;
 
     uint8_t unused4[26];
     uint32_t crc32;
+
+#ifdef RIFFMASTER
+    bool joystickClick() { return soloFlag && !(soloGreen | soloRed | soloYellow | soloBlue | soloOrange); }
+#endif
 } __attribute__((__packed__));
 ```
 

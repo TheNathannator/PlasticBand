@@ -41,7 +41,8 @@ Length: 10 bytes
   - Byte 1, bit 3 (`0x08`) - D-pad right
   - Byte 1, bit 4 (`0x10`) - Orange fret flag
   - Byte 1, bit 5 (`0x20`) - Unused
-  - Byte 1, bit 6 (`0x40`) - Solo fret flag
+  - Byte 1, bit 6 (`0x40`) - Solo fret flag / Riffmaster joystick click
+    - Due to the overlap between fret flags and the joystick, using the fret flags for fret inputs is not recommended. Additionally, the joystick click should only be recognized if none of the solo frets are pressed.
   - Byte 1, bit 7 (`0x80`) - Unused
 - Byte 2: Tilt
   - Nominally, `0x00` when parallel, `0xFF` when straight up.
@@ -64,8 +65,6 @@ Length: 10 bytes
 #### Riffmaster Additions
 
 The Riffmaster expands this input report to 28 bytes long, and adds a joystick and the Share button.
-
-TODO: Joystick click
 
 - Bytes 10-11: Joystick X (little-endian)
   - Left is negative, right is positive.
@@ -102,18 +101,18 @@ struct GipGuitarState
     uint8_t whammy;
     uint8_t pickup;
 
-    bool upperGreen : 1;
-    bool upperRed : 1;
-    bool upperYellow : 1;
-    bool upperBlue : 1;
-    bool upperOrange : 1;
+    bool green : 1;
+    bool red : 1;
+    bool yellow : 1;
+    bool blue : 1;
+    bool orange : 1;
     bool : 3;
 
-    bool lowerGreen : 1;
-    bool lowerRed : 1;
-    bool lowerYellow : 1;
-    bool lowerBlue : 1;
-    bool lowerOrange : 1;
+    bool soloGreen : 1;
+    bool soloRed : 1;
+    bool soloYellow : 1;
+    bool soloBlue : 1;
+    bool soloOrange : 1;
     bool : 3;
 
     uint8_t unknown[3];
@@ -128,6 +127,8 @@ struct GipRiffmasterGuitarState : GipGuitarState
     bool : 7;
 
     uint8_t unknown2[13];
+
+    bool joystickClick() { return soloFlag && !(soloGreen | soloRed | soloYellow | soloBlue | soloOrange); }
 } __attribute__((__packed__));
 ```
 
