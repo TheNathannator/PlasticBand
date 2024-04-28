@@ -16,7 +16,7 @@
 - Revision: `2.20`
 
 ## Axis
-Axis range from 0 to 32000. O is left/up, 32000 is right/down. 
+Axis range from 0 to 32000. 0 is left/up, 32000 is right/down. 
 
 If `dpad to axis` is enabled, then the dpad values are mapped to the left joystick Y axis
 
