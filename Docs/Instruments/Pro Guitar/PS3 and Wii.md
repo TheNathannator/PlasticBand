@@ -7,8 +7,8 @@ PS3:
 - Mustang:
   - Vendor/product ID: `12BA:2430`
   - Revision: `0x0000`
-  - Device name:
-  - PS3 ID:
+  - Device name: `Harmonix RB3 Mustang Guitar for PlayStation®3`
+  - PS3 ID: `0x06`
 - Squire:
   - Vendor/product ID: `12BA:2530` (assumed based on patterns with other RB device PIDs)
   - Revision:
@@ -35,57 +35,59 @@ Fret numbers:
 
 | String | Input                     | Byte Offset | Bits                     |
 | :----- | :----                     | :---------- | :---                     |
-| Low E  | Right Thumb X + Y         | 6 + 7       | `0b_xxxx_xxxx_xxx1_1111` |
-| A      | Right Thumb X + Y         | 6 + 7       | `0b_xxxx_xx11_111x_xxxx` |
-| D      | Right Thumb X + Y         | 6 + 7       | `0b_x111_11xx_xxxx_xxxx` |
-| G      | Pressure D-pad Up + Right | 8 + 9       | `0b_xxxx_xxxx_xxx1_1111` |
-| B      | Pressure D-pad Up + Right | 8 + 9       | `0b_xxxx_xx11_111x_xxxx` |
-| High E | Pressure D-pad Up + Right | 8 + 9       | `0b_x111_11xx_xxxx_xxxx` |
+| Low E  | Right Thumb X + Y         | 5 + 6       | `0b_xxxx_xxxx_xxx1_1111` |
+| A      | Right Thumb X + Y         | 5 + 6       | `0b_xxxx_xx11_111x_xxxx` |
+| D      | Right Thumb X + Y         | 5 + 6       | `0b_x111_11xx_xxxx_xxxx` |
+| G      | Pressure D-pad Up + Right | 7 + 8       | `0b_xxxx_xxxx_xxx1_1111` |
+| B      | Pressure D-pad Up + Right | 7 + 8       | `0b_xxxx_xx11_111x_xxxx` |
+| High E | Pressure D-pad Up + Right | 7 + 8       | `0b_x111_11xx_xxxx_xxxx` |
 
 String velocity:
 
 | String | Input               | Byte Offset | Bits           |
 | :----- | :----               | :---------- | :---           |
-| Low E  | Pressure D-pad Left | 10          | `0b_x111_1111` |
-| A      | Pressure D-pad Down | 11          | `0b_x111_1111` |
-| D      | Pressure L2         | 12          | `0b_x111_1111` |
-| G      | Pressure R2         | 13          | `0b_x111_1111` |
-| B      | Pressure L1         | 14          | `0b_x111_1111` |
-| High E | Pressure R1         | 15          | `0b_x111_1111` |
+| Low E  | Pressure D-pad Left | 9           | `0b_x111_1111` |
+| A      | Pressure D-pad Down | 10          | `0b_x111_1111` |
+| D      | Pressure L2         | 11          | `0b_x111_1111` |
+| G      | Pressure R2         | 12          | `0b_x111_1111` |
+| B      | Pressure L1         | 13          | `0b_x111_1111` |
+| High E | Pressure R1         | 14          | `0b_x111_1111` |
 
 Standard 5-fret color flags:
 
 | Fret Color | Input                | Byte Offset | Bits           |
 | :--------- | :----                | :---------- | :---           |
-| Solo flag  | Pressure D-pad Right | 9           | `0b_1xxx_xxxx` |
-| Green      | Pressure D-pad Left  | 10          | `0b_1xxx_xxxx` |
-| Red        | Pressure D-pad Down  | 11          | `0b_1xxx_xxxx` |
-| Yellow     | Pressure L2          | 12          | `0b_1xxx_xxxx` |
-| Blue       | Pressure R2          | 13          | `0b_1xxx_xxxx` |
-| Orange     | Pressure L1          | 14          | `0b_1xxx_xxxx` |
+| Solo flag  | Pressure D-pad Right | 8           | `0b_1xxx_xxxx` |
+| Green      | Pressure D-pad Left  | 9           | `0b_1xxx_xxxx` |
+| Red        | Pressure D-pad Down  | 10          | `0b_1xxx_xxxx` |
+| Yellow     | Pressure L2          | 11          | `0b_1xxx_xxxx` |
+| Blue       | Pressure R2          | 12          | `0b_1xxx_xxxx` |
+| Orange     | Pressure L1          | 13          | `0b_1xxx_xxxx` |
 
 Tilt and Auto-Calibration:
 
 - Tilt is duplicated across 3 bytes, 2 of which are used for auto-calibration sensors when enabled. When no sensors are enabled, all 3 of the inputs listed below are tilt.
 
-- Microphone: Pressure Δ (byte offset 16)
+- Microphone: Pressure Δ (byte offset 15)
   - When enabled, neutral at `0x7F`, and decreases when sound is picked up.
-- Light sensor: Pressure ○ (byte offset 17)
+- Light sensor: Pressure ○ (byte offset 16)
   - When enabled, neutral at `0x00`, and increases when light is detected.
-- Tilt: Pressure × (byte offset 18)
+- Tilt: Pressure × (byte offset 17)
   - `0x7F` when tilted, `0x40` when not tilted. (TODO: needs verification) 
 
 Pedal port:
 
-- Pedal press: Pressure □ (byte offset 19),  `0b_1000_0000`
-- Pedal connection: Accel X high byte (byte offset 21), `0b_0000_0001`
+- Pedal press: Pressure □ (byte offset 18),  `0b_1000_0000`
+- Pedal connection: Accel X high byte (byte offset 20), `0b_0000_0001`
 
 ### As A Struct
 
 ```cpp
 struct Ps3Report
 {
-    uint8_t reportId;
+#ifdef WINDOWS
+    uint8_t reportId = 0x00;
+#endif
 
     bool square : 1;
     bool cross : 1;
@@ -154,17 +156,17 @@ struct Ps3Report
                      // No description is provided for it until more investigation can be done.
 
     uint8_t unused4;
-};
+} __attribute__((__packed__));
 ```
 
 ## Feature Reports
 
-### MIDI Data
+### Enable Guitar Data (PS3)
 
-The PS3 Pro Guitars have a feature report to enable MIDI messages to be sent alongside normal input data:
+The PS3 Pro Guitars require a feature report to be sent before they will output information for the frets and such:
 
 ```cpp
-struct PS3ProGuitarEnableMidi
+struct PS3ProGuitarEnable
 {
     uint8_t reportId = 0x00;
 
@@ -175,14 +177,12 @@ struct PS3ProGuitarEnableMidi
         0x00, 0x00, 0x89, 0x00, 0x00, 0x00, 0x00, 0x00,
         0xE9, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
     };
-}
+} __attribute__((__packed__));
 ```
 
-**TODO:**
+The Wii Pro Guitars do not require this report, they send the data regardless.
 
-- Unsure of the details on how these messages are sent, maybe there's a standard MIDI input endpoint?
-- Is this supposed to be sent as 5 separate reports like the auto-calibration reports are, or does it work either way?
-- Do Wii Pro Guitars send the data regardless like Wii Keyboards do?
+**TODO:** Is this supposed to be sent as 5 separate reports like the auto-calibration reports are, or does it work either way?
 
 ### Auto-Calibration Sensors
 
@@ -239,11 +239,13 @@ enum PS3WiiProGuitarAutoCalibrationState
 
 struct PS3WiiProGuitarAutoCalibration
 {
+#ifdef WINDOWS
     uint8_t reportId = 0x00;
+#endif
 
     uint8_t unk1[7] = {0xE9, 0x00, 0x83, 0x1B, 0x00, 0x00, 0x00};
     uint8_t sensorState;
-};
+} __attribute__((__packed__));
 
 uint8_t otherReports[4][9] = {
     {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},

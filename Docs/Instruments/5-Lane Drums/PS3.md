@@ -4,14 +4,14 @@
 
 - Vendor/product ID: `12BA:0120`
 - Revision:
-  - World Tour:
+  - World Tour: `0x0108`
   - GH5/Band Hero/WoR:
 - Device name:
   - The Phase Shift device list has like 3 different names for these lol
   - `GuitarHero for Playstation (R) 3`
   - World Tour: `Guitar Hero4 for PlayStation (R) 3`
   - GH5/Band Hero/WoR: `Guitar Hero5 for PlayStation (R) 3`
-- PS3 ID:
+- PS3 ID: `0x07`
 
 ## Input Info
 
@@ -32,19 +32,21 @@ Velocities:
 
 | Pad    | Axis        | Byte offset |
 | :-:    | :--:        | :---------: |
-| Red    | R2 Pressure | 13          |
-| Yellow | L2 Pressure | 12          |
-| Blue   | R1 Pressure | 15          |
-| Orange | ○ Pressure  | 17          |
-| Green  | L1 Pressure | 14          |
-| Kick   | Δ Pressure  | 16          |
+| Red    | R2 Pressure | 12          |
+| Yellow | L2 Pressure | 11          |
+| Blue   | R1 Pressure | 14          |
+| Orange | ○ Pressure  | 16          |
+| Green  | L1 Pressure | 13          |
+| Kick   | Δ Pressure  | 15          |
 
 ### As A Struct
 
 ```cpp
 struct PS3FiveLaneDrumsState
 {
-    uint8_t reportId;
+#ifdef WINDOWS
+    uint8_t reportId = 0x00;
+#endif
 
     bool square_blue : 1;
     bool cross_green : 1;
@@ -82,7 +84,7 @@ struct PS3FiveLaneDrumsState
 
     uint8_t unused2[2];
     int16_t unused3[4];
-}
+} __attribute__((__packed__));
 ```
 
 ## References

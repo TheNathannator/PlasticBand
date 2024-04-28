@@ -1,0 +1,40 @@
+Arrival:
+6B-A7-24-43-17-4A-00-00-6F-0E-48-02-01-00-00-00-01-00-01-00-01-00-01-00-01-00-01-00
+
+- Vendor ID: 0x0E6F
+- Product ID: 0x0248
+
+Descriptor:
+10-00-01-00-00-00-00-00-00-00-00-00-00-00-EB-00-AC-00-16-00-1B-00-1C-00-23-00-29-00-6B-00-00-00
+00-00-00-00-00-00-01-01-00-00-00-00-06-01-02-03-04-06-07-05-01-04-05-06-0A-02-16-00-50-44-50-2E
+58-62-6F-78-2E-47-75-69-74-61-72-2E-4A-61-67-75-61-72-27-00-57-69-6E-64-6F-77-73-2E-58-62-6F-78
+2E-49-6E-70-75-74-2E-4E-61-76-69-67-61-74-69-6F-6E-43-6F-6E-74-72-6F-6C-6C-65-72-04-F6-6A-26-1A
+46-3A-E3-45-B9-B6-0F-2C-0B-2C-1E-BE-FE-D2-DD-EC-87-D3-94-42-BD-96-1A-71-2E-3D-C7-7D-E7-1F-F3-B8
+86-73-E9-40-A9-F8-2F-21-26-3A-CF-B7-56-FF-76-97-FD-9B-81-45-AD-45-B6-45-BB-A5-26-D6-02-17-00-20
+20-00-01-00-14-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-17-00-21-05-00-01-00-0C-00-00-00-00
+00-00-00-00-00-00-00-00-00-00-00
+
+- Custom commands:
+  1.
+  - Command ID: 0x20
+  - Max command length: 32 - 4 = 28
+  - Flags: 0x14 (HeaderIncludedInLength, Input)
+  2.
+  - Command ID: 0x21
+  - Max command length: 5 - 4 = 1
+  - Flags: 0x0C (Output, header included in length)
+
+- Input commands: 01, 02, 03, 04, 06, 07
+- Output commands: 01, 04, 05, 06, 0A
+
+- Class names:
+  - PDP.Xbox.Guitar.Jaguar
+  - Windows.Xbox.Input.NavigationController
+
+- Interface GUIDs:
+  - 1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE - PDP.Xbox.Guitar.Jaguar
+  - ECDDD2FE-D387-4294-BD96-1A712E3DC77D - Console function map (share button)
+  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7 - Windows.Xbox.Input.NavigationController
+  - 9776FF56-9BFD-4581-AD45-B645BBA526D6 - Input device
+
+HID descriptor: None

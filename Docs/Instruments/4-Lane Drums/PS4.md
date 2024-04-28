@@ -14,6 +14,8 @@
 
 ## Input Info
 
+Report ID: `0x01`
+
 Face buttons and d-pad function as normal.
 
 Pads/cymbals:
@@ -44,7 +46,7 @@ Any additional details are listed in the state struct.
 ```cpp
 struct PS4FourLaneDrumsState
 {
-    uint8_t reportId;
+    uint8_t reportId = 0x01;
 
     uint8_t unused1[4];
 
@@ -87,7 +89,7 @@ struct PS4FourLaneDrumsState
 
     uint8_t unused4[24];
     uint32_t crc32;
-};
+} __attribute__((__packed__));
 ```
 
 ## References

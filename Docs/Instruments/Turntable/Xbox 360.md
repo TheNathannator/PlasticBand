@@ -4,6 +4,14 @@
 
 - XInput type: Gamepad (1)
 - XInput subtype: 23, not part of XInput standards
+- Wireless stick hardware IDs:
+  - Vendor ID (left stick X): `0x1430`
+  - Product ID (left stick Y): `0x1705`
+  - Revision (right stick X): `0x0001`
+- Kiosk stick hardware IDs:
+  - Vendor ID (left stick X): `0x1430`
+  - Product ID (left stick Y): `0x1715`
+  - Revision (right stick X): `0x0001`
 
 ## Input Info
 
@@ -85,7 +93,7 @@ struct XInputTurntableState
 
     int16_t effectsKnob; // Whether or not this is signed doesn't really matter, as either way it's gonna loop over when it reaches min/max
     int16_t crossfader;
-}
+} __attribute__((__packed__));
 ```
 
 ## Vibration Info

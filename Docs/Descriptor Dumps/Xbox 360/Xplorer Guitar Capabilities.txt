@@ -1,0 +1,15 @@
+Capabilities reported by the XUSB driver:
+
+Type:         0x01 (Gamepad)
+SubType:      0x07 (GuitarAlternate)
+Flags:        0x000C (Voice, PluginModules)
+VendorId:     0x1430
+ProductId:    0x4748
+Revision:     0x3122
+Buttons:      0xF73F
+Triggers:     L: 0xFF  R: 0xFF
+LeftThumb:    X: 0x0000  Y: 0x0000
+RightThumb:   X: 0xFFC0  Y: 0xFFC0
+Ext:          0x00-00-00-00-00-00
+LeftMotorSpeed:   0x00
+RightMotorSpeed:  0x00

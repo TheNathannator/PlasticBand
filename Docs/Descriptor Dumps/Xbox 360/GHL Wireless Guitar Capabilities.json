@@ -1,0 +1,24 @@
+// From the newer Unity input system, which formats things as JSON
+{
+  "type": 1, // Gamepad
+  "subType": 7, // Guitar
+  "flags": 28, // 0x1C: Voice, plug-in modules, no navigation
+  "gamepad": {
+    // Every field here is 0 for some reason
+    "buttons": 0,
+    "leftTrigger": 0,
+    "rightTrigger": 0,
+    "leftStickX": 0,
+    "leftStickY": 0,
+    "rightStickX": 0,
+    "rightStickY": 0
+  },
+  "vibration": {
+    "leftMotor": 0,
+    "rightMotor": 0
+  },
+
+  // Not part of the original dump, added for posterity
+  "vendorId": 5168, // 0x1430
+  "productId": 1803 // 0x070B
+}

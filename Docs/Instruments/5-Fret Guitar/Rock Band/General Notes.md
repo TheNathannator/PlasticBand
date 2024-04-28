@@ -1,8 +1,8 @@
-# General Notes for Guitar Hero Guitars
+# General Notes for Rock Band Guitars
 
 ## Pickup Switch (Xbox 360, PS3, Wii)
 
-The pickup switch on the Xbox 360, PS3, and Wii guitars all behave fairly similarly, and can be handled in mostly the same manner. Presumably the PS4 pickup switch might behave in the same manner, but the details for that are currently unknown. The Xbox One pickup switch behaves much more simply and doesn't need any of this logic.
+The pickup switch on the Xbox 360, PS3, and Wii guitars all behave fairly similarly, and can be handled in mostly the same manner. The Xbox One and PS3 pickup switches behave much more simply and don't need any of this logic.
 
 Defining ranges for each of the pickup switch's notches is as simple as dividing the range of the byte into 5 equal ranges: in other words, dividing the raw value by `255 / 5`. These ranges work perfectly for the Xbox 360 guitar, and while they cut it pretty close for the PS3/Wii guitars, they work there as well since those guitars use discrete values instead of a fully analog value. There's just one small catch: with PS3/Wii guitars, the value returned will be `0x7F` after a second or two of the pickup switch being at rest, so that value must be ignored.
 

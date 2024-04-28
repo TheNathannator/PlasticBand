@@ -23,16 +23,16 @@ FD-9B-81-45-AD-45-B6-45-BB-A5-26-D6-02-17-00-20-0E-00-01-00-14-00-00-00-00-00-00
   - Max command length: 5 - 4 = 1
   - Flags: 0x0C (Output, header included in length)
 
-- Output commands: 01, 02, 03, 04, 06, 07
-- Input commands: 01, 04, 05, 06, 0A
+- Input commands: 01, 02, 03, 04, 06, 07
+- Output commands: 01, 04, 05, 06, 0A
 
 - Class names:
   - PDP.Xbox.Guitar.Jaguar
   - Windows.Xbox.Input.NavigationController
 
 - Interface GUIDs:
-  - 1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE
-  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7
-  - 9776FF56-9BFD-4581-AD45-B645BBA526D6
+  - 1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE - PDP.Xbox.Guitar.Jaguar
+  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7 - Windows.Xbox.Input.NavigationController
+  - 9776FF56-9BFD-4581-AD45-B645BBA526D6 - Input device
 
 - HID descriptor: None

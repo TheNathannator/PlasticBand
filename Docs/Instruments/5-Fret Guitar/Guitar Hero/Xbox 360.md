@@ -2,10 +2,21 @@
 
 ## Controller Info
 
-TODO: Check World Tour, GH5, and Warriors of Rock guitars
-
 - XInput type: Gamepad (1)
 - XInput subtype: Guitar Alternate (7)
+- World Tour kiosk stick hardware IDs:
+  - Vendor ID (left stick X): `0x1430`
+  - Product ID (left stick Y): `0x4734`
+  - Revision (right stick X): `0x3122`
+- Guitar Hero 5 wireless/kiosk stick hardware IDs:
+  - Vendor ID (left stick X): `0x1430`
+  - Product ID (left stick Y): `0x0705`
+  - Revision (right stick X): `0x0001`
+- Warriors of Rock kiosk stick hardware IDs:
+  - Vendor ID (left stick X): `0x1430`
+  - Product ID (left stick Y): `0x0706`
+  - Revision (right stick X): `0x0001`
+  - Probably the same on wireless, but not confirmed yet.
 
 ## Input Info
 
@@ -25,7 +36,7 @@ Strumbar: D-pad up/down
 
 Whammy: Right stick X
 
-- Ranges from -32768 (not pressed) to 32767 (fully pressed).
+- Ranges from -32768 when not pressed to 32767 when fully pressed.
 
 Accelerometers:
 
@@ -40,7 +51,6 @@ Accelerometers:
 
 Touch/slider bar: Left stick X
 
-- Only the bottom byte of the value matters. The top byte is the same as the bottom, except for values with the bottom byte above `0x80`, where it is one less. (When viewing those values in signed hexadecimal, they still appear the same.)
 - See the [General Notes](General%20Notes.md) document for more info.
 
 RJ14 (pedal) port: Right bumper
@@ -76,7 +86,7 @@ struct XInputGuitarAlternateGamepad
     int16_t unused;
     int16_t whammy;
     int16_t tilt_accelY;
-}
+} __attribute__((__packed__));
 
 enum XInputGuitarAlternateTouchBar
 {
@@ -117,7 +127,7 @@ enum XInputGuitarAlternateTouchBar
     TouchBar_RYBO = 0x6363,
 
     TouchBar_GRYBO = 0x5F5F
-}
+};
 ```
 
 ## References

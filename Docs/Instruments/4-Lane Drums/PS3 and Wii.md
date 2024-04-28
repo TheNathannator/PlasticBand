@@ -14,7 +14,7 @@ PS3:
   - The Phase Shift device list has 2 different names listed
   - `Harmonix Drum kit for PlayStation®3` (sic)
   - `Harmonix Drum Kit for PlayStation(R)3`
-- PS3 ID:
+- PS3 ID: `0x00`
 
 Wii:
 
@@ -26,6 +26,7 @@ Wii:
   - RB2:
   - RB3:
 - Device name:
+  - `Harmonix Drum Controller for Nintendo Wii` 
 
 MIDI Pro Adapter information may be found in [its own document](../../Other/Rock%20Band%20Adapters/MIDI%20Pro%20Adapters.md).
 
@@ -56,7 +57,7 @@ Or, as flags:
 | Pad    | L3     |
 | Cymbal | R3     |
 
-with the yellow and blue cymbals doing d-pad up and down, respectively.
+with the yellow and blue cymbals doing d-pad up and down, respectively. Refer to the [General Notes](General%20Notes.md#deciphering-pads-and-cymbals) doc for an example of how to distinguish things.
 
 Pedals:
 
@@ -69,17 +70,19 @@ Velocities:
 
 | Pad    | Axis        | Byte offset |
 | :-:    | :--:        | :---------: |
-| Red    | R2 Pressure | 13          |
-| Yellow | L2 Pressure | 12          |
-| Blue   | R1 Pressure | 15          |
-| Green  | L1 Pressure | 14          |
+| Red    | R2 Pressure | 12          |
+| Yellow | L2 Pressure | 11          |
+| Blue   | R1 Pressure | 14          |
+| Green  | L1 Pressure | 13          |
 
 ### As A Struct
 
 ```cpp
 struct PS3FourLaneDrumsState
 {
-    uint8_t reportId;
+#ifdef WINDOWS
+    uint8_t reportId = 0x00;
+#endif
 
     bool square_blue : 1;
     bool cross_green : 1;
@@ -115,7 +118,7 @@ struct PS3FourLaneDrumsState
 
     uint8_t unused2[4];
     int16_t unused3[4];
-}
+} __attribute__((__packed__));
 ```
 
 ## References

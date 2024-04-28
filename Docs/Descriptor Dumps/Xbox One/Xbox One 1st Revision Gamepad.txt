@@ -23,15 +23,15 @@ F8-2F-21-26-3A-CF-B7-02-17-00-20-0E-00-01-00-10-00-00-00-00-00-00-00-00-00-00-00
   - Max command length: 60
   - Flags: 0x08 (Output)
 
-- Output commands: 01, 02, 03, 04, 06, 07, 0C, 1E
-- Input commands: 01, 04, 05, 06, 0A, 0C, 1E
+- Input commands: 01, 02, 03, 04, 06, 07, 0C, 1E
+- Output commands: 01, 04, 05, 06, 0A, 0C, 1E
 
 - Class names:
   - Windows.Xbox.Input.Gamepad
 
 - Interface GUIDs:
-  - 9776FF56-9BFD-4581-AD45-B645BBA526D6
-  - 082E402C-07DF-45E1-A5AB-A3127AF197B5
-  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7
+  - 9776FF56-9BFD-4581-AD45-B645BBA526D6 - Input device
+  - 082E402C-07DF-45E1-A5AB-A3127AF197B5 - Windows.Xbox.Input.Gamepad
+  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7 - Windows.Xbox.Input.NavigationController
 
 - HID descriptor: None

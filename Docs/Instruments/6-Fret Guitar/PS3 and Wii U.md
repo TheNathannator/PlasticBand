@@ -45,7 +45,9 @@ GHTV button: L3
 ```cpp
 struct PS3WiiUSixFretGuitarState
 {
-    uint8_t reportId;
+#ifdef WINDOWS
+    uint8_t reportId = 0x00;
+#endif
 
     bool white1 : 1;
     bool black1 : 1;
@@ -83,7 +85,7 @@ struct PS3WiiUSixFretGuitarState
     int16_t tilt;
 
     int16_t unused4[3];
-}
+} __attribute__((__packed__));
 ```
 
 ## Output Reports
@@ -97,11 +99,13 @@ Length: 8 bytes
 ```cpp
 struct PS3GHLGuitarKeepAlive
 {
+#ifdef WINDOWS
     uint8_t reportId = 0x00;
+#endif
 
     uint8_t outputType = 0x02;
     uint8_t data[7] = { 0x08, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00 };
-};
+} __attribute__((__packed__));
 ```
 
 ## References

@@ -131,7 +131,7 @@ struct GipLegacyWiredState
 
         uint8_t reserved[6];
     } xusbState;
-}
+} __attribute__((__packed__));
 ```
 
 ### Command ID `0x22`: Receive XUSB Device Info
@@ -148,7 +148,7 @@ struct GipLegacyWiredDeviceInfo
     uint8_t subType;
     uint16be_t vendorId;
     uint16be_t productId;
-}
+} __attribute__((__packed__));
 ```
 
 ### Command ID `0x23`: Disconnection?
@@ -164,7 +164,7 @@ Length: 1 byte
 struct GipLegacyWirelessDisconnection
 {
     uint8_t subType;
-};
+} __attribute__((__packed__));
 ```
 
 ## Output Command Info

@@ -1,0 +1,19 @@
+// From the newer Unity input system, which formats things as JSON
+{
+  "type": 1, // Gamepad
+  "subType": 8, // Drumkit
+  "flags": 13, // 0x000D: Force feedback, voice, plug-in modules
+  "gamepad": {
+    "buttons": 62463,   // 0xF3FF
+    "leftTrigger": 0,   // 0x00
+    "rightTrigger": 0,  // 0x00
+    "leftStickX": 5604, // 0x15E4
+    "leftStickY": 304,  // 0x0130
+    "rightStickX": 256, // 0x0100
+    "rightStickY": -64  // 0xFFC0
+  },
+  "vibration": {
+    "leftMotor": 0,
+    "rightMotor": 0
+  }
+}

@@ -7,10 +7,12 @@ PS3:
 - Vendor/product ID: `12BA:0200`
 - Revision:
   - RB1: `0x0313`
-  - RB2:
+  - RB2: 
   - RB3:
 - Device name: `Harmonix Guitar for PlayStation®3`
-- PS3 ID: `0x00`
+- PS3 ID:
+  - RB1: `0x00`
+  - RB2: `0X06`
 
 Wii:
 
@@ -19,7 +21,7 @@ Wii:
   - RB2 and later: `1BAD:3010`
 - Revision:
   - RB1: `0x0100`
-  - RB2:
+  - RB2: `0x0200`
   - RB3:
 - Device name: `Harmonix Guitar Controller for Nintendo Wii`
 
@@ -62,6 +64,8 @@ Strumbar: D-pad up/down
 
 Whammy: Right stick X
 
+- Ranges from `0x00` when not pressed to `0xFF` when fully pressed. Resets to `0x7F` after a second or two of no movement.
+
 Tilt: R1
 
 Pickup switch: Right stick Y
@@ -73,7 +77,9 @@ Pickup switch: Right stick Y
 ```cpp
 struct PS3RockBandGuitarState
 {
-    uint8_t reportId;
+#ifdef WINDOWS
+    uint8_t reportId = 0x00;
+#endif
 
     bool blue : 1;
     bool green : 1;
@@ -106,7 +112,7 @@ struct PS3RockBandGuitarState
 
     uint8_t unused2[12];
     int16_t unused3[4];
-}
+} __attribute__((__packed__));
 ```
 
 ## References

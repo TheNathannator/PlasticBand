@@ -6,12 +6,16 @@ The HID descriptor for these devices unfortunately does not expose all of the ax
 
 ## Input Reports
 
+All PS3 instruments have no report ID, and only send a single type of report.
+
 The base report goes like this:
 
 ```cpp
 struct PS3Report
 {
-    uint8_t reportId;
+#ifdef WINDOWS
+    uint8_t reportId = 0x00;
+#endif
 
     // Button bits
     bool square : 1;
@@ -71,7 +75,7 @@ struct PS3Report
     int16_t accelZ; // Forward/back acceleration (pitch)
     int16_t accelY; // Up/down acceleration (gravity)
     int16_t gyro;   // Left/right instantaneous rotation (yaw)
-};
+} __attribute__((__packed__)); // 27/28 bytes
 ```
 
 What everything means changes between devices, but the amount of data does not.
@@ -85,17 +89,14 @@ The output reports follow this general format:
 ```cpp
 struct PS3GenericOutputReport
 {
-    // The main report ID
-    // Might not matter what this is set to, but games on PS3 typically send these with a
-    // USB transfer wValue of 0x0201, which would imply an ID of 0x01
-    // For safety, a report ID of 0x00 is used, as there doesn't seem to
-    // actually be any report ID specified by the device
+#ifdef WINDOWS
     uint8_t reportId = 0x00;
+#endif
 
     // A secondary ID used to determine the type of request
     uint8_t outputType;
     uint8_t data[7];
-}
+} __attribute__((__packed__)); // 8/9 bytes
 ```
 
 ### Output Type `0x01`: Player LEDs
@@ -115,7 +116,7 @@ struct PS3PlayerLeds
     bool player4 : 1;
     uint8_t : 4;
     uint8_t padding[5];
-}
+} __attribute__((__packed__));
 ```
 
 ## Feature Report
@@ -132,7 +133,7 @@ struct PS3Descriptor
     uint8_t unk3 = 0x01;
     uint8_t ps3_id;
     uint8_t unk4[4];
-}
+} __attribute__((__packed__));
 ```
 
 The exact purpose of this data is unknown, the only value that's observed as changing between different devices is the `ps3_id` field (which is `0x07` on DualShock 3s). It could potentially be used as another way of identifying devices if it is fully unique between device types.

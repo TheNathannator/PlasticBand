@@ -101,7 +101,7 @@ struct GipGamepadState
     int16_t leftStickY;
     int16_t rightStickX;
     int16_t rightStickY;
-}
+} __attribute__((__packed__));
 ```
 
 ## Output Command Info
@@ -146,7 +146,7 @@ enum GipGamepadMotorFlags
     GipGamepadMotor_LeftRumble = 0x02,
     GipGamepadMotor_RightTrigger = 0x04,
     GipGamepadMotor_LeftTrigger = 0x08
-}
+};
 
 struct GipGamepadVibration
 {
@@ -161,5 +161,5 @@ struct GipGamepadVibration
     uint8_t duration;
     uint8_t delay;
     uint8_t repeat;
-}
+} __attribute__((__packed__));
 ```

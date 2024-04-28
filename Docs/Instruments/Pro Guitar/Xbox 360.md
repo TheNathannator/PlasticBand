@@ -37,15 +37,32 @@ Standard 5-fret color flags:
 
 | Fret Color | Input         | Bits                     |
 | :--------- | :----         | :---                     |
+| Solo flag (speculated) | Left Thumb X  | `0b_1xxx_xxxx_xxxx_xxxx` |
 | Green      | Left Thumb Y  | `0b_xxxx_xxxx_1xxx_xxxx` |
 | Red        | Left Thumb Y  | `0b_1xxx_xxxx_xxxx_xxxx` |
 | Yellow     | Right Thumb X | `0b_xxxx_xxxx_1xxx_xxxx` |
 | Blue       | Right Thumb X | `0b_1xxx_xxxx_xxxx_xxxx` |
 | Orange     | Right Thumb Y | `0b_xxxx_xxxx_1xxx_xxxx` |
 
-Tilt is not reported through the standard XInput data, according to the referenced forum post. It's possible it does the same thing as the RB3 keyboard's touchpad.
+### [XUSB-Only Info](../../_Templates/Xbox%20360%20Base.md#xusb-only-info)
 
-TODO: There are probably more inputs present on the guitar than just these, such as a pedal port 
+The information here is speculated based on the PS3/Wii Pro guitar report, more research is needed to confirm it. The speculation is based on the Pro Keyboards having bitwise identical report data beyond a certain point of each report type; the Pro Guitars appear to have the same behavior.
+
+Tilt and Auto-Calibration:
+
+- Tilt is duplicated across 3 bytes, 2 of which are used for auto-calibration sensors when enabled. When no sensors are enabled, all 3 of the inputs listed below are tilt.
+
+- Microphone: `reserved[0]` (byte offset 12)
+  - When enabled, neutral at `0x7F`, and decreases when sound is picked up.
+- Light sensor: `reserved[1]` (byte offset 13)
+  - When enabled, neutral at `0x00`, and increases when light is detected.
+- Tilt: `reserved[2]` (byte offset 14)
+  - `0x7F` when tilted, `0x40` when not tilted. (TODO: needs verification) 
+
+Pedal port:
+
+- Pedal press: `reserved[3]` (byte offset 15),  `0b_1000_0000`
+- Pedal connection: `reserved[5]` (byte offset 17), `0b_0000_0001`
 
 ### As A Struct
 
@@ -93,7 +110,24 @@ struct XInputProGuitarState
     bool orangeFret: 1;
     uint8_t highEVelocity : 7;
     bool : 1;
-}
+
+#ifdef USING_XUSB
+    uint8_t autoCal_Microphone; // When the sensor isn't activated, this
+    uint8_t autoCal_Light; // and this just duplicate the tilt axis
+    uint8_t tilt;
+
+    uint8_t : 7;
+    bool pedal : 1;
+
+    uint8_t unused2;
+
+    bool pedalConnection : 1;
+    uint8_t : 7;
+
+    // There's additional data in the PS3/Wii report, but the XUSB report
+    // only has 6 additional bytes after the end of the XInput report.
+#endif
+} __attribute__((__packed__));
 ```
 
 ## References

@@ -44,7 +44,7 @@ struct <device>State
 {
     // Data members go here.
     // Use bitfields where practical or needed, such as buttons.
-}
+} __attribute__((__packed__));
 ```
 
 ## References

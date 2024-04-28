@@ -21,7 +21,7 @@ Frets:
 | White 2 | Left bumper  |
 | White 3 | Right bumper |
 
-Strumbar: D-pad up/down + left stick up/down
+Strumbar: D-pad up/down + left stick up/down (Y axis)
 
 - It seems that Guitar Hero Live only uses the left stick input when checking for strumming during gameplay.
 
@@ -29,7 +29,7 @@ Tilt and whammy are swapped compared to the other Xbox 360 guitars.
 
 Whammy: Right stick Y
 
-- Ranges from 0 (not pressed) to 32767 (pressed). This also differs from other Xbox 360 guitars.
+- Ranges from 0 (not pressed) to 32767 (pressed). This range also differs from other Xbox 360 guitars.
 
 Tilt: Right stick X
 
@@ -76,7 +76,7 @@ struct XInputSixFretGuitarGamepad
     int16_t strumBar;
     int16_t tilt;
     int16_t whammy;
-}
+} __attribute__((__packed__));
 ```
 
 ## References

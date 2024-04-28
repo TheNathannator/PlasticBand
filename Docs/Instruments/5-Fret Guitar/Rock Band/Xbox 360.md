@@ -4,8 +4,7 @@
 
 - XInput type: Gamepad (1)
 - XInput subtype: Guitar (6)
-
-TODO: Rock Band is able to differentiate between RB guitars with auto-calibration and those without, most likely either a flag or reported vibration capabilities
+- RB2 guitars are always wireless, and have sThumbRX > 0x100 in the vibration capabilities.
 
 ## Input Info
 
@@ -46,7 +45,7 @@ Strumbar: D-pad up/down
 
 Whammy: Right Stick X
 
-- Ranges from -32768 (not pressed) to 32767 (fully pressed). Note that the actual max may vary.
+- Ranges from -32768 when not pressed to 32767 when fully pressed. Note that the logical max might never actually be reached on these guitars, the whammy bar physically stops a little ways before then.
 
 Tilt: Right Stick Y
 
@@ -101,7 +100,7 @@ struct XInputGuitarGamepad
     int16_t unused2;
     int16_t whammy;
     int16_t tilt;
-}
+} __attribute__((__packed__));
 ```
 
 ## Vibration Info
