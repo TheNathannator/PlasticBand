@@ -19,8 +19,8 @@ Length: 64 bytes
   - Left is `0x00`, right is `0xFF`.
 - Byte 2: Joystick Y
   - Up is `0x00`, down is `0xFF`.
-- Bytes 1-7: Unused
-  - 1-4 are the DualSense stick axes, and are `0x80`
+- Bytes 3-7: Unused
+  - 3-4 are the DualSense right-stick axes, and are `0x80`
   - 5-7 are `0x00`
 - Byte 8-10: Buttons/d-pad
   - Byte 8, bits 0-3 (`0x0F`): D-pad
