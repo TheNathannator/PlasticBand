@@ -6,19 +6,31 @@
   - Stratocaster (MadCatz): `0738:4161`
   - Jaguar (PDP): `0E6F:0170`
   - Riffmaster (PDP): `0E6F:0248`
-- Interface GUID:
-  - Primary (Stratocaster): `0D2AE438-7F7D-4933-8693-30FC55018E77`
-  - Primary (Jaguar and Riffmaster): `1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE`
-  - Secondary:
-    - `ECDDD2FE-D387-4294-BD96-1A712E3DC77D` (Console function map; only present on Riffmaster)
+- Interface GUIDs:
+  - Stratocaster (MadCatz):
+    - `0D2AE438-7F7D-4933-8693-30FC55018E77` (Primary)
     - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
     - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
-- Class string:
-  - Primary (Stratocaster): `MadCatz.Xbox.Guitar.Stratocaster`
-  - Primary (Jaguar and Riffmaster): `PDP.Xbox.Guitar.Jaguar`
-  - Secondary: `Windows.Xbox.Input.NavigationController`
-
-The Riffmaster does not have a unique interface GUID, it must be distinguished by vendor/product ID.
+  - Jaguar (PDP):
+    - `1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE` (Primary)
+    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
+  - Riffmaster (PDP):
+    - No unique interface GUID, must be distinguished by vendor/product ID.
+    - `1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE` (Primary; same as Jaguar)
+    - `ECDDD2FE-D387-4294-BD96-1A712E3DC77D` (Console function map)
+    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
+- Class strings:
+  - Stratocaster (MadCatz):
+    - `MadCatz.Xbox.Guitar.Stratocaster` (Primary)
+    - `Windows.Xbox.Input.NavigationController`
+  - Jaguar (PDP):
+    - `PDP.Xbox.Guitar.Jaguar` (Primary)
+    - `Windows.Xbox.Input.NavigationController`
+  - Riffmaster (PDP):
+    - `PDP.Xbox.Guitar.Jaguar` (Primary)
+    - `Windows.Xbox.Input.NavigationController`
 
 ## Input Command Info
 

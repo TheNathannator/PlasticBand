@@ -6,15 +6,21 @@
   - MadCatz: `0738:4262`
   - PDP: `0E6F:0171`
 - Interface GUIDs:
-  - Primary (MadCatz): `06182893-CCE0-4B85-9271-0A10DBAB7E07`
-  - Primary (PDP): `A503F9B0-955E-47C4-A2ED-B1336FA7703E`
-  - Secondary:
+  - MadCatz:
+    - `06182893-CCE0-4B85-9271-0A10DBAB7E07` (Primary)
+    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
+  - PDP:
+    - `A503F9B0-955E-47C4-A2ED-B1336FA7703E` (Primary)
     - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
     - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
 - Class strings:
-  - Primary (MadCatz): `MadCatz.Xbox.Drums.Glam`
-  - Primary (PDP): `PDP.Xbox.Drums.Tablah`
-  - Secondary: `Windows.Xbox.Input.NavigationController`
+  - MadCatz:
+    - `MadCatz.Xbox.Drums.Glam` (Primary)
+    - `Windows.Xbox.Input.NavigationController`
+  - PDP:
+    - `PDP.Xbox.Drums.Tablah` (Primary)
+    - `Windows.Xbox.Input.NavigationController`
 
 NOTE: These drumkits typically send every packet twice! Respecting the packet count is vital!
 

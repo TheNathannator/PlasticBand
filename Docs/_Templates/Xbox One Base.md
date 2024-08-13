@@ -11,15 +11,11 @@ Resources to assist in the documentation process:
 
 - Vendor/product ID: `<Hex vendor ID>:<Hex product ID>`
 - Interface GUIDs:
-  - Primary:
-  - Secondary:
-    - (List each)
+  - (List each, marking the primary GUID and listing it first)
 - Class strings:
-  - Primary:
-  - Secondary:
-    - (List each)
+  - (List each, marking the primary string and listing it first)
 
-Vendor ID and product ID can be retrieved from the arrival message (`0x02`).
+Vendor ID and product ID can be retrieved from the arrival message (`0x02`) or from USB descriptor info.
 
 Interface GUIDs and class strings can be retrieved from the descriptor message (`0x04`). Multiple of each can be specified, if there's more than one include all of them but be sure to specify which is primary (unique) and which ones are secondary (non-unique). If there's only one, this is not required.
 

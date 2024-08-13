@@ -8,13 +8,12 @@ Documenting this is a bit pointless with regards to PC use since Xbox 360 device
 
 - Vendor/product ID: `0E6F:0175`
 - Interface GUIDs:
-  - Primary: `FD019937-9816-45E7-8034-CFD6AB3AE6BF`
-  - Secondary:
-    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
+  - `FD019937-9816-45E7-8034-CFD6AB3AE6BF` (Primary)
+  - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
+  - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
 - Class strings:
-  - Primary: `PDP.Xbox.RBAdapter.LegacyUSB`
-  - Secondary: `Windows.Xbox.Input.NavigationController`
+  - `PDP.Xbox.RBAdapter.LegacyUSB` (Primary)
+  - `Windows.Xbox.Input.NavigationController`
 
 ## Input Command Info
 
