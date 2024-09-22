@@ -1,0 +1,15 @@
+Capabilities reported by the XUSB driver:
+
+Type:         0x01 (Gamepad)
+SubType:      0x0F (15)
+Flags:        0x0008 (PluginModules)
+VendorId:     0x1BAD
+ProductId:    0x1338
+Revision:     0x0028
+Buttons:      0xF7FF
+Triggers:     L: 0x00  R: 0x00
+LeftThumb:    X: 0x1BAD  Y: 0x1338
+RightThumb:   X: 0x0100  Y: 0x0000
+Ext:          0x00-00-00-00-00-01
+LeftMotorSpeed:   0x00
+RightMotorSpeed:  0x00
