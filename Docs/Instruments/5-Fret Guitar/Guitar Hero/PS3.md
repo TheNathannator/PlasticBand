@@ -21,6 +21,8 @@
 
 ## Input Info
 
+This device sends a report modelled after the one [documented here](../../../Controller%20Communication%20Basics/PS3%20Instruments.md). Refer to that document for the base layout.
+
 Start/select, PS button, and d-pad work as normal, with the exception that the d-pad is neutral at 31 (`0x1F`) instead of 8.
 
 Frets:

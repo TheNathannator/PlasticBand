@@ -27,6 +27,8 @@ MIDI Pro Adapter information may be found in [its own document](../../Other/Rock
 
 ## Input Info
 
+This device sends a report modelled after the one [documented here](../../Controller%20Communication%20Basics/PS3%20Instruments.md). Refer to that document for the base layout.
+
 Face buttons and d-pad function as normal.
 
 Fret numbers:

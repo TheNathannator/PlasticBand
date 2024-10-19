@@ -9,6 +9,8 @@ The Rock Band Stage Kit is a controller that emulates certain effects that may b
 
 ## Input Info
 
+This device uses the standard Xbox 360 report format, [documented here](../../Controller%20Communication%20Basics/Xbox%20360.md). Refer to that document for the base layout.
+
 The stage kit has no special inputs. It has face buttons, a d-pad, start, select, and guide.
 
 ## Output Info

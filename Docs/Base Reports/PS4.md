@@ -1,10 +1,10 @@
-# Communicating with PS3 Guitars, Drums, and Similar
+# PS4 Base Report Format
 
 The PS4 Guitar Hero and Rock Band peripherals are standard HID devices that all follow a similar report format. This format follows that of regular PS4 gamepads, in particular the [USB version of report ID `0x01`](https://controllers.fandom.com/wiki/Sony_DualShock_4#HID_Report_0x01_Input_USB/Dongle) (even for wireless devices, though those seem to use a longer report length).
 
 ## Input Reports
 
-All PS3 instruments use a report ID of `0x01`, and only send a single type of report.
+All PS4 instruments use a report ID of `0x01`, and only send a single type of report.
 
 For wired devices, the report goes like this:
 
