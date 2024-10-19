@@ -89,8 +89,7 @@ struct PS4FourLaneDrumsState
     uint8_t blueCymbalVelocity;
     uint8_t greenCymbalVelocity;
 
-    uint8_t unused4[24];
-    uint32le_t crc32;
+    uint8_t unused4[14];
 } __attribute__((packed));
 ```
 
