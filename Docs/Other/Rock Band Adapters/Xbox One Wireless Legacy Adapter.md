@@ -40,7 +40,8 @@ Length: Typically 14 bytes (listed max: 50 bytes)
   - Byte 1, bit 6 (`0x40`) - Left stick press
   - Byte 1, bit 7 (`0x80`) - Right stick press
 - Byte 2: User index
-- Byte 3: Unknown (`0x01`)
+- Byte 3: Device type
+  - Same as in the device information message.
 - Bytes 4-13: Instrument state
   - This seems to match the state layout of the respective Xbox One instruments, not the layout of Xbox 360 controllers.
 
@@ -68,7 +69,7 @@ struct GipLegacyWirelessState
     bool rightThumbClick : 1;
 
     uint8_t userIndex;
-    uint8_t unk1 = 0x01;
+    GipLegacyWirelessDeviceType deviceType;
 
     union {
         GipGuitarState guitar;
@@ -96,10 +97,16 @@ Max length: 254
   - Drums: `0x0064, 0x0072, 0x0075, 0x006D, 0x0073` (`L"drums"`)
 
 ```cpp
+enum class GipLegacyWirelessDeviceType : uint8_t
+{
+    Guitar = 0x01,
+    Drums = 0x02,
+};
+
 struct GipLegacyWirelessDeviceInfo
 {
     uint8_t userIndex;
-    uint8_t deviceType;
+    GipLegacyWirelessDeviceType deviceType;
     uint16be_t vendorID;
     uint8_t unk;
     uint8_t xinputSubtype;
@@ -128,15 +135,14 @@ This one is unknown, needs more research done.
 
 Length: 2 bytes
 
-- Byte 0: Device ID
-- Byte 1: Device type
-  - Same as in the device information message.
+- Byte 0: User index
+- Byte 1: Unknown
 
 ```cpp
 struct GipLegacyWirelessSetState
 {
-    uint8_t deviceId;
-    uint8_t deviceType;
+    uint8_t userIndex;
+    uint8_t unknown;
 } __attribute__((packed));
 ```
 
