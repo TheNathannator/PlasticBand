@@ -19,7 +19,7 @@ This code does not attempt to account for the hardware issue described in [Key V
 // We need to assign a default velocity if more than 5 keys are pressed.
 // The keyboard defaults to 64 for keys that were pressed after all velocities filled up
 // and then keys that had velocities registered were released, so we're using the same here.
-// This can be whatever you want it to be though, so long as it's in the range of 0-127.
+// This is also the velocity recommended by the MIDI standard for velocity-insensitive devices.
 #define DEFAULT_VELOCITY 64
 
 // Array to copy key velocities into

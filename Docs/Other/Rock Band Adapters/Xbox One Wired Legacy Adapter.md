@@ -160,7 +160,7 @@ Length: 1 byte
   - The only instance of this in the packet log is set to `0x08`, closest match is the subtype.
 
 ```cpp
-struct GipLegacyWirelessDisconnection
+struct GipLegacyWiredDisconnection
 {
     uint8_t subType;
 } __attribute__((packed));

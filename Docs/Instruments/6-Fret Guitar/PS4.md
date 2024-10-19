@@ -88,7 +88,7 @@ struct PS4SixFretGuitarState
 
     bool isConnected; // 0 when guitar not connected, 1 when connected
 
-    uint8_t unused4[38];
+    uint8_t unused4[41];
 } __attribute__((packed));
 ```
 
