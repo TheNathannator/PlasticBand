@@ -69,7 +69,7 @@ Pedal port:
 ### As A Struct
 
 ```cpp
-struct XInputProGuitarState
+struct XInputProGuitarGamepad
 {
     bool dpadUp : 1;
     bool dpadDown : 1;

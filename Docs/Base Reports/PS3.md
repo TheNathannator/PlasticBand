@@ -13,7 +13,7 @@ All PS3 instruments have no report ID, and only send a single type of report.
 The base report goes like this:
 
 ```cpp
-struct PS3Report
+struct PS3ControllerState
 {
     // (The descriptor data annotating this structure was taken from the Guitar Hero World Tour guitar.)
 
@@ -191,7 +191,7 @@ struct PS3GenericOutputReport
 This report is used to set the player LEDs on the device.
 
 ```cpp
-struct PS3PlayerLeds
+struct PS3SetPlayerLeds
 {
     uint8_t reportId = 0x00;
 
@@ -211,7 +211,7 @@ struct PS3PlayerLeds
 PS3 controllers have a feature report that can be requested, which contains some data about the controller:
 
 ```cpp
-struct PS3Descriptor
+struct PS3ControllerCapabilities
 {
     uint8_t reportId = 0x00;
 

@@ -9,7 +9,7 @@ All PS4 instruments use a report ID of `0x01`, and only send a single type of re
 For wired devices, the report goes like this:
 
 ```cpp
-struct PS4Report
+struct PS4ControllerState
 {
     uint8_t reportId = 0x01;
 
@@ -93,7 +93,7 @@ struct PS4Report
 For wireless devices, there are an additional 14 bytes at the end of the report:
 
 ```cpp
-struct PS4WirelessReport : PS4Report
+struct PS4WirelessControllerState : PS4ControllerState
 {
     uint8_t padding2[10];
     uint32le_t crc32;

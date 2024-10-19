@@ -58,7 +58,7 @@ Crossfader: Right stick Y
 ### As A Struct
 
 ```cpp
-struct XInputTurntableState
+struct XInputTurntableGamepad
 {
     bool dpadUp : 1;
     bool dpadDown : 1;
