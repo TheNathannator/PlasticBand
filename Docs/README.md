@@ -70,7 +70,7 @@ Data structures in these documents assume that the processor and data are little
     - [ ] With a drumkit connected
     - [ ] With a turntable connected
     - [ ] etc...
-  - [ ] Ardwiino Devices
+  - [x] Santroller Devices
 
 There may be other things not listed here, search for `TODO` in all files to see what else there is.
 
