@@ -94,7 +94,7 @@ struct XInputFourLaneDrumsGamepad
     int16le_t yellowVelocity;
     int16le_t blueVelocity;
     int16le_t greenVelocity;
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

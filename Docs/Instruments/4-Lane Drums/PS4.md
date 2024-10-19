@@ -91,7 +91,7 @@ struct PS4FourLaneDrumsState
 
     uint8_t unused4[24];
     uint32le_t crc32;
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

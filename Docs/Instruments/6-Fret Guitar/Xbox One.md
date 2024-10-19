@@ -75,7 +75,7 @@ struct GipGHLNavigationState
     int16le_t unused2;
     int16le_t strum;
     int16le_t unused3[2];
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ### Command ID `0x21`: Guitar Input State
@@ -169,7 +169,7 @@ struct GipGHLGuitarState
     int16le_t tiltActive2;
 
     int16le_t unused4[2];
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## Output Command Info
@@ -190,7 +190,7 @@ struct GipGhlGuitarGenericCommand
 {
     uint8_t subCommand;
     uint8_t data[7];
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 #### Sub-command ID `0x01`: LED control
@@ -218,7 +218,7 @@ struct GipGhlGuitarPlayerLeds
     bool player4 : 1;
     uint8_t : 4;
     uint8_t padding[5];
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 #### Sub-command ID `0x02`: Keep-Alive Packet
@@ -232,7 +232,7 @@ struct GipGhlGuitarKeepAlive
 {
     uint8_t subCommand = 0x02;
     uint8_t data[7] = { 0x08, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00 };
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

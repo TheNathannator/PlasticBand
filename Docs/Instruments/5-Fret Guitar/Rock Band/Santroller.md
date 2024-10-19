@@ -82,5 +82,5 @@ struct SantrollerRockBandGuitarState
     uint8_t whammy;
     uint8_t pickup;
     uint8_t tilt;
-} __attribute__((__packed__)); // 7 bytes
+} __attribute__((packed)); // 7 bytes
 ```

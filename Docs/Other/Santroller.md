@@ -84,7 +84,7 @@ struct XInputSantrollerCommand
         : parameter(param << 8)
     {
     }
-} __attribute__((__packed__)); // 4 bytes
+} __attribute__((packed)); // 4 bytes
 ```
 
 Just like with the stage kit, command IDs and parameters are listed in byte form. When using XInput to send commands, these values must have an additional `0x00` byte appended.
@@ -101,7 +101,7 @@ struct HidSantrollerCommand
     uint8_t outputType = 0x5A;
     uint8_t parameter;
     uint8_t commandId;
-} __attribute__((__packed__)); // 4 bytes
+} __attribute__((packed)); // 4 bytes
 ```
 
 The padding normally present on other PS3 device commands is not required, and will not cause problems if sent.
@@ -141,7 +141,7 @@ struct SantrollerHidCommandEx
     bool soloActive : 1;
     bool noteMiss : 1;
     uint8_t : 5;
-} __attribute__((__packed__)); // 10 bytes
+} __attribute__((packed)); // 10 bytes
 ```
 
 This command is necessary for Bluetooth connections, where sending an output report tends to have a lot of overhead and batching data is extremely valuable.
@@ -185,7 +185,7 @@ struct SantrollerHidFiveFretGuitarOutput : SantrollerHidCommandEx
     bool blueHit : 1;
     bool orangeHit : 1;
     uint8_t : 2;
-} __attribute__((__packed__)); // 11 bytes
+} __attribute__((packed)); // 11 bytes
 ```
 
 #### 6-Fret Guitars
@@ -208,7 +208,7 @@ struct SantrollerHidSixFretGuitarOutput : SantrollerHidCommandEx
     bool white2Hit : 1;
     bool white3Hit : 1;
     uint8_t : 1;
-} __attribute__((__packed__)); // 11 bytes
+} __attribute__((packed)); // 11 bytes
 ```
 
 #### Rock Band Drums
@@ -231,7 +231,7 @@ struct SantrollerHidRockBandDrumsOutput : SantrollerHidCommandEx
     bool yellowCymbalHit : 1;
     bool blueCymbalHit : 1;
     bool greenCymbalHit : 1;
-} __attribute__((__packed__)); // 11 bytes
+} __attribute__((packed)); // 11 bytes
 ```
 
 #### Guitar Hero Drums
@@ -253,7 +253,7 @@ struct SantrollerHidGuitarHeroDrumsOutput : SantrollerHidCommandEx
     bool orangeCymbalHit : 1;
     bool greenPadHit : 1;
     uint8_t : 2;
-} __attribute__((__packed__)); // 11 bytes
+} __attribute__((packed)); // 11 bytes
 ```
 
 #### Turntable
@@ -279,7 +279,7 @@ struct SantrollerHidTurntableOutput : SantrollerHidCommandEx
     bool rightBlueHit : 1;
 
     uint8_t euphoriaBrightness;
-} __attribute__((__packed__)); // 12 bytes
+} __attribute__((packed)); // 12 bytes
 ```
 
 On turntables, commands will be ignored if both the command ID and parameter value are the same until a valid non-equal command is received. This is a workaround for DJ Hero on Xbox 360, which sweeps through the full vibration range on the left and right motors when pulsing the Euphoria LED.

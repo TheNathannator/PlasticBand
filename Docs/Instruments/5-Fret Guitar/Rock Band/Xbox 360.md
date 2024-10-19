@@ -102,7 +102,7 @@ struct XInputGuitarGamepad
     int16le_t unused2;
     int16le_t whammy;
     int16le_t tilt;
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## Vibration Info

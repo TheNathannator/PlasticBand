@@ -74,7 +74,7 @@ struct XInputStageKitCommand
         : parameter(param << 8)
     {
     }
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

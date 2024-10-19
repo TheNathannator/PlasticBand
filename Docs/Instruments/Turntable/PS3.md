@@ -108,7 +108,7 @@ struct PS3TurntableState
     uint16le_t crossfader;
     uint16le_t platterButtons;
     uint16le_t unused3;
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## Output Info
@@ -132,7 +132,7 @@ struct PS3TurntableEuphoria
     uint8_t unknown1 = 0x01;
     uint8_t enable; // 1 to enable, 0 to disable
     uint8_t padding[5];
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

@@ -160,7 +160,7 @@ struct PS3Report
     uint16le_t accelY; // Up/down acceleration (gravity)
     uint16le_t gyro;   // Left/right instantaneous rotation (yaw)
     // 0xC0,              // End Collection
-} __attribute__((__packed__)); // 27/28 bytes
+} __attribute__((packed)); // 27/28 bytes
 ```
 
 What everything means changes between devices, but the amount of data does not.
@@ -183,7 +183,7 @@ struct PS3GenericOutputReport
 
     uint8_t outputType; // A secondary ID used to determine the type of request
     uint8_t data[7];    // The data for the request
-} __attribute__((__packed__)); // 8/9 bytes
+} __attribute__((packed)); // 8/9 bytes
 ```
 
 ### Output Type `0x01`: Player LEDs
@@ -203,7 +203,7 @@ struct PS3PlayerLeds
     bool player4 : 1; // 0x08
     uint8_t : 4;
     uint8_t padding[5];
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## Feature Report
@@ -228,7 +228,7 @@ struct PS3Descriptor
     uint8_t unk3 = 0x01;
     uint8_t ps3_id; // purpose is unknown
     uint8_t unk4[4];
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 The `ps3_id` field is a bit of an enigma. It corresponds neither to vendor nor to device type, and there's no current discernable pattern with how it's assigned. Observed values are:

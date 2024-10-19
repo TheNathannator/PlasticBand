@@ -122,7 +122,7 @@ struct PS3GuitarHeroGuitarState
     uint16le_t accelZ;
     uint16le_t accelY;
     uint16le_t unused3;
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

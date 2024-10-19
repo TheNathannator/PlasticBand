@@ -114,7 +114,7 @@ struct PS3RockBandGuitarState
 
     uint8_t unused2[12];
     int16le_t unused3[4];
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

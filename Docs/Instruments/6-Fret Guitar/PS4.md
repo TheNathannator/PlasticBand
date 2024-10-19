@@ -89,7 +89,7 @@ struct PS4SixFretGuitarState
     bool isConnected; // 0 when guitar not connected, 1 when connected
 
     uint8_t unused4[38];
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## Output Reports
@@ -106,7 +106,7 @@ struct PS4GHLGuitarKeepAlive
     uint8_t reportId = 0x30;
 
     uint8_t data[8] = { 0x02, 0x08, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00 };
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 TODO:

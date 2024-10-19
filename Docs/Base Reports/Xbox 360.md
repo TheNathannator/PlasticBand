@@ -33,7 +33,7 @@ struct XInputGamepad
     int16le_t leftStickY;
     int16le_t rightStickX;
     int16le_t rightStickY;
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## XUSB
@@ -45,6 +45,6 @@ If you're interacting directly with the XUSB driver or otherwise have raw access
 struct XusbGamepad : XInputGamepad
 {
     uint8_t reserved[6];
-} __attribute__((__packed__));
+} __attribute__((packed));
 #endif
 ```

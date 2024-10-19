@@ -88,7 +88,7 @@ struct XInputGuitarAlternateGamepad
     int16le_t unused;
     int16le_t whammy;
     int16le_t tilt_accelY;
-} __attribute__((__packed__));
+} __attribute__((packed));
 
 enum XInputGuitarAlternateTouchBar
 {

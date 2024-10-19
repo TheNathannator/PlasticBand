@@ -138,5 +138,5 @@ struct PS5RiffmasterGuitarState
     uint64le_t checksum;
 
     bool joystickClick() { return soloFlag && !(soloGreen | soloRed | soloYellow | soloBlue | soloOrange); }
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```

@@ -87,7 +87,7 @@ struct PS3WiiUSixFretGuitarState
     uint16le_t tilt;
 
     uint16le_t unused4[3];
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## Output Reports
@@ -107,7 +107,7 @@ struct PS3GHLGuitarKeepAlive
 
     uint8_t outputType = 0x02;
     uint8_t data[7] = { 0x08, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00 };
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

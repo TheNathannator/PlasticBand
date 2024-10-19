@@ -78,7 +78,7 @@ struct SantrollerFiveLaneDrumsState
     uint8_t velocity_blue;
     uint8_t velocity_orange;
     uint8_t velocity_kick;
-} __attribute__((__packed__)); // 10 bytes
+} __attribute__((packed)); // 10 bytes
 ```
 
 ## References

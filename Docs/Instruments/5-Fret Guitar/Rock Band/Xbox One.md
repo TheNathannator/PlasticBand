@@ -128,7 +128,7 @@ struct GipGuitarState
     bool : 3;
 
     uint8_t unknown[3];
-} __attribute__((__packed__));
+} __attribute__((packed));
 
 struct GipRiffmasterGuitarState : GipGuitarState
 {
@@ -141,7 +141,7 @@ struct GipRiffmasterGuitarState : GipGuitarState
     uint8_t unknown2[13];
 
     bool joystickClick() { return soloFlag && !(soloGreen | soloRed | soloYellow | soloBlue | soloOrange); }
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## Output Command Info

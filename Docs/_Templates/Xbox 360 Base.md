@@ -75,7 +75,7 @@ struct XInput<type>Gamepad
 #ifdef USING_XUSB
     uint8_t reserved[6];
 #endif
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

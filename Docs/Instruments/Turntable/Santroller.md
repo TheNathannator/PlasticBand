@@ -86,5 +86,5 @@ struct SantrollerTurntableState
     uint8_t rightTableVelocity;
     uint8_t effectsKnob;
     uint8_t crossfader;
-} __attribute__((__packed__)); // 8 bytes
+} __attribute__((packed)); // 8 bytes
 ```

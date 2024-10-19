@@ -153,7 +153,7 @@ struct XInputKeytarGamepad
     bool pedalConnection : 1; // If this matches PS3 MPA behavior, always 0 with the MIDI Pro Adapter
     uint8_t : 7;
 #endif
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

@@ -160,7 +160,7 @@ struct PS4RockBandGuitarState
 #ifdef RIFFMASTER
     bool joystickClick() { return soloFlag && !(soloGreen | soloRed | soloYellow | soloBlue | soloOrange); }
 #endif
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

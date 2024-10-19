@@ -89,7 +89,7 @@ struct GipDrumkitState
     uint8_t yellowCymbal : 4;
     uint8_t : 4;
     uint8_t greenCymbal : 4;
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

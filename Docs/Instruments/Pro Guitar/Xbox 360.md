@@ -129,7 +129,7 @@ struct XInputProGuitarState
     // There's additional data in the PS3/Wii report, but the XUSB report
     // only has 6 additional bytes after the end of the XInput report.
 #endif
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## References

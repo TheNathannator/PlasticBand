@@ -97,7 +97,7 @@ struct GipGamepadState
     int16le_t leftStickY;
     int16le_t rightStickX;
     int16le_t rightStickY;
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
 
 ## Output Command Info
@@ -157,5 +157,5 @@ struct GipGamepadVibration
     uint8_t duration;
     uint8_t delay;
     uint8_t repeat;
-} __attribute__((__packed__));
+} __attribute__((packed));
 ```
