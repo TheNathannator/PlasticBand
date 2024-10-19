@@ -78,9 +78,9 @@ Length: 10 bytes
 
 The Riffmaster expands this input report to 28 bytes long, and adds a joystick and the Share button.
 
-- Bytes 10-11: Joystick X (little-endian)
+- Bytes 10-11: Joystick X (little-endian, signed)
   - Left is negative, right is positive.
-- Bytes 12-13: Joystick Y (little-endian)
+- Bytes 12-13: Joystick Y (little-endian, signed)
   - Up is positive, down is negative.
 - Byte 14: Console function buttons
   - Byte 14, bit 0 (`0x01`): Share button
@@ -132,8 +132,8 @@ struct GipGuitarState
 
 struct GipRiffmasterGuitarState : GipGuitarState
 {
-    uint16le_t joystickX;
-    uint16le_t joystickY;
+    int16le_t joystickX;
+    int16le_t joystickY;
 
     bool share : 1;
     bool : 7;
