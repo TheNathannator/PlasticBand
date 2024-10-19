@@ -24,12 +24,12 @@ If `dpad to axis` is enabled, then the dpad values are mapped to the left joysti
 ```c
 typedef struct {
     uint8_t reportId;
-    uint16_t joyX;
-    uint16_t joyY;
-    uint16_t unused;
-    uint16_t slider;
-    uint16_t unused2;
-    uint16_t whammy;
+    uint16le_t joyX;
+    uint16le_t joyY;
+    uint16le_t unused;
+    uint16le_t slider;
+    uint16le_t unused2;
+    uint16le_t whammy;
     uint8_t green : 1;
     uint8_t red : 1;
     uint8_t yellow : 1;
@@ -50,12 +50,12 @@ Whammy on my guitar seems to start at 12000 when unpressed, and then it goes to 
 ```c
 typedef struct {
     uint8_t reportId;
-    uint16_t leftJoyX;
-    uint16_t leftJoyY;
-    uint16_t rightJoyX;
-    uint16_t rightJoyY;
-    uint16_t leftTrigger;
-    uint16_t rightTrigger;
+    uint16le_t leftJoyX;
+    uint16le_t leftJoyY;
+    uint16le_t rightJoyX;
+    uint16le_t rightJoyY;
+    uint16le_t leftTrigger;
+    uint16le_t rightTrigger;
     uint8_t y : 1;
     uint8_t b : 1;
     uint8_t select : 1;
@@ -80,16 +80,16 @@ typedef struct {
 ```c
 typedef struct {
     uint8_t reportId;
-    uint16_t joyX;
-    uint16_t joyY;
-    uint16_t unused[4];
-    uint16_t green : 1;
-    uint16_t red : 1;
-    uint16_t yellow : 1;
-    uint16_t blue : 1;
-    uint16_t orange : 1;
-    uint16_t plus : 1;
-    uint16_t minus : 1;
-    uint16_t : 9;
+    uint16le_t joyX;
+    uint16le_t joyY;
+    uint16le_t unused[4];
+    uint16le_t green : 1;
+    uint16le_t red : 1;
+    uint16le_t yellow : 1;
+    uint16le_t blue : 1;
+    uint16le_t orange : 1;
+    uint16le_t plus : 1;
+    uint16le_t minus : 1;
+    uint16le_t : 9;
 } __attribute__((packed)) RaphnetDrum_Data_t;
 ```

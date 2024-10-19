@@ -82,9 +82,9 @@ struct PS4SixFretGuitarState
 
     uint8_t unused2[11];
 
-    int16_t tilt2;
-    int16_t tiltActive;
-    int16_t unused3;
+    int16le_t tilt2;
+    int16le_t tiltActive;
+    int16le_t unused3;
 
     bool isConnected; // 0 when guitar not connected, 1 when connected
 

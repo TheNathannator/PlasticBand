@@ -104,10 +104,10 @@ struct PS3TurntableState
     uint8_t unused2[6];
 
     // Reminder that these values are 10-bit in range
-    int16_t effectsKnob;
-    int16_t crossfader;
-    int16_t platterButtons;
-    int16_t unused3;
+    uint16le_t effectsKnob;
+    uint16le_t crossfader;
+    uint16le_t platterButtons;
+    uint16le_t unused3;
 } __attribute__((__packed__));
 ```
 

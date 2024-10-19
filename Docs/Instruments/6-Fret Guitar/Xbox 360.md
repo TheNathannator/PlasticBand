@@ -73,11 +73,11 @@ struct XInputSixFretGuitarGamepad
     bool black3 : 1;
 
     uint8_t unused1[2];
-    int16_t unused2;
+    int16le_t unused2;
 
-    int16_t strumBar;
-    int16_t tilt;
-    int16_t whammy;
+    int16le_t strumBar;
+    int16le_t tilt;
+    int16le_t whammy;
 } __attribute__((__packed__));
 ```
 

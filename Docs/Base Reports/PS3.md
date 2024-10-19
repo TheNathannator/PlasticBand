@@ -154,11 +154,11 @@ struct PS3Report
     // 0x75, 0x10,        //   Report Size (16)
     // 0x95, 0x04,        //   Report Count (4)
     // 0x81, 0x02,        //   Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
-                     // Guessed based on Guitar Hero guitars and some DS3 notes
-    uint16_t accelX; // Left/right acceleration (roll)
-    uint16_t accelZ; // Forward/back acceleration (pitch)
-    uint16_t accelY; // Up/down acceleration (gravity)
-    uint16_t gyro;   // Left/right instantaneous rotation (yaw)
+                       // Guessed based on Guitar Hero guitars and some DS3 notes
+    uint16le_t accelX; // Left/right acceleration (roll)
+    uint16le_t accelZ; // Forward/back acceleration (pitch)
+    uint16le_t accelY; // Up/down acceleration (gravity)
+    uint16le_t gyro;   // Left/right instantaneous rotation (yaw)
     // 0xC0,              // End Collection
 } __attribute__((__packed__)); // 27/28 bytes
 ```
@@ -223,7 +223,7 @@ struct PS3Descriptor
     // Corresponds to the HID usage of the feature report.
     // This seems to be used as a form of versioning, PS4 controllers have a report under 0x2721
     // and PS5 controllers have one under 0x2821.
-    uint16_t supportedUsage = 0x2621;
+    uint16le_t supportedUsage = 0x2621;
 
     uint8_t unk3 = 0x01;
     uint8_t ps3_id; // purpose is unknown

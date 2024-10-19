@@ -70,11 +70,11 @@ struct GipGHLNavigationState
     bool : 1;
     bool : 1;
 
-    uint16_t unused1[2];
+    uint16le_t unused1[2];
 
-    int16_t unused2;
-    int16_t strum;
-    int16_t unused3[2];
+    int16le_t unused2;
+    int16le_t strum;
+    int16le_t unused3[2];
 } __attribute__((__packed__));
 ```
 
@@ -165,10 +165,10 @@ struct GipGHLGuitarState
     uint8_t unused3[12];
 
     // Reminder that these values are 10-bit in range
-    int16_t tilt;
-    int16_t tiltActive2;
+    int16le_t tilt;
+    int16le_t tiltActive2;
 
-    int16_t unused4[2];
+    int16le_t unused4[2];
 } __attribute__((__packed__));
 ```
 

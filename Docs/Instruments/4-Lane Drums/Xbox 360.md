@@ -90,10 +90,10 @@ struct XInputFourLaneDrumsGamepad
     bool yellow : 1;
 
     uint8_t unused[2];
-    int16_t redVelocity;
-    int16_t yellowVelocity;
-    int16_t blueVelocity;
-    int16_t greenVelocity;
+    int16le_t redVelocity;
+    int16le_t yellowVelocity;
+    int16le_t blueVelocity;
+    int16le_t greenVelocity;
 } __attribute__((__packed__));
 ```
 

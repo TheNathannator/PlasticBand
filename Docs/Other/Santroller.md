@@ -75,8 +75,8 @@ In XInput mode, output reports are handled the same way as the stage kit, using 
 ```cpp
 struct XInputSantrollerCommand
 {
-    uint16_t parameter;
-    uint16_t commandId;
+    uint16le_t parameter;
+    uint16le_t commandId;
 
     // Helper constructor for using byte values
     XInputSantrollerCommand(uint8_t command, uint8_t param)

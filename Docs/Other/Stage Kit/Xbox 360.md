@@ -65,8 +65,8 @@ enum XInputStageKitReportId
 
 struct XInputStageKitCommand
 {
-    uint16_t parameter;
-    uint16_t commandId;
+    uint16le_t parameter;
+    uint16le_t commandId;
 
     // Helper constructor for using byte values
     XInputStageKitCommand(uint8_t command, uint8_t param)

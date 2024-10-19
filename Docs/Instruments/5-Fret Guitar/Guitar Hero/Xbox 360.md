@@ -84,10 +84,10 @@ struct XInputGuitarAlternateGamepad
 
     uint8_t accelZ;
     uint8_t accelX;
-    int16_t touchBar;
-    int16_t unused;
-    int16_t whammy;
-    int16_t tilt_accelY;
+    int16le_t touchBar;
+    int16le_t unused;
+    int16le_t whammy;
+    int16le_t tilt_accelY;
 } __attribute__((__packed__));
 
 enum XInputGuitarAlternateTouchBar

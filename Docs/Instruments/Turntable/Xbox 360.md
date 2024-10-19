@@ -90,11 +90,11 @@ struct XInputTurntableState
     bool rightTableBlue : 1;
     uint8_t : 5;
 
-    int16_t leftTableVelocity;
-    int16_t rightTableVelocity;
+    int16le_t leftTableVelocity;
+    int16le_t rightTableVelocity;
 
-    int16_t effectsKnob; // Whether or not this is signed doesn't really matter, as either way it's gonna loop over when it reaches min/max
-    int16_t crossfader;
+    int16le_t effectsKnob; // Whether or not this is signed doesn't really matter, as either way it's gonna loop over when it reaches min/max
+    int16le_t crossfader;
 } __attribute__((__packed__));
 ```
 

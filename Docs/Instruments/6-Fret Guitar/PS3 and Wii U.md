@@ -84,9 +84,9 @@ struct PS3WiiUSixFretGuitarState
     uint8_t unused3[12];
 
     // Reminder that this value is 10-bit in range
-    int16_t tilt;
+    uint16le_t tilt;
 
-    int16_t unused4[3];
+    uint16le_t unused4[3];
 } __attribute__((__packed__));
 ```
 

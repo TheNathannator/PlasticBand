@@ -155,7 +155,7 @@ struct PS4RockBandGuitarState
     bool : 3;
 
     uint8_t unused4[26];
-    uint32_t crc32;
+    uint32le_t crc32;
 
 #ifdef RIFFMASTER
     bool joystickClick() { return soloFlag && !(soloGreen | soloRed | soloYellow | soloBlue | soloOrange); }

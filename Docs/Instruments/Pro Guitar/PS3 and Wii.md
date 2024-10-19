@@ -152,7 +152,7 @@ struct Ps3Report
     bool pedalConnection : 1;
     uint8_t : 7;
 
-    int16_t unused3[2];
+    uint16le_t unused3[2];
 
     uint8_t counter; // Unsure what this is, but this is what it's defined as in the spreadsheet linked below.
                      // No description is provided for it until more investigation can be done.

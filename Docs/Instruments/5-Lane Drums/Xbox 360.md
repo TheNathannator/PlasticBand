@@ -68,7 +68,7 @@ struct XInputFiveLaneDrumsGamepad
 
     // TODO: The hi-hat pedal data is probably here somewhere
     uint8_t unused1[2];
-    int16_t unused2;
+    int16le_t unused2;
     uint8_t greenVelocity;
     uint8_t redVelocity;
     uint8_t yellowVelocity;

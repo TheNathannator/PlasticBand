@@ -47,16 +47,16 @@ struct PS4Report
     uint8_t l2Axis;
     uint8_t r2Axis;
 
-    uint16_t timestamp;
+    uint16le_t timestamp;
     uint8_t temperture;
 
-    int16_t angularVelocityX;
-    int16_t angularVelocityZ;
-    int16_t angularVelocityY;
+    int16le_t angularVelocityX;
+    int16le_t angularVelocityZ;
+    int16le_t angularVelocityY;
 
-    int16_t accelerometerX;
-    int16_t accelerometerY;
-    int16_t accelerometerZ;
+    int16le_t accelerometerX;
+    int16le_t accelerometerY;
+    int16le_t accelerometerZ;
 
     uint8_t extData[5];
 
@@ -81,8 +81,8 @@ struct PS4Report
             uint8_t notTouching : 1;
             // warning: MSVC does not pack the following fields correctly, even with "#include <pshpack1.h>"!
             // it will always add an extra byte of padding
-            uint16_t fingerX : 12;
-            uint16_t fingerY : 12;
+            uint16le_t fingerX : 12;
+            uint16le_t fingerY : 12;
         } finger[2];
     } touches[3];
 
@@ -96,7 +96,7 @@ For wireless devices, there are an additional 14 bytes at the end of the report:
 struct PS4WirelessReport : PS4Report
 {
     uint8_t padding2[10];
-    uint32_t crc32;
+    uint32le_t crc32;
 } __attribute__((__packed__)); // 78 bytes
 ```
 

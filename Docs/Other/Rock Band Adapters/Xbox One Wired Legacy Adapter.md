@@ -123,10 +123,10 @@ struct GipLegacyWiredState
 
         uint8_t leftTrigger;
         uint8_t rightTrigger;
-        int16_t leftStickX;
-        int16_t leftStickY;
-        int16_t rightStickX;
-        int16_t rightStickY;
+        int16le_t leftStickX;
+        int16le_t leftStickY;
+        int16le_t rightStickX;
+        int16le_t rightStickY;
 
         uint8_t reserved[6];
     } xusbState;

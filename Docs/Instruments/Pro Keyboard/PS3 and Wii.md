@@ -171,7 +171,7 @@ struct PS3KeytarState
     bool pedalConnection : 1; // Always 0 with the MIDI Pro Adapter
     uint8_t : 7;
 
-    int16_t unused3[2];
+    uint16le_t unused3[2];
 
     uint8_t pressCount; // Unsure what this is, but this is what it's defined as in the spreadsheet linked below.
                         // No description is provided for it until more investigation can be done.

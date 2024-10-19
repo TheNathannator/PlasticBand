@@ -98,10 +98,10 @@ struct XInputGuitarGamepad
 
     uint8_t pickupSwitch;
     uint8_t unused1;
-    int16_t calibrationSensor;
-    int16_t unused2;
-    int16_t whammy;
-    int16_t tilt;
+    int16le_t calibrationSensor;
+    int16le_t unused2;
+    int16le_t whammy;
+    int16le_t tilt;
 } __attribute__((__packed__));
 ```
 

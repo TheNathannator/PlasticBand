@@ -86,7 +86,7 @@ struct iOSSixFretGuitarState
     uint8_t unused3[12];
 
     // Reminder that this value is 10-bit in range
-    int16_t tilt;
+    uint16le_t tilt;
 } __attribute__((__packed__));
 ```
 

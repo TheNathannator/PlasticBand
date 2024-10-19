@@ -118,10 +118,10 @@ struct PS3GuitarHeroGuitarState
     uint8_t unused2[6];
 
     // Reminder that these values are 10-bit in range
-    int16_t tilt_accelX;
-    int16_t accelZ;
-    int16_t accelY;
-    int16_t unused3;
+    uint16le_t tilt_accelX;
+    uint16le_t accelZ;
+    uint16le_t accelY;
+    uint16le_t unused3;
 } __attribute__((__packed__));
 ```
 

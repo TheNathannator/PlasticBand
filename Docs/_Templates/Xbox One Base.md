@@ -90,13 +90,13 @@ struct GipGamepadState
     bool leftThumbClick : 1;
     bool rightThumbClick : 1;
 
-    uint16_t leftTrigger;
-    uint16_t rightTrigger;
+    uint16le_t leftTrigger;
+    uint16le_t rightTrigger;
 
-    int16_t leftStickX;
-    int16_t leftStickY;
-    int16_t rightStickX;
-    int16_t rightStickY;
+    int16le_t leftStickX;
+    int16le_t leftStickY;
+    int16le_t rightStickX;
+    int16le_t rightStickY;
 } __attribute__((__packed__));
 ```
 
