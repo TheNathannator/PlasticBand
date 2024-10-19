@@ -7,7 +7,7 @@ PS3:
 - Vendor/product ID: `12BA:2330`
 - Revision: `0x0005`
 - Device name: `Harmonix RB3 Keyboard for PlayStation®3`
-- PS3 ID: `0x06`
+- PS3 flags: `0x06`
 
 Wii:
 

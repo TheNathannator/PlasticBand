@@ -17,7 +17,7 @@
   - World Tour (PC): `Guitar Hero for PC/MAC`
   - GH5: `Guitar Hero5 for PlayStation (R) 3`
   - WoR:
-- PS3 ID: `0x06`
+- PS3 flags: `0x06`
 
 ## Input Info
 

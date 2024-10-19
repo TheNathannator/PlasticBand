@@ -10,9 +10,9 @@ PS3:
   - RB2: 
   - RB3:
 - Device name: `Harmonix Guitar for PlayStation®3`
-- PS3 ID:
+- PS3 flags:
   - RB1: `0x00`
-  - RB2: `0X06`
+  - RB2: `0x06`
 
 Wii:
 

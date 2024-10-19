@@ -6,7 +6,7 @@
 - Revision: `0x0005`
 - Manufacturer string: "RedOctane DJ"
 - Device name: "Guitar Hero5 for PlayStation (R) 3"
-- PS3 ID: 0x06
+- PS3 flags: `0x06`
 
 ## Input Info
 

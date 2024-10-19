@@ -226,16 +226,18 @@ struct PS3Descriptor
     uint16le_t supportedUsage = 0x2621;
 
     uint8_t unk3 = 0x01;
-    uint8_t ps3_id; // purpose is unknown
+
+    // These flags are speculation based on observations
+    // Requires actual testing on hardware/software
+    bool hasPressure : 1;
+    bool hasAccelerometers : 1;
+    bool hasOutputs : 1;
+    bool : 1;
+    uint8_t : 4;
+
     uint8_t unk4[4];
 } __attribute__((packed));
 ```
-
-The `ps3_id` field is a bit of an enigma. It corresponds neither to vendor nor to device type, and there's no current discernable pattern with how it's assigned. Observed values are:
-
-- `0x00`: Rock Band drums, RB1 guitars
-- `0x06`: Guitar Hero guitars, RB2 guitars, RB3 Pro Guitars, RB3 Pro Keyboards, DJ Hero turntables
-- `0x07`: Dualshock 3, Guitar Hero drums
 
 ## References
 

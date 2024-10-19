@@ -14,7 +14,10 @@ PS3:
   - The Phase Shift device list has 2 different names listed
   - `Harmonix Drum kit for PlayStation®3` (sic)
   - `Harmonix Drum Kit for PlayStation(R)3`
-- PS3 ID: `0x00`
+- PS3 flags:
+  - RB1: `0x00`
+  - RB2:
+  - RB3:
 
 Wii:
 

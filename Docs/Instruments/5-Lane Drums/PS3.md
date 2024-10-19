@@ -11,7 +11,7 @@
   - `GuitarHero for Playstation (R) 3`
   - World Tour: `Guitar Hero4 for PlayStation (R) 3`
   - GH5/Band Hero/WoR: `Guitar Hero5 for PlayStation (R) 3`
-- PS3 ID: `0x07`
+- PS3 flags: `0x07`
 
 ## Input Info
 
