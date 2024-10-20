@@ -8,7 +8,7 @@
 
 ## Input Info
 
-This device sends a report modelled after the one [documented here](../../Controller%20Communication%20Basics/PS4%20Instruments.md). Refer to that document for the base layout.
+This device sends a report modelled after the one [documented here](../../Base%20Reports/PS4.md). Refer to that document for the base layout.
 
 The d-pad works as normal.
 

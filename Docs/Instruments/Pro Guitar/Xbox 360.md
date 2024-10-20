@@ -7,7 +7,7 @@
 
 ## Input Info
 
-This device uses the standard Xbox 360 report format, [documented here](../../Controller%20Communication%20Basics/Xbox%20360.md). Refer to that document for the base layout.
+This device uses the standard Xbox 360 report format, [documented here](../../Base%20Reports/Xbox%20360.md). Refer to that document for the base layout.
 
 Face buttons work like a standard Xbox 360 controller.
 
