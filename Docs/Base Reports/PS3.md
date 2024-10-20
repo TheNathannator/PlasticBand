@@ -226,15 +226,7 @@ struct PS3ControllerCapabilities
     uint16le_t supportedUsage = 0x2621;
 
     uint8_t unk3 = 0x01;
-
-    // These flags are speculation based on observations
-    // Requires actual testing on hardware/software
-    bool hasPressure : 1;
-    bool hasAccelerometers : 1;
-    bool hasOutputs : 1;
-    bool : 1;
-    uint8_t : 4;
-
+    uint8_t flags;
     uint8_t unk4[4];
 } __attribute__((packed));
 ```
