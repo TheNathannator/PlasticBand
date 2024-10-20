@@ -1,18 +1,27 @@
-# Rock Band and Guitar Hero Peripheral Documentation
+# Instruemnt Peripheral Documentation
 
-This folder contains documentation on how to communicate with and interpret the data of RB/GH peripherals.
+This folder contains documentation on how to communicate with and interpret the data of instrument peripherals, primarily those from Rock Band and Guitar Hero.
+
+## Contents
+
+- [_Templates](_Templates/) - Templates for new device docs.
+- [Base Reports](Base%20Reports/) - Base report definitions for each general format of report.
+- [Controller Communication Basics](Controller%20Communication%20Basics/) - The basics on how to read each category of peripheral, from an application point of view. Primarily covers which system APIs or libraries are available for the task.
+- [Descriptor Dumps](Descriptor%20Dumps/) - Descriptor dumps for various peripherals.
+- [Instruments](Instruments/) - Documentation for instrument peripherals.
+- [Other](Other/) - Documentation for miscellaneous peripherals, plus other miscellaneous resources.
+
+Take a look at the [Controller Communication Basics](Controller%20Communication%20Basics/) folder to familiarize yourself with how to interact with the peripherals on a fundamental level before taking a look at the specific docs, as well as the [Base Reports](Base%20Reports/) folder to learn the base layouts for specific platform's peripherals. The docs assume you are familiar with these base layouts, and refer to names on them to document inputs.
+
+Data structures in these documents are primarily for documentation only, and are not guaranteed to function correctly as-is (as thoroughly testing them is non-trivial). Eventually a collection of properly-defined structures for various languages is planned, but for now be careful to ensure that endianness and packing are correctly handled if you use them.
 
 ## Contributions
 
 These docs are a work in progress, contributions are very welcome!
 
-To get started, use one of the templates in the [_Templates](_Templates/) folder. Fill out information required to identify the device, include any device descriptors if possible, and give a writeup on how its input data works. Code examples (including data structures) are also appreciated. If you're missing info, be sure to make note of such. Descriptor dumps can be added to the [Descriptor Dumps](Descriptor%20Dumps/) folder.
+To get started, use one of the templates in the [_Templates](_Templates/) folder. Fill out information required to identify the device, include any device descriptors if possible, and give a writeup on how its input data works, along with a data structure to represent the data. If you're missing info, be sure to make note of such. Descriptor dumps can be added to the [Descriptor Dumps](Descriptor%20Dumps/) folder.
 
 You may add images to documentation, and you may also create an `_Ignored` folder anywhere within the repository to have a folder you can put anything in without fear of accidentally committing it.
-
-## General Notes
-
-Data structures in these documents assume that the processor and data are little-endian, and that the structure is packed/unaligned with no padding, unless otherwise specified. If you use them directly, you'll want to ensure these assumptions are correct, or that you adjust the structures to make them correct on your system.
 
 ## Todo List
 
