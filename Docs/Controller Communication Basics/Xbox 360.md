@@ -75,3 +75,9 @@ On Linux, Xbox 360 controller support is built directly into the kernel. There a
 - [xpad-noone](https://github.com/medusalix/xpad-noone) (required if using [xone](https://github.com/medusalix/xone))
 
 These drivers generally just register everything as standard `js`/`evdev` devices, and don't expose any raw data from the controller. Works fine for general purposes, not so much if you require that raw data.
+
+## The Shotgun Method (Direct USB Communication)
+
+As a final general method, you can ignore any potential existing solutions and implement everything yourself using a raw USB transport such as libusb. On Windows this is the most invasive method, as most libusb drivers completely override the original driver and make the device unusable in other programs. It's the most complicated method out of everything, as you have to implement the entire protocol handling yourself. This route is advanced and not recommended, and there are a number of things that can go wrong if you're not careful.
+
+As of September 16, 2024, the Xbox 360 controller protocol (known officially as the Gaming Input Protocol, or GIPUSB) [has been published as a Microsoft open standard](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-xusbi/c79474e7-3968-43d1-8d2f-175d47bef43e). Refer to the documentation there for guidance on implementing the protocol.
