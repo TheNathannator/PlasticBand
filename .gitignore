@@ -1,5 +1,11 @@
 # General-purpose ignore directory
 _Ignored/
 
-# Obsidian configuration directory
+# Configuration/cache directories
+.vs/
+.vscode/
+.idea/
 .obsidian/
+
+# Rust build directory
+target/

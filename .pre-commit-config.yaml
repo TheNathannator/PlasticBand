@@ -1,0 +1,10 @@
+repos:
+  - repo: https://github.com/EmbarkStudios/cargo-deny
+    rev: 0.16.1
+    hooks:
+      - id: cargo-deny
+        args:
+          - "--all-features"
+          - "--manifest-path"
+          - "Tools/Cargo.toml"
+          - "check"
