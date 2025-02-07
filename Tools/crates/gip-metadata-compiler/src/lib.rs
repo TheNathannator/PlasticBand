@@ -3,12 +3,18 @@
 use std::num::ParseIntError;
 use std::str::FromStr;
 
+use serde::de::IgnoredAny;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Metadata {
+    #[serde(rename = "$schema")]
+    #[serde(default)]
+    #[serde(skip_serializing)]
+    pub _schema: IgnoredAny,
+
     #[serde(rename = "MetadataHeader")]
     pub header: MetadataHeader,
 
