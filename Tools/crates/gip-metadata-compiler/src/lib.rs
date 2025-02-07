@@ -3,85 +3,145 @@
 use std::num::ParseIntError;
 use std::str::FromStr;
 
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-#[allow(non_snake_case, reason = "JSON format uses PascalCase names")]
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct Metadata {
-    pub MetadataHeader: MetadataHeader,
-    pub DeviceMetadata: DeviceMetadata,
-    pub Messages: Vec<Message>,
+    #[serde(rename = "MetadataHeader")]
+    pub header: MetadataHeader,
+
+    #[serde(rename = "DeviceMetadata")]
+    pub device_metadata: DeviceMetadata,
+
+    #[serde(rename = "Messages")]
+    pub messages: Vec<Message>,
 }
 
-#[allow(non_snake_case, reason = "JSON format uses PascalCase names")]
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct MetadataHeader {
-    pub MajorVersion: i32,
-    pub MinorVersion: i32,
+    #[serde(rename = "MajorVersion")]
+    pub major_version: u16,
+
+    #[serde(rename = "MinorVersion")]
+    pub minor_version: u16,
 }
 
-#[allow(non_snake_case, reason = "JSON format uses PascalCase names")]
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct DeviceMetadata {
-    pub SupportedInSystemCommands: Vec<u8>,
-    pub SupportedOutSystemCommands: Vec<u8>,
-    pub SupportedAudioFormats: Vec<AudioFormatPair>,
-    pub SupportedDeviceFirmwareVersions: Vec<FirmwareVersion>,
-    pub PreferredTypes: Vec<String>,
-    pub SupportedInterfaces: Vec<Uuid>,
+    #[serde(rename = "SupportedInSystemCommands")]
+    pub in_commands: Vec<u8>,
+
+    #[serde(rename = "SupportedOutSystemCommands")]
+    pub out_commands: Vec<u8>,
+
+    #[serde(rename = "SupportedAudioFormats")]
+    pub audio_formats: Vec<AudioFormatPair>,
+
+    #[serde(rename = "SupportedDeviceFirmwareVersions")]
+    pub firmware_versions: Vec<FirmwareVersion>,
+
+    #[serde(rename = "PreferredTypes")]
+    pub preferred_types: Vec<String>,
+
+    #[serde(rename = "SupportedInterfaces")]
+    pub interfaces: Vec<Uuid>,
+
+    #[serde(rename = "SupportedHidDescriptor")]
     #[serde(default)]
-    pub SupportedHidDescriptor: Option<HidDescriptor>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub hid_descriptor: Option<HidDescriptor>,
 }
 
-#[allow(non_snake_case, reason = "JSON format uses PascalCase names")]
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct AudioFormatPair {
+    #[serde(rename = "Inbound")]
     #[serde(default)]
-    pub Inbound: Option<AudioFormat>,
+    pub inbound: Option<AudioFormat>,
+
+    #[serde(rename = "Outbound")]
     #[serde(default)]
-    pub Outbound: Option<AudioFormat>,
+    pub outbound: Option<AudioFormat>,
 }
 
-#[allow(non_snake_case, reason = "JSON format uses PascalCase names")]
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct AudioFormat {
-    pub Channels: i32,
-    pub Rate: i32,
+    #[serde(rename = "Channels")]
+    pub channels: i32,
+
+    #[serde(rename = "Rate")]
+    pub rate: i32,
 }
 
-#[allow(non_snake_case, reason = "JSON format uses PascalCase names")]
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct FirmwareVersion {
-    pub Major: u16,
-    pub Minor: u16,
+    #[serde(rename = "Major")]
+    pub major: u16,
+
+    #[serde(rename = "Minor")]
+    pub minor: u16,
 }
 
 #[derive(Debug)]
 pub struct HidDescriptor(pub Vec<u8>);
 
-#[allow(non_snake_case, reason = "JSON format uses PascalCase names")]
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct Message {
-    pub MessageType: u8,
-    pub MessageLength: u16,
-    pub DataType: String,
+    #[serde(rename = "MessageType")]
+    pub message_id: u8,
 
-    #[serde(default)]
-    pub IsBigEndian: bool,
-    #[serde(default)]
-    pub IsReliable: bool,
-    #[serde(default)]
-    pub IsSequenced: bool,
-    #[serde(default)]
-    pub IsUpstream: bool,
-    #[serde(default)]
-    pub IsDownstream: bool,
-    #[serde(default)]
-    pub IsDownstreamRequestResponse: bool,
+    #[serde(rename = "MessageLength")]
+    pub max_length: u16,
 
-    pub Period: i32,
-    pub PersistenceTimeout: i32,
+    #[serde(rename = "DataType")]
+    pub message_type: String,
+
+    #[serde(rename = "IsBigEndian")]
+    #[serde(default)]
+    #[serde(skip_serializing_if = "is_false")]
+    pub is_big_endian: bool,
+
+    #[serde(rename = "IsReliable")]
+    #[serde(default)]
+    #[serde(skip_serializing_if = "is_false")]
+    pub is_reliable: bool,
+
+    #[serde(rename = "IsSequenced")]
+    #[serde(default)]
+    #[serde(skip_serializing_if = "is_false")]
+    pub is_sequenced: bool,
+
+    #[serde(rename = "IsUpstream")]
+    #[serde(default)]
+    #[serde(skip_serializing_if = "is_false")]
+    pub is_upstream: bool,
+
+    #[serde(rename = "IsDownstream")]
+    #[serde(default)]
+    #[serde(skip_serializing_if = "is_false")]
+    pub is_downstream: bool,
+
+    #[serde(rename = "IsDownstreamRequestResponse")]
+    #[serde(default)]
+    #[serde(skip_serializing_if = "is_false")]
+    pub downstream_requests_response: bool,
+
+    #[serde(rename = "Period")]
+    pub period: i32,
+
+    #[serde(rename = "PersistenceTimeout")]
+    pub persistence_timeout: i32,
+}
+
+fn is_false(value: &bool) -> bool {
+    !*value
 }
 
 impl std::fmt::Display for HidDescriptor {
@@ -122,6 +182,19 @@ impl FromStr for HidDescriptor {
         }
 
         Ok(Self(bytes))
+    }
+}
+
+impl Serialize for HidDescriptor {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        if serializer.is_human_readable() {
+            serializer.collect_str(self)
+        } else {
+            serializer.serialize_bytes(&self.0)
+        }
     }
 }
 

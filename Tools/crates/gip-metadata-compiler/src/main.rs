@@ -7,6 +7,8 @@ fn main() {
 
     let metadata_text = include_str!("../docs/example_metadata.json");
     let metadata: Metadata = serde_json::from_str(metadata_text).unwrap();
-
     println!("{metadata:#?}");
+
+    let metadata_ser = serde_json::to_string_pretty(&metadata).unwrap();
+    println!("{metadata_ser}");
 }
