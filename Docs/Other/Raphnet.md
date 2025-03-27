@@ -25,8 +25,6 @@ Some notes:
 - Axis values range from 0 to 32000. 0 is left/up, 32000 is right/down. 
 - If D-pad to Axis is enabled in the Raphnet adapter manager, then the D-pad values are mapped to the left joystick.
 
-TODO: how to determine what type of controller is connected?
-
 ### Classic Controller
 
 ```cpp
@@ -117,4 +115,63 @@ struct RaphnetFiveLaneDrumsState
 
     uint8_t unused2;
 } __attribute__((packed));
+```
+
+## Feature reports
+
+These feature reports are used for configuring the raphnet, and for reading information about the raphnet
+
+To retrieve information, you must send a Request Data packet, and then constantly poll for a response until you get one.
+
+### Commands
+```cpp
+enum RaphnetCommands {
+    GetControllerType = 0x06, // Get the type of controller that is connected
+};
+```
+### Raphnet Controller Types
+
+```cpp
+enum RaphnetControllerType {
+   RNT_TYPE_NONE_NEW = 100,
+   RNT_TYPE_CLASSIC = 101,
+   RNT_TYPE_NUNCHUK = 112,
+   RNT_TYPE_CLASSIC_PRO = 113,
+   RNT_TYPE_WIIMOTE_TAIKO = 114,
+   RNT_TYPE_PSX_DIGITAL = 119,
+   RNT_TYPE_PSX_ANALOG = 120,
+   RNT_TYPE_PSX_NEGCON = 121,
+   RNT_TYPE_PSX_MOUSE = 122,
+   RNT_TYPE_WII_GUITAR = 127,
+   RNT_TYPE_UDRAW_TABLET = 128,
+   RNT_TYPE_WII_DRUM = 130
+};
+```
+
+### Request Data
+
+```cpp
+struct RaphnetExchangeRequestReport
+{
+    uint8_t reportId = 0x00;
+
+    RaphnetCommands command; 
+    uint8_t channel; // used for devices with multiple ports, 0 for devices with a single port
+} __attribute__((packed)); // 2/3 bytes
+```
+
+### Command `0x06` response - Get Controller Type
+
+The following reponse is returned if you request the controller type.
+
+```cpp
+struct RaphnetControllerTypeResponseReport
+{
+    uint8_t reportId = 0x00;
+
+    RaphnetCommands command; 
+    uint8_t channel;
+    RaphnetControllerType type;
+    uint8_t padding[29];
+} __attribute__((packed)); // 32/33 bytes, padding isn't strictly necessary
 ```
