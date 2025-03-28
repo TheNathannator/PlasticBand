@@ -15,14 +15,14 @@ Face buttons work like a standard Xbox 360 controller.
 
 Pads, cymbals, and kick:
 
-| Action | Input        |
-| :----- | :---:        |
-| Red    | B            |
-| Yellow | Y            |
-| Blue   | X            |
-| Orange | Right bumper |
-| Green  | A            |
-| Kick   | Left bumper  |
+| Action         | Input        |
+| :-----         | :---:        |
+| Red            | B            |
+| Yellow         | Y            |
+| Blue           | X            |
+| Orange         | Right bumper |
+| Green          | A            |
+| Kick + Hi-Hat  | Left bumper  |
 
 Velocities:
 
@@ -40,20 +40,10 @@ The velocity values are standard MIDI, so they range from 0 to 0x7F.
 MIDI data:
 
 The drums send any unrecognised MIDI data as-is, using the extra bytes at the end of the report.
-The Hi-Hat pedal is also sent this way.
+The Hi-Hat pedal sends MIDI data here alongside its Kick input, which is how you can differenciate it from a standard kick input.
 
-For example, a standard note-on packet would then be structured like the following:
-
-| Byte |    Meaning    |                                       Format                                       |
-| :--: | :-----------: | :--------------------------------------------------------------------------------: |
-| 0    | Status        | 0x9x, where x is the midi channel, 0 indexed. For percussion this is usually 0x99. |
-| 1    | Note          | 0x00 - 0x7F                                                                        |
-| 2    | Note Velocity | 0x00 - 0x7F                                                                        |
-
-An example packet for the Hi-Hat pedal would look like 
-```cpp
-uint8_t midiPacket = {0x99, 0x64, 0x1C};
-```
+An example packet for the Hi-Hat pedal would look like the following:
+`99 64 1C`: Note on (channel 10, note 100, velocity 28)
 
 ### As A Struct
 

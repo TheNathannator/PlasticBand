@@ -21,14 +21,14 @@ Face buttons and d-pad function as normal.
 
 Pads:
 
-| Pad    | Button |
-| :-:    | :----: |
-| Red    | ○      |
-| Yellow | Δ      |
-| Blue   | □      |
-| Orange | R1     |
-| Green  | ×      |
-| Kick   | L1     |
+| Pad            | Button |
+| :-:            | :----: |
+| Red            | ○      |
+| Yellow         | Δ      |
+| Blue           | □      |
+| Orange         | R1     |
+| Green          | ×      |
+| Kick + Hi-Hat  | L1     |
 
 Velocities:
 
@@ -54,18 +54,9 @@ The Hi-Hat pedal sends MIDI data here alongside its Kick input, which is how you
 | 1             | Accel X       | 19          |
 | 2             | Accel Y       | 23          |
 
-For example, a standard note-on packet would then be structured like the following:
 
-| Byte |    Meaning    |                                       Format                                       | 
-| :--: | :-----------: | :--------------------------------------------------------------------------------: | 
-| 0    | Status        | 0x9x, where x is the midi channel, 0 indexed. For percussion this is usually 0x99. | 
-| 1    | Note          | 0x00 - 0x7F                                                                        | 
-| 2    | Note Velocity | 0x00 - 0x7F                                                                        | 
-
-An example packet from a Hi-Hat pedal would look like 
-```cpp
-uint8_t midi_packet = {0x99, 0x64, 0x1C};
-```
+An example packet for the Hi-Hat pedal would look like the following:
+`99 64 1C`: Note on (channel 10, note 100, velocity 28)
 
 ### As A Struct
 
