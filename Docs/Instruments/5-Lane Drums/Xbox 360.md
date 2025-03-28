@@ -1,7 +1,5 @@
 # Xbox 360 Guitar Hero Drums
 
-TODO: This document was written without actual hardware to test with. Everything here needs to be verified, and missing information needs to be filled out. 
-
 ## Controller Info
 
 - XInput type: Gamepad (1)
@@ -28,18 +26,34 @@ Pads, cymbals, and kick:
 
 Velocities:
 
-- TODO: Determine what exactly the values are, we have the byte offsets but not the values
+The velocity values are standard MIDI, so they range from 0 to 0x7F.
 
-| Action | Input         | Bits                     |
-| :----- | :----         | :--:                     |
-| Red    | Left stick Y  | `0b_1111_1111_xxxx_xxxx` |
-| Yellow | Right stick X | `0b_xxxx_xxxx_1111_1111` |
-| Blue   | Right stick X | `0b_1111_1111_xxxx_xxxx` |
-| Orange | Right stick Y | `0b_xxxx_xxxx_1111_1111` |
-| Green  | Left stick Y  | `0b_xxxx_xxxx_1111_1111` |
-| Kick   | Right stick Y | `0b_1111_1111_xxxx_xxxx` |
+| Action        | Input         | Bits                     |
+| :-----        | :----         | :--:                     |
+| Red           | Left stick Y  | `0b_1111_1111_xxxx_xxxx` |
+| Yellow        | Right stick X | `0b_xxxx_xxxx_1111_1111` |
+| Blue          | Right stick X | `0b_1111_1111_xxxx_xxxx` |
+| Orange        | Right stick Y | `0b_xxxx_xxxx_1111_1111` |
+| Green         | Left stick Y  | `0b_xxxx_xxxx_1111_1111` |
+| Kick + Hi-Hat | Right stick Y | `0b_1111_1111_xxxx_xxxx` |
 
-Hi-hat pedal port: TODO 
+MIDI data:
+
+The drums send any unrecognised MIDI data as-is, using the extra bytes at the end of the report.
+The Hi-Hat pedal is also sent this way.
+
+For example, a standard note-on packet would then be structured like the following:
+
+| Byte |    Meaning    |                                       Format                                       |
+| :--: | :-----------: | :--------------------------------------------------------------------------------: |
+| 0    | Status        | 0x9x, where x is the midi channel, 0 indexed. For percussion this is usually 0x99. |
+| 1    | Note          | 0x00 - 0x7F                                                                        |
+| 2    | Note Velocity | 0x00 - 0x7F                                                                        |
+
+An example packet for the Hi-Hat pedal would look like 
+```cpp
+uint8_t midiPacket = {0x99, 0x64, 0x1C};
+```
 
 ### As A Struct
 
@@ -66,7 +80,6 @@ struct XInputFiveLaneDrumsGamepad
     bool blue : 1;
     bool yellow : 1;
 
-    // TODO: The hi-hat pedal data is probably here somewhere
     uint8_t unused1[2];
     int16le_t unused2;
     uint8_t greenVelocity;
@@ -75,6 +88,10 @@ struct XInputFiveLaneDrumsGamepad
     uint8_t blueVelocity;
     uint8_t orangeVelocity;
     uint8_t kickVelocity;
+
+    #ifdef USING_XUSB
+        uint8_t midiPacket[6];
+    #endif
 } __attribute__((packed));
 ```
 

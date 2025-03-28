@@ -2,18 +2,26 @@
 
 Some general notes that apply to all 5-lane drumkits regardless of platform.
 
+## MIDI Mappings
+
+Internally, the Guitar Hero kits speak MIDI and they use the following mappings for the various pads and pedals.
+Note that the Hi-Hat Pedal (the black pedal jack) internally will send both the Kick and the Hi-Hat Pedal inputs.
+
+| MIDI Note    | Pad          | General MIDI Name |
+| :----------- | :----------- | :---------------- |
+| `0x26` (38)  | Red          | Acoustic Snare    |
+| `0x2E` (46)  | Yellow       | Open Hi-Hat       |
+| `0x30` (48)  | Blue         | Hi Mid Tom        |
+| `0x31` (49)  | Orange       | Crash Cymbal 1    |
+| `0x2D` (45)  | Green        | Low Tom           |
+| `0x24` (36)  | Kick         | Bass Drum 1       |
+| `0x64` (100) | Hi-Hat Pedal |                   |
+
 ## Using an E-Kit via a 5-Lane Kit
 
-Guitar Hero kits come equipped with a MIDI In port for the purpose of using an e-kit in Guitar Hero games. Assuming the kit uses the same MIDI notes as the drum tuner software does, this port responds to MIDI channel 10, with the following notes mapping to the kit's pads, cymbals, and kick:
-
-| MIDI Note   | Pad    | General MIDI Name |
-| :--------   | :--    | :---------------- |
-| `0x26` (38) | Red    | Acoustic Snare    |
-| `0x2E` (46) | Yellow | Open Hi-Hat       |
-| `0x30` (48) | Blue   | Hi Mid Tom        |
-| `0x31` (49) | Orange | Crash Cymbal 1    |
-| `0x2D` (45) | Green  | Low Tom           |
-| `0x24` (36) | Kick   | Bass Drum 1       |
+Guitar Hero kits come equipped with a MIDI In port for the purpose of using an e-kit in Guitar Hero games. Assuming the kit uses the same MIDI notes as the drum tuner software does, this port responds to MIDI channel 10.
+The MIDI mappings specified above are used for E-Kits as well, except for the Hi-Hat Pedal, as that seems to only be used internally.
+Note that MIDI data destined for other channels or other notes will be forwarded to the console as-is.
 
 ## Configuring Sensitivity via the MIDI In Port
 
@@ -30,7 +38,7 @@ All adjustments are done through Control Channel messages, using channel 16 (the
 Each pad and cymbal, along with the kick, has its own controller number:
 
 | Pad    | Number |
-| :--    | :----- |
+| :----- | :----- |
 | Red    | `0x68` |
 | Yellow | `0x69` |
 | Blue   | `0x66` |
@@ -59,7 +67,7 @@ The drum tuner software has a Test button to test the sensitivity of each pad. I
 The table below is ordered by the sequence in which the program sends the notes, which is in MIDI note order rather than pad order.
 
 | MIDI Note   | Pad    | General MIDI Name |
-| :--------   | :--    | :---------------- |
+| :---------- | :----- | :---------------- |
 | `0x24` (36) | Kick   | Bass Drum 1       |
 | `0x26` (38) | Red    | Acoustic Snare    |
 | `0x2D` (45) | Green  | Low Tom           |
@@ -87,6 +95,6 @@ The sequence is as follows:
 
 ## References
 
-- The [WiiBrew page](https://wiibrew.org/wiki/Wiimote/Extension_Controllers/Guitar_Hero_World_Tour_(Wii)_Drums) for the Guitar Hero World Tour drums
+- The [WiiBrew page](<https://wiibrew.org/wiki/Wiimote/Extension_Controllers/Guitar_Hero_World_Tour_(Wii)_Drums>) for the Guitar Hero World Tour drums
 - My own research done when I initially learned about and hunted down the original software (couldn't test it with actual GH drums but it sent MIDI messages regardless)
 - [General MIDI specifications](https://www.midi.org/specifications/midi1-specifications/general-midi-specifications/general-midi-1) for percussion note names
