@@ -5,7 +5,7 @@ Some general notes that apply to all 5-lane drumkits regardless of platform.
 ## MIDI Mappings
 
 Internally, the Guitar Hero kits speak MIDI and they use the following mappings for the various pads and pedals.
-Note that the Hi-Hat Pedal (the black pedal jack) internally will send both the Kick and the Hi-Hat Pedal inputs.
+Note that the Hi-Hat Pedal is also treated as a Kick pedal, so when it is pressed the game will be sent both a Kick input, and a MIDI message for the Hi-Hat pedal.
 
 | MIDI Note    | Pad          | General MIDI Name |
 | :----------- | :----------- | :---------------- |
