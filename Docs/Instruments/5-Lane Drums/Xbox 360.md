@@ -15,14 +15,14 @@ Face buttons work like a standard Xbox 360 controller.
 
 Pads, cymbals, and kick:
 
-| Action | Input        |
-| :----- | :---:        |
-| Red    | B            |
-| Yellow | Y            |
-| Blue   | X            |
-| Orange | Right bumper |
-| Green  | A            |
-| Kick   | Left bumper  |
+| Action         | Input        |
+| :-----         | :---:        |
+| Red            | B            |
+| Yellow         | Y            |
+| Blue           | X            |
+| Orange         | Right bumper |
+| Green          | A            |
+| Kick + Hi-Hat  | Left bumper  |
 
 Velocities:
 

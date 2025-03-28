@@ -21,14 +21,14 @@ Face buttons and d-pad function as normal.
 
 Pads:
 
-| Pad    | Button |
-| :-:    | :----: |
-| Red    | ○      |
-| Yellow | Δ      |
-| Blue   | □      |
-| Orange | R1     |
-| Green  | ×      |
-| Kick   | L1     |
+| Pad            | Button |
+| :-:            | :----: |
+| Red            | ○      |
+| Yellow         | Δ      |
+| Blue           | □      |
+| Orange         | R1     |
+| Green          | ×      |
+| Kick + Hi-Hat  | L1     |
 
 Velocities:
 
