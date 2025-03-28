@@ -32,14 +32,40 @@ Pads:
 
 Velocities:
 
-| Pad    | Axis        | Byte offset |
-| :-:    | :--:        | :---------: |
-| Red    | R2 Pressure | 12          |
-| Yellow | L2 Pressure | 11          |
-| Blue   | R1 Pressure | 14          |
-| Orange | ○ Pressure  | 16          |
-| Green  | L1 Pressure | 13          |
-| Kick   | Δ Pressure  | 15          |
+The velocity values are standard MIDI, so they range from 0 to 0x7F.
+
+| Pad           | Axis        | Byte offset |
+| :-:           | :--:        | :---------: |
+| Red           | R2 Pressure | 12          |
+| Yellow        | L2 Pressure | 11          |
+| Blue          | R1 Pressure | 14          |
+| Orange        | ○ Pressure  | 16          |
+| Green         | L1 Pressure | 13          |
+| Kick + Hi-Hat | Δ Pressure  | 15          |
+
+MIDI data:
+
+The drums send any unrecognised MIDI data as-is, using the following bytes.
+The Hi-Hat pedal sends MIDI data here alongside its Kick input, which is how you can differenciate it from a standard kick input.
+
+| Byte          | Axis          | Byte offset |
+| :-----------: | :-----------: | :---------: |
+| 0             | Right Stick X | 5           |
+| 1             | Accel X       | 19          |
+| 2             | Accel Y       | 23          |
+
+For example, a standard note-on packet would then be structured like the following:
+
+| Byte |    Meaning    |                                       Format                                       | 
+| :--: | :-----------: | :--------------------------------------------------------------------------------: | 
+| 0    | Status        | 0x9x, where x is the midi channel, 0 indexed. For percussion this is usually 0x99. | 
+| 1    | Note          | 0x00 - 0x7F                                                                        | 
+| 2    | Note Velocity | 0x00 - 0x7F                                                                        | 
+
+An example packet from a Hi-Hat pedal would look like 
+```cpp
+uint8_t midi_packet = {0x99, 0x64, 0x1C};
+```
 
 ### As A Struct
 
@@ -75,7 +101,9 @@ struct PS3FiveLaneDrumsState
     //     4
     uint8_t dpad;
 
-    uint8_t unused1[8];
+    uint8_t unused1[2];
+    uint8_t midi_byte0;
+    uint8_t unused2[5];
 
     uint8_t velocity_yellow;
     uint8_t velocity_red;
@@ -84,8 +112,13 @@ struct PS3FiveLaneDrumsState
     uint8_t velocity_pedal;
     uint8_t velocity_orange;
 
-    uint8_t unused2[2];
-    uint16le_t unused3[4];
+    uint8_t unused3[2];
+    uint8_t midi_byte1;
+    uint8_t unused4;
+    uint16le_t unused5;
+    uint8_t midi_byte2;
+    uint8_t unused6;
+    uint16le_t unused7;
 } __attribute__((packed));
 ```
 
