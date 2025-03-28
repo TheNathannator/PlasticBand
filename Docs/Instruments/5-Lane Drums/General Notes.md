@@ -19,7 +19,7 @@ Note that the Hi-Hat Pedal (the black pedal jack) internally will send both the 
 
 ## Using an E-Kit via a 5-Lane Kit
 
-Guitar Hero kits come equipped with a MIDI In port for the purpose of using an e-kit in Guitar Hero games. Assuming the kit uses the same MIDI notes as the drum tuner software does, this port responds to MIDI channel 10.
+Guitar Hero kits come equipped with a MIDI In port for the purpose of using an e-kit in Guitar Hero games.
 The MIDI mappings specified above are used for E-Kits as well, except for the Hi-Hat Pedal, as that seems to only be used internally.
 Note that MIDI data destined for other channels or other notes will be forwarded to the console as-is.
 
