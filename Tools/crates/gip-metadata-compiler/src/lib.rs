@@ -7,6 +7,8 @@ use serde::de::IgnoredAny;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
+mod binary;
+
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Metadata {
@@ -38,17 +40,17 @@ pub struct MetadataHeader {
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct DeviceMetadata {
+    #[serde(rename = "SupportedDeviceFirmwareVersions")]
+    pub firmware_versions: Vec<FirmwareVersion>,
+
+    #[serde(rename = "SupportedAudioFormats")]
+    pub audio_formats: Vec<AudioIoFormat>,
+
     #[serde(rename = "SupportedInSystemCommands")]
     pub in_commands: Vec<u8>,
 
     #[serde(rename = "SupportedOutSystemCommands")]
     pub out_commands: Vec<u8>,
-
-    #[serde(rename = "SupportedAudioFormats")]
-    pub audio_formats: Vec<AudioFormatPair>,
-
-    #[serde(rename = "SupportedDeviceFirmwareVersions")]
-    pub firmware_versions: Vec<FirmwareVersion>,
 
     #[serde(rename = "PreferredTypes")]
     pub preferred_types: Vec<String>,
@@ -64,7 +66,7 @@ pub struct DeviceMetadata {
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
-pub struct AudioFormatPair {
+pub struct AudioIoFormat {
     #[serde(rename = "Inbound")]
     #[serde(default)]
     pub inbound: Option<AudioFormat>,
@@ -98,6 +100,19 @@ pub struct FirmwareVersion {
 pub struct HidDescriptor(pub Vec<u8>);
 
 #[derive(Debug, Serialize, Deserialize)]
+pub enum MessageKind {
+    #[serde(alias = "custom")]
+    Custom,
+    #[serde(alias = "audio")]
+    Audio,
+    #[serde(alias = "security")]
+    Security,
+    #[serde(alias = "gip")]
+    #[serde(alias = "Gip")]
+    GIP,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Message {
     #[serde(rename = "MessageType")]
@@ -107,7 +122,7 @@ pub struct Message {
     pub max_length: u16,
 
     #[serde(rename = "DataType")]
-    pub message_type: String,
+    pub message_kind: MessageKind,
 
     #[serde(rename = "IsBigEndian")]
     #[serde(default)]
@@ -140,10 +155,10 @@ pub struct Message {
     pub downstream_requests_response: bool,
 
     #[serde(rename = "Period")]
-    pub period: i32,
+    pub period: u16,
 
     #[serde(rename = "PersistenceTimeout")]
-    pub persistence_timeout: i32,
+    pub persistence_timeout: u16,
 }
 
 fn is_false(value: &bool) -> bool {
@@ -156,9 +171,9 @@ impl std::fmt::Display for HidDescriptor {
             return Ok(());
         }
 
-        write!(f, "{:2X}", self.0[0])?;
+        write!(f, "{:02X}", self.0[0])?;
         for byte in &self.0[1..] {
-            write!(f, " {byte:2X}")?;
+            write!(f, " {byte:02X}")?;
         }
 
         Ok(())

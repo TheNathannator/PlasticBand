@@ -11,11 +11,15 @@
       "properties": {
         "MajorVersion": {
           "description": "The major version of the metadata specification used.",
-          "const": 1
+          "type": "number",
+          "minimum": 0,
+          "maximum": 65535
         },
         "MinorVersion": {
           "description": "The minor version of the metadata specification used.",
-          "const": 0
+          "type": "number",
+          "minimum": 0,
+          "maximum": 65535
         }
       },
       "required": ["MajorVersion", "MinorVersion"],
@@ -218,7 +222,10 @@
           "DataType": {
             "description": "The type of message.",
             "type": "string",
-            "enum": ["custom"]
+            "enum": [
+              "Custom",
+              "custom"
+            ]
           },
           "IsBigEndian": {
             "description": "Whether the data in the message is big-endian.",
