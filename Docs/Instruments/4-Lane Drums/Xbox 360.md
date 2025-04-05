@@ -63,6 +63,8 @@ Velocities:
 
 - The range is inverted: excluding the top-most bit, `0x0000` for the hardest hit, and `0x7FFF` for the softest measurable hit. This is done for compatibility with Rock Band 1 kits, which don't report velocity.
 - The top-most bit probably doesn't matter, but it is observed as being different between pads.
+- If you hit both the pad and cymbal of the same colour simultaneously, the pads velocity will be in its respective velocity byte, but the cymbals velocity will be placed into the red velocity byte.
+  In this scenario you end up with a velocity in the red velocity byte but the red button bit won't be set.
 
 ### As A Struct
 
