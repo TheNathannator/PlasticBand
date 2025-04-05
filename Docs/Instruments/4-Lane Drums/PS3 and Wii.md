@@ -80,6 +80,9 @@ Velocities:
 | Blue   | R1 Pressure | 14          |
 | Green  | L1 Pressure | 13          |
 
+If you hit both the pad and cymbal of the same colour simultaneously, the pads velocity will be in its respective velocity byte, but the cymbals velocity will be placed into the red velocity byte.
+In this scenario you end up with a velocity in the red velocity byte but the red button bit won't be set.
+
 ### As A Struct
 
 ```cpp
