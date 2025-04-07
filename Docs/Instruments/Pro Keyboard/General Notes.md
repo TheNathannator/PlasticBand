@@ -42,9 +42,11 @@ uint32_t keyMask =
 
 // Put keys and velocity together
 int pressed = 0; // Number of keys pressed
-int keyBit = 1 << (KEY_COUNT - 1); // Bitmask used to test for a specific key
 for (int i = 0; i < KEY_COUNT; i++)
 {
+    // Bitmask used to test for a specific key
+    int keyBit = 1 << (KEY_COUNT - 1 - i);
+
     // Check if the key is pressed
     if (keyMask & keyBit)
     {
@@ -65,8 +67,5 @@ for (int i = 0; i < KEY_COUNT; i++)
         // Key is not pressed
         keyArr[i] = 0;
     }
-
-    // Shift the key mask to the next key
-    keyMask <<= 1;
 }
 ```
