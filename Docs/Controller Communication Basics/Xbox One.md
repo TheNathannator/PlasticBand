@@ -60,6 +60,7 @@ Linux natively supports wired Xbox One gamepads through the built-in xpad driver
 
 - [xone](https://github.com/medusalix/xone)
   - Primary source for protocol info, and supports guitars and drumkits, among many other peripheral types.
+  - Note that this repository is not actively maintained; [a more upkept fork may be found here](https://github.com/dlundqvist/xone).
 - [xboxdrv](https://gitlab.com/xboxdrv/xboxdrv)
 - a modified [xpad](https://github.com/paroj/xpad)
   - Supports the Guitar Hero Live guitar.
