@@ -129,14 +129,18 @@ struct GipLegacyWirelessDisconnection
 
 ## Output Command Info
 
-### Command ID `0x21`: Set State?
-
-This one is unknown, needs more research done.
+### Command ID `0x21`: Auto-Calibration Mode
 
 Length: 2 bytes
 
+This request is used on guitars to change which auto-calibration sensors are enabled.
+
 - Byte 0: User index
-- Byte 1: Unknown
+- Byte 1: Sensor mode
+  - 0: Disabled
+  - 1: Light sensor
+  - 2: Audio sensor
+  - 254: Both light and audio
 
 ```cpp
 struct GipLegacyWirelessSetState

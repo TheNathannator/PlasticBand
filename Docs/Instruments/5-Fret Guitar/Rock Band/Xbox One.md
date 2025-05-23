@@ -71,8 +71,10 @@ Length: 10 bytes
   - Bit 4 (`0x10`) - Orange
 - Byte 6: 8-bit lower (solo) fret bitmask
   - Same as previous
-- Bytes 7-9: unknown
-  - These are most likely used for the auto-calibration sensors once those are activated.
+- Byte 7: Auto-calibration light sensor
+  - Must be enabled first using the [`0x21` output report](#command-id-0x21-auto-calibration-mode).
+- Bytes 8-9: Auto-calibration audio sensor (little-endian, unsigned)
+  - Must be enabled first using the [`0x21` output report](#command-id-0x21-auto-calibration-mode).
 
 #### Riffmaster Additions
 
@@ -146,11 +148,17 @@ struct GipRiffmasterGuitarState : GipGuitarState
 
 ## Output Command Info
 
-### Command ID `0x21`
+### Command ID `0x21`: Auto-Calibration Mode
 
 - Length: 1 byte
 
-The data for this one is unknown, it's reported in the descriptor but unfortunately it doesn't provide any important info outside of the ID, length, and that it's an output command. It's probably used for enabling/disabling the auto-calibration sensors.
+This request is sent to change which auto-calibration sensors are enabled on the guitar.
+
+- Byte 0: Sensor mode
+  - 0: Disabled
+  - 1: Light sensor
+  - 2: Audio sensor
+  - 254: Both light and audio
 
 ## References
 
