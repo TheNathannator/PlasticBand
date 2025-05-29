@@ -1,0 +1,44 @@
+{
+  "$schema": "gip_metadata_schema.json",
+  "MetadataHeader": {
+    "MajorVersion": 1,
+    "MinorVersion": 0
+  },
+  "DeviceMetadata": {
+    "SupportedInSystemCommands": [1, 2, 3, 4, 6],
+    "SupportedOutSystemCommands": [1, 4, 5, 6],
+    "SupportedAudioFormats": [
+      {
+        "Inbound": {
+          "Channels": 0,
+          "Rate": 0
+        },
+        "Outbound": {
+          "Channels": 0,
+          "Rate": 0
+        }
+      }
+    ],
+    "SupportedDeviceFirmwareVersions": [
+      {
+        "Major": 1,
+        "Minor": 0
+      }
+    ],
+    "PreferredTypes": ["Windows.Xbox.Input.NavigationController"],
+    "SupportedInterfaces": [
+      "b8f31fe7-7386-40e9-a9f8-2f21263acfb7",
+      "9776ff56-9bfd-4581-ad45-b645bba526d6"
+    ]
+  },
+  "Messages": [
+    {
+      "MessageType": 32,
+      "MessageLength": 8,
+      "DataType": "custom",
+      "IsUpstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    }
+  ]
+}

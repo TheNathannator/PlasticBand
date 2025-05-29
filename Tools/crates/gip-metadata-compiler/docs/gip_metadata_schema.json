@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "GIP Metadata Configuration",
+  "description": "The metadata used to describe a GIP device.",
+  "type": "object",
+  "required": ["MetadataHeader", "DeviceMetadata", "Messages"],
+  "properties": {
+    "MetadataHeader": {
+      "description": "The header of the metadata information.",
+      "type": "object",
+      "properties": {
+        "MajorVersion": {
+          "description": "The major version of the metadata specification used.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 65535
+        },
+        "MinorVersion": {
+          "description": "The minor version of the metadata specification used.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 65535
+        }
+      },
+      "required": ["MajorVersion", "MinorVersion"],
+      "additionalProperties": false
+    },
+    "DeviceMetadata": {
+      "description": "The supported properties of the device/metadata block.",
+      "type": "object",
+      "properties": {
+        "SupportedInSystemCommands": {
+          "description": "The system commands that the device can send to the host.",
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 255
+          },
+          // Ensure unconditionally required commands are included.
+          // Small hack done with minimum/maximum to emulate `const`,
+          // since it doesn't seem to be supported in this particular location.
+          "allOf": [
+            {
+              // Protocol control
+              "contains": {
+                "minimum": 1,
+                "maximum": 1
+              }
+            },
+            {
+              // Hello
+              "contains": {
+                "minimum": 2,
+                "maximum": 2
+              }
+            },
+            {
+              // Status
+              "contains": {
+                "minimum": 3,
+                "maximum": 3
+              }
+            },
+            {
+              // Metadata
+              "contains": {
+                "minimum": 4,
+                "maximum": 4
+              }
+            },
+            {
+              // Security
+              "contains": {
+                "minimum": 6,
+                "maximum": 6
+              }
+            }
+          ],
+          "uniqueItems": true,
+          "additionalItems": false
+        },
+        "SupportedOutSystemCommands": {
+          "description": "The system commands that the device can receive from the host.",
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 255
+          },
+          // Ensure unconditionally required commands are included
+          "allOf": [
+            {
+              // Protocol control
+              "contains": {
+                "minimum": 1,
+                "maximum": 1
+              }
+            },
+            {
+              // Metadata
+              "contains": {
+                "minimum": 4,
+                "maximum": 4
+              }
+            },
+            {
+              // Set device state
+              "contains": {
+                "minimum": 5,
+                "maximum": 5
+              }
+            },
+            {
+              // Security
+              "contains": {
+                "minimum": 6,
+                "maximum": 6
+              }
+            }
+          ],
+          "uniqueItems": true,
+          "additionalItems": false
+        },
+        "SupportedAudioFormats": {
+          "description": "The audio formats supported by the device, in order of preference.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Inbound": {
+                "description": "The format used for sending audio from the device to the host (i.e. microphones).",
+                "$ref": "#/$defs/AudioFormat"
+              },
+              "Outbound": {
+                "description": "The format used for receiving audio from the host to the device (i.e. speakers, headphones).",
+                "$ref": "#/$defs/AudioFormat"
+              }
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        },
+        "SupportedDeviceFirmwareVersions": {
+          "description": "The device firmware versions supported by the metadata.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Major": {
+                "description": "The major version of the supported device firmware.",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              },
+              "Minor": {
+                "description": "The minor version of the supported device firmware.",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              }
+            },
+            "required": ["Major", "Minor"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "PreferredTypes": {
+          "description": "The preferred class types to use for the device, in order of fallback.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "SupportedInterfaces": {
+          "description": "The list of supported interface GUIDs, in preferred order from most to least specific.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+          },
+          "uniqueItems": true
+        },
+        "SupportedHidDescriptor": {
+          "description": "The descriptor to use for HID input commands.",
+          "type": "string",
+          "pattern": "^(?:[0-9a-fA-F]{2} )+[0-9a-fA-F]{2}$",
+          "minLength": 26,
+          "maxLength": 767
+        }
+      },
+      "required": [
+        "SupportedInSystemCommands",
+        "SupportedOutSystemCommands",
+        "SupportedAudioFormats",
+        "SupportedDeviceFirmwareVersions",
+        "PreferredTypes",
+        "SupportedInterfaces"
+      ],
+      "additionalProperties": false
+    },
+    "Messages": {
+      "description": "The custom messages that the device supports.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "MessageType": {
+            "description": "The ID of the message in the packet header.",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          },
+          "MessageLength": {
+            "description": "The maximum length of the message.",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535
+          },
+          "DataType": {
+            "description": "The type of message.",
+            "type": "string",
+            "enum": [
+              "Custom",
+              "custom"
+            ]
+          },
+          "IsBigEndian": {
+            "description": "Whether the data in the message is big-endian.",
+            "type": "boolean"
+          },
+          "IsReliable": {
+            "description": "Whether the message needs to be acknowledged.",
+            "type": "boolean"
+          },
+          "IsSequenced": {
+            "description": "Whether the message requires a strictly-sequential sequence count.",
+            "type": "boolean"
+          },
+          "IsUpstream": {
+            "description": "Whether the message is sent from the host to the device.",
+            "type": "boolean"
+          },
+          "IsDownstream": {
+            "description": "Whether the message is sent from the device to the host.",
+            "type": "boolean"
+          },
+          "IsDownstreamRequestResponse": {
+            "description": "(Undocumented.)",
+            "type": "boolean"
+          },
+          "Period": {
+            "description": "Not supported by the protocol yet.",
+            "const": 0
+          },
+          "PersistenceTimeout": {
+            "description": "Not supported by the protocol yet.",
+            "const": 0
+          }
+        },
+        "required": [
+          "MessageType",
+          "MessageLength",
+          "DataType",
+          "Period",
+          "PersistenceTimeout"
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "AudioFormat": {
+      "type": "object",
+      "properties": {
+        "Channels": {
+          "description": "The number of channels supported by this format.",
+          "type": "integer",
+          "enum": [0, 1, 2, 6, 8]
+        },
+        "Rate": {
+          "description": "The sample rate supported by this format.",
+          "type": "integer",
+          "enum": [0, 8000, 12000, 16000, 20000, 24000, 32000, 40000, 48000]
+        }
+      },
+      "required": ["Channels", "Rate"]
+    }
+  }
+}

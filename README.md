@@ -8,6 +8,6 @@ This may evolve into an actual library, it's something I've wanted to do for qui
 
 ## Licenses
 
-The documentation found in [Docs](Docs/) is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+The documentation found in the [Docs](Docs/) folder is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). See [Docs/LICENSE](Docs/LICENSE) file for details.
 
-If this project becomes a library, the source code for that library will be under a separate license that will be determined at that point.
+The tools found in the [Tools](Tools/) folder are licensed under the GNU Lesser General Public License, version 3 or later. See [Tools/LICENSE](Tools/LICENSE) file for details.

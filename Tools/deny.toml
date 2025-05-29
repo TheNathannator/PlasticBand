@@ -1,0 +1,15 @@
+[licenses]
+unused-allowed-license = "allow"
+allow = [
+    "Apache-2.0",
+    "BSD-3-Clause",
+    "BSL-1.0",
+    "GPL-3.0",
+    "LGPL-3.0",
+    "MIT",
+    "Unicode-DFS-2016",
+    "Unicode-3.0",
+]
+
+[licenses.private]
+ignore = true
