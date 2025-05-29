@@ -51,19 +51,19 @@ struct PS3WiiUSixFretGuitarState
     uint8_t reportId = 0x00;
 #endif
 
-    bool white1 : 1;
-    bool black1 : 1;
-    bool black2 : 1;
-    bool black3 : 1;
+    bool white1 : 1; // square
+    bool black1 : 1; // cross
+    bool black2 : 1; // circle
+    bool black3 : 1; // triangle
 
-    bool white2 : 1;
-    bool white3 : 1;
+    bool white2 : 1; // l1
+    bool white3 : 1; // r1
     bool : 1;
     bool : 1;
 
-    bool heroPower : 1;
-    bool pause : 1;
-    bool ghtv : 1;
+    bool heroPower : 1; // select
+    bool pause : 1; // start
+    bool ghtv : 1; // l3
     bool : 1;
 
     bool dpad_center : 1;
@@ -76,17 +76,16 @@ struct PS3WiiUSixFretGuitarState
     //      4
     uint8_t dpad;
 
-    uint8_t unused1;
-    uint8_t strumBar;
-    uint8_t unused2;
-    uint8_t whammy;
+    uint8_t unused_leftStickX;
+    uint8_t strumBar; // leftStickY
+    uint8_t unused_rightStickX;
+    uint8_t whammy; // rightStickY
 
-    uint8_t unused3[12];
+    uint8_t unused_pressure[12];
 
     // Reminder that this value is 10-bit in range
-    uint16le_t tilt;
-
-    uint16le_t unused4[3];
+    uint16le_t tilt; // accelX
+    uint16le_t unused_accelerometer[3];
 } __attribute__((packed));
 ```
 

@@ -119,8 +119,9 @@ struct PS3KeytarState
     //     4
     uint8_t dpad;
 
-    uint8_t unused1[2];
+    uint8_t unused_leftStick[2];
 
+    // rightStickX
     bool key8 : 1;
     bool key7 : 1;
     bool key6 : 1;
@@ -130,6 +131,7 @@ struct PS3KeytarState
     bool key2 : 1;
     bool key1 : 1;
 
+    // rightStickY
     bool key16 : 1;
     bool key15 : 1;
     bool key14 : 1;
@@ -139,6 +141,7 @@ struct PS3KeytarState
     bool key10 : 1;
     bool key9 : 1;
 
+    // pressure[0]
     bool key24 : 1;
     bool key23 : 1;
     bool key22 : 1;
@@ -148,34 +151,46 @@ struct PS3KeytarState
     bool key18 : 1;
     bool key17 : 1;
 
+    // pressure[1]
     uint8_t velocity1 : 7;
     bool key25 : 1;
+    // pressure[2]
     uint8_t velocity2 : 7;
     bool : 1;
+    // pressure[3]
     uint8_t velocity3 : 7;
     bool : 1;
+    // pressure[4]
     uint8_t velocity4 : 7;
     bool : 1;
+    // pressure[5]
     uint8_t velocity5 : 7;
     bool : 1;
 
+    // pressure[6]
     uint8_t : 7;
     bool overdrive : 1;
+    // pressure[7]
     uint8_t pedalAnalog : 7;
     bool pedalDigital : 1;
+    // pressure[8]
     uint8_t touchPad : 7;
     bool : 1;
 
-    uint8_t unused2[4];
+    uint8_t unused_pressure[3]; // pressure[9-11]
 
+    // accelX
+    uint8_t unused_accelX;
     bool pedalConnection : 1; // Always 0 with the MIDI Pro Adapter
     uint8_t : 7;
 
-    uint16le_t unused3[2];
+    uint16le_t unused_accelZ;
+    uint16le_t unused_accelY;
 
-    uint8_t pressCount; // Unsure what this is, but this is what it's defined as in the spreadsheet linked below.
-                        // No description is provided for it until more investigation can be done.
-
+    // gyro
+    // Unsure what this is, but this is what it's defined as in the spreadsheet linked below.
+    // No description is provided for it until more investigation can be done.
+    uint8_t pressCount;
     uint8_t unused4;
 } __attribute__((packed));
 ```

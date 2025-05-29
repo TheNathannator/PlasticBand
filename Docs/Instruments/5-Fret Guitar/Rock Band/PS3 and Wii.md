@@ -83,14 +83,14 @@ struct PS3RockBandGuitarState
     uint8_t reportId = 0x00;
 #endif
 
-    bool blue : 1;
-    bool green : 1;
-    bool red : 1;
-    bool yellow : 1;
+    bool blue : 1; // square
+    bool green : 1; // cross
+    bool red : 1; // circle
+    bool yellow : 1; // triangle
 
-    bool orange : 1;
-    bool tilt : 1;
-    bool solo : 1;
+    bool orange : 1; // l1
+    bool tilt : 1; // r1
+    bool solo : 1; // l2
     bool : 1;
 
     bool select : 1;
@@ -108,12 +108,12 @@ struct PS3RockBandGuitarState
     //     4
     uint8_t dpad_strum;
 
-    uint8_t unused1[2];
-    uint8_t whammy;
-    uint8_t pickup;
+    uint8_t unused_leftStick[2];
+    uint8_t whammy; // rightStickX
+    uint8_t pickup; // rightStickY
 
-    uint8_t unused2[12];
-    int16le_t unused3[4];
+    uint8_t unused_pressure[12];
+    uint16le_t unused_accelerometer[4];
 } __attribute__((packed));
 ```
 

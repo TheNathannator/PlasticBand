@@ -116,47 +116,59 @@ struct Ps3Report
     //     4
     uint8_t dpad;
 
-    uint8_t unused1[2];
+    uint8_t unused_leftStick[2];
 
+    // rightStick
     uint8_t lowEFret : 5;
     uint8_t aFret : 5;
     uint8_t dFret : 5;
     bool : 1;
+    // pressures[0-1]
     uint8_t gFret : 5;
     uint8_t bFret : 5;
     uint8_t highEFret : 5;
     bool soloFlag : 1;
 
+    // pressures[2]
     uint8_t lowEVelocity : 7;
     bool greenFret: 1;
+    // pressures[3]
     uint8_t aVelocity : 7;
     bool redFret: 1;
+    // pressures[4]
     uint8_t dVelocity : 7;
     bool yellowFret: 1;
+    // pressures[5]
     uint8_t gVelocity : 7;
     bool blueFret: 1;
+    // pressures[6]
     uint8_t bVelocity : 7;
     bool orangeFret: 1;
+    // pressures[7]
     uint8_t highEVelocity : 7;
     bool : 1;
 
-    uint8_t autoCal_Microphone; // When the sensor isn't activated, this
-    uint8_t autoCal_Light; // and this just duplicate the tilt axis
-    uint8_t tilt;
+    // Note: when the auto-cal sensors aren't activated, they just duplicate the tilt axis
+    uint8_t autoCal_Microphone; // pressures[8]
+    uint8_t autoCal_Light; // pressures[9]
+    uint8_t tilt; // pressures[10]
 
+    // pressures[11]
     uint8_t : 7;
     bool pedal : 1;
 
+    // accelX
     uint8_t unused2;
-
     bool pedalConnection : 1;
     uint8_t : 7;
 
-    uint16le_t unused3[2];
+    uint16le_t unused_accelZ;
+    uint16le_t unused_accelY;
 
-    uint8_t counter; // Unsure what this is, but this is what it's defined as in the spreadsheet linked below.
-                     // No description is provided for it until more investigation can be done.
-
+    // gyro
+    // Unsure what this is, but this is what it's defined as in the spreadsheet linked below.
+    // No description is provided for it until more investigation can be done.
+    uint8_t counter;
     uint8_t unused4;
 } __attribute__((packed));
 ```

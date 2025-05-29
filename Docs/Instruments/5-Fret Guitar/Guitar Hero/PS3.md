@@ -80,13 +80,13 @@ struct PS3GuitarHeroGuitarState
     uint8_t reportId = 0x00;
 #endif
 
-    bool yellow : 1;
-    bool green : 1;
-    bool red : 1;
-    bool blue : 1;
+    bool yellow : 1; // square
+    bool green : 1; // cross
+    bool red : 1; // circle
+    bool blue : 1; // triangle
 
-    bool orange : 1;
-    bool spPedal : 1;
+    bool orange : 1; // l1
+    bool spPedal : 1; // r1
     bool : 1;
     bool : 1;
 
@@ -105,23 +105,24 @@ struct PS3GuitarHeroGuitarState
     //      4
     uint8_t dpad_strum;
 
-    uint8_t unused1[2];
-    uint8_t whammy;
-    uint8_t slider;
+    uint8_t unused_leftStick[2];
+    uint8_t whammy; // rightStickX
+    uint8_t slider; // rightStickY
 
-    uint8_t pressure_dpadRight_yellow;
-    uint8_t pressure_dpadLeft;
-    uint8_t pressure_dpadUp_green;
-    uint8_t pressure_dpadDown_orange;
-    uint8_t pressure_blue;
-    uint8_t pressure_red;
-    uint8_t unused2[6];
+    // The pressure values here are mapped a little nonsensically compared to the base PS3 report
+    uint8_t pressure_dpadRight_yellow; // pressure[0]
+    uint8_t pressure_dpadLeft; // pressure[1]
+    uint8_t pressure_dpadUp_green; // pressure[2]
+    uint8_t pressure_dpadDown_orange; // pressure[3]
+    uint8_t pressure_blue; // pressure[4]
+    uint8_t pressure_red; // pressure[5]
+    uint8_t unused_pressure[6]; // pressure[6-11]
 
     // Reminder that these values are 10-bit in range
     uint16le_t tilt_accelX;
     uint16le_t accelZ;
     uint16le_t accelY;
-    uint16le_t unused3;
+    uint16le_t unused_gyro;
 } __attribute__((packed));
 ```
 

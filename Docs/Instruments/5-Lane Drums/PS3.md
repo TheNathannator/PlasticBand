@@ -72,8 +72,8 @@ struct PS3FiveLaneDrumsState
     bool circle_red : 1;
     bool triangle_yellow : 1;
 
-    bool kick : 1;
-    bool orange : 1;
+    bool kick : 1; // l1
+    bool orange : 1; // r1
     bool : 1;
     bool : 1;
 
@@ -92,24 +92,25 @@ struct PS3FiveLaneDrumsState
     //     4
     uint8_t dpad;
 
-    uint8_t unused1[2];
-    uint8_t midi_byte0;
-    uint8_t unused2[5];
+    uint8_t unused_leftStick[2];
+    uint8_t midi_byte0; // rightStickX
+    uint8_t unused_rightStickY;
 
-    uint8_t velocity_yellow;
-    uint8_t velocity_red;
-    uint8_t velocity_green;
-    uint8_t velocity_blue;
-    uint8_t velocity_pedal;
-    uint8_t velocity_orange;
+    uint8_t unused_pressure1[4]; // pressure[0-3]
+    uint8_t velocity_yellow; // pressure[4]
+    uint8_t velocity_red; // pressure[5]
+    uint8_t velocity_green; // pressure[6]
+    uint8_t velocity_blue; // pressure[7]
+    uint8_t velocity_pedal; // pressure[8]
+    uint8_t velocity_orange; // pressure[9]
+    uint8_t unused_pressure2[2]; // pressure[10-11]
 
-    uint8_t unused3[2];
-    uint8_t midi_byte1;
-    uint8_t unused4;
-    uint16le_t unused5;
-    uint8_t midi_byte2;
-    uint8_t unused6;
-    uint16le_t unused7;
+    uint8_t midi_byte1; // accelerometer X first byte
+    uint8_t unused_accelX;
+    uint16le_t unused_accelZ;
+    uint8_t midi_byte2; // accelerometer Y first byte
+    uint8_t unused_accelY;
+    uint16le_t unused_gyro;
 } __attribute__((packed));
 ```
 

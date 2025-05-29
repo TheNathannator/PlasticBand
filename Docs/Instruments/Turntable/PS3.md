@@ -91,23 +91,23 @@ struct PS3TurntableState
     //      4
     uint8_t dpad;
 
-    uint8_t unused1[2];
-    uint8_t leftTableVelocity;
-    uint8_t rightTableVelocity;
+    uint8_t unused_leftStick[2];
+    uint8_t leftTableVelocity; // rightStickX
+    uint8_t rightTableVelocity; // rightStickY
 
-    uint8_t pressure_dpadRight_square;
-    uint8_t pressure_dpadLeft;
-    uint8_t pressure_dpadUp_cross;
-    uint8_t pressure_dpadDown;
-    uint8_t pressure_triangle;
-    uint8_t pressure_circle;
-    uint8_t unused2[6];
+    uint8_t pressure_dpadRight_square; // pressure[0]
+    uint8_t pressure_dpadLeft; // pressure[1]
+    uint8_t pressure_dpadUp_cross; // pressure[2]
+    uint8_t pressure_dpadDown; // pressure[3]
+    uint8_t pressure_triangle; // pressure[4]
+    uint8_t pressure_circle; // pressure[5]
+    uint8_t unused_pressure[6]; // pressure[6-11]
 
     // Reminder that these values are 10-bit in range
-    uint16le_t effectsKnob;
-    uint16le_t crossfader;
-    uint16le_t platterButtons;
-    uint16le_t unused3;
+    uint16le_t effectsKnob; // accelX
+    uint16le_t crossfader; // accelZ
+    uint16le_t platterButtons; // accelY
+    uint16le_t unused_gyro;
 } __attribute__((packed));
 ```
 

@@ -97,15 +97,15 @@ struct PS3FourLaneDrumsState
     bool circle_red : 1;
     bool triangle_yellow : 1;
 
-    bool kick1 : 1;
-    bool kick2 : 1;
+    bool kick1 : 1; // l1
+    bool kick2 : 1; // r1
     bool : 1;
     bool : 1;
 
     bool select : 1;
     bool start : 1;
-    bool pad : 1;
-    bool cymbal : 1;
+    bool pad : 1; // l3
+    bool cymbal : 1; // r3
 
     bool ps : 1;
     uint8_t : 3;
@@ -117,15 +117,16 @@ struct PS3FourLaneDrumsState
     //     4
     uint8_t dpad;
 
-    uint8_t unused1[8];
+    uint8_t unused_sticks[4];
 
-    uint8_t velocity_yellow;
-    uint8_t velocity_red;
-    uint8_t velocity_green;
-    uint8_t velocity_blue;
+    uint8_t unused_pressure1[4]; // pressure[0-3]
+    uint8_t velocity_yellow; // pressure[4]
+    uint8_t velocity_red; // pressure[5]
+    uint8_t velocity_green; // pressure[6]
+    uint8_t velocity_blue; // pressure[7]
+    uint8_t unused_pressure2[4]; // pressure[8-11]
 
-    uint8_t unused2[4];
-    uint16le_t unused3[4];
+    uint16le_t unused_accelerometer[4];
 } __attribute__((packed));
 ```
 
