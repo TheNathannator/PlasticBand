@@ -4,12 +4,11 @@ This is a template and guide for creating HID device data documents. Text that i
 
 This template probably needs some adjustments and additional categories
 
-Resources to assist in the documentation process:
 
-- [USB Implementers Forum documentation on HID](https://www.usb.org/hid)
+See the [USB Implementers Forum documentation on HID](https://www.usb.org/hid) for documentation on the HID protocol. Additionally, see the [Tools](../../Tools) folder for tools and resources to assist with research, along with the following external tools/resources:
+
 - [Ryochan7's HID Report Inspector](https://github.com/Ryochan7/HidReportInspector/)
 - [abend0c1's hidrdd (HID Report Descriptor Decoder)](https://github.com/abend0c1/hidrdd)
-- TODO: Should probably have more resources here, feel free to contribute!
 
 ## Device Info
 

@@ -2,10 +2,7 @@
 
 This is a template and guide for creating Xbox One controller data documents. Text that is not part of describing the device should be removed, as it is for guidance purposes only.
 
-Resources to assist in the documentation process:
-
-- The [GIP interface writeup](https://gist.github.com/TheNathannator/bcebc77e653f71e77634144940871596) has documentation on common messages that can be received or sent, along with references to other sources of information on the protocol.
-- There's currently no programs to assist. TODO! 
+See the [MS-GIPUSB open specification](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gipusb/e7c90904-5e21-426e-b9ad-d82adeee0dbc) for documentation on the baseline protocol. Additionally, see the [Tools](../../Tools) folder for tools and resources to assist with research.
 
 ## Controller Info
 

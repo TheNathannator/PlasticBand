@@ -2,9 +2,7 @@
 
 This is a template and guide for creating Xbox 360 controller data documents. Text that is not part of describing the device should be removed, as it is for guidance purposes only.
 
-Resources to assist in the documentation process:
-
-- TODO: XInput test app 
+See the [MS-XUSBI open specification](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-xusbi/c79474e7-3968-43d1-8d2f-175d47bef43e) for documentation on the underlying protocol. Additionally, see the [Tools](../../Tools) folder for tools and resources to assist with research.
 
 ## Controller Info
 
