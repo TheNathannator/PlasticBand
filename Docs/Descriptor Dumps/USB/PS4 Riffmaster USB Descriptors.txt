@@ -1,4 +1,4 @@
-Information for device PDP RiffMaster Guitar for PS5 (VID=0x0E6F PID=0x0249):
+Information for device PDP RiffMaster Guitar for PS4 (VID=0x0E6F PID=0x024A):
 
 ------------------------------
 Connection Information:
@@ -6,9 +6,9 @@ Connection Information:
 Device current bus speed: FullSpeed
 Device supports USB 1.1 specification
 Device supports USB 2.0 specification
-Device address: 0x0027
-Current configuration value: 0x01
-Number of open pipes: 2
+Device address: 0x0023
+Current configuration value: 0x00
+Number of open pipes: 0
 
 
 ------------------------------
@@ -22,11 +22,11 @@ Device Descriptor:
 0x00	bDeviceProtocol   
 0x40	bMaxPacketSize0   (64 bytes)
 0x0E6F	idVendor
-0x0249	idProduct
+0x024A	idProduct
 0x0101	bcdDevice
 0x01	iManufacturer   "Performance Designed Products"
-0x02	iProduct        "PDP RiffMaster Guitar for PS5"
-0x03	iSerialNumber   "0000002804026233"
+0x02	iProduct        "PDP RiffMaster Guitar for PS4"
+0x03	iSerialNumber   (omitted)
 0x01	bNumConfigurations
 
 
@@ -293,7 +293,7 @@ HID Descriptor:
 0x00	bCountryCode
 0x01	bNumDescriptors
 0x22	bDescriptorType   (Report descriptor)
-0x00A5	bDescriptorLength
+0x00AB	bDescriptorLength
 
 Endpoint Descriptor:
 ------------------------------
@@ -302,7 +302,7 @@ Endpoint Descriptor:
 0x81	bEndpointAddress  (IN endpoint 1)
 0x03	bmAttributes      (Transfer: Interrupt / Synch: None / Usage: Data)
 0x0040	wMaxPacketSize    (1 x 64 bytes)
-0x06	bInterval         (6 frames)
+0x05	bInterval         (5 frames)
 
 Endpoint Descriptor:
 ------------------------------
@@ -311,7 +311,7 @@ Endpoint Descriptor:
 0x02	bEndpointAddress  (OUT endpoint 2)
 0x03	bmAttributes      (Transfer: Interrupt / Synch: None / Usage: Data)
 0x0040	wMaxPacketSize    (1 x 64 bytes)
-0x06	bInterval         (6 frames)
+0x05	bInterval         (5 frames)
 
 Microsoft OS Descriptor is not available. Error code: 0x0000001F
 
@@ -322,15 +322,15 @@ String Descriptor Table
 Index  LANGID  String
 0x00   0x0000  0x0409 
 0x01   0x0409  "Performance Designed Products"
-0x02   0x0409  "PDP RiffMaster Guitar for PS5"
-0x03   0x0409  "0000002804026233"
+0x02   0x0409  "PDP RiffMaster Guitar for PS4"
+0x03   0x0409  (omitted)
 
 ------------------------------
 
 Connection path for device: 
 USB xHCI Compliant Host Controller
 Root Hub
-PDP RiffMaster Guitar for PS5 (VID=0x0E6F PID=0x0249) Port: 10
+PDP RiffMaster Guitar for PS4 (VID=0x0E6F PID=0x024A) Port: 10
 
 Running on: Windows 10 or greater (Build Version 19045)
 

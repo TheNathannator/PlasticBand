@@ -26,7 +26,7 @@ Device Descriptor:
 0x0101	bcdDevice
 0x01	iManufacturer   "Performance Designed Products"
 0x02	iProduct        "PDP RiffMaster Guitar for Xbox"
-0x03	iSerialNumber   "00004A174324A76B"
+0x03	iSerialNumber   (omitted)
 0x01	bNumConfigurations
 
 
@@ -130,7 +130,7 @@ Index  LANGID  String
 0x00   0x0000  0x0409 
 0x01   0x0409  "Performance Designed Products"
 0x02   0x0409  "PDP RiffMaster Guitar for Xbox"
-0x03   0x0409  "00004A174324A76B"
+0x03   0x0409  (omitted)
 
 ------------------------------
 
