@@ -309,7 +309,7 @@ impl DeviceMetadata {
         let interfaces = read_offset_array(&mut reader, interfaces_offset, |r| {
             let mut bytes = [0u8; 16];
             io::Read::read_exact(r, &mut bytes)?;
-            Ok(Uuid::from_bytes(bytes))
+            Ok(Uuid::from_bytes_le(bytes))
         })?;
         let hid_descriptor = if header.major_version >= 1 && header.minor_version >= 1 {
             let hid_descriptor = read_offset_bytes(&mut reader, hid_descriptor_offset)?;
@@ -347,7 +347,7 @@ impl DeviceMetadata {
         let in_commands_offset = write_byte_array(&mut writer, &self.in_commands)?;
         let out_commands_offset = write_byte_array(&mut writer, &self.out_commands)?;
         let preferred_types_offset = write_string_array(&mut writer, &self.preferred_types)?;
-        let interfaces_offset = write_array(&mut writer, &self.interfaces, |w, i| w.write_all(i.as_bytes()))?;
+        let interfaces_offset = write_array(&mut writer, &self.interfaces, |w, i| w.write_all(&i.to_bytes_le()))?;
         let hid_descriptor_offset = match self.hid_descriptor.as_ref() {
             Some(hid_descriptor) if header.major_version >= 1 && header.minor_version >= 1 => {
                 adjust_offset(write_byte_array(&mut writer, &hid_descriptor.0)?)?
