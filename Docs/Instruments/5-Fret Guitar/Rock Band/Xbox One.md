@@ -39,7 +39,7 @@
 Length: 10 bytes
 
 - Bytes 0-1: 16-bit button bitmask
-  - Byte 0, bit 0 (`0x01`) - Sync button
+  - Byte 0, bit 0 (`0x01`) - Unused
   - Byte 0, bit 1 (`0x02`) - Unused
   - Byte 0, bit 2 (`0x04`) - Menu button
   - Byte 0, bit 3 (`0x08`) - View button
@@ -84,14 +84,14 @@ The Riffmaster expands this input report to 28 bytes long, and adds a joystick a
   - Left is negative, right is positive.
 - Bytes 12-13: Joystick Y (little-endian, signed)
   - Up is positive, down is negative.
-- Byte 14: Console function buttons
-  - Byte 14, bit 0 (`0x01`): Share button
-- Bytes 15-27: Unknown
+- Byte 14-27: Console function map payload
+  - See \[[MS-GIPUSB 3.1.5.6.1.3.1](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gipusb/436a0207-03cb-486c-9a6b-6338d6f71998)\] or \[H001419 3.7.2.2.1\] for specification.
+  - An oddity: the specification says the console function map occupies 18 bytes, but the Riffmaster only provides 14.
 
 ```cpp
 struct GipGuitarState
 {
-    bool sync : 1;
+    bool : 1;
     bool : 1;
     bool menu : 1;
     bool view : 1;
@@ -138,10 +138,7 @@ struct GipRiffmasterGuitarState : GipGuitarState
     int16le_t joystickX;
     int16le_t joystickY;
 
-    bool share : 1;
-    bool : 7;
-
-    uint8_t unknown2[13];
+    uint8_t consoleFunctions[14];
 
     bool joystickClick() { return soloFlag && !(soloGreen | soloRed | soloYellow | soloBlue | soloOrange); }
 } __attribute__((packed));

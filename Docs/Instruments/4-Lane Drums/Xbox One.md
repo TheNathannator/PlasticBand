@@ -31,7 +31,7 @@ NOTE: These drumkits typically send every message twice! Respecting the sequence
 Length: 6 bytes
 
 - Bytes 0-1: 16-bit button bitmask
-  - Byte 0, bit 0 (`0x01`) - Sync button
+  - Byte 0, bit 0 (`0x01`) - Unused
   - Byte 0, bit 1 (`0x02`) - Unused
   - Byte 0, bit 2 (`0x04`) - Menu button
   - Byte 0, bit 3 (`0x08`) - View button
@@ -60,7 +60,7 @@ Length: 6 bytes
 ```cpp
 struct GipDrumkitState
 {
-    bool sync : 1;
+    bool : 1;
     bool : 1;
     bool menu : 1;
     bool view : 1;
