@@ -129,7 +129,8 @@ struct GipGuitarState
     bool soloOrange : 1;
     bool : 3;
 
-    uint8_t unknown[3];
+    uint8_t autocalLight;
+    uint16le_t autocalAudio;
 } __attribute__((packed));
 
 struct GipRiffmasterGuitarState : GipGuitarState
