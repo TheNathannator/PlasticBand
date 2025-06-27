@@ -16,38 +16,74 @@ B7-56-FF-76-97-FD-9B-81-45-AD-45-B6-45-BB-A5-26-D6-05-17-00-20-36-00-01-00-14-00
 00-00-00-00-00-00-00-00-00-00-00-00-00-00-17-00-24-04-00-01-00-0C-00-00-00-00-00-00-00-00-00-00
 00-00-00-00-00
 
-- Custom commands:
-  1.
-  - Command ID: 0x20
-  - Max command length: 54 - 4 = 50
-  - Flags: 0x14 (Input, header included in length)
-  2.
-  - Command ID: 0x21
-  - Max command length: 6 - 4 = 2
-  - Flags: 0x0C (Output, header included in length)
-  3.
-  - Command ID: 0x22
-  - Max command length: 258 - 4 = 254
-  - Flags: 0x14 (Input, header included in length)
-  4.
-  - Command ID: 0x23
-  - Max command length: 5 - 4 = 1
-  - Flags: 0x14 (Input, header included in length)
-  5.
-  - Command ID: 0x24
-  - Max command length: 4 - 4 = 0
-  - Flags: 0x0C (Output, header included in length)
-
-- Input commands: 01, 02, 03, 04, 06, 07
-- Output commands: 01, 04, 05, 06, 0A
-
-- Class names:
-  - MadCatz.Xbox.Module.Brangus
-  - Windows.Xbox.Input.NavigationController
-
-- Interface GUIDs:
-  - AF259D0F-76B0-4CDB-BFD1-CEA8C0A8F5EE - MadCatz.Xbox.Module.Brangus
-  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7 - Windows.Xbox.Input.NavigationController
-  - 9776FF56-9BFD-4581-AD45-B645BBA526D6 - Input device
-
-- HID descriptor: None
+Decompiled JSON:
+{
+  "MetadataHeader": {
+    "MajorVersion": 1,
+    "MinorVersion": 0
+  },
+  "DeviceMetadata": {
+    "SupportedDeviceFirmwareVersions": [
+      { "Major": 1, "Minor": 0 }
+    ],
+    "SupportedAudioFormats": [],
+    "SupportedInSystemCommands": [1, 2, 3, 4, 6, 7],
+    "SupportedOutSystemCommands": [1, 4, 5, 6, 10],
+    "PreferredTypes": [
+      "MadCatz.Xbox.Module.Brangus",
+      "Windows.Xbox.Input.NavigationController"
+    ],
+    "SupportedInterfaces": [
+      "af259d0f-76b0-4cdb-bfd1-cea8c0a8f5ee",
+      "b8f31fe7-7386-40e9-a9f8-2f21263acfb7", // Windows.Xbox.Input.INavigationController
+      "9776ff56-9bfd-4581-ad45-b645bba526d6"  // Windows.Xbox.Input.IController
+    ]
+  },
+  "Messages": [
+    {
+      "MessageType": 32,
+      "MessageLength": 54,
+      "DataType": "Custom",
+      "IsSequenced": true,
+      "IsDownstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    },
+    {
+      "MessageType": 33,
+      "MessageLength": 6,
+      "DataType": "Custom",
+      "IsSequenced": true,
+      "IsUpstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    },
+    {
+      "MessageType": 34,
+      "MessageLength": 258,
+      "DataType": "Custom",
+      "IsSequenced": true,
+      "IsDownstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    },
+    {
+      "MessageType": 35,
+      "MessageLength": 5,
+      "DataType": "Custom",
+      "IsSequenced": true,
+      "IsDownstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    },
+    {
+      "MessageType": 36,
+      "MessageLength": 4,
+      "DataType": "Custom",
+      "IsSequenced": true,
+      "IsUpstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    }
+  ]
+}

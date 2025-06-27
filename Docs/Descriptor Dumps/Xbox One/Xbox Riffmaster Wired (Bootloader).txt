@@ -17,46 +17,90 @@ Descriptor:
 00-00-00-00-00-00-00-00-17-00-33-3C-00-01-00-18-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-17
 00-34-3C-00-01-00-18-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
 
-- Custom commands: 
-  1. 
-  - Command ID: 0x20
-  - Max command length: 60
-  - Flags: 0x10 (Input)
-  2. 
-  - Command ID: 0x21
-  - Max command length: 60
-  - Flags: 0x10 (Input)
-  3. 
-  - Command ID: 0x30
-  - Max command length: 60
-  - Flags: 0x18 (Output, Input)
-  4. 
-  - Command ID: 0x31
-  - Max command length: 60
-  - Flags: 0x18 (Output, Input)
-  5. 
-  - Command ID: 0x32
-  - Max command length: 60
-  - Flags: 0x18 (Output, Input)
-  6. 
-  - Command ID: 0x33
-  - Max command length: 60
-  - Flags: 0x18 (Output, Input)
-  7. 
-  - Command ID: 0x34
-  - Max command length: 60
-  - Flags: 0x18 (Output, Input)
-
-- Input commands: 01, 02, 03, 04, 06, 07
-- Output commands: 01, 04, 05, 06, 0A
-
-- Class names: 
-  - PDP.Xbox.Controller.Bootloader
-  - Windows.Xbox.Input.NavigationController
-
-- Interface GUIDs: 
-  - 067C12DA-E0CC-457F-A1E8-D8B389958139 - PDP.Xbox.Controller.Bootloader
-  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7 - Windows.Xbox.Input.NavigationController
-  - 9776FF56-9BFD-4581-AD45-B645BBA526D6 - Input device
-
-- HID descriptor: None
+Decompiled JSON:
+{
+  "MetadataHeader": {
+    "MajorVersion": 1,
+    "MinorVersion": 0
+  },
+  "DeviceMetadata": {
+    "SupportedDeviceFirmwareVersions": [
+      { "Major": 1, "Minor": 0 }
+    ],
+    "SupportedAudioFormats": [],
+    "SupportedInSystemCommands": [1, 2, 3, 4, 6, 7],
+    "SupportedOutSystemCommands": [1, 4, 5, 6, 10],
+    "PreferredTypes": [
+      "PDP.Xbox.Controller.Bootloader",
+      "Windows.Xbox.Input.NavigationController"
+    ],
+    "SupportedInterfaces": [
+      "067c12da-e0cc-457f-a1e8-d8b389958139",
+      "b8f31fe7-7386-40e9-a9f8-2f21263acfb7", // Windows.Xbox.Input.INavigationController
+      "9776ff56-9bfd-4581-ad45-b645bba526d6"  // Windows.Xbox.Input.IController
+    ]
+  },
+  "Messages": [
+    {
+      "MessageType": 32,
+      "MessageLength": 60,
+      "DataType": "Custom",
+      "IsDownstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    },
+    {
+      "MessageType": 33,
+      "MessageLength": 60,
+      "DataType": "Custom",
+      "IsDownstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    },
+    {
+      "MessageType": 48,
+      "MessageLength": 60,
+      "DataType": "Custom",
+      "IsUpstream": true,
+      "IsDownstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    },
+    {
+      "MessageType": 49,
+      "MessageLength": 60,
+      "DataType": "Custom",
+      "IsUpstream": true,
+      "IsDownstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    },
+    {
+      "MessageType": 50,
+      "MessageLength": 60,
+      "DataType": "Custom",
+      "IsUpstream": true,
+      "IsDownstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    },
+    {
+      "MessageType": 51,
+      "MessageLength": 60,
+      "DataType": "Custom",
+      "IsUpstream": true,
+      "IsDownstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    },
+    {
+      "MessageType": 52,
+      "MessageLength": 60,
+      "DataType": "Custom",
+      "IsUpstream": true,
+      "IsDownstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    }
+  ]
+}

@@ -13,25 +13,51 @@ Descriptor:
 F8-2F-21-26-3A-CF-B7-02-17-00-20-0E-00-01-00-10-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-17
 00-09-3C-00-01-00-08-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
 
-- Custom commands:
-  1.
-  - Command ID: 0x20
-  - Max command length: 14
-  - Flags: 0x10 (Input)
-  2.
-  - Command ID: 0x09
-  - Max command length: 60
-  - Flags: 0x08 (Output)
-
-- Input commands: 01, 02, 03, 04, 06, 07, 0C, 1E
-- Output commands: 01, 04, 05, 06, 0A, 0C, 1E
-
-- Class names:
-  - Windows.Xbox.Input.Gamepad
-
-- Interface GUIDs:
-  - 9776FF56-9BFD-4581-AD45-B645BBA526D6 - Input device
-  - 082E402C-07DF-45E1-A5AB-A3127AF197B5 - Windows.Xbox.Input.Gamepad
-  - B8F31FE7-7386-40E9-A9F8-2F21263ACFB7 - Windows.Xbox.Input.NavigationController
-
-- HID descriptor: None
+Decompiled JSON:
+{
+  "MetadataHeader": {
+    "MajorVersion": 1,
+    "MinorVersion": 0
+  },
+  "DeviceMetadata": {
+    "SupportedDeviceFirmwareVersions": [
+      { "Major": 1, "Minor": 0 },
+      { "Major": 1, "Minor": 1 },
+      { "Major": 1, "Minor": 2 },
+      { "Major": 1, "Minor": 3 },
+      { "Major": 2, "Minor": 0 },
+      { "Major": 2, "Minor": 1 },
+      { "Major": 2, "Minor": 2 },
+      { "Major": 2, "Minor": 3 }
+    ],
+    "SupportedAudioFormats": [],
+    "SupportedInSystemCommands": [1, 2, 3, 4, 6, 7, 12, 30],
+    "SupportedOutSystemCommands": [1, 4, 5, 6, 10, 12, 30],
+    "PreferredTypes": [
+      "Windows.Xbox.Input.Gamepad"
+    ],
+    "SupportedInterfaces": [
+      "9776ff56-9bfd-4581-ad45-b645bba526d6", // Windows.Xbox.Input.IController
+      "082e402c-07df-45e1-a5ab-a3127af197b5", // Microsoft.Xbox.Input.IGamepad
+      "b8f31fe7-7386-40e9-a9f8-2f21263acfb7"  // Windows.Xbox.Input.INavigationController
+    ]
+  },
+  "Messages": [
+    {
+      "MessageType": 32,
+      "MessageLength": 14,
+      "DataType": "Custom",
+      "IsDownstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    },
+    {
+      "MessageType": 9,
+      "MessageLength": 60,
+      "DataType": "Custom",
+      "IsUpstream": true,
+      "Period": 0,
+      "PersistenceTimeout": 0
+    }
+  ]
+}
