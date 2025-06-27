@@ -150,7 +150,7 @@ struct GipRiffmasterGuitarState : GipGuitarState
 
 - Length: 1 byte
 
-This request is sent to change which auto-calibration sensors are enabled on the guitar.
+This message is sent to change which auto-calibration sensors are enabled on the guitar.
 
 - Byte 0: Sensor mode
   - 0: Disabled

@@ -178,7 +178,7 @@ The data for this one is unknown, it's reported in the metadata block but unfort
 
 Length: 0 bytes
 
-This request is sent to retrieve information about the connected device. The info is returned under message ID `0x22`.
+This message is sent to request information about the connected device. The info is returned under message ID `0x22`.
 
 ## References
 

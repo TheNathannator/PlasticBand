@@ -133,7 +133,7 @@ struct GipLegacyWirelessDisconnection
 
 Length: 2 bytes
 
-This request is used on guitars to change which auto-calibration sensors are enabled.
+This message is used on guitars to change which auto-calibration sensors are enabled.
 
 - Byte 0: User index
 - Byte 1: Sensor mode
@@ -154,7 +154,7 @@ struct GipLegacyWirelessSetState
 
 Length: 0 bytes
 
-This request is sent to retrieve information about the connected device. The info is returned under message ID `0x22`.
+This message is sent to request information about all connected devices. The info is returned under message ID `0x22`.
 
 ## References
 
