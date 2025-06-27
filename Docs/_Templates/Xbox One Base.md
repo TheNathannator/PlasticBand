@@ -12,9 +12,7 @@ See the [MS-GIPUSB open specification](https://learn.microsoft.com/en-us/openspe
 - Class strings:
   - (List each, marking the primary string and listing it first)
 
-Vendor ID and product ID can be retrieved from the arrival message (`0x02`) or from USB descriptor info.
-
-Interface GUIDs and class strings can be retrieved from the descriptor message (`0x04`). Multiple of each can be specified, if there's more than one include all of them but be sure to specify which is primary (unique) and which ones are secondary (non-unique). If there's only one, this is not required.
+Vendor ID and product ID can be retrieved from the "Hello" message (`0x02`) or from USB descriptor info. Interface GUIDs and class strings are found in the metadata message (`0x04`).
 
 Common non-unique GUIDs include:
 
@@ -25,13 +23,13 @@ Common non-unique class strings include:
 
 - `Windows.Xbox.Input.NavigationController`
 
-## Input Command Info
+## Inbound Message Info
 
-Detail information about commands that may be received from the device, excluding common core ones such as status messages (command ID `0x03`) unless there's something important of note about them.
+Detail information about messagess that may be received from the device, excluding system messages (unless there's something important of note about them).
 
-### Example: Command ID `0x20`: Input State
+### Example: Message ID `0x20`: Input State
 
-Typically, devices will report input data via the `0x20` command ID. As an example, this section details the standard gamepad's state info.
+Typically, devices will report input data via the `0x20` message ID. As an example, this section details the standard gamepad's state info.
 
 Length: 14 bytes
 
@@ -97,17 +95,17 @@ struct GipGamepadState
 } __attribute__((packed));
 ```
 
-## Output Command Info
+## Outbound Message
 
-Detail info about any commands that can be sent to the device.
+Detail info about any messages that can be sent to the device.
 
-### Example: Command ID `0x09`: Set Vibration
+### Example: Message ID `0x09`: Set Vibration
 
-This command is found in the standard Xbox One gamepad's descriptor, and is used to set the state of its four vibration motors.
+This message is found in the standard Xbox One gamepad's metadata block, and is used to set the state of its four vibration motors.
 
 Length: Typically 9 bytes (listed max: 60 bytes)
 
-- Sometimes the in-practice length of a command differs from what the descriptor reports as its max length.
+- Note that the length reported in the metadata block is a *maximum* length. It is possible for messages to be shorter, and there will typically be corresponding data within the report that indicates what length should be expected.
 
 Bytes:
 

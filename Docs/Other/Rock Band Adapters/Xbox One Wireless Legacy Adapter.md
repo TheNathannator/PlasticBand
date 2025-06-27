@@ -8,16 +8,16 @@ With regards to PC use, this may also seem pointless to document, as there's an 
 
 - Vendor/product ID: `0738:4164`
 - Interface GUIDs:
-  - `AF259D0F-76B0-4CDB-BFD1-CEA8C0A8F5EE` (Primary)
-  - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-  - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
+  - `AF259D0F-76B0-4CDB-BFD1-CEA8C0A8F5EE` (Preferred)
+  - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (`Windows.Xbox.Input.INavigationController`)
+  - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (`Windows.Xbox.Input.IController`)
 - Class strings:
-  - `MadCatz.Xbox.Module.Brangus` (Primary)
+  - `MadCatz.Xbox.Module.Brangus` (Preferred)
   - `Windows.Xbox.Input.NavigationController`
 
-## Input Command Info
+## Inbound Message Info
 
-### Command ID `0x20`: Input State
+### Message ID `0x20`: Input State
 
 Length: Typically 14 bytes (listed max: 50 bytes)
 
@@ -79,7 +79,7 @@ struct GipLegacyWirelessState
 } __attribute__((packed));
 ```
 
-### Command ID `0x22`: Device Information
+### Message ID `0x22`: Device Information
 
 Max length: 254
 
@@ -114,7 +114,7 @@ struct GipLegacyWirelessDeviceInfo
 } __attribute__((packed));
 ```
 
-### Command ID `0x23`: Disconnection
+### Message ID `0x23`: Disconnection
 
 Length: 1 byte
 
@@ -127,9 +127,9 @@ struct GipLegacyWirelessDisconnection
 } __attribute__((packed));
 ```
 
-## Output Command Info
+## Outbound Message
 
-### Command ID `0x21`: Auto-Calibration Mode
+### Message ID `0x21`: Auto-Calibration Mode
 
 Length: 2 bytes
 
@@ -150,11 +150,11 @@ struct GipLegacyWirelessSetState
 } __attribute__((packed));
 ```
 
-### Command ID `0x24`: Request Device Info
+### Message ID `0x24`: Request Device Info
 
 Length: 0 bytes
 
-This request is sent to retrieve information about the connected device. The info is returned under command ID `0x22`.
+This request is sent to retrieve information about the connected device. The info is returned under message ID `0x22`.
 
 ## References
 

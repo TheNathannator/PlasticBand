@@ -7,26 +7,26 @@
   - PDP: `0E6F:0171`
 - Interface GUIDs:
   - MadCatz:
-    - `06182893-CCE0-4B85-9271-0A10DBAB7E07` (Primary)
-    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
+    - `06182893-CCE0-4B85-9271-0A10DBAB7E07` (Preferred)
+    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (`Windows.Xbox.Input.INavigationController`)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (`Windows.Xbox.Input.IController`)
   - PDP:
-    - `A503F9B0-955E-47C4-A2ED-B1336FA7703E` (Primary)
-    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
+    - `A503F9B0-955E-47C4-A2ED-B1336FA7703E` (Preferred)
+    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (`Windows.Xbox.Input.INavigationController`)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (`Windows.Xbox.Input.IController`)
 - Class strings:
   - MadCatz:
-    - `MadCatz.Xbox.Drums.Glam` (Primary)
+    - `MadCatz.Xbox.Drums.Glam` (Preferred)
     - `Windows.Xbox.Input.NavigationController`
   - PDP:
-    - `PDP.Xbox.Drums.Tablah` (Primary)
+    - `PDP.Xbox.Drums.Tablah` (Preferred)
     - `Windows.Xbox.Input.NavigationController`
 
-NOTE: These drumkits typically send every packet twice! Respecting the packet count is vital!
+NOTE: These drumkits typically send every message twice! Respecting the sequence count is vital!
 
-## Input Command Info
+## Inbound Message Info
 
-### Command ID `0x20`: Input State
+### Message ID `0x20`: Input State
 
 Length: 6 bytes
 

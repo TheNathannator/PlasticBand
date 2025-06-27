@@ -6,20 +6,20 @@ This one is interesting, it's basically just a PS3/Wii U GHL guitar masquerading
 
 - Vendor/product ID: `1430:079B`
 - Interface GUIDs:
-  - `FD12FDD9-8E73-47C7-A231-96268C38009A` (Primary)
-  - `082E402C-07DF-45E1-A5AB-A3127AF197B5` (Gamepad)
-  - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-  - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
+  - `FD12FDD9-8E73-47C7-A231-96268C38009A` (Preferred)
+  - `082E402C-07DF-45E1-A5AB-A3127AF197B5` (`Microsoft.Xbox.Input.IGamepad`)
+  - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (`Windows.Xbox.Input.INavigationController`)
+  - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (`Windows.Xbox.Input.IController`)
 - Class strings:
-  - `Activision.Xbox.Input.GH7` (Primary)
+  - `Activision.Xbox.Input.GH7` (Preferred)
   - `Windows.Xbox.Input.Gamepad`
   - `Windows.Xbox.Input.NavigationController`
 
-## Input Command Info
+## Inbound Message Info
 
-### Command ID `0x20`: Standard Input State
+### Message ID `0x20`: Standard Input State
 
-This command is the standard input report that the Xbox expects and uses for menu navigation. This gets sent whenever the state of an input that is used for menu navigation changes, such as the frets (excluding White 2 and 3) and strumbar.
+This message is the standard input report that the Xbox expects and uses for menu navigation. This gets sent whenever the state of an input that is used for menu navigation changes, such as the frets (excluding White 2 and 3) and strumbar.
 
 Length: 14 bytes
 
@@ -78,9 +78,9 @@ struct GipGHLNavigationState
 } __attribute__((packed));
 ```
 
-### Command ID `0x21`: Guitar Input State
+### Message ID `0x21`: Guitar Input State
 
-This command is used to send the actual guitar input reports. Unlike the standard input report, it is sent at a consistent poll rate, not just when an input changes.
+This message is used to send the actual guitar input reports. Unlike the standard input report, it is sent at a consistent poll rate, not just when an input changes.
 
 Length: 27
 
@@ -172,11 +172,11 @@ struct GipGHLGuitarState
 } __attribute__((packed));
 ```
 
-## Output Command Info
+## Outbound Message
 
-### Command ID `0x22`: PS3-Style Output Reports
+### Message ID `0x22`: PS3-Style Output Reports
 
-This command is used to send the same output reports as what is seen on PS3 controllers.
+This message is used to send the same output reports as what is seen on PS3 controllers.
 
 Length: 8
 
@@ -186,7 +186,7 @@ Bytes:
 - Bytes 1-7: Command data
 
 ```cpp
-struct GipGhlGuitarGenericCommand
+struct GipGhlGuitarGenericMessage
 {
     uint8_t subCommand;
     uint8_t data[7];

@@ -8,16 +8,16 @@ Documenting this is a bit pointless with regards to PC use since Xbox 360 device
 
 - Vendor/product ID: `0E6F:0175`
 - Interface GUIDs:
-  - `FD019937-9816-45E7-8034-CFD6AB3AE6BF` (Primary)
+  - `FD019937-9816-45E7-8034-CFD6AB3AE6BF` (Preferred)
   - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
   - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
 - Class strings:
-  - `PDP.Xbox.RBAdapter.LegacyUSB` (Primary)
+  - `PDP.Xbox.RBAdapter.LegacyUSB` (Preferred)
   - `Windows.Xbox.Input.NavigationController`
 
-## Input Command Info
+## Inbound Message Info
 
-### Command ID `0x20`: Input State
+### Message ID `0x20`: Input State
 
 Length: 23 bytes
 
@@ -133,7 +133,7 @@ struct GipLegacyWiredState
 } __attribute__((packed));
 ```
 
-### Command ID `0x22`: Receive XUSB Device Info
+### Message ID `0x22`: Receive XUSB Device Info
 
 Length: 5 bytes
 
@@ -150,7 +150,7 @@ struct GipLegacyWiredDeviceInfo
 } __attribute__((packed));
 ```
 
-### Command ID `0x23`: Disconnection?
+### Message ID `0x23`: Disconnection?
 
 This only occurs once in the packet log at the very end.
 
@@ -166,19 +166,19 @@ struct GipLegacyWiredDisconnection
 } __attribute__((packed));
 ```
 
-## Output Command Info
+## Outbound Message
 
-### Command ID `0x21`: Set state? 
+### Message ID `0x21`: Set state? 
 
 Reported length: 23 bytes
 
-The data for this one is unknown, it's reported in the descriptor but unfortunately it's not present in the referenced packet captures.
+The data for this one is unknown, it's reported in the metadata block but unfortunately it's not present in the referenced packet captures.
 
-### Command ID `0x24`: Request Device Info
+### Message ID `0x24`: Request Device Info
 
 Length: 0 bytes
 
-This request is sent to retrieve information about the connected device. The info is returned under command ID `0x22`.
+This request is sent to retrieve information about the connected device. The info is returned under message ID `0x22`.
 
 ## References
 

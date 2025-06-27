@@ -8,33 +8,33 @@
   - Riffmaster (PDP): `0E6F:0248`
 - Interface GUIDs:
   - Stratocaster (MadCatz):
-    - `0D2AE438-7F7D-4933-8693-30FC55018E77` (Primary)
-    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
+    - `0D2AE438-7F7D-4933-8693-30FC55018E77` (Preferred)
+    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (`Windows.Xbox.Input.INavigationController`)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (`Windows.Xbox.Input.IController`)
   - Jaguar (PDP):
-    - `1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE` (Primary)
-    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
+    - `1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE` (Preferred)
+    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (`Windows.Xbox.Input.INavigationController`)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (`Windows.Xbox.Input.IController`)
   - Riffmaster (PDP):
     - No unique interface GUID, must be distinguished by vendor/product ID.
-    - `1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE` (Primary; same as Jaguar)
-    - `ECDDD2FE-D387-4294-BD96-1A712E3DC77D` (Console function map)
-    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (Navigation)
-    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (Input device)
+    - `1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE` (Preferred; same as Jaguar)
+    - `ECDDD2FE-D387-4294-BD96-1A712E3DC77D` (`Windows.Xbox.Input.IConsoleFunctionMap`)
+    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (`Windows.Xbox.Input.INavigationController`)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (`Windows.Xbox.Input.IController`)
 - Class strings:
   - Stratocaster (MadCatz):
-    - `MadCatz.Xbox.Guitar.Stratocaster` (Primary)
+    - `MadCatz.Xbox.Guitar.Stratocaster` (Preferred)
     - `Windows.Xbox.Input.NavigationController`
   - Jaguar (PDP):
-    - `PDP.Xbox.Guitar.Jaguar` (Primary)
+    - `PDP.Xbox.Guitar.Jaguar` (Preferred)
     - `Windows.Xbox.Input.NavigationController`
   - Riffmaster (PDP):
-    - `PDP.Xbox.Guitar.Jaguar` (Primary)
+    - `PDP.Xbox.Guitar.Jaguar` (Preferred)
     - `Windows.Xbox.Input.NavigationController`
 
-## Input Command Info
+## Inbound Message Info
 
-### Command ID `0x20`: Input State
+### Message ID `0x20`: Input State
 
 Length: 10 bytes
 
@@ -72,9 +72,9 @@ Length: 10 bytes
 - Byte 6: 8-bit lower (solo) fret bitmask
   - Same as previous
 - Byte 7: Auto-calibration light sensor
-  - Must be enabled first using the [`0x21` output report](#command-id-0x21-auto-calibration-mode).
+  - Must be enabled first using the [`0x21` output report](#message-id-0x21-auto-calibration-mode).
 - Bytes 8-9: Auto-calibration audio sensor (little-endian, unsigned)
-  - Must be enabled first using the [`0x21` output report](#command-id-0x21-auto-calibration-mode).
+  - Must be enabled first using the [`0x21` output report](#message-id-0x21-auto-calibration-mode).
 
 #### Riffmaster Additions
 
@@ -146,9 +146,9 @@ struct GipRiffmasterGuitarState : GipGuitarState
 } __attribute__((packed));
 ```
 
-## Output Command Info
+## Outbound Message
 
-### Command ID `0x21`: Auto-Calibration Mode
+### Message ID `0x21`: Auto-Calibration Mode
 
 - Length: 1 byte
 
