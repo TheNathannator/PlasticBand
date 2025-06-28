@@ -75,7 +75,7 @@ Tilt and Auto-Calibration:
 - Light sensor: Pressure ○ (byte offset 16)
   - When enabled, neutral at `0x00`, and increases when light is detected.
 - Tilt: Pressure × (byte offset 17)
-  - `0x7F` when tilted, `0x40` when not tilted. (TODO: needs verification) 
+  - `0x7F` when tilted, `0x40` when not tilted.
 
 Pedal port:
 
