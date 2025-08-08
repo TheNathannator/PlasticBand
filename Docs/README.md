@@ -1,4 +1,4 @@
-# Instruemnt Peripheral Documentation
+# Instrument Peripheral Documentation
 
 This folder contains documentation on how to communicate with and interpret the data of instrument peripherals, primarily those from Rock Band and Guitar Hero.
 
