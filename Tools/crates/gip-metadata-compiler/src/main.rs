@@ -69,13 +69,31 @@ fn create_file(path: &Path, allow_overwrite: bool) -> anyhow::Result<BufWriter<F
 }
 
 fn parse_hex_bytes(text: &str) -> Result<Vec<u8>, anyhow::Error> {
-    text.split(|c: char| c.is_ascii_whitespace() || c == '-')
-        .filter(|t| !t.is_empty())
-        .map(|t| {
-            ensure!(t.len() == 2, "invalid hex byte length {}, expected 2 characters", t.len());
-            u8::from_str_radix(t, 16).with_context(|| format!("invalid hex byte {}", t))
-        })
-        .collect()
+    let mut bytes = Vec::new();
+
+    let mut position = 0;
+    let mut buffer = [0u8, 0u8];
+    for c in text.chars() {
+        position += 1;
+        if c.is_ascii_whitespace() || c == '-' {
+            continue;
+        }
+
+        ensure!(c.is_ascii_hexdigit(), "non-hexadecimal digit {c} at position {position}");
+
+        if buffer[0] == 0 {
+            buffer[0] = c as u8;
+        } else {
+            buffer[1] = c as u8;
+            let s = str::from_utf8(&buffer).expect("buffer is valid by way of being ASCII hex");
+            let byte = u8::from_str_radix(s, 16).expect("buffer is valid ASCII hex");
+            bytes.push(byte);
+
+            buffer = [0, 0];
+        }
+    }
+
+    Ok(bytes)
 }
 
 fn compile(args: Arguments) -> anyhow::Result<()> {
