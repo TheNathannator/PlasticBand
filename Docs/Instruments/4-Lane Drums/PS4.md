@@ -4,7 +4,7 @@
 
 - Vendor/product ID:
   - MadCatz: `0738:8262`
-  - PDP: `0E6F:????` (product ID not known yet)
+  - PDP: `0E6F:0174`
 - Revision:
   - MadCatz:
   - PDP:
