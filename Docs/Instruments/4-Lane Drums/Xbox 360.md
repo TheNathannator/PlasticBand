@@ -10,6 +10,8 @@
   - Revision (right stick X): `0x0100`
   - Using these IDs to distinguish the Drum Rocker from Guitar Hero drumkits is recommended, as they have a hardware quirk that prevents the normal method from working correctly: the kick pedal being plugged in tends to hold down the right stick click input.
 
+Rock Band drums set the Force Feedback flag in their capabilities, Guitar Hero drum kits do not.
+
 ## Input Info
 
 This device uses the standard Xbox 360 report format, [documented here](../../Base%20Reports/Xbox%20360.md). Refer to that document for the base layout.

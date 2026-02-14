@@ -1,0 +1,15 @@
+Capabilities reported by the XUSB driver:
+
+Type:         0x01 (Gamepad)
+SubType:      0x08 (DrumKit)
+Flags:        0x0007 (ForceFeedback, Wireless, Voice)
+VendorId:     0x2068
+ProductId:    0x0000
+Revision:     0x0001
+Buttons:     0xF57F (DpadUp, DpadDown, DpadLeft, DpadRight, Start, Back, LeftThumb, LeftShoulder, Guide, A, B, X, Y)
+Triggers:    L: 0xFF  R: 0xFF
+LeftThumb:   X: 0x2068  Y: 0x0002
+RightThumb:  X: 0x0100  Y: 0xFFFF
+Ext:         0x00-00-00-00-00-00
+LeftMotorSpeed:   0x00
+RightMotorSpeed:  0x00

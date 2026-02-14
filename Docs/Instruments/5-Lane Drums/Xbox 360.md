@@ -4,8 +4,14 @@
 
 - XInput type: Gamepad (1)
 - XInput subtype: Drumkit (8)
+- Band Hero Drum stick hardware IDs:
+  - Vendor ID (left stick X): `0x1430`
+  - Product ID (left stick Y): `0x0805`
+  - Revision (right stick X): `0x0001`
 
-Guitar Hero kits differentiate themselves from Rock Band kits by holding the left stick click input. This conflicts with the second kick pedal input on Rock Band kits, but should be easy to detect when first finding a drumkit. The only issue will be if a Rock Band kit user happens to be holding the second pedal as the kit gets detected, which isn't likely but is entirely possible.
+Guitar Hero kits differentiate themselves from Rock Band kits by holding the left stick click input. This conflicts with the second kick pedal input on Rock Band kits, but should be easy to detect when first finding a drumkit. The only issue will be if a Rock Band kit user happens to be holding the second pedal as the kit gets detected, which isn't likely but is entirely possible. 
+
+Guitar Hero kits also lack the Force Feedback flag in their capabilities.
 
 ## Input Info
 
