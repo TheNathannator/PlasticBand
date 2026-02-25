@@ -47,7 +47,7 @@ Accelerometers:
 
 - These guitars feature a full 3-axis accelerometer which outputs values relative to gravity. The axis names used here match the fields that they're placed on compared to the normal PS3 controller report.
 - X axis (used for standard tilt): Accelerometer X
-  - Above `0x200` when the guitar is pointed up, below when the guitar is pointed down.
+  - Below `0x200` when the guitar is pointed up, above when the guitar is pointed down.
 - Y axis: Accelerometer Y
   - Above `0x200` when the guitar is face down, below when the guitar is face up.
 - Z axis: Accelerometer Z
