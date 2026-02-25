@@ -33,6 +33,7 @@ Whammy: Right stick Y
 - Ranges from `0x80` when not pressed to `0xFF` when fully pressed. (Assumed based on other GHL guitars)
 
 Tilt: Accelerometer X
+- Above 0x7f when the guitar is pointed up, below when the guitar is pointed down.
 
 D-pad center button: PlayStation button
 
