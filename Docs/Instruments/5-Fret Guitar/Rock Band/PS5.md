@@ -1,12 +1,19 @@
-# PS5 PDP Riffmaster Guitar
-
-The PS4/5 Riffmaster in PS5 mode.
+# PS5 Rock Band Guitars
 
 ## Device Info
 
-- Vendor/product ID: `0E6F:0249`
-- Revision: `0x0101`
-- Device name: `PDP RiffMaster Guitar for PS5`
+- Vendor/product ID:
+  - Riffmaster, PS5 mode (PDP): `0E6F:0249`
+  - Gibson SG, PS5 mode wired (CRKD): `3651:1600`
+  - Gibson SG, PS5 mode dongle (CRKD): `3651:5600`
+- Revision:
+  - Riffmaster: `0x0101`
+  - Gibson SG, PS5 mode wired (CRKD):
+  - Gibson SG, PS5 mode dongle (CRKD):
+- Device name:
+  - Riffmaster: `PDP RiffMaster Guitar for PS5`
+  - Gibson SG, PS5 mode wired (CRKD):
+  - Gibson SG, PS5 mode dongle (CRKD):
 
 ## Input Info
 
@@ -77,7 +84,7 @@ Length: 64 bytes
 ### As A Struct
 
 ```cpp
-struct PS5RiffmasterGuitarState
+struct PS5RockBandGuitarState
 {
     uint8_t reportId = 0x01;
 
