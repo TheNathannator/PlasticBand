@@ -6,14 +6,20 @@
   - Stratocaster (MadCatz): `0738:8261`
   - Jaguar (PDP): `0E6F:0173`
   - Riffmaster, PS4 mode (PDP): `0E6F:024A`
+  - Gibson SG, PS4 mode wired (CRKD): `3651:1500`
+  - Gibson SG, PS4 mode dongle (CRKD): `3651:5500`
 - Revision:
   - Stratocaster:
   - Jaguar:
   - Riffmaster: `0x0101`
+  - Gibson SG, PS4 mode wired (CRKD):
+  - Gibson SG, PS4 mode dongle (CRKD):
 - Device name:
   - Stratocaster:
   - Jaguar:
   - Riffmaster: `PDP RiffMaster Guitar for PS4`
+  - Gibson SG, PS4 mode wired (CRKD):
+  - Gibson SG, PS4 mode dongle (CRKD):
 
 ## Input Info
 
