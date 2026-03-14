@@ -2,11 +2,11 @@ Capabilities reported by the XUSB driver:
 
 Type:         0x01 (Gamepad)
 SubType:      0x0B (GuitarBass)
-Flags:        0x000C (Voice, PluginModules)
+Flags:        0x0006 (Wireless, Voice)
 VendorId:     0x0738
-ProductId:    0x9806
-Revision:     0x0410
-Buttons:     0xF57F (DpadUp, DpadDown, DpadLeft, DpadRight, Start, Back, LeftThumb, LeftShoulder, Guide, A, B, X, Y)
+ProductId:    0x0000
+Revision:     0x0006
+Buttons:     0xFD7F (DpadUp, DpadDown, DpadLeft, DpadRight, Start, Back, LeftThumb, LeftShoulder, Guide, Sync, A, B, X, Y)
 Triggers:    L: 0xFF  R: 0x00
 LeftThumb:   X: 0x0000  Y: 0x0000
 RightThumb:  X: 0xFFC0  Y: 0xFFC0

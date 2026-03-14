@@ -1,7 +1,7 @@
 Capabilities reported by the XUSB driver:
 
 Type:         0x01 (Gamepad)
-SubType:      0x0B (GuitarBass)
+SubType:      0x06 (Guitar)
 Flags:        0x000C (Voice, PluginModules)
 VendorId:     0x0738
 ProductId:    0x9806
