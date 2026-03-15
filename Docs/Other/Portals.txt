@@ -1,0 +1,15 @@
+Skylanders:
+Universal:    VID:1430 - PID:0150
+Xbox 360:     VID:1430 - PID:1F17
+Xbox One:     VID:1430 - PID:09AA
+-------------------------------------
+Lego Dimensions:
+Universal:    VID:0E6F - PID:0241
+Xbox 360:     VID:24C6 - PID:FA01
+Xbox One:     VID:0E6F - PID:0141
+-------------------------------------
+Disney Infinity:
+Universal:    VID:0E6F - PID:0129
+Xbox 360:     VID:24C6 - PID:FA00
+Xbox One:     VID:0E6F - PID:0229
+-------------------------------------

@@ -1,0 +1,52 @@
+10-00-01-00-00-00-00-00-00-00-00-00-00-00-94-00
+6C-00-16-00-1B-00-1C-00-23-00-29-00-4B-00-00-00
+00-00-00-00-00-00-01-01-00-00-00-00-06-01-02-03
+04-06-1F-05-01-04-05-06-1F-01-1F-00-54-54-47-61
+6D-65-73-2E-58-62-6F-78-2E-44-69-6D-65-6E-73-69
+6F-6E-73-2E-47-61-74-65-77-61-79-02-17-36-C0-53
+67-8C-43-46-9A-A6-3F-5C-22-84-F5-92-56-FF-76-97
+FD-9B-81-45-AD-45-B6-45-BB-A5-26-D6-01-17-00-21
+20-00-01-00-18-00-00-00-00-00-00-00-00-00-00-00
+00-00-00-00
+
+Vendor ID: 0x0E6F
+Product ID: 0x0141
+Header:
+- Length: 16
+- unk1: 0x00000001
+- unk2: 0x0000000000000000
+- Data length: 148
+Offsets:
+- Custom commands: 0x006C
+- Firmware versions: 0x0016
+- Audio formats: 0x001B
+- Input commands: 0x001C
+- Output commands: 0x0023
+- Class names: 0x0029
+- Interface GUIDs: 0x004B
+- HID descriptor: 0x0000
+
+Custom commands: 
+1. 
+- Command ID: 0x21
+- Max command length: 32
+- unk1: 0x0001
+- Flags: 0x18 (Output, Input)
+- unk2: 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+
+Supported firmware versions: 
+- v1.0
+
+Audio formats: None
+
+Input commands: 01, 02, 03, 04, 06, 1F
+Output commands: 01, 04, 05, 06, 1F
+
+Class names: 
+- TTGames.Xbox.Dimensions.Gateway
+
+Interface GUIDs: 
+- 53C03617-8C67-4643-9AA6-3F5C2284F592
+- 9776FF56-9BFD-4581-AD45-B645BBA526D6 - Windows.Xbox.Input.InputDevice
+
+HID descriptor: None
