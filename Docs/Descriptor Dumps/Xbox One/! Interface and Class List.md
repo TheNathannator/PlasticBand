@@ -31,6 +31,9 @@
 | `{1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE}` | [PDP Jaguar guitar](PDP%20Jaguar%20Guitar.txt), [PDP Riffmaster guitar](Xbox%20Riffmaster%20Dongle.txt) |
 | `{A503F9B0-955E-47C4-A2ED-B1336FA7703E}` | [PDP drumkit](PDP%20Drums.txt) |
 | `{FD019937-9816-45E7-8034-CFD6AB3AE6BF}` | [PDP Legacy Wired Adapter](PDP%20Legacy%20Wired%20Adapter.txt) |
+| `{7788A200-601F-40B8-9B36-26EC56C7C452}` | [Skylanders Portal](Skylanders%20Portal.txt) |
+| `{53C03617-8C67-4643-9AA6-3F5C2284F592}` | [Lego Dimension Portal](Lego%20Dimensions%20Portal.txt) |
+| `{E90D173C-309B-41A6-A477-826E2C97D882}` | [Disney Infinity Portal](Disney%20Infinity%20Portal.txt) |
 
 ## Class Names ("Preferred Types")
 
@@ -61,3 +64,6 @@
 | `PDP.Xbox.Guitar.Jaguar` | [PDP Jaguar guitar](PDP%20Jaguar%20Guitar.txt), [PDP Riffmaster guitar](Xbox%20Riffmaster%20Dongle.txt) |
 | `PDP.Xbox.Drums.Tablah` | [PDP drumkit](PDP%20Drums.txt) |
 | `PDP.Xbox.RBAdapter.LegacyUSB` | [PDP Legacy Wired Adapter](PDP%20Legacy%20Wired%20Adapter.txt) |
+| `Activision.Xbox.Skylanders.Portal` | [Skylanders Portal](Skylanders%20Portal.txt) |
+| `TTGames.Xbox.Dimensions.Gateway` | [Lego Dimension Portal](Lego%20Dimensions%20Portal.txt) |
+| `Disney.Xbox.Infinity.Base` | [Disney Infinity Portal](Disney%20Infinity%20Portal.txt) |

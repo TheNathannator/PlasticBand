@@ -45,8 +45,7 @@ Decompiled JSON:
     ],
     "SupportedInterfaces": [
       "e90d173c-309b-41a6-a477-826e2c97d882",
-      "9776ff56-9bfd-4581-ad45-b645bba526d6", 
-      "7a34ce77-7de2-45c6-8ca4-0042c08bd94a" 
+      "9776ff56-9bfd-4581-ad45-b645bba526d6" // Windows.Xbox.Input.IController
     ]
   },
   "Messages": [
