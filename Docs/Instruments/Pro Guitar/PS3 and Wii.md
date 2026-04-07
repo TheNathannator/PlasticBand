@@ -9,21 +9,16 @@ PS3:
   - Revision: `0x0000`
   - Device name: `Harmonix RB3 Mustang Guitar for PlayStation®3`
   - PS3 flags: `0x06`
-- Squire:
-  - Vendor/product ID: `12BA:2530` (assumed based on patterns with other RB device PIDs)
-  - Revision:
-  - Device name:
-  - PS3 flags:
 
 Wii:
 
 - Vendor/product ID:
   - Mustang: `1BAD:3430`
-  - Squire: `1BAD:3530` (assumed based on patterns with other RB device PIDs)
 - Revision: `0x0005`
 - Device name:
 
 MIDI Pro Adapter information may be found in [its own document](../../Other/Rock%20Band%20Adapters/MIDI%20Pro%20Adapters.md).
+Note that the Squier does not have USB, it needs a MIDI adapter to function in game.
 
 ## Input Info
 
