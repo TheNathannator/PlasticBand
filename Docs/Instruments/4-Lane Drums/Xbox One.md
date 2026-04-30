@@ -23,7 +23,7 @@
     - `Windows.Xbox.Input.NavigationController`
 
 NOTE: These drumkits typically send every message twice! Respecting the sequence count is vital!
-
+NOTE: PDP kits send X and Y face button inputs when hitting pads, Madcatz kits do not!
 ## Inbound Message Info
 
 ### Message ID `0x20`: Input State
