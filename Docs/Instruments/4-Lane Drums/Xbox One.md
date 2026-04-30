@@ -37,9 +37,9 @@ Length: 6 bytes
   - Byte 0, bit 4 (`0x10`) - A button/green pad
   - Byte 0, bit 5 (`0x20`) - B button/red pad
   - Byte 0, bit 6 (`0x40`) - X button/blue pad
-   - NOTE: Blue pad only triggers this on PDP drumkits.
+    - NOTE: Blue pad only triggers this on PDP drumkits.
   - Byte 0, bit 7 (`0x80`) - Y button/yellow pad
-   - NOTE: Yellow pad only triggers this on PDP drumkits.
+    - NOTE: Yellow pad only triggers this on PDP drumkits.
   - Byte 1, bit 0 (`0x01`) - D-pad up
   - Byte 1, bit 1 (`0x02`) - D-pad down
   - Byte 1, bit 2 (`0x04`) - D-pad left
