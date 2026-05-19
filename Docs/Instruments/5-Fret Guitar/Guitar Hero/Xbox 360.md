@@ -4,7 +4,7 @@
 
 - XInput type: Gamepad (1)
 - XInput subtype: Guitar Alternate (7)
-- World Tour kiosk stick hardware IDs:
+- World Tour **kiosk (only!)** stick hardware IDs:
   - Vendor ID (left stick X): `0x1430`
   - Product ID (left stick Y): `0x4734`
   - Revision (right stick X): `0x3122`
