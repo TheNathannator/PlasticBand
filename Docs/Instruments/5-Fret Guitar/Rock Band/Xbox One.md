@@ -6,6 +6,7 @@
   - Stratocaster (MadCatz): `0738:4161`
   - Jaguar (PDP): `0E6F:0170`
   - Riffmaster (PDP): `0E6F:0248`
+  - CRKD: `3651:4161`
 - Interface GUIDs:
   - Stratocaster (MadCatz):
     - `0D2AE438-7F7D-4933-8693-30FC55018E77` (Preferred)
@@ -21,6 +22,10 @@
     - `ECDDD2FE-D387-4294-BD96-1A712E3DC77D` (`Windows.Xbox.Input.IConsoleFunctionMap`)
     - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (`Windows.Xbox.Input.INavigationController`)
     - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (`Windows.Xbox.Input.IController`)
+  - CRKD:
+    - `0D2AE438-7F7D-4933-8693-30FC55018E77` (Preferred)
+    - `B8F31FE7-7386-40E9-A9F8-2F21263ACFB7` (`Windows.Xbox.Input.INavigationController`)
+    - `9776FF56-9BFD-4581-AD45-B645BBA526D6` (`Windows.Xbox.Input.IController`)
 - Class strings:
   - Stratocaster (MadCatz):
     - `MadCatz.Xbox.Guitar.Stratocaster` (Preferred)
@@ -30,6 +35,9 @@
     - `Windows.Xbox.Input.NavigationController`
   - Riffmaster (PDP):
     - `PDP.Xbox.Guitar.Jaguar` (Preferred)
+    - `Windows.Xbox.Input.NavigationController`
+  - CRKD:
+    - `MadCatz.Xbox.Guitar.Stratocaster` (Preferred)
     - `Windows.Xbox.Input.NavigationController`
 
 ## Inbound Message Info
