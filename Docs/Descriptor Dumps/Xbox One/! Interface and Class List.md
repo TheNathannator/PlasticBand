@@ -25,12 +25,12 @@
 | Interface ID | Description |
 | :----------- | :---------- |
 | `{FD12FDD9-8E73-47C7-A231-96268C38009A}` | [Guitar Hero Live guitar](Guitar%20Hero%20Live%20Guitar%20Dongle.txt) |
-| `{0D2AE438-7F7D-4933-8693-30FC55018E77}` | [MadCatz Stratocaster guitar](MadCatz%20Stratocaster%20Guitar.txt) |
-| `{06182893-CCE0-4B85-9271-0A10DBAB7E07}` | [MadCatz drumkit](MadCatz%20Drums.txt) |
-| `{AF259D0F-76B0-4CDB-BFD1-CEA8C0A8F5EE}` | [MadCatz Legacy Wireless Adapter](MadCatz%20Legacy%20Wireless%20Adapter.txt) |
-| `{1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE}` | [PDP Jaguar guitar](PDP%20Jaguar%20Guitar.txt), [PDP Riffmaster guitar](Xbox%20Riffmaster%20Dongle.txt) |
-| `{A503F9B0-955E-47C4-A2ED-B1336FA7703E}` | [PDP drumkit](PDP%20Drums.txt) |
-| `{FD019937-9816-45E7-8034-CFD6AB3AE6BF}` | [PDP Legacy Wired Adapter](PDP%20Legacy%20Wired%20Adapter.txt) |
+| `{0D2AE438-7F7D-4933-8693-30FC55018E77}` | [MadCatz Stratocaster guitar](Rock%20Band%204%20MadCatz%20Stratocaster%20Guitar.txt) |
+| `{06182893-CCE0-4B85-9271-0A10DBAB7E07}` | [MadCatz drumkit](Rock%20Band%204%20MadCatz%20Drums.txt) |
+| `{AF259D0F-76B0-4CDB-BFD1-CEA8C0A8F5EE}` | [MadCatz Legacy Wireless Adapter](Rock%20Band%204%20MadCatz%20Legacy%20Wireless%20Adapter.txt) |
+| `{1A266AF6-3A46-45E3-B9B6-0F2C0B2C1EBE}` | [PDP Jaguar guitar](Rock%20Band%204%20PDP%20Jaguar%20Guitar.txt), [PDP Riffmaster guitar](PDP%20Riffmaster%20Dongle.txt) |
+| `{A503F9B0-955E-47C4-A2ED-B1336FA7703E}` | [PDP drumkit](Rock%20Band%204%20PDP%20Drums.txt) |
+| `{FD019937-9816-45E7-8034-CFD6AB3AE6BF}` | [PDP Legacy Wired Adapter](Rock%20Band%204%20PDP%20Legacy%20Wired%20Adapter.txt) |
 | `{7788A200-601F-40B8-9B36-26EC56C7C452}` | [Skylanders Portal](Skylanders%20Portal.txt) |
 | `{53C03617-8C67-4643-9AA6-3F5C2284F592}` | [Lego Dimension Portal](Lego%20Dimensions%20Portal.txt) |
 | `{E90D173C-309B-41A6-A477-826E2C97D882}` | [Disney Infinity Portal](Disney%20Infinity%20Portal.txt) |
@@ -58,12 +58,12 @@
 | Class Name | Description |
 | :--------- | :---------- |
 | `Activision.Xbox.Input.GH7` | [Guitar Hero Live guitar/dongle](Guitar%20Hero%20Live%20Guitar%20Dongle.txt) |
-| `MadCatz.Xbox.Guitar.Stratocaster` | [MadCatz Stratocaster guitar](MadCatz%20Stratocaster%20Guitar.txt) |
-| `MadCatz.Xbox.Drums.Glam` | [MadCatz drumkit](MadCatz%20Drums.txt) |
-| `MadCatz.Xbox.Module.Brangus` | [MadCatz Legacy Wireless Adapter](MadCatz%20Legacy%20Wireless%20Adapter.txt) |
-| `PDP.Xbox.Guitar.Jaguar` | [PDP Jaguar guitar](PDP%20Jaguar%20Guitar.txt), [PDP Riffmaster guitar](Xbox%20Riffmaster%20Dongle.txt) |
-| `PDP.Xbox.Drums.Tablah` | [PDP drumkit](PDP%20Drums.txt) |
-| `PDP.Xbox.RBAdapter.LegacyUSB` | [PDP Legacy Wired Adapter](PDP%20Legacy%20Wired%20Adapter.txt) |
+| `MadCatz.Xbox.Guitar.Stratocaster` | [MadCatz Stratocaster guitar](Rock%20Band%204%20MadCatz%20Stratocaster%20Guitar.txt) |
+| `MadCatz.Xbox.Drums.Glam` | [MadCatz drumkit](Rock%20Band%204%20MadCatz%20Drums.txt) |
+| `MadCatz.Xbox.Module.Brangus` | [MadCatz Legacy Wireless Adapter](Rock%20Band%204%20MadCatz%20Legacy%20Wireless%20Adapter.txt) |
+| `PDP.Xbox.Guitar.Jaguar` | [PDP Jaguar guitar](Rock%20Band%204%20PDP%20Jaguar%20Guitar.txt), [PDP Riffmaster guitar](PDP%20Riffmaster%20Dongle.txt) |
+| `PDP.Xbox.Drums.Tablah` | [PDP drumkit](Rock%20Band%204%20PDP%20Drums.txt) |
+| `PDP.Xbox.RBAdapter.LegacyUSB` | [PDP Legacy Wired Adapter](Rock%20Band%204%20PDP%20Legacy%20Wired%20Adapter.txt) |
 | `Activision.Xbox.Skylanders.Portal` | [Skylanders Portal](Skylanders%20Portal.txt) |
 | `TTGames.Xbox.Dimensions.Gateway` | [Lego Dimension Portal](Lego%20Dimensions%20Portal.txt) |
 | `Disney.Xbox.Infinity.Base` | [Disney Infinity Portal](Disney%20Infinity%20Portal.txt) |
