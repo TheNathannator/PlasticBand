@@ -48,15 +48,16 @@ Length: 64 bytes
   - Byte 8, bit 6 (`0x40`): Red fret flag (○ button)
   - Byte 8, bit 7 (`0x80`): Yellow fret flag (Δ button)
   - Byte 9, bit 0 (`0x01`): Orange fret flag (L1 button)
-  - Byte 9, bit 1 (`0x02`): Unused
-  - Byte 9, bit 2 (`0x04`): Unused
-  - Byte 9, bit 3 (`0x08`): Unused
+  - Byte 9, bit 1 (`0x02`): Unused (R1 button)
+  - Byte 9, bit 2 (`0x04`): Unused (L2 button)
+  - Byte 9, bit 3 (`0x08`): Unused (R2 button)
   - Byte 9, bit 4 (`0x10`): Select (Share / `\|/`) button
   - Byte 9, bit 5 (`0x20`): Start (Options / `≡`) button
   - Byte 9, bit 6 (`0x40`): Solo fret flag / Joystick click (L3 button)
-  - Byte 9, bit 7 (`0x80`): P1 button default (R3 button)
+  - Byte 9, bit 7 (`0x80`): Riffmaster P1 button default (R3 button)
     - Note that the P1 button is a programmable button, and can be remapped to any other input on the guitar.
   - Byte 10, bit 0 (`0x01`): PlayStation button
+  - Byte 10, bit 1 (`0x02`): CRKD P1 button default (touchpad press)
 - Byte 11: Unused (`0x00`)
 - Bytes 12-15: Packet counter (little-endian)
 - Bytes 16-40: Unused

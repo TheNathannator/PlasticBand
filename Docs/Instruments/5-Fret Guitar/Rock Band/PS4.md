@@ -95,6 +95,12 @@ P1 button: R3 by default
 
 - This button is programmable and can be remapped to any other input available on the guitar. This is simply its default, which does not correspond to any other input on the guitar.
 
+### CRKD Additions
+
+The CRKD guitars use the same format as the Riffmaster, with some slight changes.
+
+P1 button: Touchpad press by default
+
 ### As A Struct
 
 ```cpp
