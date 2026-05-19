@@ -8,9 +8,8 @@
   - Vendor ID (left stick X): `0x15E4`
   - Product ID (left stick Y): `0x0130`
   - Revision (right stick X): `0x0100`
-  - Using these IDs to distinguish the Drum Rocker from Guitar Hero drumkits is recommended, as they have a hardware quirk that prevents the normal method from working correctly: the kick pedal being plugged in tends to hold down the right stick click input.
 
-Rock Band drums set the Force Feedback flag in their capabilities, Guitar Hero drum kits do not.
+Note that Rock Band and Guitar Hero drums share the same subtype, and can't be distinguished off of that alone. The Force Feedback capability flag is used as the distinguisher instead: Rock Band drums set the Force Feedback flag in their capabilities, while Guitar Hero drum kits do not.
 
 ## Input Info
 
