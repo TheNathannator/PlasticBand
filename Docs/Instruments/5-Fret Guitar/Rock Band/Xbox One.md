@@ -146,6 +146,7 @@ struct GipRiffmasterGuitarState : GipGuitarState
     int16le_t joystickX;
     int16le_t joystickY;
 
+    //! Notable issue: this is supposed to be 16 bytes according to the spec, not 14
     uint8_t consoleFunctions[14];
 
     bool joystickClick() { return soloFlag && !(soloGreen | soloRed | soloYellow | soloBlue | soloOrange); }
