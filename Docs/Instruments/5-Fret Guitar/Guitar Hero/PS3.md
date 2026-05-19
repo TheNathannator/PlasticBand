@@ -6,17 +6,17 @@
   - PS3 guitars: `12BA:0100`
   - World Tour PC guitar: `1430:474C`
 - Revision:
-  - Les Paul:
+  - Les Paul: `0x0108`
   - World Tour (PS3): `0x0108`
   - World Tour (PC):
-  - GH5:
-  - WoR:
+  - GH5: `0x0005`
+  - WoR: `0x0108`
 - Device name:
   - Les Paul: `Guitar Hero3 for PlayStation (R) 3`
   - World Tour (PS3): `Guitar Hero4 for PlayStation (R) 3`
   - World Tour (PC): `Guitar Hero for PC/MAC`
   - GH5: `Guitar Hero5 for PlayStation (R) 3`
-  - WoR:
+  - WoR: `GuitarHero for Playstation (R) 3`
 - PS3 flags: `0x06`
 
 ## Input Info
