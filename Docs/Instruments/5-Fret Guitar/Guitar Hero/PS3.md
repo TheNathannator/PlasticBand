@@ -53,12 +53,18 @@ Accelerometers:
 - Z axis: Accelerometer Z
   - Above `0x200` when the guitar is pointed right, below when the guitar is pointed left.
 - Values and ranges may vary. All values listed are nominal, for proper handling calibration will need to be provided.
+- X, Y and Z are limited to a range of `0x180`-`0x280`
 
-Some World Tour-specific(?) accelerometer quirks:
-
-- X and Z are limited to a range of `0x180`-`0x280`.
+Some LP and World Tour accelerometer quirks:
 - When reaching its minimum, X will snap to the maximum. After a certain point beyond that, it will somewhat jitter between max and min.
 
+Some WoR specific quirks:
+- Y axis is always 512
+- Z axis is just X + 128 if X < 512, otherwise its X - 128
+
+Some GH5 specific quirks:
+- Y axis is always 512
+- Z axis is normally 384, but if the guitar iw pointed directly up or down it jumps to 512
 Touch/slider bar: Right stick Y
 
 - See the [General Notes](General%20Notes.md) document for more info.
@@ -122,7 +128,7 @@ struct PS3GuitarHeroGuitarState
     uint16le_t tilt_accelX;
     uint16le_t accelZ;
     uint16le_t accelY;
-    uint16le_t unused_gyro;
+    uint16le_t angularRate; // unused
 } __attribute__((packed));
 ```
 
