@@ -68,7 +68,7 @@ Some WoR specific quirks:
 
 Some GH5 specific quirks:
 - Z axis is always 512
-- Y axis is normally 384, but if the guitar iw pointed directly up or down it jumps to 512
+- Y axis is normally 384, but if the guitar is pointed directly up or down it jumps to 512
 Touch/slider bar: Right stick Y
 
 - See the [General Notes](General%20Notes.md) document for more info.
