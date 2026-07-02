@@ -63,12 +63,12 @@ Some World Tour accelerometer quirks:
 - When reaching its minimum, X will snap to the minimum. After a certain point beyond that, it will somewhat jitter between max and min.
 
 Some WoR specific quirks:
-- Y axis is always 512
-- Z axis is just X + 128 if X < 512, otherwise its X - 128
+- Z axis is always 512
+- Y axis is just X + 128 if X < 512, otherwise its X - 128
 
 Some GH5 specific quirks:
-- Y axis is always 512
-- Z axis is normally 384, but if the guitar iw pointed directly up or down it jumps to 512
+- Z axis is always 512
+- Y axis is normally 384, but if the guitar iw pointed directly up or down it jumps to 512
 Touch/slider bar: Right stick Y
 
 - See the [General Notes](General%20Notes.md) document for more info.
