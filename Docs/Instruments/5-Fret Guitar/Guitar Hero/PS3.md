@@ -130,8 +130,8 @@ struct PS3GuitarHeroGuitarState
 
     // Reminder that these values are 10-bit in range
     uint16le_t tilt_accelX;
-    uint16le_t accelZ;
     uint16le_t accelY;
+    uint16le_t accelZ;
     uint16le_t angularRate; // unused
 } __attribute__((packed));
 ```
