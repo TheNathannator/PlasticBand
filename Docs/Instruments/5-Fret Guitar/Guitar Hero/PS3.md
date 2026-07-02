@@ -55,8 +55,12 @@ Accelerometers:
 - Values and ranges may vary. All values listed are nominal, for proper handling calibration will need to be provided.
 - X, Y and Z are limited to a range of `0x180`-`0x280`
 
-Some LP and World Tour accelerometer quirks:
-- When reaching its minimum, X will snap to the maximum. After a certain point beyond that, it will somewhat jitter between max and min.
+Some LP accelerometer quirks:
+- When reaching its minimum, X will snap to the minimum.
+- When reaching its maximum, X will snap to the maximum.
+
+Some World Tour accelerometer quirks:
+- When reaching its minimum, X will snap to the minimum. After a certain point beyond that, it will somewhat jitter between max and min.
 
 Some WoR specific quirks:
 - Y axis is always 512
