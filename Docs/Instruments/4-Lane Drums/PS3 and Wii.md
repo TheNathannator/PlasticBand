@@ -16,7 +16,7 @@ PS3:
   - `Harmonix Drum Kit for PlayStation(R)3`
 - PS3 flags:
   - RB1: `0x00`
-  - RB2:
+  - RB2: `0x05`
   - RB3:
 
 Wii:
