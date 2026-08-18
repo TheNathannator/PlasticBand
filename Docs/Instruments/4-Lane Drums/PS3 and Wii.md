@@ -8,7 +8,7 @@ PS3:
   - Drumkit: `12BA:0210`
 - Revision:
   - RB1: `0x1000`
-  - RB2:
+  - RB2: `0x0200`
   - RB3:
 - Device name:
   - The Phase Shift device list has 2 different names listed
