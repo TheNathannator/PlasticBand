@@ -9,7 +9,11 @@
   - Product ID (left stick Y): `0x0805`
   - Revision (right stick X): `0x0001`
 
-Note that Guitar Hero and Rock Band drums share the same subtype, and can't be distinguished off of that alone. The Force Feedback capability flag is used as the distinguisher instead: Rock Band drums set the Force Feedback flag in their capabilities, while Guitar Hero drum kits do not.
+Note that Guitar Hero and Rock Band drums share the same subtype, and can't be distinguished off of that alone, so alternative methods of detection are required:
+
+- Rock Band 2/3 drumkits set the Force Feedback flag in their capabilities.
+- Rock Band 1 drumkits set all 0s for the trigger and stick capabilities.
+- Guitar Hero drumkits do neither of these.
 
 ## Input Info
 
@@ -49,7 +53,7 @@ The Hi-Hat pedal sends MIDI data here alongside its Kick input, which is how you
 An example packet for the Hi-Hat pedal would look like the following:
 `99 64 1C`: Note on (channel 10, note 100, velocity 28)
 
-As an additional note, Guitar Hero drumkits constantly hold the left stick click input. This is used by the Guitar Hero games in addition to the Force Feedback capability flag for differentiation, however just checking the Force Feedback flag is enough for any new software.
+As an additional note, Guitar Hero drumkits constantly hold the left stick click input. This is used by the Guitar Hero games in addition to the Force Feedback capability flag for differentiation.
 
 ### As A Struct
 

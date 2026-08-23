@@ -9,7 +9,11 @@
   - Product ID (left stick Y): `0x0130`
   - Revision (right stick X): `0x0100`
 
-Note that Rock Band and Guitar Hero drums share the same subtype, and can't be distinguished off of that alone. The Force Feedback capability flag is used as the distinguisher instead: Rock Band drums set the Force Feedback flag in their capabilities, while Guitar Hero drum kits do not.
+Note that Rock Band and Guitar Hero drums share the same subtype, and can't be distinguished off of that alone, so alternative methods of detection are required:
+
+- Rock Band 2/3 drumkits set the Force Feedback flag in their capabilities.
+- Rock Band 1 drumkits set all 0s for the trigger and stick capabilities.
+- Guitar Hero drumkits do neither of these.
 
 ## Input Info
 
