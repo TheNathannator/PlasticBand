@@ -4,6 +4,12 @@
 
 - XInput type: Gamepad (1)
 - XInput subtype: Drumkit (8)
+- RB1 drumkit stick "hardware IDs":
+  - Vendor ID (left stick X): `0x0000`
+  - Product ID (left stick Y): `0x0000`
+  - Revision (right stick X): `0x0000`
+  - Note that *all* of the axis capabilities are zero on RB1 drumkits, not just the ones used for IDs.
+  - These are necessary for disambiguation between RB and GH kits; see the paragraph below for more details.
 - ION Drum Rocker stick hardware IDs:
   - Vendor ID (left stick X): `0x15E4`
   - Product ID (left stick Y): `0x0130`
