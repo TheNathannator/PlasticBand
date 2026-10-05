@@ -52,6 +52,12 @@ As with Xbox 360 controllers, Xbox One controllers are not natively supported on
 
 This driver does not support the Xbox One receiver, and does not support Xbox One guitars/drumkits.
 
+### Userspace (IOUSBHost/libusb)
+
+Devices that expose the vendor-specific GIP interface (class `0xFF`, subclass `0x47`, protocol `0xD0`) can also be driven entirely from userspace, without a kernel extension. macOS does not match any driver to them, so they stay unconfigured: a program can open the device through IOUSBHost (or libusb), select configuration 1, claim the GIP interface and handle the protocol itself, as described in [The Shotgun Method](#the-shotgun-method-direct-usb-communication). This has been verified to work without root or special entitlements on macOS 27.
+
+[GHLive Xbox One for Mac](https://github.com/rodmarzavala/ghlive-xbox-one-mac) does this for the Guitar Hero Live Xbox One dongle (`1430:079B`), turning its input into keyboard events.
+
 ---
 
 ## Linux
