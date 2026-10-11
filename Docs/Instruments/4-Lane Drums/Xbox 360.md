@@ -72,9 +72,11 @@ Velocities:
   | Blue   | Right stick X | `0b_0BBB_BBBB_BBBB_BBBB` |
   | Green  | Right stick Y | `0b_1BBB_BBBB_BBBB_BBBB` |
 
-- The range is inverted: excluding the top-most bit, `0x0000` for the hardest hit, and `0x7FFF` for the softest measurable hit. This is done for compatibility with Rock Band 1 kits, which don't report velocity.
-- The top-most bit probably doesn't matter, but it is observed as being different between pads.
-- If you hit both the pad and cymbal of the same colour simultaneously, the pads velocity will be in its respective velocity byte, but the cymbals velocity will be placed into the red velocity byte.
+- The range is inverted. This is done for compatibility with Rock Band 1 kits, which don't report velocity and thus would always report 0.
+  - For Red and Blue: `0x0000 (0)` for the hardest hit, and `0x7FFF (32767)` for the softest measurable hit. 
+  - For Yellow and Green: `0xFFFF (-1)` for the hardest hit, and `0x8000 (-32768)` for the softest measurable hit. 
+- The differences between the colors suggest that they just wanted to invert the Y axis which is a thing commonly done with joysticks on gamepads.
+- If you hit both the pad and cymbal of the same color simultaneously, the pads velocity will be in its respective velocity byte, but the cymbals velocity will be placed into the red velocity byte.
   In this scenario you end up with a velocity in the red velocity byte but the red button bit won't be set.
 
 ### As A Struct
