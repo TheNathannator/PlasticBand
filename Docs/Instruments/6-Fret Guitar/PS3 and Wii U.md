@@ -5,7 +5,7 @@
 - Vendor/product ID: `12BA:074B`
 - Revision:
 - Device name: 
-- PS3 flags: `0x06`
+- PS3 flags: `supportsMotionSensors`, `supportsLed` (`0x06`)
 
 ## Input Info
 

@@ -225,9 +225,12 @@ struct PS3ControllerCapabilities
     // and PS5 controllers have one under 0x2821.
     uint16le_t supportedUsage = 0x2621;
 
-    uint8_t unk3 = 0x01;
-    uint8_t flags;
-    uint8_t unk4[4];
+    uint8_t protocolVersion = 0x01;
+    uint8_t supportsPressure :1;
+    uint8_t supportsMotionSensors :1;
+    uint8_t supportsLed :1;
+    uint8_t : 5;
+    uint8_t reserved[4];
 } __attribute__((packed));
 ```
 

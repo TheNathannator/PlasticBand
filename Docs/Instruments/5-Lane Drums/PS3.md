@@ -5,13 +5,16 @@
 - Vendor/product ID: `12BA:0120`
 - Revision:
   - World Tour: `0x0108`
-  - GH5/Band Hero/WoR:
+  - GH5/Band Hero/WoR: `0x0005`
+- Manufacturer string:
+  - World Tour: `Licensed by Sony Computer Entertainment` or `RedOctane MIDI Drum`
+  - GH5/Band Hero/WoR: `RedOctane MIDI Drum`
 - Device name:
   - The Phase Shift device list has like 3 different names for these lol
   - `GuitarHero for Playstation (R) 3`
   - World Tour: `Guitar Hero4 for PlayStation (R) 3`
   - GH5/Band Hero/WoR: `Guitar Hero5 for PlayStation (R) 3`
-- PS3 flags: `0x07`
+- PS3 flags: `supportsPressure`, `supportsMotionSensors`, `supportsLed` (`0x07`)
 
 ## Input Info
 

@@ -8,7 +8,7 @@ PS3:
   - Vendor/product ID: `12BA:2430`
   - Revision: `0x0000`
   - Device name: `Harmonix RB3 Mustang Guitar for PlayStation®3`
-  - PS3 flags: `0x06`
+  - PS3 flags: `supportsMotionSensors`, `supportsLed` (`0x06`)
 
 Wii:
 
