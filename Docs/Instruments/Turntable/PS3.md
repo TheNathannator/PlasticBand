@@ -4,7 +4,7 @@
 
 - Vendor/product ID: `12BA:0140`
 - Revision: `0x0005`
-- Manufacturer string: `Licensed by Sony Computer Entertainment`
+- Manufacturer string: `RedOctane DJ`
 - Device name: `Guitar Hero5 for PlayStation (R) 3`
 - PS3 flags: `supportsMotionSensors`, `supportsLed` (`0x06`)
 
