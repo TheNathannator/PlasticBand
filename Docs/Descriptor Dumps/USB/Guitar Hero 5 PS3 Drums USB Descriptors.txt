@@ -24,7 +24,7 @@ Device Descriptor:
 0x12BA	idVendor
 0x0120	idProduct
 0x0005	bcdDevice
-0x01	iManufacturer   "Licensed by Sony Computer Entertainment"
+0x01	iManufacturer   "RedOctane MIDI Drum"
 0x02	iProduct        "Guitar Hero5 for PlayStation (R) 3"
 0x00	iSerialNumber
 0x01	bNumConfigurations
@@ -90,7 +90,7 @@ String Descriptor Table
 --------------------------------
 Index  LANGID  String
 0x00   0x0000  0x0409 
-0x01   0x0409  "Licensed by Sony Computer Entertainment"
+0x01   0x0409  "RedOctane MIDI Drum"
 0x02   0x0409  "Guitar Hero5 for PlayStation (R) 3"
 
 ------------------------------

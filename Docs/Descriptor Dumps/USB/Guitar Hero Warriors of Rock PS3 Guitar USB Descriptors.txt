@@ -24,7 +24,7 @@ Device Descriptor:
 0x12BA	idVendor
 0x0100	idProduct
 0x0108	bcdDevice
-0x01	iManufacturer   "Licensed by Sony Computer Entertainment"
+0x01	iManufacturer   "GuitarHero for Playstation (R) 3"
 0x02	iProduct        "GuitarHero for Playstation (R) 3"
 0x03	iSerialNumber
 0x01	bNumConfigurations
@@ -90,7 +90,7 @@ String Descriptor Table
 --------------------------------
 Index  LANGID  String
 0x00   0x0000  0x0409 
-0x01   0x0409  "Licensed by Sony Computer Entertainment"
+0x01   0x0409  "GuitarHero for Playstation (R) 3"
 0x02   0x0409  "GuitarHero for Playstation (R) 3"
 0x03   0x0409  Request failed with 0x0000001F
 

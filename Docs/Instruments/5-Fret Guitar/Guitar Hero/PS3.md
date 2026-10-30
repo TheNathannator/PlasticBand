@@ -11,6 +11,12 @@
   - World Tour (PC):
   - GH5: `0x0005`
   - WoR: `0x0108`
+- Manufacturer string:
+  - Les Paul: `Licensed by Sony Computer Entertainment`
+  - World Tour (PS3): `Licensed by Sony Computer Entertainment`
+  - World Tour (PC):
+  - GH5: `Licensed by Sony Computer Entertainment`
+  - WoR: `GuitarHero for Playstation (R) 3`
 - Device name:
   - Les Paul: `Guitar Hero3 for PlayStation (R) 3`
   - World Tour (PS3): `Guitar Hero4 for PlayStation (R) 3`

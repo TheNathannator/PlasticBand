@@ -6,6 +6,9 @@
 - Revision:
   - World Tour: `0x0108`
   - GH5/Band Hero/WoR: `0x0005`
+- Manufacturer string:
+  - World Tour: `Licensed by Sony Computer Entertainment` or `RedOctane MIDI Drum`
+  - GH5/Band Hero/WoR: `RedOctane MIDI Drum`
 - Device name:
   - The Phase Shift device list has like 3 different names for these lol
   - `GuitarHero for Playstation (R) 3`
